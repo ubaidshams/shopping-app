@@ -33,4 +33,43 @@
 .logoBlock h1 {
   font-size: 2rem;
   color: var(--text-primary) !important;
+  transition: all 0.3s linear;
+  font-weight: 500;
+}
+.logoBlock h1:hover {
+  color: var(--text-secondary) !important;
+}
+.authBlock {
+  width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.authBlock a {
+  color: var(--text-primary);
+  transition: all 0.3s linear;
+}
+.authBlock a:hover {
+  color: var(--text-secondary);
+}
+.cartIcon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.cartIcon svg {
+  height: 30px;
+  width: 30px;
+}
+.cartIcon span {
+  background-color: crimson;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 14px;
+  font-weight: 500;
 }
