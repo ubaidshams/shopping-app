@@ -29,3 +29,6 @@ h6 {
   font-family: "Yeseva One", cursive !important;
   color: var(--heading-secondary) !important;
 }
+a {
+  text-decoration: none;
+}
