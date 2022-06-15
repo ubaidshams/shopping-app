@@ -20,8 +20,8 @@ export default function Forget() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      reset: data.get("reset"),
-      password: data.get("password"),
+      newpassword: data.get("newpassword"),
+      token: data.get("token"),
     });
   };
 
