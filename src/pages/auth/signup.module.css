@@ -6,6 +6,7 @@
   height: 90vh;
   padding: 20px;
   box-shadow: 0 5px 15px gray;
+  /* position: absolute; */
 }
 .formCard h1 {
   text-align: center;
@@ -29,7 +30,7 @@
   text-decoration: underline;
 }
 hr {
-  width: 60%;
+  width: 90%;
   margin: 15px auto;
   height: 0.01rem;
   background-color: #999;
@@ -73,7 +74,7 @@ hr {
   border-radius: 10px;
 }
 
-.bn5:before {
+.bn5:before{
   content: "";
   background: linear-gradient(
     45deg,
@@ -117,11 +118,11 @@ hr {
   color: #ED7501;
 }
 
-.bn5:active:after {
+.bn5:active:after{
   background: transparent;
 }
 
-.bn5:hover:before {
+.bn5:hover:before{
   opacity: 1;
 }
 
@@ -136,3 +137,25 @@ hr {
   top: 0;
   border-radius: 10px;
 }
+
+
+/* left side of the card */
+
+.rightCard{
+  
+  width: 55vw;
+  height: 90vh;
+
+  overflow: hidden;
+  padding: 0;
+   margin: 20px 10px;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_960_720.jpg");
+  float: left;
+  box-shadow: 0 5px 15px gray;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
