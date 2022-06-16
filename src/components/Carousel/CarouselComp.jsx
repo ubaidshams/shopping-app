@@ -12,6 +12,7 @@ const CarouselComp = () => {
         infiniteLoop={true}
         showStatus={false}
         showArrows={false}
+        useKeyboardArrows={true}
       >
         <div>
           <img
