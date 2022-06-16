@@ -104,31 +104,33 @@ const Signup = () => {
           style={{ backgroundColor: "transparent" }}
           className={style.formCardContainer}
         >
-          <FormLabel component="legend">Gender</FormLabel>
           <RadioGroup
             aria-label="gender"
             name="gender1"
             value={gender}
             onChange={e => setGender(e.target.value)}
           >
-            <FormControlLabel
-              className={style.radioGroup}
-              value="female"
-              control={<Radio />}
-              label="Female"
-            />
-            <FormControlLabel
-              className={style.radioGroup}
-              value="male"
-              control={<Radio />}
-              label="Male"
-            />
-            <FormControlLabel
-              className={style.radioGroup}
-              value="other"
-              control={<Radio />}
-              label="Other"
-            />
+            <section style={{ display: "flex", alignItems:"baseline",alignItems:"center", justifyContent:"space-evenly"}}>
+              <FormLabel component="legend">Gender</FormLabel>
+              <FormControlLabel
+                className={style.radioGroup}
+                value="female"
+                control={<Radio />}
+                label="Female"
+              />
+              <FormControlLabel
+                className={style.radioGroup}
+                value="male"
+                control={<Radio />}
+                label="Male"
+              />
+              <FormControlLabel
+                className={style.radioGroup}
+                value="other"
+                control={<Radio />}
+                label="Other"
+              />
+            </section>
           </RadioGroup>
         </Card>
         <hr />
