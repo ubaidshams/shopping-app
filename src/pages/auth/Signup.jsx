@@ -110,7 +110,14 @@ const Signup = () => {
             value={gender}
             onChange={e => setGender(e.target.value)}
           >
-            <section style={{ display: "flex", alignItems:"baseline",alignItems:"center", justifyContent:"space-evenly"}}>
+            <section
+              style={{
+                display: "flex",
+                alignItems: "baseline",
+                alignItems: "center",
+                justifyContent: "space-evenly",
+              }}
+            >
               <FormLabel component="legend">Gender</FormLabel>
               <FormControlLabel
                 className={style.radioGroup}
