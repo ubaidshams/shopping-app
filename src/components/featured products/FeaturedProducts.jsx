@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/products/productSlice";
 import Spinner from "./../spinner/Spinner";
 import styles from "./featuredProducts.module.css";
+import { addToCart } from "../../features/cart/cartSlice";
 
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
@@ -43,12 +44,14 @@ const FeaturedProducts = () => {
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
                       <span>{brand}</span>
-                      <span>{title.slice(0, 12)+`...`}</span>
+                      <span>{title.slice(0, 12) + `...`}</span>
                       <span>${price}</span>
                     </div>
                     <div className={styles.footerRight}>
                       <span>{discountPercentage}% OFF</span>
-                      <button>Add to cart </button>
+                      <button onClick={() => dispatch(addToCart(product))}>
+                        Add to cart{" "}
+                      </button>
                     </div>
                   </div>
                 </div>
