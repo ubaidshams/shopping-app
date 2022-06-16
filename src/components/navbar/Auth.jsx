@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import styles from "./navbar.module.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
+import { useSelector } from "react-redux";
+
 const Auth = () => {
+  let cartValue = useSelector(state => state.cart.cartItems.length);
   return (
     <div className={styles.authBlock}>
       <Link to="/cart" className={styles.cartIcon}>
         <AiOutlineShoppingCart />
-        <span>0</span>
+        <span>{cartValue}</span>
       </Link>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
