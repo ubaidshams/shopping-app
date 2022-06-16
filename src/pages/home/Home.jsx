@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { axios } from "axios";
+import CarouselComp from "../../components/Carousel/CarouselComp";
+import FeaturedProducts from "../../components/featured products/FeaturedProducts";
 
 const Home = () => {
-  let [product, setProduct] = useState([]);
-  useEffect(() => {
-    let fetchProducts = async () => {
-      try {
-        let { products } = await fetch("https://dummyjson.com/products").then(
-          res => res.json()
-        );
-        setProduct(products);
-      } catch (error) {
-        console.log(error);
-      }
-      console.log(product);
-    };
-    fetchProducts();
-  }, []);
   return (
-    <div>
-      {product.map(prod => {
-        let { title } = prod;
-        return <div>{title}</div>;
-      })}
-    </div>
+    <section className="homeBlock">
+      <article>
+        <CarouselComp />
+        <FeaturedProducts />
+      </article>
+    </section>
   );
 };
 
