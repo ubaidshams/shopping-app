@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&family=Yeseva+One&display=swap");
 /*  #313132*/
 :root {
-  --text-primary: #d6d6d6;
+  --text-primary: #adadad;
   --text-secondary: #eee;
   --heading-primary: #111;
   --heading-secondary: #8b8b8b;
@@ -28,4 +28,7 @@ h5,
 h6 {
   font-family: "Yeseva One", cursive !important;
   color: var(--heading-secondary) !important;
+}
+a {
+  text-decoration: none;
 }

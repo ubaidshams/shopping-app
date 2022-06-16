@@ -4,8 +4,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import {Link} from "react-router-dom";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
@@ -14,16 +12,16 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme();
 
-export default function Login() {
-  let [mail, setMail] = useState();
-  let [password, setPassword] = useState();
+export default function Forget() {
+  let [newpass, setPass] = useState();
+  let [token, setToken] = useState();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      newpassword: data.get("newpassword"),
+      token: data.get("token"),
     });
   };
 
@@ -43,7 +41,7 @@ export default function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log-In
+            Reset Password
           </Typography>
           <Box
             component="form"
@@ -55,25 +53,25 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
+              id="newpassword"
+              label="newpassword"
+              name="newpassword"
+              autoComplete="newpassword"
               autoFocus
-              value={mail}
-              onChange={(e) => setMail(e.target.value)}
+              value={newpass}
+              onChange={(e) => setPass(e.target.value)}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
+              name="token"
+              label="token"
+              type="token"
+              id="token"
               autoComplete="current-password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={token}
+              onChange={(e) => setToken(e.target.value)}
             />
 
             <Button
@@ -82,20 +80,8 @@ export default function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Log-In
+              Confirm
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link to="/forgot">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link to="/signup">
-                  "Don't have an account? Sign Up"
-                </Link>
-              </Grid>
-            </Grid>
           </Box>
         </Box>
       </Container>
