@@ -1,9 +1,11 @@
 .formCard {
-  width: 70vw;
+  width: 40vw;
   /* background-color: red; */
-  margin: 20px auto;
-  height: 100vh;
+  margin: 20px 20px;
+  float:right;
+  height: 90vh;
   padding: 20px;
+  box-shadow: 0 5px 15px gray;
 }
 .formCard h1 {
   text-align: center;
@@ -64,7 +66,7 @@ hr {
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
-  background: #111;
+  background: #ED7501;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -112,7 +114,7 @@ hr {
 }
 
 .bn5:active {
-  color: #000;
+  color: #ED7501;
 }
 
 .bn5:active:after {
@@ -129,7 +131,7 @@ hr {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #191919;
+  background: #ED7501;
   left: 0;
   top: 0;
   border-radius: 10px;
