@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { axios } from "axios";
+import CarouselComp from "../../components/Carousel/CarouselComp";
+import FeaturedProducts from "../../components/featured products/FeaturedProducts";
 
 const Home = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-      <p>hello</p>
-      <h4>yo</h4>
-    </div>
+    <section className="homeBlock">
+      <article>
+        <CarouselComp />
+        <FeaturedProducts />
+      </article>
+    </section>
   );
 };
 
