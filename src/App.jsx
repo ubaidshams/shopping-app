@@ -9,6 +9,7 @@ const App = () => {
     <Router>
       <Navbar />
       <CustomRoutes />
+      
       <Footer />
     </Router>
   );

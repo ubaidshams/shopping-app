@@ -1,8 +1,11 @@
 import React from "react";
 import { useRoutes } from "react-router";
+import Login from "../pages/auth/Login";
+
+import Signup from "../pages/auth/Signup";
 import Home from "../pages/home/Home";
-import Login from "./../pages/auth/Login";
-import Signup from "./../pages/auth/Signup";
+
+
 import Forget from "./../pages/auth/Forget";
 
 const CustomRoutes = () => {
@@ -21,8 +24,9 @@ const CustomRoutes = () => {
     },
     {
       path: "/forgot",
-      element: <Forget />,
-    },
+      element:<Forget/>
+    }
+    
   ]);
   return myRoutes;
 };
