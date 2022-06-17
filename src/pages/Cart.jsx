@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import styles from "../cart.module.css"
+
 function Item(props) {
     console.log(props);
-    let data = props;
+  let data = props;
+  console.log(props.index)
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = () => setIsOpen(!isOpen);
 
   return (
     <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-          <motion.div className={styles.avatar} layout >{ props.title}</motion.div>
+          <motion.div className={styles.avatar} layout >{ props.index}</motion.div>
       <AnimatePresence>{isOpen && <Content data={data} />}</AnimatePresence>
     </motion.li>
   );
 }
 function Content(props) {
+  console.log("data from Contet comp", props.data);
   return (
     <motion.div
       layout
@@ -23,14 +26,14 @@ function Content(props) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div >{props.title}</div>
+      <div className={styles.row}></div>
       <div className={styles.row} />
       <div className={styles.row} />
     </motion.div>
   );
 }
 
-const items = [0, 1, 2];
+
 
 const Cart = () => {
     
@@ -38,18 +41,21 @@ const Cart = () => {
     useEffect(async () => {
         let { products } = await (await fetch("https://dummyjson.com/products")).json();
         console.log(products);
-        setDummy(products)
+      setDummy(products)
+      
     },[])
     return (
+    
+      <AnimateSharedLayout>
       
-    <AnimateSharedLayout>
-      <motion.ul layout initial={{ borderRadius: 25 }}>
-        {dummy.map(item => (
-          <Item key={item} />
-        ))}
-      </motion.ul>
-    </AnimateSharedLayout>
-  );
+          <motion.ul layout initial={{ borderRadius: 25 }}>
+            {dummy.map((item,index) => (
+              <Item key={item} index={index} />
+            ))}
+          </motion.ul>
+        </AnimateSharedLayout>
+      
+    );
 };
 
 export default Cart;
