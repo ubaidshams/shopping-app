@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link} from "react-router-dom";
-import { Card, TextField, makeStyles } from "@material-ui/core";
+import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -8,8 +8,12 @@ import FormLabel from "@material-ui/core/FormLabel";
 import style from "./signup.module.css";
 import { motion } from "framer-motion";
 import axios from "../../apis/Axios";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
 import "animate.css";
 import clsx from "clsx";
+import TermsConditions from "./TermsConditions";
+import InputLabel from "@material-ui/core/InputLabel";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -57,12 +61,26 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
+  const [btnCondition, setBtnCondition] = useState(true)
+  const [model, setModel] = useState(false)
+  const [age, setAge] = React.useState("");
+  const [open, setOpen] = React.useState(false);
   // const navigate = useNavigate()
+  
   const handleSubmit = e => {
     e.preventDefault();
-    setPayload({ fname, lname, email, password, gender, role });
+    setPayload({ fname, lname, email, password, gender, role, age });
     console.log(payload);
+
     fetchData();
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   const fetchData = async () => {
@@ -75,7 +93,6 @@ const Signup = () => {
 
   return (
     <>
-      
       <motion.div className={clsx(style.formCard)}>
         <h1>Create Your Profile</h1>
         <section>
@@ -212,12 +229,66 @@ const Signup = () => {
             ></TextField>
           </Card>
           <hr />
+
+          
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            <button className={style.bn5}>Let's Shop</button>
+            <InputLabel id="demo-controlled-open-select-label">
+              Cities
+            </InputLabel>
+            <Select
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              open={open}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              value={age}
+              onChange={e => setAge(e.target.value)}
+            >
+              <MenuItem value="">
+                <em>None</em>
+              </MenuItem>
+              <MenuItem value={"chennai"}>Chennai</MenuItem>
+              <MenuItem value={"Bangalore"}>Bangalore</MenuItem>
+              <MenuItem value={"mumbai"}>Mumbai</MenuItem>
+            </Select>
+          </Card>
+          <hr />
+          <Card
+            className={clsx(style.formCardContainer, style.Checkbox)}
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+          >
+            <span
+              style={{ marginLeft: "200px" }}
+              onClick={() => {
+                setModel(!model);
+              }}
+            >
+              Terms Conditions*
+            </span>
+          </Card>
+          <Card style={{ marginLeft: "300px" }}>
+            {model && (
+              <TermsConditions
+                modelCondition={setModel}
+                condition={setBtnCondition}
+              />
+            )}
+          </Card>
+          <hr />
+
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <button className={style.bn5} disabled={btnCondition}>
+              Let's Shop
+            </button>
           </Card>
         </form>
       </motion.div>

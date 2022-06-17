@@ -1,11 +1,11 @@
 .formCard {
-  width: 40vw;
+  width: 60vw;
   /* background-color: red; */
-  margin: 20px 20px;
-  float:right;
+  margin: 20px auto;
+  
   height: 90vh;
   padding: 20px;
-  box-shadow: 0 5px 15px gray;
+  /* box-shadow: 0 5px 15px gray; */
   /* position: absolute; */
 }
 .formCard h1 {
@@ -30,7 +30,7 @@
   text-decoration: underline;
 }
 hr {
-  width: 90%;
+  width: 70%;
   margin: 15px auto;
   height: 0.01rem;
   background-color: #999;
@@ -159,3 +159,6 @@ hr {
 
 }
 
+.Checkbox{
+  margin-left: -5px;
+}
