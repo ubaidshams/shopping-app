@@ -9,7 +9,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { Link } from "react-router-dom";
 const theme = createTheme();
 
 export default function Forget() {
@@ -73,15 +73,16 @@ export default function Forget() {
               value={token}
               onChange={(e) => setToken(e.target.value)}
             />
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Confirm
-            </Button>
+            <Link to="/login">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Confirm
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Container>

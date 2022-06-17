@@ -1,11 +1,12 @@
-.btn{
+.btn {
   color: var(--text-primary);
   background-color: #313132;
+  font-weight: bold;
 }
 
-.btn:hover{
-  color: var(--text-secondary);
-  background-color: #313132bb;
+.btn:hover {
+  color: var(--link-hover);
+  background-color: #313132;
 }
 
 .content {

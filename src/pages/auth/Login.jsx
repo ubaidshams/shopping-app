@@ -37,12 +37,19 @@ export default function Login() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            fontweight: "bold",
+            border: "1px solid #6666",
+            padding: "50px",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          <Typography
+            component="h1"
+            variant="h5"
+            sx={{
+              fontweight: "bolder",
+              padding:"0px 10px"
+            }}
+          >
             Log-In
           </Typography>
           <Box
@@ -75,16 +82,18 @@ export default function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <Link to="/">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                className={styles.btn}
+              >
+                Log-In
+              </Button>
+            </Link>
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              className={styles.btn}
-            >
-              Log-In
-            </Button>
             <Grid container>
               <Grid item xs>
                 <Link to="/forgot" className={styles.content}>
