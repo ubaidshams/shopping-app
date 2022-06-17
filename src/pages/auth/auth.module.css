@@ -1,7 +1,6 @@
 .btn {
   color: var(--text-primary);
-  background-color: #313132;
-  font-weight: bold;
+  background-color: #ed7501;
 }
 
 .btn:hover {

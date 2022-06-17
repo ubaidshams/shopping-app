@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
+// import { makeStyles } from "@material-ui/core";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -12,7 +13,15 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styles from "./auth.module.css";
-const theme = createTheme();
+import {orange } from "@mui/material/colors";
+const btnTheme = createTheme({
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+  },
+});
+
 
 export default function Login() {
   let [mail, setMail] = useState();
@@ -27,8 +36,8 @@ export default function Login() {
     });
   };
 
-  return (
-    <ThemeProvider theme={theme}>
+  return (``
+    <ThemeProvider theme={btnTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -42,6 +51,7 @@ export default function Login() {
             padding: "50px",
           }}
         >
+<<<<<<< HEAD
           <Typography
             component="h1"
             variant="h5"
@@ -50,6 +60,12 @@ export default function Login() {
               padding:"0px 10px"
             }}
           >
+=======
+          <Avatar sx={{ m: 1, bgcolor: "#1D2C4E" }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+>>>>>>> ecb54b5841c39ca847b953f8bfb5ddd230eec724
             Log-In
           </Typography>
           <Box
@@ -68,7 +84,8 @@ export default function Login() {
               autoComplete="email"
               autoFocus
               value={mail}
-              onChange={(e) => setMail(e.target.value)}
+              size="small"
+              onChange={e => setMail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -80,7 +97,8 @@ export default function Login() {
               id="password"
               autoComplete="current-password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              size="small"
+              onChange={e => setPassword(e.target.value)}
             />
             <Link to="/">
               <Button

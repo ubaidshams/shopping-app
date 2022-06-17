@@ -44,6 +44,18 @@ const CarouselComp = () => {
             alt="watch"
           />
         </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1641390323814-b6720f65dee9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            alt="watch"
+          />
+        </div>
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1520256862855-398228c41684?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+            alt="watch"
+          />
+        </div>
       </Carousel>
     </div>
   );
