@@ -75,9 +75,7 @@ const Signup = () => {
 
   return (
     <>
-      <motion.div className={style.rightCard}>
-        
-      </motion.div>
+      
       <motion.div className={clsx(style.formCard)}>
         <h1>Create Your Profile</h1>
         <section>
