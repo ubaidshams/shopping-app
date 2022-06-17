@@ -3,9 +3,9 @@ import { useRoutes } from "react-router";
 import Login from "../pages/auth/Login";
 
 import Signup from "../pages/auth/Signup";
-import Cart from "../pages/Cart";
-import Home from "../pages/home/Home";
+import Cart from "../pages/cart/Cart";
 
+import Home from "../pages/home/Home";
 
 import Forget from "./../pages/auth/Forget";
 
@@ -25,13 +25,12 @@ const CustomRoutes = () => {
     },
     {
       path: "/forgot",
-      element:<Forget/>
+      element: <Forget />,
     },
     {
       path: "/cart",
-      element:<Cart/>
-    }
-    
+      element: <Cart />,
+    },
   ]);
   return myRoutes;
 };
