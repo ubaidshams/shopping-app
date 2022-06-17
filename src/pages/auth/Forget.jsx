@@ -9,24 +9,31 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { orange } from "@mui/material/colors";
+const btnTheme = createTheme({
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+  },
+});
 
-const theme = createTheme();
 
 export default function Forget() {
   let [newpass, setPass] = useState();
-  let [token, setToken] = useState();
+  let [conpassword, setConfirmpassword] = useState();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      newpassword: data.get("newpassword"),
-      token: data.get("token"),
+      newpassword: data.get("New password"),
+      confirmpassword: data.get(""),
     });
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={btnTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -37,7 +44,7 @@ export default function Forget() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#1D2C4E" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -54,24 +61,25 @@ export default function Forget() {
               required
               fullWidth
               id="newpassword"
-              label="newpassword"
-              name="newpassword"
-              autoComplete="newpassword"
-              autoFocus
+              label="New password"
+              name="Newpassword"
+              size="small"
+              type="password"
               value={newpass}
-              onChange={(e) => setPass(e.target.value)}
+              onChange={e => setPass(e.target.value)}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="token"
-              label="token"
-              type="token"
-              id="token"
+              name="confirmpassword"
+              label="Confirm password"
+              type="passeord"
+              id="confirmpassword"
+              size="small"
               autoComplete="current-password"
-              value={token}
-              onChange={(e) => setToken(e.target.value)}
+              value={conpassword}
+              onChange={e => setConfirmpassword(e.target.value)}
             />
 
             <Button

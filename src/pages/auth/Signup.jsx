@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link} from "react-router-dom";
-import { Card, TextField, makeStyles } from "@material-ui/core";
+import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -75,7 +75,6 @@ const Signup = () => {
 
   return (
     <>
-      
       <motion.div className={clsx(style.formCard)}>
         <h1>Create Your Profile</h1>
         <section>
@@ -212,6 +211,15 @@ const Signup = () => {
             ></TextField>
           </Card>
           <hr />
+
+          <Card
+            className={clsx(style.formCardContainer, style.Checkbox)}
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+          >
+            <span>Terms and Conditions</span>
+          </Card>
+
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
