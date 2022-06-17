@@ -11,7 +11,6 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-    console.log(product);
   }, []);
 
   return (
