@@ -6,7 +6,6 @@ import Signup from "../pages/auth/users/Signup";
 import Cart from "../pages/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
-
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
 import Kids from "../components/categories/Kids";
