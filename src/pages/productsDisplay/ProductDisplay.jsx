@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState  } from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import { Star } from "@material-ui/icons"
+
 import Chip from "@material-ui/core/Chip";
 import style from "./ProductDisplay.module.css";
 import { Carousel } from "react-responsive-carousel";
@@ -12,6 +12,9 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
+import { useParams } from "react-router-dom";
+
+
 
 
 // import Statements
@@ -32,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 const ProductDisplay = () => {
   const classes = useStyles();
-    const [productName, setProductName] = useState("iPhone 55");
+    const [productName, setProductName] = useState("iPhone");
     const [productPriceInfo, setProductPriceInfo] = useState(
       "From ₹8227.00/mo.Per Month with EMI,Footnote** or ₹69900.00"
     );
@@ -42,6 +45,10 @@ const ProductDisplay = () => {
     const [ratings, setRating] = useState(4.9);
   const [price, setPrice] = useState(88);
   const [brand, setBrand] = useState("Apple")
+
+
+      let {id} = useParams()
+
     return (
       <div>
         {/* title card */}
@@ -121,7 +128,7 @@ const ProductDisplay = () => {
 
           {/* info card */}
           <div className={style.infoCard}>
-            <h1>
+            <h1 className={style.h1Title}>
               {productName}
               <sup className={style.supScript}>new</sup>
             </h1>

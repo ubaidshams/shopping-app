@@ -4,7 +4,8 @@
     box-sizing: border-box;
     
 }
-/* sanjanashetty720 */
+
+
 
 .headingCard{
     display: flex;
@@ -61,6 +62,10 @@
     margin-top: 60px;
     padding:20px;
     height: 60vh;
+}
+
+.h1Title{
+    margin-left: -140px;
 }
 
 .supScript{

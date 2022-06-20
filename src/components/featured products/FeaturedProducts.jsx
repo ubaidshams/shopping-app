@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
           ) : (
             product.productList.map(product => {
               let {
-                id,
+                productsid,
                 title,
                 price,
                 thumbnail,
@@ -32,7 +32,7 @@ const FeaturedProducts = () => {
                 brand,
               } = product;
               return (
-                <div className={styles.productCard} key={id}>
+                <div className={styles.productCard} key={productsid}>
                   <div className={styles.cardBody}>
                     <img src={thumbnail} alt={title} />
                   </div>
