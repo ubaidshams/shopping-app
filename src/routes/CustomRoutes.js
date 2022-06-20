@@ -41,6 +41,7 @@ const CustomRoutes = () => {
     {
       path: "/main-category",
       element: <Maincategory />,
+      
     },
      {
       path:"/men",
