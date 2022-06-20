@@ -38,6 +38,7 @@
   background-color: #fff;
   border-radius: 10px;
   transition: all 0.3s linear;
+  cursor: pointer;
 }
 .productCard:hover {
   box-shadow: 0 0 10px 5px #666;
@@ -53,16 +54,19 @@
 .cardHeader span:nth-child(2) {
   color: var(--link-hover);
 }
-/* .cardBody {
-  width: fit-content;
-  margin: auto;
-} */
+.cardBody {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .cardBody img {
   width: 100%;
   height: 260px;
   border-radius: 10px 10px 0 0;
   object-fit: cover;
-  object-position: center;
+  object-position: 0% 0%;
 }
 .cardFooter {
   display: flex;
