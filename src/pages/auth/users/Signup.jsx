@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
+import { Card, TextField, makeStyles } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -14,7 +14,7 @@ import "animate.css";
 import clsx from "clsx";
 import TermsConditions from "./TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
-import TextareaAutosize from "@material-ui/core/TextareaAutosize";
+
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 
@@ -99,7 +99,7 @@ const Signup = () => {
       role,
       number1,
       number2,
-      address
+      address,
     });
     console.log(payload);
 
@@ -167,7 +167,7 @@ const Signup = () => {
               <section
                 style={{
                   display: "flex",
-                  alignItems: "baseline",
+                  // alignItems: "baseline",
                   alignItems: "center",
                   justifyContent: "space-evenly",
                 }}
@@ -384,7 +384,9 @@ const Signup = () => {
               label="Pincode"
               required
               value={address.pincode}
-              onChange={e=>{setAddress({...address,pincode: e.target.value})}}
+              onChange={e => {
+                setAddress({ ...address, pincode: e.target.value });
+              }}
             ></TextField>
           </Card>
           <hr />

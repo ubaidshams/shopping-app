@@ -6,12 +6,13 @@ import CustomRoutes from "./routes/CustomRoutes";
 
 const App = () => {
   return (
-    <Router>
-      <Navbar />
-      <CustomRoutes />
-      
-      {/* <Footer /> */}
-    </Router>
+    <div>
+      <Router>
+        <Navbar />
+        <CustomRoutes />
+        {/* <Footer /> */}
+      </Router>
+    </div>
   );
 };
 
