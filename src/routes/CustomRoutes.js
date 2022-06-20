@@ -5,13 +5,15 @@ import MerchSignup from "../pages/auth/merchants/MerchSignup";
 import Signup from "../pages/auth/users/Signup";
 import Cart from "../pages/Cart";
 import Home from "../pages/home/Home";
+import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
+
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
 import Kids from "../components/categories/Kids";
-import Women from "../components/categories/Women"
-import Menpage from "../components/categories/Menpage"
-import Electronics from "../components/categories/Electronics"
-import Beauty from "../components/categories/Beauty"
+import Women from "../components/categories/Women";
+import Menpage from "../components/categories/Menpage";
+import Electronics from "../components/categories/Electronics";
+import Beauty from "../components/categories/Beauty";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -35,6 +37,10 @@ const CustomRoutes = () => {
       element: <Cart />,
     },
     {
+      path: "/products_page",
+      element: <ProductDisplay />,
+    },
+    {
       path: "/merch-Signup",
       element: <MerchSignup />,
     },
@@ -42,26 +48,26 @@ const CustomRoutes = () => {
       path: "/main-category",
       element: <Maincategory />,
     },
-     {
-      path:"/men",
-      element:<Menpage/>
-    },
-     {
-      path:"/women",
-      element:<Women/>
+    {
+      path: "/men",
+      element: <Menpage />,
     },
     {
-      path:"/kids",
-      element:<Kids/>
+      path: "/women",
+      element: <Women />,
     },
-     {
-      path:"/electronics",
-      element:<Electronics/>
+    {
+      path: "/kids",
+      element: <Kids />,
     },
-     {
-      path:"/beauty_products",
-      element:<Beauty/>
-    }
+    {
+      path: "/electronics",
+      element: <Electronics />,
+    },
+    {
+      path: "/beauty_products",
+      element: <Beauty />,
+    },
   ]);
   return myRoutes;
 };

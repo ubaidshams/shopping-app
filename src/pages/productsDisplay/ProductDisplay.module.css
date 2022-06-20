@@ -1,0 +1,237 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+    
+}
+/* sanjanashetty720 */
+
+.headingCard{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    z-index: 10000;
+    
+    
+}
+
+.sectionCard{
+    width:70%;
+    margin : 0 auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.priceInfo{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#2b2a2a;
+    font-weight: 700;
+    word-spacing: 2px;
+
+}
+
+/* product info card */
+.productInfoImgContainer{
+    width:70vw;
+    /* background-color: aqua; */
+    height:68vh;
+    margin: 0 auto;
+    
+
+}
+.infoCard{
+    width: 550px ;
+    height: 60vh;
+    /* float: right; */
+    position: absolute;
+    /* background-color: black; */
+    margin-top: 60px;
+    right: 15%;
+    padding: 20px;
+}
+
+.imageCard{
+    width: 500px;
+    position: absolute;
+    /* background-color: rgba(255, 0, 0, 0.313); */
+    margin-top: 60px;
+    padding:20px;
+    height: 60vh;
+}
+
+.supScript{
+    background-color: rgb(62, 74, 249);
+    border-radius: 15%;
+    font-size: small;
+    /* top:-10px; */
+    padding:3px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    font-weight: 100;
+}
+
+.offerDetails{
+    max-width:250px;
+    color:#0066CC;
+    font-size: 20px;
+    /* margin-top: 35px; */
+    text-align: left;
+
+}
+.offerDetailsContainer{
+    border-bottom: 2px solid ;
+    height: 60px;
+}
+.starIcon svg {
+  height: 30px;
+  width: 30px;
+}
+.priceTag, .ratingstag{
+    color:rgb(240, 3, 3)
+}
+.chip{
+    margin-top: 3px;
+    padding:2px;
+
+    fill: #1D2C4E;
+    color: white
+}
+.supScriptPriceTag{
+    background-color: rgb(62, 74, 249);
+    border-radius: 15%;
+    font-size: 8px;
+    /* top:-10px; */
+    padding:1px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+    font-weight: 100;
+}
+
+.btnContainer{
+    /* border:2px solid red; */
+    margin-top: 20px;
+    /* padding: 10px; */
+    width:310px;
+}
+
+.addToCart{
+    padding: 5px;
+  /* border: 1px solid blak; */
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  background-color:  #ffb452;
+  width: 100%;
+  margin-top:5px;
+}
+
+.addToCart:hover {
+  color: white ;
+  background-color: #fe9000;
+  /* color: var(--text-secondary); */
+  box-shadow: 0 0 2px black;
+
+}
+
+.buyNow{
+    padding:5px;
+    border: 1px solid #f8981c;
+  color: #f8981c;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  background-color: white;
+  width: 100%;
+  
+  margin-bottom: 5px;   
+
+}
+
+.buyNow:hover{
+    background-color: rgba(32, 249, 119, 0.703);
+  /* color: var(--text-secondary); */
+  box-shadow: 0 0 2px black;
+  
+  color:darkgreen;
+  border:1.5px solid black
+}
+
+.accordion{
+    margin-top: 10px;
+    background-color: #1D2C4E;
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* product image card */
+
+.imgContainer{
+    width:350px;
+    height: 350px;
+    /* border:2px solid gray; */
+    margin: 0 auto;
+    /* margin-top: 50px; */
+    
+}
+
+ div img{
+    width:346px;
+    height: 345px;
+    margin: auto;
+    
+    object-fit: cover;
+}
+
+.imgCardFooterCard{
+    margin-top:20px;
+    
+    /* border: 2px solid green; */
+    padding:3px;
+    display:flex;
+    /* width:150px; */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: green;
+    /* text-shadow: 0 2px 5px green; */
+    /* background-color: orange; */
+    font-weight: 700;
+}
+
+
+
+
+
+/* detailed description */
+
+.detailDescription{
+    /* border: 2px solid red; */
+    height:150px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+
+}
+
+.detailDescription summary h4{
+    max-width: 60%;
+    text-align: justify;
+    /* color: red */
+}
