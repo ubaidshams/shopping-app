@@ -6,6 +6,7 @@ import Signup from "../pages/auth/Signup";
 import Cart from "../pages/cart/Cart";
 
 import Home from "../pages/home/Home";
+import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
 
 import Forget from "./../pages/auth/Forget";
 
@@ -31,6 +32,11 @@ const CustomRoutes = () => {
       path: "/cart",
       element: <Cart />,
     },
+    {
+      path: "/products_page",
+      element:<ProductDisplay/>
+      
+    }
   ]);
   return myRoutes;
 };

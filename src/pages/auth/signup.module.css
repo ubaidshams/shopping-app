@@ -139,25 +139,6 @@ hr {
 }
 
 
-/* left side of the card */
-
-.rightCard{
-  
-  width: 55vw;
-  height: 90vh;
-
-  overflow: hidden;
-  padding: 0;
-   margin: 20px 10px;
-  background-image: url("https://cdn.pixabay.com/photo/2016/11/22/19/08/hangers-1850082_960_720.jpg");
-  float: left;
-  box-shadow: 0 5px 15px gray;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
-}
 
 .Checkbox{
   margin-left: -5px;
