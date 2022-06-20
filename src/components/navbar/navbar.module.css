@@ -17,7 +17,7 @@
   align-items: center;
 }
 .logoBlock {
-  width: 10%;
+  width: 20%;
   height: 10vh;
   display: flex;
   align-items: center;
@@ -27,12 +27,13 @@
   height: 10vh;
   display: flex !important;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 10px;
+  /* justify-content: space-evenly; */
+  /* gap: 10px; */
 }
 .logoBlock img {
-  width: 40%;
+  width: 20%;
   height: 5vh;
+  object-fit: contain;
 }
 .logoBlock h1 {
   font-size: 2rem;
