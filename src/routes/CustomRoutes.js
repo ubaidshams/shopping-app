@@ -38,7 +38,7 @@ const CustomRoutes = () => {
     },
 
     {
-      path: `/products_page/:productsid`,
+      path: `/products_page/:id`,
       element: <ProductDisplay />,
     },
     {
@@ -48,7 +48,6 @@ const CustomRoutes = () => {
     {
       path: "/main-category",
       element: <Maincategory />,
-      
     },
     {
       path: "/men",
