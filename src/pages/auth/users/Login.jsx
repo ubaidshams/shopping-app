@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import styles from "./auth.module.css";
-import {orange } from "@mui/material/colors";
+import { orange } from "@mui/material/colors";
 const btnTheme = createTheme({
   palette: {
     primary: {
@@ -22,21 +22,17 @@ const btnTheme = createTheme({
   },
 });
 
-
 export default function Login() {
   let [mail, setMail] = useState();
   let [password, setPassword] = useState();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("mail",mail)
+    console.log("password",password);
   };
 
-  return (``
+  return (
     <ThemeProvider theme={btnTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -51,21 +47,10 @@ export default function Login() {
             padding: "50px",
           }}
         >
-<<<<<<< HEAD
-          <Typography
-            component="h1"
-            variant="h5"
-            sx={{
-              fontweight: "bolder",
-              padding:"0px 10px"
-            }}
-          >
-=======
           <Avatar sx={{ m: 1, bgcolor: "#1D2C4E" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
->>>>>>> ecb54b5841c39ca847b953f8bfb5ddd230eec724
             Log-In
           </Typography>
           <Box
@@ -85,7 +70,7 @@ export default function Login() {
               autoFocus
               value={mail}
               size="small"
-              onChange={e => setMail(e.target.value)}
+              onChange={(e) => setMail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -98,9 +83,9 @@ export default function Login() {
               autoComplete="current-password"
               value={password}
               size="small"
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <Link to="/">
+           
               <Button
                 type="submit"
                 fullWidth
@@ -110,7 +95,7 @@ export default function Login() {
               >
                 Log-In
               </Button>
-            </Link>
+           
 
             <Grid container>
               <Grid item xs>

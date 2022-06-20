@@ -10,18 +10,25 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link } from "react-router-dom";
-const theme = createTheme();
+import { orange } from "@mui/material/colors";
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+  },
+});
 
 export default function Forget() {
   let [newpass, setPass] = useState();
-  let [token, setToken] = useState();
+  let [confirmpassword, setPassword] = useState();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
       newpassword: data.get("newpassword"),
-      token: data.get("token"),
+      confirmpassword: data.get("conpassword"),
     });
   };
 
@@ -65,13 +72,13 @@ export default function Forget() {
               margin="normal"
               required
               fullWidth
-              name="token"
-              label="token"
-              type="token"
-              id="token"
+              name="confirmpassword"
+              label="confirmpassword"
+              type="confirmpassword"
+              id="confirmpassword"
               autoComplete="current-password"
-              value={token}
-              onChange={(e) => setToken(e.target.value)}
+              value={confirmpassword}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <Link to="/login">
               <Button
