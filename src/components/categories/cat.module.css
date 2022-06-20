@@ -23,17 +23,48 @@ h1 {
   justify-content: center;
 }
 .maincart div img {
-  height: 30vh;
-  width: 150% !important;
+  height: 32vh;
+  width: 220px !important;
   border: 0px solid;
   border-radius: 150px;
 }
-/* .ele{
-   height: 30vh;
-  width: 120%;
-} */
+
 .maincart div h4 {
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
+}
+
+/* //////////////category part//////////////////////////// */
+
+.block {
+  display: flex;
+  height: 10vh;
+  width: 60%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block input {
+  width: 400px;
+  height: 8vh;
+}
+.block p {
+  font-size: 20px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1rem;
+}
+.box div {
+  border: 1px solid;
+  margin-right: 10px;
+  padding: 10px;
+}
+.box div img{
+  object-fit: contain;
+  border-radius: 20px;
 }
