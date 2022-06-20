@@ -2,12 +2,13 @@
   width: 100%;
   height: 10vh;
   display: flex;
-  background-color: #1d2c4e;
+  background-color:#1d2c4e ; /*dark--->  #141e37*/
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 99;
+  /*dark--> box-shadow:  0 0 5px 5px #111; */
 }
 .navbar article {
   width: 90%;
