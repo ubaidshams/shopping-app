@@ -23,10 +23,10 @@ h1 {
   justify-content: center;
 }
 .maincart div img {
-  height: 32vh;
+  height: 220px;
   width: 220px !important;
   border: 0px solid;
-  border-radius: 150px;
+  border-radius: 100%;
 }
 
 .maincart div h4 {
@@ -56,7 +56,7 @@ h1 {
 
 .box {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 .box div {
@@ -64,7 +64,7 @@ h1 {
   margin-right: 10px;
   padding: 10px;
 }
-.box div img{
+.box div img {
   object-fit: contain;
   border-radius: 20px;
 }
