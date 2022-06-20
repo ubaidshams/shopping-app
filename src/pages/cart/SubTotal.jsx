@@ -13,7 +13,7 @@ const SubTotal = () => {
   return (
     <div className={styles.subtotalContainer}>
       <h2>
-        Subtotal ({cart.cartItems.length} Items): ${cart.cartTotal}
+        Subtotal ({cart.cartItems.length} Items): ₹{cart.cartTotal}
       </h2>
       <div className={styles.formControl}>
         <input type="checkbox" name="gift" id="gift" />

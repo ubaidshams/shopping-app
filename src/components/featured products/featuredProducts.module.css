@@ -65,8 +65,8 @@
   width: 100%;
   height: 260px;
   border-radius: 10px 10px 0 0;
-  object-fit: cover;
-  object-position: 0% 0%;
+  object-fit: contain;
+  /* object-position: 0% 0%; */
 }
 .cardFooter {
   display: flex;

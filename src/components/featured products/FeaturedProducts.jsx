@@ -52,10 +52,15 @@ const FeaturedProducts = () => {
                     <div className={styles.footerLeft}>
                       <span>{brand}</span>
                       <span>{title.slice(0, 15) + `...`}</span>
-                      <span>${price}</span>
+                      <span>₹{price}</span>
                     </div>
                     <div className={styles.footerRight}>
-                      <button onClick={() => dispatch(addToCart(product))}>
+                      <button
+                        onClick={e => {
+                          e.stopPropagation();
+                          dispatch(addToCart(product));
+                        }}
+                      >
                         Add to cart{" "}
                       </button>
                     </div>
