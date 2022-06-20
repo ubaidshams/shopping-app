@@ -23,7 +23,7 @@ export default function Forget() {
   let [newpass, setPass] = useState();
   let [confirmpassword, setPassword] = useState();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
@@ -44,7 +44,7 @@ export default function Forget() {
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#1D2C4E" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -61,12 +61,12 @@ export default function Forget() {
               required
               fullWidth
               id="newpassword"
-              label="newpassword"
-              name="newpassword"
-              autoComplete="newpassword"
-              autoFocus
+              label="New password"
+              name="Newpassword"
+              size="small"
+              type="password"
               value={newpass}
-              onChange={(e) => setPass(e.target.value)}
+              onChange={e => setPass(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -78,7 +78,7 @@ export default function Forget() {
               id="confirmpassword"
               autoComplete="current-password"
               value={confirmpassword}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={e => setPassword(e.target.value)}
             />
             <Link to="/login">
               <Button
