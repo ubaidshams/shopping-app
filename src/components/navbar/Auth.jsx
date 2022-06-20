@@ -13,7 +13,7 @@ const Auth = () => {
         <AiOutlineShoppingCart />
         <span>{cartValue}</span>
       </Link>
-      <Link to="/login">Login</Link>
+      <button>Login</button>
       <Link to="/signup">Signup</Link>
     </div>
   );

@@ -11,7 +11,6 @@ const FeaturedProducts = () => {
 
   useEffect(() => {
     dispatch(fetchProducts());
-    console.log(product);
   }, []);
 
   return (
@@ -34,12 +33,12 @@ const FeaturedProducts = () => {
               } = product;
               return (
                 <div className={styles.productCard} key={id}>
+                  <div className={styles.cardBody}>
+                    <img src={thumbnail} alt={title} />
+                  </div>
                   <div className={styles.cardHeader}>
                     <span>{rating}⭐</span>
                     {rating > 4.6 ? <span>Featured</span> : null}
-                  </div>
-                  <div className={styles.cardBody}>
-                    <img src={thumbnail} alt={title} />
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
