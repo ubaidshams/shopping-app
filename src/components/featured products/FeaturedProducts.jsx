@@ -4,13 +4,16 @@ import { fetchProducts } from "../../features/products/productSlice";
 import Spinner from "./../spinner/Spinner";
 import styles from "./featuredProducts.module.css";
 import { addToCart } from "../../features/cart/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
+  let navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchProducts());
+    console.log(product);
   }, []);
 
   return (
@@ -23,18 +26,23 @@ const FeaturedProducts = () => {
           ) : (
             product.productList.map(product => {
               let {
-                id,
+                productsid,
                 title,
                 price,
-                thumbnail,
-                discountPercentage,
+                thumbnail_URL,
+
                 rating,
                 brand,
               } = product;
+
               return (
-                <div className={styles.productCard} key={id}>
+                <div
+                  onClick={() => navigate(`/products_page/${productsid}`)}
+                  className={styles.productCard}
+                  key={productsid}
+                >
                   <div className={styles.cardBody}>
-                    <img src={thumbnail} alt={title} />
+                    <img src={thumbnail_URL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
                     <span>{rating}⭐</span>
@@ -43,11 +51,10 @@ const FeaturedProducts = () => {
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
                       <span>{brand}</span>
-                      <span>{title.slice(0, 12) + `...`}</span>
+                      <span>{title.slice(0, 15) + `...`}</span>
                       <span>${price}</span>
                     </div>
                     <div className={styles.footerRight}>
-                      <span>{discountPercentage}% OFF</span>
                       <button onClick={() => dispatch(addToCart(product))}>
                         Add to cart{" "}
                       </button>

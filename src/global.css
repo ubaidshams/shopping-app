@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne&family=Ubuntu&family=Varela+Round&display=swap");
 /*  #313132*/
 :root {
   --text-primary: #adadad;
@@ -21,13 +21,13 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Syne", sans-serif !important;
+  font-family: "Ubuntu", sans-serif;
   color: var(--heading-primary) !important;
 }
 h4,
 h5,
 h6 {
-  font-family: "Syne", sans-serif !important;
+  font-family: "Ubuntu", sans-serif;
 
   color: var(--heading-secondary) !important;
 }
