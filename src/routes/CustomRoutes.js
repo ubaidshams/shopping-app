@@ -36,8 +36,9 @@ const CustomRoutes = () => {
       path: "/cart",
       element: <Cart />,
     },
+
     {
-      path: "/products_page",
+      path: `/products_page/:productsid`,
       element: <ProductDisplay />,
     },
     {
@@ -47,6 +48,7 @@ const CustomRoutes = () => {
     {
       path: "/main-category",
       element: <Maincategory />,
+      
     },
     {
       path: "/men",
