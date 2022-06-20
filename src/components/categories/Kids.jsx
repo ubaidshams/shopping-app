@@ -6,7 +6,10 @@ import style from "./cat.module.css";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BiSort } from "react-icons/bi";
 import { FaHeart, FaFilter } from "react-icons/fa";
+import {addToCart} from '../../features/cart/cartSlice'
+import { useDispatch } from "react-redux";
 const Kids = () => {
+    let dispatch = useDispatch()
   let [data, setdata] = useState([]);
   const fetchdata = async () => {
     let { data } = await Cataxios.get("/products");
@@ -42,6 +45,7 @@ const Kids = () => {
                 <p>BRAND:{brand}</p>
                 <p>RATING:{rating}</p>
                 <p>PRICE:{price}</p>
+          <button onClick={()=>{dispatch(addToCart(data))}}>Add Cart</button>
               </div>
             );
           })}
