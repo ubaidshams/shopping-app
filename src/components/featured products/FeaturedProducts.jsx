@@ -37,6 +37,8 @@ const FeaturedProducts = () => {
 
               return (
                 <div
+                  data-aos="zoom-in"
+                  data-aos-offset="200"
                   onClick={() => navigate(`/products_page/${productsid}`)}
                   className={styles.productCard}
                   key={productsid}
@@ -56,7 +58,7 @@ const FeaturedProducts = () => {
                     </div>
                     <div className={styles.footerRight}>
                       <button
-                        onClick={e => {
+                        onClick={(e) => {
                           e.stopPropagation();
                           dispatch(addToCart(product));
                         }}
