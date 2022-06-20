@@ -7,14 +7,16 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import style from "./signup.module.css";
 import { motion } from "framer-motion";
-import axios from "../../../apis/Axios";
-
+import Axios from "../../../apis/Axios";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import "animate.css";
 import clsx from "clsx";
-import TermsConditions from "./TermsConditions";
+import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
+
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -50,6 +52,13 @@ const useStyles = makeStyles(theme => ({
     backgroundSize: "cover",
     backgroundPosition: "center",
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 const Signup = () => {
@@ -64,29 +73,42 @@ const Signup = () => {
   const [payload, setPayload] = useState({});
   const [btnCondition, setBtnCondition] = useState(true);
   const [model, setModel] = useState(false);
-  const [age, setAge] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+  const [number1, setNumber1] = useState();
+  const [number2, setNumber2] = useState();
+  const [address, setAddress] = useState([
+    {
+      houseNo: "",
+      street: "",
+      landmark: "",
+      city: "",
+      state: "",
+      pincode: "",
+      country: "",
+    },
+  ]);
   // const navigate = useNavigate()
 
   const handleSubmit = e => {
     e.preventDefault();
-    setPayload({ fname, lname, email, password, gender, role, age });
+    setPayload({
+      fname,
+      lname,
+      email,
+      password,
+      gender,
+      role,
+      number1,
+      number2,
+      address,
+    });
     console.log(payload);
 
     fetchData();
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
   const fetchData = async () => {
     try {
-      await axios.post("/user", payload);
+      await Axios.post("/user", payload);
     } catch (error) {
       console.log(error.message);
     }
@@ -172,6 +194,201 @@ const Signup = () => {
               </section>
             </RadioGroup>
           </Card>
+          {/* phone number1 mandatory */}
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              label="Phone Number"
+              required
+              placeholder="9856412537"
+              id="outlined-size-small"
+              variant="outlined"
+              value={number1}
+              onChange={e => setNumber1(e.target.value)}
+            ></TextField>
+          </Card>
+          {/* number2 optional */}
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              label="Phone Number(optional)"
+              placeholder="9856412537"
+              id="outlined-size-small"
+              variant="outlined"
+              value={number2}
+              onChange={e => setNumber2(e.target.value)}
+            ></TextField>
+          </Card>
+          {/* address 1 is mandatory */}
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              id="outlined-size-small"
+              label="House/Office-Number"
+              placeholder="eg-142/87"
+              variant="outlined"
+              value={address.houseNo}
+              required
+              onChange={e => {
+                setAddress({ ...address, houseNo: e.target.value });
+              }}
+            ></TextField>
+          </Card>
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              id="outlined-size-small"
+              label="Street"
+              placeholder="eg-4th Street"
+              variant="outlined"
+              value={address.street}
+              required
+              onChange={e => {
+                setAddress({ ...address, street: e.target.value });
+              }}
+            ></TextField>
+          </Card>
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              id="outlined-size-small"
+              variant="outlined"
+              value={address.landmark}
+              label="Landmark"
+              required
+              placeholder="eg-near This and That"
+              onChange={e => {
+                setAddress({ ...address, landmark: e.target.value });
+              }}
+            ></TextField>
+          </Card>
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            {/* cities */}
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                city
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={address.city}
+                required
+                onChange={e => {
+                  setAddress({ ...address, city: e.target.value });
+                }}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value=""></MenuItem>
+                <MenuItem value={"chennai"}>chennai</MenuItem>
+                <MenuItem value={"bangalore"}>bangalore</MenuItem>
+                <MenuItem value={"mumbai"}>mumbai</MenuItem>
+              </Select>
+              <FormHelperText>Select your city</FormHelperText>
+            </FormControl>
+            {/* state */}
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                State
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={address.state}
+                required
+                onChange={e => {
+                  setAddress({ ...address, state: e.target.value });
+                }}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value=""></MenuItem>
+                <MenuItem value={"Tamil Nadu"}>Tamil Nadu</MenuItem>
+                <MenuItem value={"Karnataka"}>Karnataka</MenuItem>
+                <MenuItem value={"Maharastra"}>Maharastra</MenuItem>
+              </Select>
+              <FormHelperText>Select your State</FormHelperText>
+            </FormControl>
+            {/* country */}
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                Country
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={address.country}
+                required
+                onChange={e => {
+                  setAddress({ ...address, country: e.target.value });
+                }}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value=""></MenuItem>
+                <MenuItem value={"Tamil Nadu"}>Tamil Nadu</MenuItem>
+                <MenuItem value={"Karnataka"}>Karnataka</MenuItem>
+                <MenuItem value={"Maharastra"}>Maharastra</MenuItem>
+              </Select>
+              <FormHelperText>Select your Country</FormHelperText>
+            </FormControl>
+          </Card>
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              variant="outlined"
+              placeholder="eg-895641"
+              label="Pincode"
+              required
+              value={address.pincode}
+              onChange={e => {
+                setAddress({ ...address, pincode: e.target.value });
+              }}
+            ></TextField>
+          </Card>
           <hr />
           <Card
             elevation={0}
@@ -228,33 +445,6 @@ const Signup = () => {
                 setRole(e.target.value);
               }}
             ></TextField>
-          </Card>
-          <hr />
-
-          <Card
-            elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            className={style.formCardContainer}
-          >
-            <InputLabel id="demo-controlled-open-select-label">
-              Cities
-            </InputLabel>
-            <Select
-              labelId="demo-controlled-open-select-label"
-              id="demo-controlled-open-select"
-              open={open}
-              onClose={handleClose}
-              onOpen={handleOpen}
-              value={age}
-              onChange={e => setAge(e.target.value)}
-            >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value={"chennai"}>Chennai</MenuItem>
-              <MenuItem value={"Bangalore"}>Bangalore</MenuItem>
-              <MenuItem value={"mumbai"}>Mumbai</MenuItem>
-            </Select>
           </Card>
           <hr />
           <Card

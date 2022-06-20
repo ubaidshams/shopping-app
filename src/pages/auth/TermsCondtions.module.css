@@ -1,14 +1,16 @@
 .mainContainer{
-    top:0;
+    top:100%;
     position:absolute;
     z-index: 100;
     width: 100%;
-    height: 120%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.662);
     margin-top: 75px;
+    z-index: 10000;
+    
     
 }
 
@@ -18,6 +20,7 @@
     overflow: hidden;
     overflow-y: scroll;
     color: black;
+
 }
 
 .TitleCard{
