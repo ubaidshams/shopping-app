@@ -7,7 +7,7 @@ const TermsConditions = ({ condition, modelCondition }) => {
   return ReactDOM.createPortal(
     <div className={style.mainContainer}>
       <section className={style.cardForTermsConditions}>
-        <Card>
+        <Card elevation={5}>
           <article className={style.TitleCard}>
             <h1>Terms and conditions</h1>
           </article>

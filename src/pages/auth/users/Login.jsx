@@ -4,11 +4,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
+import { Link } from "react-router-dom";
+// import { makeStyles } from "@material-ui/core";
+import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import styles from "./auth.module.css";
 import { orange } from "@mui/material/colors";
 const btnTheme = createTheme({
   palette: {
@@ -18,18 +22,14 @@ const btnTheme = createTheme({
   },
 });
 
+export default function Login() {
+  let [mail, setMail] = useState();
+  let [password, setPassword] = useState();
 
-export default function Forget() {
-  let [newpass, setPass] = useState();
-  let [conpassword, setConfirmpassword] = useState();
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      newpassword: data.get("New password"),
-      confirmpassword: data.get(""),
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("mail",mail)
+    console.log("password",password);
   };
 
   return (
@@ -42,13 +42,16 @@ export default function Forget() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            fontweight: "bold",
+            border: "1px solid #6666",
+            padding: "50px",
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: "#1D2C4E" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Reset Password
+            Log-In
           </Typography>
           <Box
             component="form"
@@ -60,36 +63,52 @@ export default function Forget() {
               margin="normal"
               required
               fullWidth
-              id="newpassword"
-              label="New password"
-              name="Newpassword"
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+              value={mail}
               size="small"
-              type="password"
-              value={newpass}
-              onChange={e => setPass(e.target.value)}
+              onChange={(e) => setMail(e.target.value)}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="confirmpassword"
-              label="Confirm password"
-              type="passeord"
-              id="confirmpassword"
-              size="small"
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
               autoComplete="current-password"
-              value={conpassword}
-              onChange={e => setConfirmpassword(e.target.value)}
+              value={password}
+              size="small"
+              onChange={(e) => setPassword(e.target.value)}
             />
+           
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+                className={styles.btn}
+              >
+                Log-In
+              </Button>
+           
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Confirm
-            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link to="/forgot" className={styles.content}>
+                  Forgot password?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link to="/signup" className={styles.content}>
+                  "Don't have an account? Sign Up"
+                </Link>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </Container>
