@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link} from "react-router-dom";
-import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import { Card, TextField, makeStyles } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import style from "./signup.module.css";
 import { motion } from "framer-motion";
-import axios from "../../apis/Axios";
+import axios from "../../../apis/Axios";
+
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import "animate.css";
@@ -61,12 +62,12 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
-  const [btnCondition, setBtnCondition] = useState(true)
-  const [model, setModel] = useState(false)
+  const [btnCondition, setBtnCondition] = useState(true);
+  const [model, setModel] = useState(false);
   const [age, setAge] = React.useState("");
   const [open, setOpen] = React.useState(false);
   // const navigate = useNavigate()
-  
+
   const handleSubmit = e => {
     e.preventDefault();
     setPayload({ fname, lname, email, password, gender, role, age });
@@ -144,7 +145,7 @@ const Signup = () => {
               <section
                 style={{
                   display: "flex",
-                  alignItems: "baseline",
+                  // alignItems: "baseline",
                   alignItems: "center",
                   justifyContent: "space-evenly",
                 }}
@@ -230,7 +231,6 @@ const Signup = () => {
           </Card>
           <hr />
 
-          
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}

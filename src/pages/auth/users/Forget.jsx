@@ -4,17 +4,14 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
-// import { makeStyles } from "@material-ui/core";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import styles from "./auth.module.css";
-import {orange } from "@mui/material/colors";
-const btnTheme = createTheme({
+import { Link } from "react-router-dom";
+import { orange } from "@mui/material/colors";
+const theme = createTheme({
   palette: {
     primary: {
       main: orange[500],
@@ -22,22 +19,21 @@ const btnTheme = createTheme({
   },
 });
 
+export default function Forget() {
+  let [newpass, setPass] = useState();
+  let [confirmpassword, setPassword] = useState();
 
-export default function Login() {
-  let [mail, setMail] = useState();
-  let [password, setPassword] = useState();
-
-  const handleSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+      newpassword: data.get("newpassword"),
+      confirmpassword: data.get("conpassword"),
     });
   };
 
   return (
-    <ThemeProvider theme={btnTheme}>
+    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -52,7 +48,7 @@ export default function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log-In
+            Reset Password
           </Typography>
           <Box
             component="form"
@@ -64,50 +60,36 @@ export default function Login() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-              value={mail}
+              id="newpassword"
+              label="New password"
+              name="Newpassword"
               size="small"
-              onChange={e => setMail(e.target.value)}
+              type="password"
+              value={newpass}
+              onChange={e => setPass(e.target.value)}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
+              name="confirmpassword"
+              label="confirmpassword"
+              type="confirmpassword"
+              id="confirmpassword"
               autoComplete="current-password"
-              value={password}
-              size="small"
+              value={confirmpassword}
               onChange={e => setPassword(e.target.value)}
             />
-
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              className={styles.btn}
-            >
-              Log-In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link to="/forgot" className={styles.content}>
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link to="/signup" className={styles.content}>
-                  "Don't have an account? Sign Up"
-                </Link>
-              </Grid>
-            </Grid>
+            <Link to="/login">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Confirm
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Container>
