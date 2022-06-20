@@ -7,12 +7,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormLabel from "@material-ui/core/FormLabel";
 import style from "./signup.module.css";
 import { motion } from "framer-motion";
-import axios from "../../apis/Axios";
+import Axios from "../../../apis/Axios";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import "animate.css";
 import clsx from "clsx";
-import TermsConditions from "./TermsConditions";
+import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
 
 import FormHelperText from "@material-ui/core/FormHelperText";
@@ -108,7 +108,7 @@ const Signup = () => {
 
   const fetchData = async () => {
     try {
-      await axios.post("/user", payload);
+      await Axios.post("/user", payload);
     } catch (error) {
       console.log(error.message);
     }

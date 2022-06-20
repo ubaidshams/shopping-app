@@ -3,7 +3,7 @@ import { useRoutes } from "react-router";
 import Login from "../pages/auth/users/Login";
 import MerchSignup from "../pages/auth/merchants/MerchSignup";
 import Signup from "../pages/auth/users/Signup";
-import Cart from "../pages/Cart";
+import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
 
