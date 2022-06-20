@@ -34,3 +34,37 @@ h1 {
   font-weight: bold;
   margin: 10px;
 }
+
+/* //////////////category part//////////////////////////// */
+
+.block {
+  display: flex;
+  height: 10vh;
+  width: 60%;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block input {
+  width: 400px;
+  height: 8vh;
+}
+.block p {
+  font-size: 20px;
+}
+
+.box {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 1rem;
+}
+.box div {
+  border: 1px solid;
+  margin-right: 10px;
+  padding: 10px;
+}
+.box div img{
+  object-fit: contain;
+  border-radius: 20px;
+}
