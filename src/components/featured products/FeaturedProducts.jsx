@@ -59,7 +59,7 @@ const FeaturedProducts = () => {
                     </div>
                     <div className={styles.footerRight}>
                       <button
-                        onClick={(e) => {
+                        onClick={e => {
                           e.stopPropagation();
                           dispatch(addToCart(product));
                         }}
