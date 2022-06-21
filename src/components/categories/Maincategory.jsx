@@ -42,7 +42,7 @@ const Maincategory = () => {
               alt=""
             />
           </Link>
-          <h4>Electronic</h4>
+          <h4>ELECTRONICS</h4>
         </div>
         <div>
           <Link to="/beauty_products">

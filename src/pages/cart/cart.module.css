@@ -110,6 +110,9 @@
   justify-content: space-evenly;
   flex-direction: column;
   gap: 20px;
+  position: sticky;
+  top: 13%;
+  right: 0;
 
   /* align-items: center; */
 }

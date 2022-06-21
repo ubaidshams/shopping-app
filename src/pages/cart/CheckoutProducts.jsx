@@ -10,18 +10,18 @@ const CheckoutProducts = () => {
     <div className={styles.checkoutProductContainer}>
       {cart.cartItems.map((product, index) => {
         let {
-          id,
+          productsid,
           title,
           price,
           description,
-          discountPercentage,
-          thumbnail,
+
+          thumbnail_URL,
           rating,
           brand,
         } = product;
         return (
-          <div className={styles.cartProduct} key={id}>
-            <img src={thumbnail} alt={title} />
+          <div className={styles.cartProduct} key={productsid}>
+            <img src={thumbnail_URL} alt={title} />
             <div className={styles.productDetails}>
               <h3>{brand}</h3>
               <p>{title}</p>
@@ -29,8 +29,8 @@ const CheckoutProducts = () => {
             </div>
             <div className={styles.moreDetails}>
               <span>{rating}⭐</span>
-              <span>{discountPercentage}% Off</span>
-              <span>${price}</span>
+
+              <span>₹{price}</span>
               <button onClick={() => dispatch(removeFromCart(index))}>
                 Remove from Cart
               </button>
