@@ -16,6 +16,8 @@ import { useParams } from "react-router-dom";
 import Cataxios from "./../../apis/Cataxios";
 // import Statements
 import axios from "./../../apis/Cataxios";
+import { addToCart } from "../../features/cart/cartSlice"
+import {useDispatch} from "react-redux"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -42,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 const ProductDisplay = () => {
   let { id } = useParams();
-  
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [productName, setProductName] = useState("Kids");
   const [productPriceInfo, setProductPriceInfo] = useState(
@@ -180,7 +182,7 @@ const ProductDisplay = () => {
           <section className={style.btnContainer}>
             <button className={style.buyNow}>Buy Now</button>
             <br />
-            <button className={style.addToCart}>Add To Cart</button>
+            <button className={style.addToCart} onClick={()=>{dispatch(addToCart(product))}}>Add To Cart</button>
           </section>
           <Accordion className={style.accordion}>
             <AccordionSummary
