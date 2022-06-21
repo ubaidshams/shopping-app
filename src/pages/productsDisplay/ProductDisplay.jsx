@@ -13,9 +13,11 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 import { useParams } from "react-router-dom";
-
+import Cataxios from "./../../apis/Cataxios";
 // import Statements
 import axios from "./../../apis/Cataxios";
+import { addToCart } from "../../features/cart/cartSlice"
+import {useDispatch} from "react-redux"
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -42,7 +44,7 @@ const useStyles = makeStyles(theme => ({
 
 const ProductDisplay = () => {
   let { id } = useParams();
-  
+  const dispatch = useDispatch();
   const classes = useStyles();
   const [productName, setProductName] = useState("Kids");
   const [productPriceInfo, setProductPriceInfo] = useState(
@@ -59,13 +61,14 @@ const ProductDisplay = () => {
   useEffect(() => {
     const fetchProd = async () => {
       try {
-        let { data } = await axios.get(`http://localhost:5000/products/${id}`);
+        let { data } = await Cataxios.get(`/allProduct/${id}`);
         console.log(data)
           setProduct(data);
           setPrice(data.price)
             setDescription(data.description);
           setBrand(data.brand);
-          setRating(data.rating);
+        setRating(data.rating);
+        setProductName(data.title)
       } catch (error) {
         console.log(error);
       }
@@ -179,7 +182,7 @@ const ProductDisplay = () => {
           <section className={style.btnContainer}>
             <button className={style.buyNow}>Buy Now</button>
             <br />
-            <button className={style.addToCart}>Add To Cart</button>
+            <button className={style.addToCart} onClick={()=>{dispatch(addToCart(product))}}>Add To Cart</button>
           </section>
           <Accordion className={style.accordion}>
             <AccordionSummary
