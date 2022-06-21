@@ -4,7 +4,7 @@ const kidsJson = require("../Model/kids.json");
 const MenJson = require("../Model/men.json");
 const WomenJson = require("../Model/women.json");
 const BeatyproductJson = require("../Model/beautyProducts.json");
-const ElectronicsJson=require("../Model/electronics.json")
+const ElectronicsJson = require("../Model/electronics.json");
 const { realpathSync } = require("fs");
 
 const getAllProducts = (req, res) => {
@@ -24,11 +24,11 @@ const getBeatyProducts = (req, res) => {
 };
 
 const getElectronics = (req, res) => {
-  res.json(ElectronicsJson)
-}
+  res.json(ElectronicsJson);
+};
 const findProduct = (req, res) => {
-    let id = req.params.id;
-    let findedProduct = featureProductJson.find((item) => item.productsid === id);
+  let id = req.params.id;
+  let findedProduct = featureProductJson.find(item => item.productsid === id);
   res.json(findedProduct);
 };
 
@@ -37,6 +37,7 @@ module.exports = {
   getKidsProducts,
   getBeatyProducts,
   getMensProducts,
-    getWomensProducts,
-  findProduct
+  getWomensProducts,
+  getElectronics,
+  findProduct,
 };
