@@ -30,6 +30,7 @@ const FeaturedProducts = () => {
                 title,
                 price,
                 thumbnail_URL,
+                productsid,
 
                 rating,
                 brand,

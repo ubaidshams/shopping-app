@@ -10,9 +10,9 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 const Kids = () => {
   let dispatch = useDispatch();
-  let [data, setdata] = useState([]);
+  let [data, setdata] = useState({});
   const fetchdata = async () => {
-    let { data } = await Cataxios.get("/products");
+    let { data } = await Cataxios.get("/kids");
     setdata(data);
     console.log(data);
   };
@@ -27,9 +27,9 @@ const Kids = () => {
           <h1>Kids Category</h1>
           <div className={style.block}>
             <input type="text" name="" id="" placeholder="Search " />
-            {/* <p>
+            <p>
               <AiOutlineSearch />
-            </p> */}
+            </p>
             <p>
               <BiSort />
             </p>
@@ -41,27 +41,31 @@ const Kids = () => {
             </p>
           </div>
         </div>
+        <div>
+          <h2>Toys :</h2>
+        </div>
         <div className={style.box}>
-          {data.map((data) => {
-            let { productsid, brand, rating, thumbnail_URL, price } = data;
-            return (
-              <div>
-                <img src={thumbnail_URL} alt="" />
-                <p>ID:{productsid}</p>
-                <p>BRAND:{brand}</p>
-                <p>RATING:{rating}</p>
-                <p>PRICE:{price}</p>
-                <button
-                  onClick={() => {
-                    dispatch(addToCart(data));
-                  }}
-                >
-                  Add Cart
-                </button>
-                <button>Buy Now</button>
-              </div>
-            );
-          })}
+          {data["Toys"] &&
+            data.Toys.map((data) => {
+              let { productsid, brand, rating, thumbnail_URL, price } = data;
+              return (
+                <div>
+                  <img src={thumbnail_URL} alt="" />
+                  <p>ID:{productsid}</p>
+                  <p>BRAND:{brand}</p>
+                  <p>RATING:{rating}</p>
+                  <p>PRICE:{price}</p>
+                  <button
+                    onClick={() => {
+                      dispatch(addToCart(data));
+                    }}
+                  >
+                    Add Cart
+                  </button>
+                  <button>Buy Now</button>
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>
