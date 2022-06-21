@@ -29,11 +29,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//  brand: "YK"
+// category: "Kids"
+// description: "Black and white knitted trousers,Flat-front, with no pleats design"
+// id: "KTR10"
+// price: 699
+// productimages_URL: (3) ['https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-2.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-5.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-6.jpg']
+// rating: 4.7
+// search_tags: (2) ['YK', 'Boys Black & White Checked Pure Cotton Trousers']
+// thumbnail_URL: "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15266194/2022/6/4/32da16f7-30a8-42ae-8e21-cecec1f688ed1654331800339-YK-Boys-Black--White-Checked-Pure-Cotton-Trousers-9321654331-1.jpg"
+// title: "Boys Black & White Checked Pure Cotton Trousers"
+
 const ProductDisplay = () => {
   let { id } = useParams();
-  const [product, setProduct] = useState();
+  
   const classes = useStyles();
-  const [productName, setProductName] = useState("iPhone 55");
+  const [productName, setProductName] = useState("Kids");
   const [productPriceInfo, setProductPriceInfo] = useState(
     "From ₹8227.00/mo.Per Month with EMI,Footnote** or ₹69900.00"
   );
@@ -42,12 +53,19 @@ const ProductDisplay = () => {
   );
   const [ratings, setRating] = useState(4.9);
   const [price, setPrice] = useState(88);
-  const [brand, setBrand] = useState("Apple");
+    const [brand, setBrand] = useState("Apple");
+    const [product, setProduct] = useState({});
+    const [description, setDescription] = useState("")
   useEffect(() => {
     const fetchProd = async () => {
       try {
         let { data } = await axios.get(`http://localhost:5000/products/${id}`);
-        setProduct(data);
+        console.log(data)
+          setProduct(data);
+          setPrice(data.price)
+            setDescription(data.description);
+          setBrand(data.brand);
+          setRating(data.rating);
       } catch (error) {
         console.log(error);
       }
@@ -80,13 +98,16 @@ const ProductDisplay = () => {
               showArrows={false}
               useKeyboardArrows={true}
             >
-              <div>
-                <img
-                  src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-og-2021?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1630076508000"
-                  alt="watch"
-                />
-              </div>
-              <div>
+              {product.productimages_URL &&
+                product.productimages_URL.map(e => {
+                  return (
+                    <div>
+                      <img src={e} alt="watch" />
+                    </div>
+                  );
+                })}
+
+              {/* <div>
                 <img
                   src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-og-2021?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1630076508000"
                   alt="watch"
@@ -121,7 +142,7 @@ const ProductDisplay = () => {
                   src="https://images.unsplash.com/photo-1520256862855-398228c41684?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
                   alt="watch"
                 />
-              </div>
+              </div> */}
             </Carousel>
           </section>
           <footer className={style.imgCardFooterCard}>
@@ -133,7 +154,7 @@ const ProductDisplay = () => {
 
         {/* info card */}
         <div className={style.infoCard}>
-          <h1>
+          <h1 className={style.h1Title}>
             {productName}
             <sup className={style.supScript}>new</sup>
           </h1>
@@ -169,7 +190,7 @@ const ProductDisplay = () => {
               <Typography className={classes.heading}>{brand}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>Add basic product description here</Typography>
+              <Typography>{description}</Typography>
             </AccordionDetails>
           </Accordion>
         </div>
@@ -177,12 +198,7 @@ const ProductDisplay = () => {
       <div className={style.detailDescription}>
         <summary>
           <h3>Detailed Description</h3>
-          <h4>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
-            voluptatum! Veniam fuga minima nihil ea magni ipsa omnis. Omnis
-            blanditiis nulla ullam magnam ratione obcaecati, odit officiis
-            cupiditate in error.
-          </h4>
+          <h4>{description}</h4>
         </summary>
       </div>
     </div>

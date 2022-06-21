@@ -26,11 +26,10 @@ const FeaturedProducts = () => {
           ) : (
             product.productList.map(product => {
               let {
-                id,
+                productsid,
                 title,
                 price,
                 thumbnail_URL,
-                productsid,
 
                 rating,
                 brand,
@@ -42,7 +41,7 @@ const FeaturedProducts = () => {
                   data-aos-offset="200"
                   onClick={() => navigate(`/products_page/${productsid}`)}
                   className={styles.productCard}
-                  key={id}
+                  key={productsid}
                 >
                   <div className={styles.cardBody}>
                     <img src={thumbnail_URL} alt={title} />
