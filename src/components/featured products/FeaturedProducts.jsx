@@ -30,6 +30,7 @@ const FeaturedProducts = () => {
                 title,
                 price,
                 thumbnail_URL,
+                productsid,
 
                 rating,
                 brand,
@@ -37,9 +38,9 @@ const FeaturedProducts = () => {
 
               return (
                 <div
-                  onClick={() => navigate(`/products_page/${id}`)}
                   data-aos="zoom-in"
                   data-aos-offset="200"
+                  onClick={() => navigate(`/products_page/${productsid}`)}
                   className={styles.productCard}
                   key={id}
                 >
