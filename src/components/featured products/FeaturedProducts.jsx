@@ -38,6 +38,8 @@ const FeaturedProducts = () => {
               return (
                 <div
                   onClick={() => navigate(`/products_page/${id}`)}
+                  data-aos="zoom-in"
+                  data-aos-offset="200"
                   className={styles.productCard}
                   key={id}
                 >

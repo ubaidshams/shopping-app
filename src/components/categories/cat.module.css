@@ -49,22 +49,28 @@ h1 {
 .block input {
   width: 400px;
   height: 8vh;
+  border: 1px solid #666;
+  border-radius: 50px;
+  font-size: 16px;
+  padding-left: 15px;
 }
 .block p {
   font-size: 20px;
 }
 
 .box {
+  width:85%;
+  margin:0px auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(4,1fr);
+  
+  grid-gap:0.8rem;
 }
 .box div {
   border: 1px solid;
-  margin-right: 10px;
-  padding: 10px;
+  padding: 8px;
 }
 .box div img {
-  object-fit: contain;
+  width:100%;
   border-radius: 20px;
 }
