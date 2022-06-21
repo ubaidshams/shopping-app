@@ -5,7 +5,7 @@ const initialState = {
   productList: [],
 };
 export const fetchProducts = createAsyncThunk("product/fetchProducts", () => {
-  return axios.get("http://localhost:5000/products");
+  return axios.get("http://localhost:3001/api/allProduct");
 });
 const productSlice = createSlice({
   name: "product",
