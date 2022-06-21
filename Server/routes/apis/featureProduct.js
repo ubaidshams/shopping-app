@@ -4,7 +4,8 @@ const { getAllProducts } = require("../../Controller/ProductController");
 const router = express.Router();
 
 router.route("/allProduct").get(getAllProducts);
-router.route("/allProduct/:id").get(findProduct)
+router.route("/allProduct/:id").get(findProduct);
+router.route("/electronics").get();
 
 router.route("/kids").get(getKidsProducts)
 router.route("/mens").get(getMensProducts)
