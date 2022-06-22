@@ -2,13 +2,27 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./cart.module.css";
 import { removeFromCart } from "../../features/cart/cartSlice";
-
+import { Card } from "@material-ui/core";
+import { useState } from "react";
 const CheckoutProducts = () => {
+  // for the card 
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
+  console.log(cart.cartItems.length);
+  const cartSet = cart.cartItems.map(JSON.stringify);
+  const uniqueSet = new Set(cartSet); 
+  let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+  // for quantity 
+  const productQuantityCounter = {}
+  const cartQnty = useSelector(state=> state.cart)
+  cartQnty.cartItems.map(element => {
+    productQuantityCounter[element.productsid] =
+      (productQuantityCounter[element.productsid] || 0) + 1;
+  });
+  console.log(productQuantityCounter["HPH1"]);
   return (
     <div className={styles.checkoutProductContainer}>
-      {cart.cartItems.map((product, index) => {
+      {uniqueArray.map((product, index) => {
         let {
           productsid,
           title,
@@ -19,8 +33,9 @@ const CheckoutProducts = () => {
           rating,
           brand,
         } = product;
+
         return (
-          <div className={styles.cartProduct} key={productsid}>
+          <Card elevation={5} className={styles.cartProduct} key={productsid}>
             <img src={thumbnail_URL} alt={title} />
             <div className={styles.productDetails}>
               <h3>{brand}</h3>
@@ -31,11 +46,12 @@ const CheckoutProducts = () => {
               <span>{rating}⭐</span>
 
               <span>₹{price}</span>
+              <span>Qty:{productQuantityCounter[productsid]}</span>
               <button onClick={() => dispatch(removeFromCart(index))}>
                 Remove from Cart
               </button>
             </div>
-          </div>
+          </Card>
         );
       })}
     </div>
