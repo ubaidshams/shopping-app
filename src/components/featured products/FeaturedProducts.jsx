@@ -7,6 +7,7 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import PaginationComp from "../pagination/PaginationComp";
 
+import Card from "@material-ui/core/Card";
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
@@ -52,7 +53,7 @@ const FeaturedProducts = () => {
               } = product;
 
               return (
-                <div
+                <Card
                   data-aos="zoom-in"
                   data-aos-offset="200"
                   onClick={() => navigate(`/products_page/${productsid}`)}
@@ -79,11 +80,11 @@ const FeaturedProducts = () => {
                           dispatch(addToCart(product));
                         }}
                       >
-                        Add to cart{" "}
+                        Add to cart
                       </button>
                     </div>
                   </div>
-                </div>
+                </Card>
               );
             })
           )}
