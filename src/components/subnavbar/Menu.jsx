@@ -5,19 +5,26 @@ import WomenMenu from './WomenMenu';
 import KidsMenu from './KidsMenu';
 import Electronic from "./Electronic";
 import Beauty from './Beauty';
+import { motion } from 'framer-motion';
 
 
 const Menu = () => {
+ 
+ 
   return (
     <div className={Style.menuBlock}>
       <nav>
         <ul>
           <li>
             <a href="#">Men</a>
-            <div className={Style.dropDown}>
+            <motion.div
+              className={Style.dropDown}
+              inital={{ y: "50%" , opacity: 0, scale: 0.5 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{duration:0.2,ease:"easeInOut"}}
+            >
               <MenMenu />
-            </div>
-            
+            </motion.div>
           </li>
 
           <li>
