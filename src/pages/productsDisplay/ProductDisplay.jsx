@@ -176,13 +176,20 @@ const ProductDisplay = () => {
           <br />
           <br />
           <span>
-            Price:<span className={style.priceTag}>${price}</span>
+            Price:<span className={style.priceTag}>₹{price}</span>
             <sup className={style.supScriptPriceTag}>new</sup>
           </span>
           <section className={style.btnContainer}>
             <button className={style.buyNow}>Buy Now</button>
             <br />
-            <button className={style.addToCart} onClick={()=>{dispatch(addToCart(product))}}>Add To Cart</button>
+            <button
+              className={style.addToCart}
+              onClick={() => {
+                dispatch(addToCart(product));
+              }}
+            >
+              Add To Cart
+            </button>
           </section>
           <Accordion className={style.accordion}>
             <AccordionSummary
