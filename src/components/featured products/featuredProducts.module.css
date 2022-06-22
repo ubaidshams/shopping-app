@@ -10,6 +10,8 @@
   height: inherit;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .featuredProducts article h1 {
@@ -22,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  background-color:#ddd; /*Dark--->transparent*/
+  background-color: #ddd; /*Dark--->transparent*/
   margin: auto;
   justify-content: center;
   padding: 20px;
@@ -41,7 +43,7 @@
   cursor: pointer;
 }
 .productCard:hover {
-  box-shadow:0 0 10px 5px #666;
+  box-shadow: 0 0 10px 5px #666;
   /* 0 0 10px 9px rgb(12, 12, 12) */
   transform: scale(1.03);
 }
@@ -89,7 +91,7 @@
   gap: 30px;
 }
 .footerRight span:nth-child(1) {
-  color:rgba(72, 210, 72, 0.872);
+  color: rgba(72, 210, 72, 0.872);
   font-size: 14px;
 }
 .footerRight button {
@@ -104,6 +106,8 @@
 }
 .footerRight button:hover {
   background-color: #1d2c4e;
-  color:var(--text-secondary);/* dark-->rgb(234, 232, 232)*/
-
+  color: var(--text-secondary); /* dark-->rgb(234, 232, 232)*/
+}
+.paginationComp {
+  margin-bottom: 20px;
 }

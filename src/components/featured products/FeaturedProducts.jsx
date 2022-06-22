@@ -1,30 +1,46 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../../features/products/productSlice";
 import Spinner from "./../spinner/Spinner";
 import styles from "./featuredProducts.module.css";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
+import PaginationComp from "../pagination/PaginationComp";
 
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
   let navigate = useNavigate();
+  let [prodList, setProdList] = useState([]);
+  let [currentPage, setCurrentPage] = useState(1);
+  let cardPerPage = 12;
+  let totalPages = Math.ceil(product.productList.length / cardPerPage);
 
+  const setPage = () => {
+    let start, end;
+    if (currentPage === 1) {
+      start = 0;
+      end = currentPage * cardPerPage;
+    } else {
+      start = currentPage * cardPerPage - cardPerPage;
+      end = currentPage * cardPerPage;
+    }
+    setProdList(product.productList.slice(start, end));
+  };
   useEffect(() => {
     dispatch(fetchProducts());
-    console.log(product);
-  }, []);
+    setPage();
+  }, [currentPage]);
 
   return (
     <section className={styles.featuredProducts}>
       <article>
         <h1>Featured Products</h1>
         <div className={styles.cardContainer}>
-          {product.productList.length === 0 ? (
+          {prodList.length === 0 ? (
             <Spinner />
           ) : (
-            product.productList.map(product => {
+            prodList.map(product => {
               let {
                 productsid,
                 title,
@@ -72,6 +88,11 @@ const FeaturedProducts = () => {
             })
           )}
         </div>
+        <PaginationComp
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalPages={totalPages}
+        />
       </article>
     </section>
   );
