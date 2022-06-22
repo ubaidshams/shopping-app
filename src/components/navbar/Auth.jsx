@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./navbar.module.css";
@@ -22,8 +23,9 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const Auth = () => {
   const location = useLocation();
-  const [isLoginOpen, setLoginOpen] = useState(false);
   let cartValue = useSelector(state => state.cart.cartItems.length);
+  const [count, setCount] = useState(cartValue);
+  const [isLoginOpen, setLoginOpen] = useState(false);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -39,12 +41,20 @@ const Auth = () => {
     event.preventDefault();
   };
 
+  let cartCount = useSelector(state =>
+    state.cart.cartItems.map(item => item.productsid)
+  );
+  let set = new Set(cartCount);
+  cartCount = [...set].length;
+  useEffect(() => {
+    setCount(cartCount);
+  }, [cartCount]);
   return (
     <div className={styles.authBlock}>
       {location.pathname !== "/signup" && (
         <Link to="/cart" className={styles.cartIcon}>
           <AiOutlineShoppingCart />
-          <span>{cartValue}</span>
+          <span>{count}</span>
         </Link>
       )}
       {/*  */}
@@ -58,9 +68,24 @@ const Auth = () => {
       <Dialog
         open={isLoginOpen}
         onClose={() => setLoginOpen(false)}
-        maxWidth="md"
+        // maxWidth="md"
       >
-        <DialogTitle style={{ textAlign: "center" }}>Login</DialogTitle>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            marginBottom: "1rem",
+            color: "#3f51b5",
+          }}
+        >
+          <h1>Login</h1>
+          <span>or</span>
+          <a href="" style={{ textDecoration: "underLine" }}>
+            create a account
+          </a>
+        </div>
         <DialogContent>
           <Box
             component="form"
@@ -118,11 +143,22 @@ const Auth = () => {
             onClick={() => setLoginOpen(false)}
             variant="contained"
             color="primary"
-            style={{ marginRight: "9.3rem",marginBottom:"1rem" }}
+            style={{ width: "90%", margin: "0.7rem auto" }}
           >
             submit
           </Button>
         </DialogActions>
+        <div
+          style={{
+            display: "grid",
+            placeItems: "center",
+            marginBottom: "1.5rem",
+          }}
+        >
+          <a href="" style={{ textDecoration: "underLine" }}>
+            Forgot Password?
+          </a>
+        </div>
       </Dialog>
     </div>
   );

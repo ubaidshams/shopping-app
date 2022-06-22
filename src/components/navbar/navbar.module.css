@@ -83,13 +83,17 @@
   width: 30px;
 }
 .cartIcon span {
-  background-color: crimson;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  font-size: 14px;
-  font-weight: 500;
+
+    background-color: crimson;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: -12px;
+    margin-top: -21px;
 }
+
