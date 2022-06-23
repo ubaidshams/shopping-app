@@ -6,6 +6,8 @@ import styles from "./featuredProducts.module.css";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import PaginationComp from "../pagination/PaginationComp";
+import { AiOutlineHeart } from "react-icons/ai";
+import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 import Card from "@material-ui/core/Card";
 const FeaturedProducts = () => {
@@ -84,6 +86,12 @@ const FeaturedProducts = () => {
                       >
                         Add to cart
                       </button>
+                      <AiOutlineHeart
+                        onClick={e => {
+                          e.stopPropagation();
+                          dispatch(addToWishlist(product));
+                        }}
+                      />
                     </div>
                   </div>
                 </Card>
