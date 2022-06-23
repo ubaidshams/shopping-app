@@ -76,5 +76,37 @@
       }
     ],
     "orderHistory": []
+  },
+  {
+    "firstName": "Ubaid",
+    "lastName": "Uz Zaman",
+    "gender": "male",
+    "email": "wahidshams@gmail.com",
+    "Phno": "7022177781",
+    "password": "$2b$10$BuSNcxebPwiVAuPFNA7WTuCYs72Td9KZo4mdF0WQRKUmV0MchPn3a",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "0": {
+          "house_no": "",
+          "street": "",
+          "landmark": "",
+          "city": "",
+          "state": "",
+          "pincode": "",
+          "country": ""
+        },
+        "houseNo": "A-201",
+        "street": "Citypark",
+        "landmark": "Adarsh school",
+        "state": "Karnataka",
+        "pincode": "580023",
+        "city": "bangalore",
+        "country": "Karnataka"
+      }
+    ],
+    "orderHistory": []
   }
 ]
