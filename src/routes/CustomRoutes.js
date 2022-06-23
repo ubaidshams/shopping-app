@@ -16,6 +16,7 @@ import Menpage from "../components/categories/Menpage";
 import Electronics from "../components/categories/Electronics";
 import Beauty from "../components/categories/Beauty";
 
+import Wishlist from "../pages/wishlist/Wishlist";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -75,6 +76,10 @@ const CustomRoutes = () => {
     {
       path: "/beauty_products",
       element: <Beauty />,
+    },
+    {
+      path: "/wishlist",
+      element: <Wishlist />,
     },
   ]);
   return myRoutes;

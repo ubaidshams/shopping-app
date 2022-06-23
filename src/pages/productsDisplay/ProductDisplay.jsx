@@ -176,7 +176,7 @@ const ProductDisplay = () => {
           <br />
           <br />
           <span>
-            Price:<span className={style.priceTag}>${price}</span>
+            Price:<span className={style.priceTag}>₹{price}</span>
             <sup className={style.supScriptPriceTag}>new</sup>
           </span>
           <section className={style.btnContainer}>
