@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import CustomRoutes from "./routes/CustomRoutes";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SubNavbar from "./components/subnavbar/SubNavbar";
 
 const App = () => {
   AOS.init();
@@ -12,6 +13,7 @@ const App = () => {
     <div>
       <Router>
         <Navbar />
+        <SubNavbar/>
         <CustomRoutes />
         {/* <Footer /> */}
       </Router>
