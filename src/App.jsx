@@ -8,17 +8,18 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
 import SubNavbar from "./components/subnavbar/SubNavbar";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
-  AOS.init({once:true});
+  AOS.init({ once: true });
   return (
     <div>
       <Router>
         <ToastContainer />
         <Navbar />
-        <SubNavbar/>
+        <SubNavbar />
         <CustomRoutes />
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </div>
   );
