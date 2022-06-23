@@ -76,5 +76,37 @@
       }
     ],
     "orderHistory": []
+  },
+  {
+    "firstName": "Ritheesh",
+    "lastName": "kumar",
+    "gender": "male",
+    "email": "ritheesh@gmail.com",
+    "Phno": "3287932849",
+    "password": "$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "0": {
+          "house_no": "",
+          "street": "",
+          "landmark": "",
+          "city": "",
+          "state": "",
+          "pincode": "",
+          "country": ""
+        },
+        "houseNo": "NOa-234",
+        "street": "gandhi bazzar",
+        "landmark": "Dosa Camp",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "country": "Karnataka",
+        "pincode": "23234"
+      }
+    ],
+    "orderHistory": []
   }
 ]
