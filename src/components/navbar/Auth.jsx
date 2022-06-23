@@ -18,18 +18,23 @@ import {
   OutlinedInput,
 } from "@material-ui/core";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { CloseLogin, OpenLogin } from "../../features/Login/LoginSlice";
+import { createCurrentUser } from "../../features/User/userSlice";
+import UserMenu from "../UserMenu/UserMenu";
 
 const Auth = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
   let cartValue = useSelector(state => state.cart.cartItems.length);
+  const isLoginOpen = useSelector(state => state.Login.isOpen);
+  const currentUser = useSelector(state => state.user.currentUser);
   const [count, setCount] = useState(cartValue);
-  const [isLoginOpen, setLoginOpen] = useState(false);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -55,21 +60,20 @@ const Auth = () => {
   }, [cartCount]);
 
   const handleSubmit = async e => {
-    e.preventDefault();
+    // e.preventDefault();
     let { data } = await axios.post("http://localhost:3001/user/signIn", {
       email: values.email,
       password: values.password,
     });
-    console.log(data);
-    if (data.message == "success") toast.success("successfully logged in");
-    else toast.error("Invalid password or Email");
+    if (data.message == "success") {
+      dispatch(createCurrentUser(data.userData));
+      dispatch(CloseLogin());
+      toast.success("successfully logged in");
+    } else toast.error("Invalid password or Email");
     setValues({ email: "", password: "", showPassword: false });
   };
   return (
-    <div className={styles.authBlock}>
-      <Link to="/wishlist">
-        <BsHeart />
-      </Link>
+    <div className={(currentUser.email) ? styles.authBlock2:styles.authBlock}>
       {location.pathname !== "/signup" && (
         <Link to="/cart" className={styles.cartIcon}>
           <AiOutlineShoppingCart />
@@ -77,16 +81,21 @@ const Auth = () => {
         </Link>
       )}
       {/*  */}
-      {location.pathname === "/signup" ? (
-        ""
+      {currentUser.email || location.pathname === "/signup" ? (
+        currentUser.email && <UserMenu user={currentUser} />
       ) : (
-        <button onClick={() => setLoginOpen(true)}>Login</button>
+        <button
+          onClick={() => dispatch(OpenLogin())}
+          className={styles.Loginbutton}
+        >
+          Login
+        </button>
       )}
       {/*  */}
-      <Link to="/signup">Signup</Link>
+      {!currentUser.email && <Link to="/signup">Signup</Link>}
       <Dialog
         open={isLoginOpen}
-        onClose={() => setLoginOpen(false)}
+        onClose={() => dispatch(CloseLogin())}
         component="form"
         // maxWidth="md"
       >
@@ -102,12 +111,17 @@ const Auth = () => {
         >
           <h1>Login</h1>
           <span>or</span>
-          <a onClick={() => { navigate("/signup"); setLoginOpen(false)}} style={{ textDecoration: "underLine" }}>
+          <a
+            onClick={() => {
+              navigate("/signup");
+              dispatch(CloseLogin());
+            }}
+            style={{ textDecoration: "underLine" }}
+          >
             create a account
           </a>
         </div>
         <DialogContent>
-          <toast />
           <Box
             component="form"
             sx={{
@@ -157,16 +171,14 @@ const Auth = () => {
                 label="Password"
               />
             </FormControl>
-            <FormControl>
-              <Button
-                onClick={handleSubmit}
-                variant="contained"
-                color="primary"
-                style={{ width: "90%", margin: "0.7rem auto" }}
-              >
-                submit
-              </Button>
-            </FormControl>
+            <Button
+              onClick={handleSubmit}
+              variant="contained"
+              color="primary"
+              style={{ width: "90%", margin: "0.7rem auto" }}
+            >
+              submit
+            </Button>
           </Box>
         </DialogContent>
         <div
@@ -177,7 +189,10 @@ const Auth = () => {
           }}
         >
           <a
-            onClick={() => { navigate("/forgot"); setLoginOpen(false)}}
+            onClick={() => {
+              navigate("/forgot");
+              dispatch(CloseLogin());
+            }}
             style={{ textDecoration: "underLine" }}
           >
             Forgot Password?

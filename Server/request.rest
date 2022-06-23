@@ -1,28 +1,7 @@
-POST    
+POST http://localhost:3001/user/signIn
 Content-Type: application/json
 
 {
-    
-        "firstName":"siddanth",
-        "lastName":"",
-        "gender":"Male",
-        "email":"siddanth@gmail.com",
-        "Phno":8967642874,
-        "password":"hello2",
-        "user_cart":[],
-        "user_wishlist":[],
-        "recently_viewed":[],
-        "address_list":[
-            {
-                "house_no":0,
-                "street":"",
-                "landmark":"",
-                "city":"Bangalore",
-                "state":"Karnataka",
-                "country":"India",
-                "pincode":32234
-            }
-        ],
-        "orderHistory":[]
-    
+    "email":"prashanth@gmail.com",
+    "password":"hello world"
 }
