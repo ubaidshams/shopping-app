@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./navbar.module.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { BsHeart } from "react-icons/bs";
 import {
   Box,
   Button,
@@ -51,6 +52,9 @@ const Auth = () => {
   }, [cartCount]);
   return (
     <div className={styles.authBlock}>
+      <Link to="/wishlist">
+        <BsHeart />
+      </Link>
       {location.pathname !== "/signup" && (
         <Link to="/cart" className={styles.cartIcon}>
           <AiOutlineShoppingCart />
