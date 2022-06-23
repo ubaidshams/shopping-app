@@ -16,6 +16,7 @@ import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
+import axios from "axios";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -76,7 +77,7 @@ const Signup = () => {
   const [number2, setNumber2] = useState();
   const [address, setAddress] = useState([
     {
-      houseNo: "",
+      house_no: "",
       street: "",
       landmark: "",
       city: "",
@@ -89,25 +90,24 @@ const Signup = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setPayload({
-      fname,
-      lname,
+    let currPayload = {
+      firstName: fname,
+      lastName: lname,
       email,
       password,
       gender,
-      role,
-      number1,
-      number2,
-      address,
-    });
+      Phno: number1,
+      address_list: [address],
+    };
+    setPayload(currPayload);
     console.log(payload);
 
-    fetchData();
+    fetchData(currPayload);
   };
 
-  const fetchData = async () => {
+  const fetchData = async currPayload => {
     try {
-      await Axios.post("/user", payload);
+      await axios.post("http://localhost:3001/user/signUp", currPayload);
     } catch (error) {
       console.log(error.message);
     }

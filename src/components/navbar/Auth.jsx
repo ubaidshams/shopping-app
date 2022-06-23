@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
@@ -21,9 +21,12 @@ import {
 import { useSelector } from "react-redux";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Auth = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   let cartValue = useSelector(state => state.cart.cartItems.length);
   const [count, setCount] = useState(cartValue);
   const [isLoginOpen, setLoginOpen] = useState(false);
@@ -50,6 +53,18 @@ const Auth = () => {
   useEffect(() => {
     setCount(cartCount);
   }, [cartCount]);
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    let { data } = await axios.post("http://localhost:3001/user/signIn", {
+      email: values.email,
+      password: values.password,
+    });
+    console.log(data);
+    if (data.message == "success") toast.success("successfully logged in");
+    else toast.error("Invalid password or Email");
+    setValues({ email: "", password: "", showPassword: false });
+  };
   return (
     <div className={styles.authBlock}>
       <Link to="/wishlist">
@@ -72,6 +87,7 @@ const Auth = () => {
       <Dialog
         open={isLoginOpen}
         onClose={() => setLoginOpen(false)}
+        component="form"
         // maxWidth="md"
       >
         <div
@@ -86,11 +102,12 @@ const Auth = () => {
         >
           <h1>Login</h1>
           <span>or</span>
-          <a href="" style={{ textDecoration: "underLine" }}>
+          <a onClick={() => { navigate("/signup"); setLoginOpen(false)}} style={{ textDecoration: "underLine" }}>
             create a account
           </a>
         </div>
         <DialogContent>
+          <toast />
           <Box
             component="form"
             sx={{
@@ -140,18 +157,18 @@ const Auth = () => {
                 label="Password"
               />
             </FormControl>
+            <FormControl>
+              <Button
+                onClick={handleSubmit}
+                variant="contained"
+                color="primary"
+                style={{ width: "90%", margin: "0.7rem auto" }}
+              >
+                submit
+              </Button>
+            </FormControl>
           </Box>
         </DialogContent>
-        <DialogActions>
-          <Button
-            onClick={() => setLoginOpen(false)}
-            variant="contained"
-            color="primary"
-            style={{ width: "90%", margin: "0.7rem auto" }}
-          >
-            submit
-          </Button>
-        </DialogActions>
         <div
           style={{
             display: "grid",
@@ -159,7 +176,10 @@ const Auth = () => {
             marginBottom: "1.5rem",
           }}
         >
-          <a href="" style={{ textDecoration: "underLine" }}>
+          <a
+            onClick={() => { navigate("/forgot"); setLoginOpen(false)}}
+            style={{ textDecoration: "underLine" }}
+          >
             Forgot Password?
           </a>
         </div>
