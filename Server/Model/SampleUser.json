@@ -1,0 +1,23 @@
+{
+  "firstName": "",
+  "lastName": "",
+  "gender": "",
+  "email": "",
+  "Phno":0,
+  "password": "",
+  "user_cart": [],
+  "user_wishlist": [],
+  "recently_viewed": [],
+  "address_list": [
+    {
+      "house_no": 0,
+      "street": "",
+      "landmark": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "pincode": 0
+    }
+  ],
+  "orderHistory": []
+}

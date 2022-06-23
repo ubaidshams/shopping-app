@@ -31,7 +31,7 @@ const FeaturedProducts = () => {
   useEffect(() => {
     dispatch(fetchProducts());
     setPage();
-  }, [currentPage]);
+  }, [currentPage,product ]);
 
   return (
     <section className={styles.featuredProducts}>
