@@ -73,7 +73,7 @@ const Auth = () => {
     setValues({ email: "", password: "", showPassword: false });
   };
   return (
-    <div className={(currentUser.email) ? styles.authBlock2:styles.authBlock}>
+    <div className={currentUser.email ? styles.authBlock2 : styles.authBlock}>
       {location.pathname !== "/signup" && (
         <Link to="/cart" className={styles.cartIcon}>
           <AiOutlineShoppingCart />
