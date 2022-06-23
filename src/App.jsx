@@ -7,6 +7,7 @@ import CustomRoutes from "./routes/CustomRoutes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
+import SubNavbar from "./components/subnavbar/SubNavbar";
 
 const App = () => {
   AOS.init({once:true});
@@ -15,6 +16,7 @@ const App = () => {
       <Router>
         <ToastContainer />
         <Navbar />
+        <SubNavbar/>
         <CustomRoutes />
         {/* <Footer /> */}
       </Router>

@@ -141,6 +141,7 @@ const ChatBot = () => {
               id="chat_input"
               value={chat_entered}
               onChange={e => setChat_entered(e.target.value)}
+          style={{ padding: '10px', }}
             />
             <span className="chat_send_arrow" onClick={handleSubmit}>
               <BsArrowRight />
