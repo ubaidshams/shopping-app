@@ -108,6 +108,13 @@
   background-color: #1d2c4e;
   color: var(--text-secondary); /* dark-->rgb(234, 232, 232)*/
 }
+.footerRight svg {
+  width: 30px;
+  height: 30px;
+  color: red;
+  cursor: pointer;
+  font-weight: 100;
+}
 .paginationComp {
   margin-bottom: 20px;
 }

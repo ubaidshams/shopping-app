@@ -13,6 +13,7 @@ const PaginationComp = ({ currentPage, setCurrentPage, totalPages }) => {
         showLastButton
         page={currentPage}
         onChange={(ev, n) => setCurrentPage(n)}
+        siblingCount={3}
       />
     </Stack>
   );
