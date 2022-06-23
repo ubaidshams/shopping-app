@@ -31,9 +31,11 @@ const FeaturedProducts = () => {
     setProdList(product.productList.slice(start, end));
   };
   useEffect(() => {
-    dispatch(fetchProducts());
     setPage();
-  }, [currentPage,product ]);
+  }, [currentPage, product]);
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
 
   return (
     <section className={styles.featuredProducts}>

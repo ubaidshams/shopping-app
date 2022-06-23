@@ -1,7 +1,7 @@
 const UserJson = require("../Model/User.json");
 const fs = require("fs").promises;
 const path = require("path");
-const SampleUserObj=require("../Model/SampleUser.json")
+const SampleUserObj = require("../Model/SampleUser.json");
 
 const bcrypt = require("bcrypt");
 
@@ -23,7 +23,7 @@ const RegisterUser = async (req, res) => {
   try {
     let salt = await bcrypt.genSalt(10);
     let hashPassword = await bcrypt.hash(req.body.password, salt);
-    UserObj.addData({ ...SampleUserObj,...req.body, password: hashPassword });
+    UserObj.addData({ ...SampleUserObj, ...req.body,address_list:[...req.body.address_list], password: hashPassword });
     reWrinteJson();
     res.json({ Message: "successfully registered" });
   } catch {
@@ -43,7 +43,8 @@ const SignInUser = async (req, res) => {
 
   try {
     if (await bcrypt.compare(req.body.password, reqUser.password)) {
-      res.json({ message: "success" });
+      let {password,...rest}=reqUser
+      res.json({ message: "success", userData: rest });
     } else {
       res.json({ message: "Invalid email or password" });
     }
@@ -53,7 +54,7 @@ const SignInUser = async (req, res) => {
 };
 
 const getAllUsers = (req, res) => {
-    res.json(UserObj.data);
-}
+  res.json(UserObj.data);
+};
 
-module.exports = { RegisterUser, SignInUser,getAllUsers };
+module.exports = { RegisterUser, SignInUser, getAllUsers };
