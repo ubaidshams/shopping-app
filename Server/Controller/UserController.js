@@ -23,7 +23,7 @@ const RegisterUser = async (req, res) => {
   try {
     let salt = await bcrypt.genSalt(10);
     let hashPassword = await bcrypt.hash(req.body.password, salt);
-    UserObj.addData({ ...SampleUserObj, ...req.body, password: hashPassword });
+    UserObj.addData({ ...SampleUserObj, ...req.body,address_list:[...req.body.address_list], password: hashPassword });
     reWrinteJson();
     res.json({ Message: "successfully registered" });
   } catch {

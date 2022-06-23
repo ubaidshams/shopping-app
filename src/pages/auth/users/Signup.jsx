@@ -80,7 +80,7 @@ const Signup = () => {
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [number2, setNumber2] = useState();
-  const [address, setAddress] = useState([
+  const [address, setAddress] = useState(
     {
       house_no: "",
       street: "",
@@ -90,7 +90,7 @@ const Signup = () => {
       pincode: "",
       country: "",
     },
-  ]);
+  );
   // const navigate = useNavigate()
 
   const handleSubmit = e => {

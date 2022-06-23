@@ -52,14 +52,25 @@
   align-items: center;
   justify-content: space-between;
 }
+.authBlock2{
+    width: 20%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+}
 .authBlock a {
+  color: var(--text-primary);
+  transition: all 0.3s linear;
+}
+.authBlock2 a{
   color: var(--text-primary);
   transition: all 0.3s linear;
 }
 .authBlock a:hover {
   color: var(--text-secondary);
 }
-.authBlock button {
+.Loginbutton {
   padding: 8px 16px;
   border: 1px solid var(--link-hover);
   border-radius: 10px;
