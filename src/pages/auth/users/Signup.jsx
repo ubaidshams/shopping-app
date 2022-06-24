@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Card, TextField, makeStyles } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
@@ -16,6 +16,10 @@ import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
+import axios from "axios";
+import {toast} from "react-toastify"
+import {useDispatch} from "react-redux"
+import { OpenLogin } from "../../../features/Login/LoginSlice";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -61,6 +65,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Signup = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const classes = useStyles();
 
   const [fname, setFname] = useState("");
@@ -74,9 +80,9 @@ const Signup = () => {
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [number2, setNumber2] = useState();
-  const [address, setAddress] = useState([
+  const [address, setAddress] = useState(
     {
-      houseNo: "",
+      house_no: "",
       street: "",
       landmark: "",
       city: "",
@@ -84,30 +90,31 @@ const Signup = () => {
       pincode: "",
       country: "",
     },
-  ]);
+  );
   // const navigate = useNavigate()
 
   const handleSubmit = e => {
     e.preventDefault();
-    setPayload({
-      fname,
-      lname,
+    let currPayload = {
+      firstName: fname,
+      lastName: lname,
       email,
       password,
       gender,
-      role,
-      number1,
-      number2,
-      address,
-    });
+      Phno: number1,
+      address_list: [address],
+    };
+    setPayload(currPayload);
     console.log(payload);
 
-    fetchData();
+    fetchData(currPayload);
+    navigate("/")
   };
 
-  const fetchData = async () => {
+  const fetchData = async currPayload => {
     try {
-      await Axios.post("/user", payload);
+      await axios.post("http://localhost:3001/user/signUp", currPayload);
+      toast.success("successfully registered")
     } catch (error) {
       console.log(error.message);
     }
@@ -119,7 +126,7 @@ const Signup = () => {
         <h1>Create Your Profile</h1>
         <section>
           One profile ID is all you need to access all KART services. You
-          already have a profile? <Link to="/login">Find it here </Link>
+          already have a profile? <a onClick={() => { dispatch(OpenLogin());navigate("/")}}>Find it here </a>
         </section>
         <form onSubmit={handleSubmit}>
           <Card

@@ -6,6 +6,7 @@ import Signup from "../pages/auth/users/Signup";
 import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
+import Checkout from '../pages/cart/ProductCheckout/Checkout'
 
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
@@ -14,6 +15,8 @@ import Women from "../components/categories/Women";
 import Menpage from "../components/categories/Menpage";
 import Electronics from "../components/categories/Electronics";
 import Beauty from "../components/categories/Beauty";
+
+import Wishlist from "../pages/wishlist/Wishlist";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -37,6 +40,11 @@ const CustomRoutes = () => {
       element: <Cart />,
     },
 
+    {
+      path:"/checkout",
+      element:<Checkout/>
+    },
+    
     {
       path: `/products_page/:id`,
       element: <ProductDisplay />,
@@ -68,6 +76,10 @@ const CustomRoutes = () => {
     {
       path: "/beauty_products",
       element: <Beauty />,
+    },
+    {
+      path: "/wishlist",
+      element: <Wishlist />,
     },
   ]);
   return myRoutes;

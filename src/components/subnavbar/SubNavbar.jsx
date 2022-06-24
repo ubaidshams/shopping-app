@@ -1,12 +1,13 @@
-import React from 'react'
-import Menu from './Menu'
+import React from "react";
+import Menu from "./Menu";
+import styles from "./menu.module.css";
 
 const SubNavbar = () => {
   return (
-    <div>
-      <Menu/>
+    <div className={styles.catMenu}>
+      <Menu />
     </div>
-  )
-}
+  );
+};
 
-export default SubNavbar
+export default SubNavbar;
