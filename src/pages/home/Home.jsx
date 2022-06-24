@@ -4,6 +4,7 @@ import CarouselComp from "../../components/Carousel/CarouselComp";
 import FeaturedProducts from "../../components/featured products/FeaturedProducts";
 import Maincategory from "../../components/categories/Maincategory";
 import ChatBot from "../../components/chatBot/ChatBot";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
         <CarouselComp />
         <Maincategory />
         <FeaturedProducts />
+        <Footer />
       </article>
     </section>
   );
