@@ -14,8 +14,9 @@ import Logout from "@mui/icons-material/Logout";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function UserMenu({user}) {
+export default function UserMenu({ user }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = event => {
@@ -24,6 +25,7 @@ export default function UserMenu({user}) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  let navigate = useNavigate();
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -36,7 +38,7 @@ export default function UserMenu({user}) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32,background:"orange" }}>
+            <Avatar sx={{ width: 32, height: 32, background: "orange" }}>
               {user.firstName.slice(0, 1)}
             </Avatar>
           </IconButton>
@@ -80,7 +82,7 @@ export default function UserMenu({user}) {
         <MenuItem>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => navigate("/wishlist")}>
           <ListItemIcon>
             <FavoriteBorderIcon />
           </ListItemIcon>
@@ -88,7 +90,7 @@ export default function UserMenu({user}) {
         </MenuItem>
         <MenuItem>
           <ListItemIcon>
-            <ShoppingBagIcon/>
+            <ShoppingBagIcon />
           </ListItemIcon>
           Your Orders
         </MenuItem>
