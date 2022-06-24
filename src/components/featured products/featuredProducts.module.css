@@ -111,9 +111,12 @@
 .footerRight svg {
   width: 30px;
   height: 30px;
-  color: red;
   cursor: pointer;
   font-weight: 100;
+  transition: all linear 0.2s;
+}
+.footerRight svg:hover {
+  fill: red;
 }
 .paginationComp {
   margin-bottom: 20px;

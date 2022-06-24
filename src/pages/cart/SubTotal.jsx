@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 const SubTotal = () => {
   let navigate = useNavigate();
 
-  const cart = useSelector((state) => state.cart);
+  const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCartTotal());
@@ -27,7 +27,12 @@ const SubTotal = () => {
         <input type="checkbox" name="gift" id="gift" />
         <label htmlFor="gift">This order contains a gift</label>
       </div>
-      <button onClick={buyProduct}>Proceed to Buy</button>
+      <button
+        disabled={cart.cartItems.length === 0 ? true : false}
+        onClick={buyProduct}
+      >
+        Proceed to Buy
+      </button>
     </div>
   );
 };
