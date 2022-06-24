@@ -26,6 +26,7 @@ import { toast } from "react-toastify";
 import { CloseLogin, OpenLogin } from "../../features/Login/LoginSlice";
 import { createCurrentUser } from "../../features/User/userSlice";
 import UserMenu from "../UserMenu/UserMenu";
+import CartDropdown from "../CartDropDown/CartDropdown";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ const Auth = () => {
     password: "",
     showPassword: false,
   });
+  const [openCart, setCart] = useState(false);
   const handleChange = (e, prop) => {
     setValues({ ...values, [prop]: e.target.value });
   };
@@ -75,12 +77,18 @@ const Auth = () => {
   return (
     <div className={currentUser.email ? styles.authBlock2 : styles.authBlock}>
       {location.pathname !== "/signup" && (
-        <Link to="/cart" className={styles.cartIcon}>
+        <Link
+          to="/cart"
+          className={styles.cartIcon}
+          onMouseEnter={() => setCart(true)}
+          onMouseLeave={() => setCart(false)}
+        >
           <AiOutlineShoppingCart />
           <span>{count}</span>
         </Link>
       )}
-      {/*  */}
+
+      {openCart && <CartDropdown />}
       {currentUser.email || location.pathname === "/signup" ? (
         currentUser.email && <UserMenu user={currentUser} />
       ) : (
