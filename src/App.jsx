@@ -6,6 +6,7 @@ import CustomRoutes from "./routes/CustomRoutes";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SubNavbar from "./components/subnavbar/SubNavbar";
+import Profile from './pages/profile/Profile';
 
 const App = () => {
   AOS.init();
@@ -13,9 +14,12 @@ const App = () => {
     <div>
       <Router>
         <Navbar />
-        <SubNavbar/>
+
+        <SubNavbar />
+        <Profile />
         <CustomRoutes />
         {/* <Footer /> */}
+        
       </Router>
     </div>
   );

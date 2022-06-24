@@ -41,7 +41,7 @@ const MenMegaMenu = () => {
             <li><a href="">Briefs & Trunks</a></li>
             <li><a href="">Boxers</a></li>
             <li><a href="">Vests</a></li>
-            <li><a href="">Sleepwear & Loungewear</a></li>
+            <li><a href="">Sleepwear</a></li>
             <li><a href="">Thermals</a></li>
         </ul>
        

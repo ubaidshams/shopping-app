@@ -82,6 +82,7 @@ z-index: 1;
 }
 .dropDown ul li:first-child a{
     color: #ee5f73;
+   
     font-size: 12px;
     font-weight: bold;
     padding-bottom:4px;
@@ -91,7 +92,9 @@ z-index: 1;
 .menuBlock nav > ul > li:hover .dropDown{
      
     display:block;
+    transform: scaleX(1.1);
     left: -120px;
+
 }
 
 

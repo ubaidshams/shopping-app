@@ -7,7 +7,7 @@ const WomenMenu = () => {
             <ul>
                 <li><a href="">Indian & Fusion Wear</a></li>
                 <li><a href="">Kurtas & Suits</a></li>
-                <li><a href="">Kurtis,Tunics & Churidars</a></li>
+                <li><a href="">Kurtis,Tunics</a></li>
                 <li><a href="">Ethnic Wear</a></li>
                 <li><a href="">Skirts & Palazzos</a></li>
                 <li><a href="">Sarees</a></li>
