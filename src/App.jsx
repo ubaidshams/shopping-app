@@ -19,7 +19,7 @@ const App = () => {
         <Navbar />
         <SubNavbar />
         <CustomRoutes />
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </div>
   );

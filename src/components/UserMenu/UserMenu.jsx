@@ -79,7 +79,7 @@ export default function UserMenu({ user }) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem>
+        <MenuItem onClick={() => navigate("/my-profile")}>
           <Avatar /> Profile
         </MenuItem>
         <MenuItem onClick={() => navigate("/wishlist")}>
