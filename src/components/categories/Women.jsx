@@ -8,9 +8,15 @@ import { BiSort } from "react-icons/bi";
 import { FaHeart, FaFilter } from "react-icons/fa";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import Card from "@material-ui/core/Card";
+import style2 from "../featured products/featuredProducts.module.css";
+import { useNavigate } from "react-router-dom";
+import { AiOutlineHeart } from "react-icons/ai";
+import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 const Women = () => {
   let dispatch = useDispatch();
+  let navigate = useNavigate();
   let [data, setdata] = useState([]);
   const fetchdata = async () => {
     let { data } = await Cataxios.get("/women");
@@ -44,23 +50,50 @@ const Women = () => {
         </div>
         <div className={style.box}>
           {data.map((data) => {
-            let { productsid, brand, rating, thumbnail_URL, price } = data;
+            let { productsid, brand, rating, thumbnail_URL, price,title} = data;
             return (
-              <div key={productsid}>
-                <img src={thumbnail_URL} alt="" />
-                <p>ID:{productsid}</p>
-                <p>BRAND:{brand}</p>
-                <p>RATING:{rating}</p>
-                <p>PRICE:{price}</p>
-                <button
-                  onClick={() => {
-                    dispatch(addToCart(data));
-                  }}
-                >
-                  Add Cart
-                </button>
-                <button>Buy Now</button>
-              </div>
+              <Card
+                data-aos="zoom-in"
+                data-aos-offset="200"
+                onClick={() => navigate(`/products_page/${productsid}`)}
+                className={style2.productCard}
+                key={productsid}
+                style={{
+                  background: "#efefef",
+                  border: "#d2cdcd 0.1px solid",
+                }}
+              >
+                <div className={style2.cardBody}>
+                  <img src={thumbnail_URL} alt={title} />
+                </div>
+                <div className={style2.cardHeader}>
+                  <span>{rating}⭐</span>
+                  {rating > 4.6 ? <span>Featured</span> : null}
+                </div>
+                <div className={style2.cardFooter}>
+                  <div className={style2.footerLeft}>
+                    <span>{brand}</span>
+                    <span>{title.slice(0, 15) + `...`}</span>
+                    <span>₹{price}</span>
+                  </div>
+                  <div className={style2.footerRight}>
+                    <button
+                      onClick={e => {
+                        e.stopPropagation();
+                        dispatch(addToCart(data));
+                      }}
+                    >
+                      Add to cart
+                    </button>
+                    <AiOutlineHeart
+                      onClick={e => {
+                        e.stopPropagation();
+                        dispatch(addToWishlist(data));
+                      }}
+                    />
+                  </div>
+                </div>
+              </Card>
             );
           })}
         </div>
