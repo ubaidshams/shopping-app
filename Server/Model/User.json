@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> b2951503ea3daff304b94a0f2243baca3f8c3244
 [
   {
     "firstName": "Prashanth",
@@ -62,8 +57,6 @@
     "recently_viewed": [],
     "address_list": [
       {
-<<<<<<< HEAD
-=======
         "0": {
           "house_no": "",
           "street": "",
@@ -73,7 +66,6 @@
           "pincode": "",
           "country": ""
         },
->>>>>>> b2951503ea3daff304b94a0f2243baca3f8c3244
         "street": "Dosa Camp Road",
         "landmark": "Dosa Camp",
         "city": "bangalore",
@@ -86,27 +78,26 @@
     "orderHistory": []
   },
   {
-<<<<<<< HEAD
     "firstName": "Ritheesh",
     "lastName": "kumar",
     "gender": "male",
     "email": "ritheesh@gmail.com",
     "Phno": "3287932849",
     "password": "$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK",
-=======
-    "firstName": "Ubaid",
-    "lastName": "Uz Zaman",
-    "gender": "male",
-    "email": "wahidshams@gmail.com",
-    "Phno": "7022177781",
-    "password": "$2b$10$BuSNcxebPwiVAuPFNA7WTuCYs72Td9KZo4mdF0WQRKUmV0MchPn3a",
->>>>>>> b2951503ea3daff304b94a0f2243baca3f8c3244
     "user_cart": [],
     "user_wishlist": [],
     "recently_viewed": [],
     "address_list": [
       {
-<<<<<<< HEAD
+        "0": {
+          "house_no": "",
+          "street": "",
+          "landmark": "",
+          "city": "",
+          "state": "",
+          "pincode": "",
+          "country": ""
+        },
         "houseNo": "NOa-234",
         "street": "gandhi bazzar",
         "landmark": "Dosa Camp",
@@ -138,35 +129,8 @@
         "pincode": "312313",
         "country": "Karnataka",
         "houseNo": "House No1231"
-=======
-        "0": {
-          "house_no": "",
-          "street": "",
-          "landmark": "",
-          "city": "",
-          "state": "",
-          "pincode": "",
-          "country": ""
-        },
-        "houseNo": "A-201",
-        "street": "Citypark",
-        "landmark": "Adarsh school",
-        "state": "Karnataka",
-        "pincode": "580023",
-        "city": "bangalore",
-        "country": "Karnataka"
->>>>>>> b2951503ea3daff304b94a0f2243baca3f8c3244
       }
     ],
     "orderHistory": []
   }
 ]
-<<<<<<< HEAD
-=======
-=======
-[{"firstName":"Prashanth","lastName":"Kumar","gender":"Male","email":"prashanth@gmail.com","Phno":8967642874,"password":"$2b$10$r3ZTaE29xGwqxEPBh7GZ6OUcpCkYyrl6BADw7MORkJKs2Uq/QZ5B2","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[]},{"firstName":"siddanth","lastName":"","gender":"Male","email":"siddanth@gmail.com","Phno":8967642874,"password":"$2b$10$eYYcd2ZqIJebSA9tcUbiF.tdmEH.mu0cHhhcEM6DjjzwTvkSqH7FS","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[]},{"firstName":"Amruta","lastName":"ammu","gender":"female","email":"amruta@gmail.com","Phno":"8789789981","password":"$2b$10$gFuUIoFUO4yMpM1RM090IOTP68/L22.CfLpmXfP/BaOcUkSteXyEi","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"street":"Dosa Camp Road","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","pincode":"987987","houseNo":"slkdfjskljd","country":"Tamil Nadu"}],"orderHistory":[]},{"firstName":"Ritheesh","lastName":"kumar","gender":"male","email":"ritheesh@gmail.com","Phno":"3287932849","password":"$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"houseNo":"NOa-234","street":"gandhi bazzar","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","country":"Karnataka","pincode":"23234"}],"orderHistory":[]},{"firstName":"Abdul","lastName":"Razeem","gender":"male","email":"abdul@gamil.com","Phno":"2314234234","password":"$2b$10$Xlbe5P//9jk15qr/uxRbm.eXP94Sa8AJUMh6u1A8WFnR1Iq/jR7au","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"Gandhi Bazzar","landmark":"vidharthi Bhavan","city":"bangalore","state":"Karnataka","pincode":"312313","country":"Karnataka","houseNo":"House No1231"}],"orderHistory":[]}]
->>>>>>> 4f00b658cf9213f303874286ab0a96da6ec2b3b1
-=======
-[{"firstName":"Prashanth","lastName":"Kumar","gender":"Male","email":"prashanth@gmail.com","Phno":8967642874,"password":"$2b$10$r3ZTaE29xGwqxEPBh7GZ6OUcpCkYyrl6BADw7MORkJKs2Uq/QZ5B2","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[]},{"firstName":"siddanth","lastName":"","gender":"Male","email":"siddanth@gmail.com","Phno":8967642874,"password":"$2b$10$eYYcd2ZqIJebSA9tcUbiF.tdmEH.mu0cHhhcEM6DjjzwTvkSqH7FS","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[]},{"firstName":"Amruta","lastName":"ammu","gender":"female","email":"amruta@gmail.com","Phno":"8789789981","password":"$2b$10$gFuUIoFUO4yMpM1RM090IOTP68/L22.CfLpmXfP/BaOcUkSteXyEi","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"street":"Dosa Camp Road","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","pincode":"987987","houseNo":"slkdfjskljd","country":"Tamil Nadu"}],"orderHistory":[]},{"firstName":"Ritheesh","lastName":"kumar","gender":"male","email":"ritheesh@gmail.com","Phno":"3287932849","password":"$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"houseNo":"NOa-234","street":"gandhi bazzar","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","country":"Karnataka","pincode":"23234"}],"orderHistory":[]},{"firstName":"Abdul","lastName":"Razeem","gender":"male","email":"abdul@gamil.com","Phno":"2314234234","password":"$2b$10$Xlbe5P//9jk15qr/uxRbm.eXP94Sa8AJUMh6u1A8WFnR1Iq/jR7au","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"Gandhi Bazzar","landmark":"vidharthi Bhavan","city":"bangalore","state":"Karnataka","pincode":"312313","country":"Karnataka","houseNo":"House No1231"}],"orderHistory":[]}]
->>>>>>> 17e5e1eec45e0282429ace08fffe714d87b0d506
->>>>>>> b2951503ea3daff304b94a0f2243baca3f8c3244
