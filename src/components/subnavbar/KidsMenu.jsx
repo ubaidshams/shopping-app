@@ -36,7 +36,7 @@ const KidsMenu = () => {
             <a href="">Inner & Thermals</a>
           </li>
           <li>
-            <a href="">Nightwear & Loungewear</a>
+            <a href="">Nightwear</a>
           </li>
           <li>
             <a href="">Value Packs</a>
@@ -85,7 +85,7 @@ const KidsMenu = () => {
             <a href="">Inner & Thermals</a>
           </li>
           <li>
-            <a href="">Nightwear & Loungewear</a>
+            <a href="">Loungewear</a>
           </li>
           <li>
             <a href="">Value Packs</a>
