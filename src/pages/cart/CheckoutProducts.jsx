@@ -23,10 +23,14 @@ const CheckoutProducts = () => {
   return (
     <div className={styles.checkoutProductContainer}>
       {cart.cartItems.length === 0 ? (
-        <h1>
-          Uh Oh ... Looks like your cart is empty. Please go back an shop some
-          products
-        </h1>
+        <div className={styles.emptyCart}>
+          <img
+            src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90"
+            alt="..."
+          />
+          <h2>Your cart is empty!</h2>
+          <p>It's a good day to buy the items you saved for later!</p>
+        </div>
       ) : (
         uniqueArray.map((product, index) => {
           let {
