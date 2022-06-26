@@ -8,14 +8,15 @@ import ListItemDecorator from "@mui/joy/ListItemDecorator";
 import Typography from "@mui/joy/Typography";
 import Style from "./CartDropdown.module.css";
 import { useSelector } from "react-redux";
-import { Description } from "@material-ui/icons";
+
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import EjectIcon from "@mui/icons-material/Eject";
 
 export default function CartDropdown() {
   let cartItem = useSelector(state => state.cart.cartItems);
+  const currentUser = useSelector(state => state.user.currentUser);
+
   return (
-    <div className={Style.container}>
+    <div className={currentUser.email ? Style.container2 : Style.container}>
       <Box sx={{ width: 200 }}>
         <Typography
           id="ellipsis-list-demo"
@@ -28,7 +29,9 @@ export default function CartDropdown() {
         >
           Cart
         </Typography>
-        <div className={Style.arrowup}></div>
+        <div
+          className={currentUser.email ? Style.arrowup2 : Style.arrowup}
+        ></div>
         <List
           aria-labelledby="ellipsis-list-demo"
           sx={{ "--List-decorator-width": "56px" }}
