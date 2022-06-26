@@ -32,10 +32,10 @@
 .productCard {
   width: 300px;
   height: 450px;
-  /* padding: 20px 15px; */
+
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+
   gap: 15px;
   background-color: #fff;
   border-radius: 10px;
@@ -43,9 +43,8 @@
   cursor: pointer;
 }
 .productCard:hover {
+  transform: scale(1.05);
   box-shadow: 0 0 10px 5px #666;
-  /* 0 0 10px 9px rgb(12, 12, 12) */
-  transform: scale(1.03);
 }
 .cardHeader {
   display: flex;

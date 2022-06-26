@@ -82,6 +82,7 @@ const Auth = () => {
           className={styles.cartIcon}
           onMouseEnter={() => setCart(true)}
           onMouseLeave={() => setCart(false)}
+          style={{ marginRight: "0.6rem" }}
         >
           <AiOutlineShoppingCart />
           <span>{count}</span>
