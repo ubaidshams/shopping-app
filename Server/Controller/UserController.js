@@ -74,13 +74,14 @@ const SignInUser = async (req, res) => {
       //reWrite the user json file
       reWrinteJson();
       // sending refreshToken as cookie to the client
-     
+      res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
       res.cookie("jwt", refreshToken, {
         httpOnly: true,
         secure: true,
         sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000,
       });
+      
       // sending accessToken as reponse to client
       res.json({ message: "success", userData: rest, accessToken });
     } else {
