@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Card, TextField, makeStyles } from "@material-ui/core";
+import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
@@ -122,11 +122,20 @@ const Signup = () => {
 
   return (
     <>
+      <br />
       <motion.div className={clsx(style.formCard)}>
         <h1>Create Your Profile</h1>
         <section>
           One profile ID is all you need to access all KART services. You
-          already have a profile? <a onClick={() => { dispatch(OpenLogin());navigate("/")}}>Find it here </a>
+          already have a profile?{" "}
+          <a
+            onClick={() => {
+              dispatch(OpenLogin());
+              navigate("/");
+            }}
+          >
+            Find it here{" "}
+          </a>
         </section>
         <form onSubmit={handleSubmit}>
           <Card
@@ -318,9 +327,9 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                <MenuItem value={"chennai"}>chennai</MenuItem>
-                <MenuItem value={"bangalore"}>bangalore</MenuItem>
-                <MenuItem value={"mumbai"}>mumbai</MenuItem>
+                <MenuItem value={"chennai"}>Chennai</MenuItem>
+                <MenuItem value={"bangalore"}>Bangalore</MenuItem>
+                <MenuItem value={"mumbai"}>Mumbai</MenuItem>
               </Select>
               <FormHelperText>Select your city</FormHelperText>
             </FormControl>
@@ -370,9 +379,9 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                <MenuItem value={"Tamil Nadu"}>Tamil Nadu</MenuItem>
-                <MenuItem value={"Karnataka"}>Karnataka</MenuItem>
-                <MenuItem value={"Maharastra"}>Maharastra</MenuItem>
+                <MenuItem value={"Tamil Nadu"}>India</MenuItem>
+                <MenuItem value={"Karnataka"}>USA</MenuItem>
+                <MenuItem value={"Maharastra"}>UK</MenuItem>
               </Select>
               <FormHelperText>Select your Country</FormHelperText>
             </FormControl>
@@ -395,7 +404,7 @@ const Signup = () => {
               }}
             ></TextField>
           </Card>
-          <hr />
+
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
@@ -459,12 +468,19 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
           >
             <span
-              style={{ marginLeft: "200px" }}
+              style={{ marginLeft: "300px" }}
               onClick={() => {
                 setModel(!model);
               }}
             >
-              Terms Conditions*
+              <FormControlLabel
+                // className={style.radioGroup}
+                style={{width: '350px'}}
+                value="other"
+                control={<Checkbox />}
+                label="I agree to the Terms Conditions*"
+              />
+             
             </span>
           </Card>
           <Card style={{ marginLeft: "300px" }}>
@@ -488,6 +504,7 @@ const Signup = () => {
           </Card>
         </form>
       </motion.div>
+      <br />
     </>
   );
 };
