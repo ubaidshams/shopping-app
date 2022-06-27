@@ -16,10 +16,10 @@ import { useParams } from "react-router-dom";
 import Cataxios from "./../../apis/Cataxios";
 // import Statements
 import axios from "./../../apis/Cataxios";
-import { addToCart } from "../../features/cart/cartSlice"
-import {useDispatch} from "react-redux"
+import { addToCart } from "../../features/cart/cartSlice";
+import { useDispatch } from "react-redux";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "33.33%",
@@ -55,20 +55,20 @@ const ProductDisplay = () => {
   );
   const [ratings, setRating] = useState(4.9);
   const [price, setPrice] = useState(88);
-    const [brand, setBrand] = useState("Apple");
-    const [product, setProduct] = useState({});
-    const [description, setDescription] = useState("")
+  const [brand, setBrand] = useState("Apple");
+  const [product, setProduct] = useState({});
+  const [description, setDescription] = useState("");
   useEffect(() => {
     const fetchProd = async () => {
       try {
         let { data } = await Cataxios.get(`/allProduct/${id}`);
-        console.log(data)
-          setProduct(data);
-          setPrice(data.price)
-            setDescription(data.description);
-          setBrand(data.brand);
+        console.log(data);
+        setProduct(data);
+        setPrice(data.price);
+        setDescription(data.description);
+        setBrand(data.brand);
         setRating(data.rating);
-        setProductName(data.title)
+        setProductName(data.title);
       } catch (error) {
         console.log(error);
       }
@@ -102,7 +102,7 @@ const ProductDisplay = () => {
               useKeyboardArrows={true}
             >
               {product.productimages_URL &&
-                product.productimages_URL.map(e => {
+                product.productimages_URL.map((e) => {
                   return (
                     <div>
                       <img src={e} alt="watch" />
@@ -176,13 +176,20 @@ const ProductDisplay = () => {
           <br />
           <br />
           <span>
-            Price:<span className={style.priceTag}>${price}</span>
+            Price:<span className={style.priceTag}>₹{price}</span>
             <sup className={style.supScriptPriceTag}>new</sup>
           </span>
           <section className={style.btnContainer}>
             <button className={style.buyNow}>Buy Now</button>
             <br />
-            <button className={style.addToCart} onClick={()=>{dispatch(addToCart(product))}}>Add To Cart</button>
+            <button
+              className={style.addToCart}
+              onClick={() => {
+                dispatch(addToCart(product));
+              }}
+            >
+              Add To Cart
+            </button>
           </section>
           <Accordion className={style.accordion}>
             <AccordionSummary

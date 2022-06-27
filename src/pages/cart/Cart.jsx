@@ -17,6 +17,7 @@ const Cart = () => {
         </div>
       </article>
     </section>
+  
   );
 };
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+
 import CarouselComp from "../../components/Carousel/CarouselComp";
 import FeaturedProducts from "../../components/featured products/FeaturedProducts";
 import Maincategory from "../../components/categories/Maincategory";
