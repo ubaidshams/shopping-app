@@ -9,36 +9,27 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { Link } from "react-router-dom";
 import { orange } from "@mui/material/colors";
-import { toast } from "react-toastify";
 const theme = createTheme({
   palette: {
     primary: {
-      main: orange[400],
+      main: orange[500],
     },
   },
 });
 
-export default function Forget() {
-  let navigate = useNavigate();
-  let [email, setEmail] = useState();
+export default function Reset() {
+  let [newpass, setPass] = useState();
+  let [confirmpassword, setPassword] = useState();
 
-  const handleSubmit = async event => {
+  const handleSubmit = event => {
     event.preventDefault();
-    let { data } = await axios.post(
-      "http://localhost:3001/user/forgot-password",
-      {
-        email,
-      }
-    );
-    if (data.message === "Invalid") toast.error("invalid email");
-    else {
-      toast.success("reset link is sended successfully");
-      setEmail("");
-      navigate("/");
-    }
+    const data = new FormData(event.currentTarget);
+    console.log({
+      newpassword: data.get("newpassword"),
+      confirmpassword: data.get("conpassword"),
+    });
   };
 
   return (
@@ -61,7 +52,7 @@ export default function Forget() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Forget Password
+            Reset Password
           </Typography>
           <Box
             component="form"
@@ -73,22 +64,36 @@ export default function Forget() {
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Your Email"
+              id="newpassword"
+              label="New password"
+              name="Newpassword"
               size="small"
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
+              type="password"
+              value={newpass}
+              onChange={e => setPass(e.target.value)}
             />
-
-            <Button
-              type="submit"
+            <TextField
+              margin="normal"
+              required
               fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              send Reset Link
-            </Button>
+              name="confirmpassword"
+              label="confirm password"
+              type="confirmpassword"
+              id="confirmpassword"
+              autoComplete="current-password"
+              value={confirmpassword}
+              onChange={e => setPassword(e.target.value)}
+            />
+            <Link to="/login">
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Confirm
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Container>

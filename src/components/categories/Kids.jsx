@@ -8,6 +8,7 @@ import { BiSort } from "react-icons/bi";
 import { FaHeart, FaFilter } from "react-icons/fa";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import { Button, Menu, MenuItem, IconButton } from "@mui/material";
 import Card from "@material-ui/core/Card";
 import style2 from "../featured products/featuredProducts.module.css";
 import { useNavigate } from "react-router-dom";
@@ -17,15 +18,33 @@ const Kids = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let [data, setdata] = useState({});
+  const [sorting, setSorting] = useState(null);
+  const [sortingType, setSortType] = useState("");
+  const SortOpen = Boolean(sorting);
   const fetchdata = async () => {
     let { data } = await Cataxios.get("/kids");
     setdata(data);
     console.log(data);
   };
+  function getSorting(){
+    
+  }
   useEffect(() => {
     fetchdata();
-  }, []);
-
+  },[]);
+  useEffect(() => {
+    getSorting()
+  },[sortingType])
+  const handleClick = event => {
+    setSorting(event.currentTarget);
+  };
+  const handleClose = () => {
+    setSorting(null);
+  };
+  const handleSort = (e) => {
+    setSortType(e.target.innerText);
+    handleClose();
+  }
   return (
     <div>
       <div>
@@ -36,9 +55,34 @@ const Kids = () => {
             <p>
               <AiOutlineSearch />
             </p>
-            <p>
+            <IconButton
+              id="demo-positioned-button"
+              aria-controls={SortOpen ? "demo-positioned-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={SortOpen ? "true" : undefined}
+              onClick={handleClick}
+            >
               <BiSort />
-            </p>
+            </IconButton>
+            <Menu
+              id="demo-positioned-menu"
+              aria-labelledby="demo-positioned-button"
+              anchorEl={sorting}
+              open={SortOpen}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              <MenuItem onClick={handleSort}>By Price</MenuItem>
+              <MenuItem onClick={handleSort}>By rating</MenuItem>
+            </Menu>
+
             <p>
               <FaFilter />
             </p>
@@ -53,7 +97,8 @@ const Kids = () => {
         <div className={style.box}>
           {data["Toys"] &&
             data.Toys.map(data => {
-              let { productsid, brand, rating, thumbnail_URL, price,title } = data;
+              let { productsid, brand, rating, thumbnail_URL, price, title } =
+                data;
               return (
                 <Card
                   data-aos="zoom-in"

@@ -1,7 +1,7 @@
 .container {
   position: absolute;
-  top: 70px;
-  left: 72rem;
+  top: 60px;
+  left: 64rem;
   background-color: #e7ecf7;
   color: black;
   z-index: 1000 !important;
@@ -10,8 +10,8 @@
 }
 .container2 {
   position: absolute;
-  top: 70px;
-  left: 80rem;
+  top: 65px;
+  left: 82.7%;
   background-color: #e7ecf7;
   color: black;
   z-index: 1000 !important;

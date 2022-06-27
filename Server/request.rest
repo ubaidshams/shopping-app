@@ -5,3 +5,11 @@ Content-Type: application/json
     "email":"prashanth@gmail.com",
     "password":"hello world"
 }
+
+###
+POST  http://localhost:3001/user/forgot-password
+Content-Type: application/json
+
+{
+    "email":"prashanth@gmail.com"
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -9,17 +9,20 @@ import "aos/dist/aos.css";
 import "react-toastify/dist/ReactToastify.css";
 import SubNavbar from "./components/subnavbar/SubNavbar";
 import Footer from "./components/footer/Footer";
+import PersistentLogin from "./components/PersistentLogin/PersistentLogin";
 
 const App = () => {
   AOS.init({ once: true });
   return (
     <div>
       <Router>
-        <ToastContainer />
-        <Navbar />
-        <SubNavbar />
-        <CustomRoutes />
-        <Footer />
+        <PersistentLogin>
+          <ToastContainer />
+          <Navbar />
+          <SubNavbar />
+          <CustomRoutes />
+          <Footer />
+        </PersistentLogin>
       </Router>
     </div>
   );

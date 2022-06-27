@@ -18,6 +18,7 @@ import Beauty from "../components/categories/Beauty";
 
 import Wishlist from "../pages/wishlist/Wishlist";
 import Profile from "./../pages/profile/Profile";
+import Reset from "../pages/auth/users/Reset";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -35,6 +36,10 @@ const CustomRoutes = () => {
     {
       path: "/forgot",
       element: <Forget />,
+    },
+    {
+      path: "/reset",
+      element: <Reset />,
     },
     {
       path: "/cart",
