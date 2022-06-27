@@ -21,7 +21,7 @@ const App = () => {
           <Navbar />
           <SubNavbar />
           <CustomRoutes />
-          {/* <Footer /> */}
+          <Footer />
         </PersistentLogin>
       </Router>
     </div>

@@ -461,7 +461,6 @@ const Signup = () => {
               }}
             ></TextField>
           </Card>
-          <hr />
           <Card
             className={clsx(style.formCardContainer, style.Checkbox)}
             elevation={0}
@@ -491,7 +490,6 @@ const Signup = () => {
               />
             )}
           </Card>
-          <hr />
 
           <Card
             elevation={0}
