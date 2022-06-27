@@ -63,12 +63,16 @@ const Auth = () => {
 
   const handleSubmit = async e => {
     // e.preventDefault();
-    let { data } = await axios.post("http://localhost:3001/user/signIn", {
-      email: values.email,
-      password: values.password,
-    });
+    let { data } = await axios.post(
+      "http://localhost:3001/user/signIn",
+      {
+        email: values.email,
+        password: values.password,
+      },
+      { withCredentials: true }
+    );
     if (data.message == "success") {
-      dispatch(createCurrentUser(data.userData));
+      dispatch(createCurrentUser({currentUser:data.userData,token:data.accessToken}));
       dispatch(CloseLogin());
       toast.success("successfully logged in");
     } else toast.error("Invalid password or Email");

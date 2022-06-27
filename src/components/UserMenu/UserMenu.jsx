@@ -15,9 +15,13 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import {useDispatch} from "react-redux"
+import { createCurrentUser } from "../../features/User/userSlice";
 
 export default function UserMenu({ user }) {
   const [anchorEl, setAnchorEl] = useState(null);
+  const dispatch = useDispatch();
   const open = Boolean(anchorEl);
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -25,6 +29,18 @@ export default function UserMenu({ user }) {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleLogOut = async () => {
+    try {
+      await axios.get("http://localhost:3001/user/logout", { withCredentials:true});
+    }
+    catch (error) {
+      console.log(error);
+    } finally {
+      dispatch(createCurrentUser({token:"",currentUser:{}}))
+      
+    }
+
+  }
   let navigate = useNavigate();
   return (
     <>
@@ -94,7 +110,7 @@ export default function UserMenu({ user }) {
           </ListItemIcon>
           Your Orders
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleLogOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
