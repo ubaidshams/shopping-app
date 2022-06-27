@@ -3,9 +3,10 @@
   /* background-color: red; */
   margin: 20px auto;
   
-  height: 90vh;
+  /* height: 90vh; */
   padding: 20px;
-  /* box-shadow: 0 5px 15px gray; */
+  box-shadow: 0 5px 15px gray;
+  border-radius: 80px;
   /* position: absolute; */
 }
 .formCard h1 {
@@ -63,7 +64,7 @@ hr {
 /* btn */
 .bn5 {
   /* width: 100%; */
-  padding: 20px;
+  padding: 20px 100px;
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
