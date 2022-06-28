@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
@@ -20,6 +20,7 @@ import axios from "axios";
 import {toast} from "react-toastify"
 import {useDispatch} from "react-redux"
 import { OpenLogin } from "../../../features/Login/LoginSlice";
+import { Country, State, City } from "country-state-city";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -65,6 +66,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Signup = () => {
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -91,7 +94,31 @@ const Signup = () => {
       country: "",
     },
   );
+  const [allCountries, setAllCountries] = useState([]);
+  const [countryCode, setCountryCode] = useState('IN');
+  const [allStates, setAllStates] = useState([]);
+  const [allCity, setAllcity] = useState([])
   // const navigate = useNavigate()
+
+
+   useEffect(() => {
+     let allCountriesData = Country.getAllCountries().map(countryData => {
+       return countryData.name;
+     });
+     setAllCountries(allCountriesData)
+   }, []);
+  
+  
+  function enableStateDropDown(countryCode1) {
+    let allStatesData = State.getStatesOfCountry(`${countryCode1}`);
+    setAllStates(allStatesData);
+  }
+
+  function enableCityDropDown(stateCode1) {
+    let allCityData = City.getCitiesOfState(countryCode, stateCode1);
+    setAllcity(allCityData);
+  }
+  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -307,6 +334,88 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
+            {/* country */}
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                Country
+              </InputLabel>
+              {/* select country code */}
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={address.country}
+                required
+                onChange={e => {
+                  setAddress({ ...address, country: e.target.value });
+                  // set country code
+                  let countryCode1 = "";
+                  Country.getAllCountries().map(countryData => {
+                    if (countryData.name == e.target.value) {
+                      setCountryCode(countryData.isoCode);
+                      countryCode1 = countryData.isoCode;
+                    }
+                  });
+
+                  enableStateDropDown(countryCode1);
+                }}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value=""></MenuItem>
+                {allCountries.map((countryName,i) => {
+                  return (
+                    <MenuItem value={`${countryName}`} key={`${i}`}>
+                      {`${countryName}`}
+                    </MenuItem>
+                  );
+                })}
+              </Select>
+              <FormHelperText>Select your Country</FormHelperText>
+            </FormControl>
+
+            {/* state */}
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                State
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-placeholder-label-label"
+                id="demo-simple-select-placeholder-label"
+                value={address.state}
+                required
+                onChange={e => {
+                  setAddress({ ...address, state: e.target.value });
+                  // set state code
+                  let stateCode1 = "";
+                  State.getStatesOfCountry(`${countryCode}`).map(stateData => {
+                    if (stateData.name == e.target.value) {
+                      stateCode1 = stateData.isoCode;
+                    }
+                  });
+
+                  enableCityDropDown(stateCode1);
+                }}
+                displayEmpty
+                className={classes.selectEmpty}
+              >
+                <MenuItem value=""></MenuItem>
+                {allStates.map((stateName,j) => {
+                  return (
+                    <MenuItem
+                      value={`${stateName.name}`}
+                      key={`${j}`}
+                    >{`${stateName.name}`}</MenuItem>
+                  );
+                })}
+              </Select>
+              <FormHelperText>Select your State</FormHelperText>
+            </FormControl>
             {/* cities */}
             <FormControl className={classes.formControl}>
               <InputLabel
@@ -327,63 +436,16 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                <MenuItem value={"chennai"}>Chennai</MenuItem>
-                <MenuItem value={"bangalore"}>Bangalore</MenuItem>
-                <MenuItem value={"mumbai"}>Mumbai</MenuItem>
+                {allCity.map((cityName,k) => {
+                  return (
+                    <MenuItem
+                      value={`${cityName.name}`}
+                      key={`${k}`}
+                    >{`${cityName.name}`}</MenuItem>
+                  );
+                })}
               </Select>
               <FormHelperText>Select your city</FormHelperText>
-            </FormControl>
-            {/* state */}
-            <FormControl className={classes.formControl}>
-              <InputLabel
-                shrink
-                id="demo-simple-select-placeholder-label-label"
-              >
-                State
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-placeholder-label-label"
-                id="demo-simple-select-placeholder-label"
-                value={address.state}
-                required
-                onChange={e => {
-                  setAddress({ ...address, state: e.target.value });
-                }}
-                displayEmpty
-                className={classes.selectEmpty}
-              >
-                <MenuItem value=""></MenuItem>
-                <MenuItem value={"Tamil Nadu"}>Tamil Nadu</MenuItem>
-                <MenuItem value={"Karnataka"}>Karnataka</MenuItem>
-                <MenuItem value={"Maharastra"}>Maharastra</MenuItem>
-              </Select>
-              <FormHelperText>Select your State</FormHelperText>
-            </FormControl>
-            {/* country */}
-            <FormControl className={classes.formControl}>
-              <InputLabel
-                shrink
-                id="demo-simple-select-placeholder-label-label"
-              >
-                Country
-              </InputLabel>
-              <Select
-                labelId="demo-simple-select-placeholder-label-label"
-                id="demo-simple-select-placeholder-label"
-                value={address.country}
-                required
-                onChange={e => {
-                  setAddress({ ...address, country: e.target.value });
-                }}
-                displayEmpty
-                className={classes.selectEmpty}
-              >
-                <MenuItem value=""></MenuItem>
-                <MenuItem value={"Tamil Nadu"}>India</MenuItem>
-                <MenuItem value={"Karnataka"}>USA</MenuItem>
-                <MenuItem value={"Maharastra"}>UK</MenuItem>
-              </Select>
-              <FormHelperText>Select your Country</FormHelperText>
             </FormControl>
           </Card>
           <Card
@@ -474,12 +536,11 @@ const Signup = () => {
             >
               <FormControlLabel
                 // className={style.radioGroup}
-                style={{width: '350px'}}
+                style={{ width: "350px" }}
                 value="other"
                 control={<Checkbox />}
                 label="I agree to the Terms Conditions*"
               />
-             
             </span>
           </Card>
           <Card style={{ marginLeft: "300px" }}>
