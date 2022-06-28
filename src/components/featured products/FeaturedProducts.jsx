@@ -10,6 +10,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 import Card from "@material-ui/core/Card";
+import { Button } from "@mui/material";
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
@@ -78,14 +79,16 @@ const FeaturedProducts = () => {
                       <span>₹{price}</span>
                     </div>
                     <div className={styles.footerRight}>
-                      <button
+                      <Button
+                        variant="outlined"
+                        size="small"
                         onClick={e => {
                           e.stopPropagation();
                           dispatch(addToCart(product));
                         }}
                       >
                         Add to cart
-                      </button>
+                      </Button>
                       <AiOutlineHeart
                         onClick={e => {
                           e.stopPropagation();

@@ -2,7 +2,7 @@
   width: 60vw;
   /* background-color: red; */
   margin: 20px auto;
-  
+
   /* height: 90vh; */
   padding: 20px;
   box-shadow: 0 5px 15px gray;
@@ -68,27 +68,16 @@ hr {
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
-  background: #ED7501;
+  background: #ed7501;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
 }
 
-.bn5:before{
+.bn5:before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background-color: #ec8a2f;
   position: absolute;
   top: -2px;
   left: -2px;
@@ -116,14 +105,14 @@ hr {
 }
 
 .bn5:active {
-  color: #ED7501;
+  color: #ed7501;
 }
 
-.bn5:active:after{
+.bn5:active:after {
   background: transparent;
 }
 
-.bn5:hover:before{
+.bn5:hover:before {
   opacity: 1;
 }
 
@@ -133,14 +122,12 @@ hr {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #ED7501;
+  background: #ed7501;
   left: 0;
   top: 0;
   border-radius: 10px;
 }
 
-
-
-.Checkbox{
+.Checkbox {
   margin-left: -5px;
 }
