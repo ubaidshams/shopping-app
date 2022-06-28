@@ -40,12 +40,19 @@ h1 {
 .block {
   display: flex;
   height: 10vh;
-  width: 60%;
+  width: 70%;
   margin: 10px auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
+.block>div{
+  width:10rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .block input {
   width: 400px;
   height: 8vh;

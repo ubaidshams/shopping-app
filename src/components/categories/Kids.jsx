@@ -8,12 +8,13 @@ import { BiSort } from "react-icons/bi";
 import { FaHeart, FaFilter } from "react-icons/fa";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch } from "react-redux";
-import { Button, Menu, MenuItem, IconButton } from "@mui/material";
+import { Button, Menu, MenuItem, IconButton, Chip } from "@mui/material";
 import Card from "@material-ui/core/Card";
 import style2 from "../featured products/featuredProducts.module.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
+import FilterDialog from "../FilterPopUp/FilterDialog";
 const Kids = () => {
   let dispatch = useDispatch();
   let navigate = useNavigate();
@@ -21,30 +22,45 @@ const Kids = () => {
   const [sorting, setSorting] = useState(null);
   const [sortingType, setSortType] = useState("");
   const SortOpen = Boolean(sorting);
+  const [openFilter, setFilter] = useState(false);
   const fetchdata = async () => {
     let { data } = await Cataxios.get("/kids");
     setdata(data);
     console.log(data);
   };
-  function getSorting(){
-    
+  function getSorting() {
+    if (sortingType == "") return;
+    console.log(typeof sortingType);
+    let value = sortingType.split(" ")[1].toLowerCase();
+    let dataValue = data["Toys"]
+      .slice(0, data.length)
+      .sort((a, b) => (a[value] < b[value] ? 1 : -1));
+    console.log(dataValue);
+    console.log(data);
+    setdata({ ...data, Toys: dataValue });
   }
   useEffect(() => {
     fetchdata();
-  },[]);
+  }, []);
   useEffect(() => {
-    getSorting()
-  },[sortingType])
+    getSorting();
+  }, [sortingType]);
   const handleClick = event => {
     setSorting(event.currentTarget);
   };
   const handleClose = () => {
     setSorting(null);
   };
-  const handleSort = (e) => {
+  const handleDelete = () => {
+    let newData = [...data.Toys];
+    newData.sort((a, b) => (a.productsid > a.productsid ? -1 : 1));
+    setdata({ ...data, Toys: newData });
+    setSortType("");
+  };
+  const handleSort = e => {
     setSortType(e.target.innerText);
     handleClose();
-  }
+  };
   return (
     <div>
       <div>
@@ -52,18 +68,28 @@ const Kids = () => {
           <h1>Kids Category</h1>
           <div className={style.block}>
             <input type="text" name="" id="" placeholder="Search " />
-            <p>
+            <div>
               <AiOutlineSearch />
-            </p>
-            <IconButton
-              id="demo-positioned-button"
-              aria-controls={SortOpen ? "demo-positioned-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={SortOpen ? "true" : undefined}
-              onClick={handleClick}
-            >
-              <BiSort />
-            </IconButton>
+            </div>
+            <div>
+              <IconButton
+                id="demo-positioned-button"
+                aria-controls={SortOpen ? "demo-positioned-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={SortOpen ? "true" : undefined}
+                color="primary"
+                onClick={handleClick}
+              >
+                <BiSort />
+              </IconButton>
+              {sortingType !== "" && (
+                <Chip
+                  variant="filled"
+                  onDelete={handleDelete}
+                  label={sortingType}
+                />
+              )}
+            </div>
             <Menu
               id="demo-positioned-menu"
               aria-labelledby="demo-positioned-button"
@@ -83,12 +109,19 @@ const Kids = () => {
               <MenuItem onClick={handleSort}>By rating</MenuItem>
             </Menu>
 
-            <p>
-              <FaFilter />
-            </p>
-            <p>
+            <div>
+              <IconButton
+                onClick={() => setFilter(true)}
+                aria-haspopup="true"
+                color="primary"
+              >
+                <FaFilter />
+              </IconButton>
+              <FilterDialog openFilter={openFilter} setFilter={setFilter} />
+            </div>
+            <div>
               <FaHeart />
-            </p>
+            </div>
           </div>
         </div>
         <div>
@@ -125,14 +158,16 @@ const Kids = () => {
                       <span>₹{price}</span>
                     </div>
                     <div className={style2.footerRight}>
-                      <button
+                      <Button
+                        size="small"
+                        varient="outlined"
                         onClick={e => {
                           e.stopPropagation();
                           dispatch(addToCart(data));
                         }}
                       >
                         Add to cart
-                      </button>
+                      </Button>
                       <AiOutlineHeart
                         onClick={e => {
                           e.stopPropagation();
