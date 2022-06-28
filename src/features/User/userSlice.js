@@ -14,7 +14,7 @@ const userSlice = createSlice({
       state.currentUser = { ...currentUser };
       state.token = refreshToken;
     },
-  },
+  }
 });
 
 export default userSlice.reducer;

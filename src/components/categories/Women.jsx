@@ -13,6 +13,7 @@ import style2 from "../featured products/featuredProducts.module.css";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
+import { Button } from "@mui/material";
 
 const Women = () => {
   let dispatch = useDispatch();
@@ -34,18 +35,18 @@ const Women = () => {
           <h1>Mens Category</h1>
           <div className={style.block}>
             <input type="text" name="" id="" placeholder="Search " />
-            <p>
+            <div>
               <AiOutlineSearch />
-            </p>
-            <p>
+            </div>
+            <div>
               <BiSort />
-            </p>
-            <p>
+            </div>
+            <div>
               <FaFilter />
-            </p>
-            <p>
+            </div>
+            <div>
               <FaHeart />
-            </p>
+            </div>
           </div>
         </div>
         <div className={style.box}>
@@ -77,14 +78,16 @@ const Women = () => {
                     <span>₹{price}</span>
                   </div>
                   <div className={style2.footerRight}>
-                    <button
+                    <Button
+                      size="small"
+                      varient="outlined"
                       onClick={e => {
                         e.stopPropagation();
                         dispatch(addToCart(data));
                       }}
                     >
                       Add to cart
-                    </button>
+                    </Button>
                     <AiOutlineHeart
                       onClick={e => {
                         e.stopPropagation();
