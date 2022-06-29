@@ -35,6 +35,8 @@ const Profile = () => {
     setLocations(true);
   };
 
+  console.log(gender);
+
   return (
     <section className={Avatar.section}>
       <h1>My Account</h1>
@@ -51,10 +53,10 @@ const Profile = () => {
               <img
                 className={Avatar.img}
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIIeNZ-NOv0PRSi8eRp5eeBsJKTpr5AMatrg&usqp=CAU"
-                alt=""
+                alt="username"
               />
             )}
-            <h1>User Name</h1>
+            <h1>{`${firstName}`}</h1>
 
             <div className={Avatar.info}>
               <li onClick={() => setManage("personal")}>Profile Information</li>
@@ -66,7 +68,7 @@ const Profile = () => {
           <div className={Avatar.details}>
             {manage === "personal" ? (
               <>
-                <div>
+                <div style={{paddingTop: "10px"}}>
                   <lable>First Name:</lable>
                   <input
                     type="text"
@@ -94,7 +96,7 @@ const Profile = () => {
                     name="gender"
                     value="male"
                     onClick={changeOption}
-                    checked={"Male" == gender}
+                    checked={"male" == gender}
                     disabled={true}
                   />
                   <label htmlFor="male">Male</label>

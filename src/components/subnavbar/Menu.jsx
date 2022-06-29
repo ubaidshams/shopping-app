@@ -1,17 +1,14 @@
-import React from 'react'
-import MenMenu from './MenMenu';
-import Style  from './menu.module.css';
-import WomenMenu from './WomenMenu';
-import KidsMenu from './KidsMenu';
+import React from "react";
+import MenMenu from "./MenMenu";
+import Style from "./menu.module.css";
+import WomenMenu from "./WomenMenu";
+import KidsMenu from "./KidsMenu";
 import Electronic from "./Electronic";
-import Beauty from './Beauty';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-
+import Beauty from "./Beauty";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Menu = () => {
- 
- 
   return (
     <div className={Style.menuBlock}>
       <nav>
@@ -58,6 +55,6 @@ const Menu = () => {
       </nav>
     </div>
   );
-}
+};
 
-export default Menu
+export default Menu;

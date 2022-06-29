@@ -34,7 +34,7 @@ const CustomRoutes = () => {
       element: <Signup />,
     },
     {
-      path: "/forgot",
+      path: "/forgot", 
       element: <Forget />,
     },
     {
