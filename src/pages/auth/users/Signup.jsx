@@ -79,7 +79,7 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
-  const [btnCondition, setBtnCondition] = useState(true);
+  const [btnCondition, setBtnCondition] = useState(false);
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [number2, setNumber2] = useState();
@@ -365,7 +365,7 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                {allCountries.map((countryName,i) => {
+                {allCountries.map((countryName, i) => {
                   return (
                     <MenuItem value={`${countryName}`} key={`${i}`}>
                       {`${countryName}`}
@@ -405,7 +405,7 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                {allStates.map((stateName,j) => {
+                {allStates.map((stateName, j) => {
                   return (
                     <MenuItem
                       value={`${stateName.name}`}
@@ -436,7 +436,7 @@ const Signup = () => {
                 className={classes.selectEmpty}
               >
                 <MenuItem value=""></MenuItem>
-                {allCity.map((cityName,k) => {
+                {allCity.map((cityName, k) => {
                   return (
                     <MenuItem
                       value={`${cityName.name}`}
@@ -538,6 +538,8 @@ const Signup = () => {
                 // className={style.radioGroup}
                 style={{ width: "350px" }}
                 value="other"
+                checked={btnCondition}
+                onClick={()=> setModel()}
                 control={<Checkbox />}
                 label="I agree to the Terms Conditions*"
               />
