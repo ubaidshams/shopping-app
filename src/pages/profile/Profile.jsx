@@ -68,7 +68,7 @@ const Profile = () => {
           <div className={Avatar.details}>
             {manage === "personal" ? (
               <>
-                <div>
+                <div style={{paddingTop: "10px"}}>
                   <lable>First Name:</lable>
                   <input
                     type="text"
