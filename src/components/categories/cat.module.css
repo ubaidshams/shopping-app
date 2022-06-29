@@ -52,6 +52,14 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+.subHeading{
+  margin:3rem 0rem;
+  padding-left:6.2rem;
+  font-size:1.8rem;
+  text-transform: capitalize;
+  text-align:center;
+
+}
 
 .block input {
   width: 400px;

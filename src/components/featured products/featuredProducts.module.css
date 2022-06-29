@@ -23,6 +23,7 @@
   height: inherit;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
   background-color: #ddd; /*Dark--->transparent*/
   margin: auto;
