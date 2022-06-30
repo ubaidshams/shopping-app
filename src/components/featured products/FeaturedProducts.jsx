@@ -9,9 +9,12 @@ import PaginationComp from "../pagination/PaginationComp";
 import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
+
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
 import CalculateOffer from "../Offer Helper Components/CalculateOffer";
+import StarRatings from "../starRating/StarRatings";
+
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
@@ -70,8 +73,11 @@ const FeaturedProducts = () => {
                     <img src={thumbnailURL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
-                    <span>{rating}⭐</span>
-                    {rating > 4.6 ? <span>Featured</span> : null}
+                    <span>
+                      <StarRatings rating={rating}/>
+                    </span>
+                    {/* <span>{rating}⭐</span> */}
+                    {/* {rating > 4.6 ? <span>Featured</span> : null} */}
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
