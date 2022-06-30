@@ -128,16 +128,16 @@ const Auth = () => {
           }}
         >
           <h1>Login</h1>
-          <span>or</span>
+          {/* <span>or</span>
           <a
             onClick={() => {
               navigate("/signup");
               dispatch(CloseLogin());
             }}
-            style={{ textDecoration: "underLine" }}
+            style={{ textDecoration: "underLine", cursor: "pointer" }}
           >
             create a account
-          </a>
+          </a> */}
         </div>
         <DialogContent>
           <Box
@@ -201,17 +201,27 @@ const Auth = () => {
         </DialogContent>
         <div
           style={{
-            display: "grid",
+            display: "flex",
             placeItems: "center",
             marginBottom: "1.5rem",
+            justifyContent: "space-evenly"
           }}
         >
+          <a
+            onClick={() => {
+              navigate("/signup");
+              dispatch(CloseLogin());
+            }}
+            style={{ cursor: "pointer", color: "blue" }}
+          >
+            create a account
+          </a>
           <a
             onClick={() => {
               navigate("/forgot");
               dispatch(CloseLogin());
             }}
-            style={{ textDecoration: "underLine" }}
+            style={{ textDecoration: "underLine", cursor: "pointer" }}
           >
             Forgot Password?
           </a>

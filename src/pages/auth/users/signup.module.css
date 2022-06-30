@@ -22,6 +22,7 @@
 .formCard section a {
   color: #0070c9;
   text-decoration: none;
+  cursor: pointer;
 }
 .formCard section a::after {
   content: ">";
