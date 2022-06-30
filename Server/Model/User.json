@@ -1,1 +1,236 @@
-[{"firstName":"siddanth","lastName":"","gender":"male","email":"siddanth@gmail.com","Phno":8967642874,"password":"$2b$10$eYYcd2ZqIJebSA9tcUbiF.tdmEH.mu0cHhhcEM6DjjzwTvkSqH7FS","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[]},{"firstName":"Amruta","lastName":"ammu","gender":"female","email":"amruta@gmail.com","Phno":"8789789981","password":"$2b$10$gFuUIoFUO4yMpM1RM090IOTP68/L22.CfLpmXfP/BaOcUkSteXyEi","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"street":"Dosa Camp Road","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","pincode":"987987","houseNo":"slkdfjskljd","country":"Tamil Nadu"}],"orderHistory":[]},{"firstName":"Ritheesh","lastName":"kumar","gender":"male","email":"ritheesh@gmail.com","Phno":"3287932849","password":"$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"0":{"house_no":"","street":"","landmark":"","city":"","state":"","pincode":"","country":""},"houseNo":"NOa-234","street":"gandhi bazzar","landmark":"Dosa Camp","city":"bangalore","state":"Karnataka","country":"Karnataka","pincode":"23234"}],"orderHistory":[]},{"firstName":"Abdul","lastName":"Razeem","gender":"male","email":"abdul@gamil.com","Phno":"2314234234","password":"$2b$10$Xlbe5P//9jk15qr/uxRbm.eXP94Sa8AJUMh6u1A8WFnR1Iq/jR7au","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"Gandhi Bazzar","landmark":"vidharthi Bhavan","city":"bangalore","state":"Karnataka","pincode":"312313","country":"Karnataka","houseNo":"House No1231"}],"orderHistory":[]},{"firstName":"Rich","lastName":"anto","gender":"male","email":"fdsfdfdf@etgdg.com","Phno":"3646247863284","password":"$2b$10$PdBULV8c4OtDpiAj2eeE7ehZGr/5THnzU3xvHHRQgrl6tq73JNOmi","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"23213213213fsdfsdfsdfsdf","landmark":"dfdsfsdfsdfdsf","city":"chennai","state":"Tamil Nadu","pincode":"54353453","country":"Tamil Nadu","houseNo":"312321321321321"}],"orderHistory":[]},{"firstName":"jai","lastName":"kumar","gender":"male","email":"jaikumar@gmail","Phno":"213123123","password":"$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"thomsan ","landmark":"sdfsdf","city":"bangalore","state":"Karnataka","pincode":"32342","country":"Tamil Nadu","houseNo":"No:12d "}],"orderHistory":[],"refreshToken":""},{"firstName":"Sandeep","lastName":"Suryaprasad","gender":"male","email":"sandeep.gs@testyantra.com","Phno":"9663004003","password":"$2b$10$5c8OlMOWg3boA4RlopdckuFiDbk08LYfFkDNSUE.9S040QpI8J0oi","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"123","landmark":"kathriguppe","city":"Mandya","state":"Karnataka","pincode":"571401","country":"India","houseNo":"301"}],"orderHistory":[],"refreshToken":""},{"firstName":"Ubaid","lastName":"Uz Zaman","gender":"male","email":"wahidshams@gmail.com","Phno":"7022177781","password":"$2b$10$.dG9ZVzx.Ji6k4HLN9J81Ob0JAprpsulWhgvl5Kmf2VNNjqKIlCFu","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":"","street":"CityPark","landmark":"Adarsh School","city":"bangalore","state":"Karnataka","pincode":"560029","country":"Tamil Nadu","houseNo":"A-201, Midmac Regency"}],"orderHistory":[],"refreshToken":""},{"firstName":"Prashanth","lastName":"Kumar","gender":"male","email":"prashanth@gmail.com","Phno":8967642874,"password":"$2b$10$r3ZTaE29xGwqxEPBh7GZ6OUcpCkYyrl6BADw7MORkJKs2Uq/QZ5B2","user_cart":[],"user_wishlist":[],"recently_viewed":[],"address_list":[{"house_no":0,"street":"","landmark":"","city":"Bangalore","state":"Karnataka","country":"India","pincode":32234}],"orderHistory":[],"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InByYXNoYW50aEBnbWFpbC5jb20iLCJpYXQiOjE2NTY0OTY4NDcsImV4cCI6MTY1NjU4MzI0N30.i5wydxA_ehwtjYOnB7B5kxF3BJUrUvVcZCO9a-fZQe8"}]
+[
+  {
+    "firstName": "siddanth",
+    "lastName": "",
+    "gender": "male",
+    "email": "siddanth@gmail.com",
+    "Phno": 8967642874,
+    "password": "$2b$10$eYYcd2ZqIJebSA9tcUbiF.tdmEH.mu0cHhhcEM6DjjzwTvkSqH7FS",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": 0,
+        "street": "",
+        "landmark": "",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": 32234
+      }
+    ],
+    "orderHistory": []
+  },
+  {
+    "firstName": "Amruta",
+    "lastName": "ammu",
+    "gender": "female",
+    "email": "amruta@gmail.com",
+    "Phno": "8789789981",
+    "password": "$2b$10$gFuUIoFUO4yMpM1RM090IOTP68/L22.CfLpmXfP/BaOcUkSteXyEi",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "0": {
+          "house_no": "",
+          "street": "",
+          "landmark": "",
+          "city": "",
+          "state": "",
+          "pincode": "",
+          "country": ""
+        },
+        "street": "Dosa Camp Road",
+        "landmark": "Dosa Camp",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "pincode": "987987",
+        "houseNo": "slkdfjskljd",
+        "country": "Tamil Nadu"
+      }
+    ],
+    "orderHistory": []
+  },
+  {
+    "firstName": "Ritheesh",
+    "lastName": "kumar",
+    "gender": "male",
+    "email": "ritheesh@gmail.com",
+    "Phno": "3287932849",
+    "password": "$2b$10$hAvtmFnwDRCA4Oj8VVixEeeTZhYorZhkqorqeAhi70kR75FRrNlWK",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "0": {
+          "house_no": "",
+          "street": "",
+          "landmark": "",
+          "city": "",
+          "state": "",
+          "pincode": "",
+          "country": ""
+        },
+        "houseNo": "NOa-234",
+        "street": "gandhi bazzar",
+        "landmark": "Dosa Camp",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "country": "Karnataka",
+        "pincode": "23234"
+      }
+    ],
+    "orderHistory": []
+  },
+  {
+    "firstName": "Abdul",
+    "lastName": "Razeem",
+    "gender": "male",
+    "email": "abdul@gamil.com",
+    "Phno": "2314234234",
+    "password": "$2b$10$Xlbe5P//9jk15qr/uxRbm.eXP94Sa8AJUMh6u1A8WFnR1Iq/jR7au",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": "",
+        "street": "Gandhi Bazzar",
+        "landmark": "vidharthi Bhavan",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "pincode": "312313",
+        "country": "Karnataka",
+        "houseNo": "House No1231"
+      }
+    ],
+    "orderHistory": []
+  },
+  {
+    "firstName": "Rich",
+    "lastName": "anto",
+    "gender": "male",
+    "email": "fdsfdfdf@etgdg.com",
+    "Phno": "3646247863284",
+    "password": "$2b$10$PdBULV8c4OtDpiAj2eeE7ehZGr/5THnzU3xvHHRQgrl6tq73JNOmi",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": "",
+        "street": "23213213213fsdfsdfsdfsdf",
+        "landmark": "dfdsfsdfsdfdsf",
+        "city": "chennai",
+        "state": "Tamil Nadu",
+        "pincode": "54353453",
+        "country": "Tamil Nadu",
+        "houseNo": "312321321321321"
+      }
+    ],
+    "orderHistory": []
+  },
+  {
+    "firstName": "jai",
+    "lastName": "kumar",
+    "gender": "male",
+    "email": "jaikumar@gmail",
+    "Phno": "213123123",
+    "password": "$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": "",
+        "street": "thomsan ",
+        "landmark": "sdfsdf",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "pincode": "32342",
+        "country": "Tamil Nadu",
+        "houseNo": "No:12d "
+      }
+    ],
+    "orderHistory": [],
+    "refreshToken": ""
+  },
+  {
+    "firstName": "Sandeep",
+    "lastName": "Suryaprasad",
+    "gender": "male",
+    "email": "sandeep.gs@testyantra.com",
+    "Phno": "9663004003",
+    "password": "$2b$10$5c8OlMOWg3boA4RlopdckuFiDbk08LYfFkDNSUE.9S040QpI8J0oi",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": "",
+        "street": "123",
+        "landmark": "kathriguppe",
+        "city": "Mandya",
+        "state": "Karnataka",
+        "pincode": "571401",
+        "country": "India",
+        "houseNo": "301"
+      }
+    ],
+    "orderHistory": [],
+    "refreshToken": ""
+  },
+  {
+    "firstName": "Prashanth",
+    "lastName": "Kumar",
+    "gender": "male",
+    "email": "prashanth@gmail.com",
+    "Phno": 8967642874,
+    "password": "$2b$10$r3ZTaE29xGwqxEPBh7GZ6OUcpCkYyrl6BADw7MORkJKs2Uq/QZ5B2",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": 0,
+        "street": "",
+        "landmark": "",
+        "city": "Bangalore",
+        "state": "Karnataka",
+        "country": "India",
+        "pincode": 32234
+      }
+    ],
+    "orderHistory": [],
+    "refreshToken": ""
+  },
+  {
+    "firstName": "Ubaid",
+    "lastName": "Uz Zaman",
+    "gender": "male",
+    "email": "wahidshams@gmail.com",
+    "Phno": "7022177781",
+    "password": "$2b$10$.dG9ZVzx.Ji6k4HLN9J81Ob0JAprpsulWhgvl5Kmf2VNNjqKIlCFu",
+    "user_cart": [],
+    "user_wishlist": [],
+    "recently_viewed": [],
+    "address_list": [
+      {
+        "house_no": "",
+        "street": "CityPark",
+        "landmark": "Adarsh School",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "pincode": "560029",
+        "country": "Tamil Nadu",
+        "houseNo": "A-201, Midmac Regency"
+      }
+    ],
+    "orderHistory": [],
+    "refreshToken": ""
+  }
+]

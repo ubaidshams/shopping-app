@@ -6,7 +6,7 @@ import CategoriesComp from "./CategoriesComp";
 const Menpage = () => {
   let [data, setdata] = useState({});
   const fetchdata = async () => {
-    let { data } = await Cataxios.get("/mens");
+    let { data } = await Cataxios.get("/men");
     setdata(data);
   };
   useEffect(() => {

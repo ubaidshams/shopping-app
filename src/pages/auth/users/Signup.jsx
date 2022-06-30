@@ -75,14 +75,13 @@ const Signup = () => {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("nopassword");
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
   const [btnCondition, setBtnCondition] = useState(false);
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
-  const [number2, setNumber2] = useState();
   const [address, setAddress] = useState(
     {
       house_no: "",
@@ -131,6 +130,7 @@ const Signup = () => {
       Phno: number1,
       address_list: [address],
     };
+console.log("dskfjsdkj")
     setPayload(currPayload);
     console.log(payload);
 
@@ -255,22 +255,7 @@ const Signup = () => {
             ></TextField>
           </Card>
           {/* number2 optional */}
-          <Card
-            elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            className={style.formCardContainer}
-          >
-            <TextField
-              className={classes.formTextFieldOther}
-              size="small"
-              label="Phone Number(optional)"
-              placeholder="9856412537"
-              id="outlined-size-small"
-              variant="outlined"
-              value={number2}
-              onChange={e => setNumber2(e.target.value)}
-            ></TextField>
-          </Card>
+          
           {/* address 1 is mandatory */}
           <Card
             elevation={0}
@@ -488,7 +473,7 @@ const Signup = () => {
           </Card>
           <Card
             elevation={0}
-            style={{ backgroundColor: "transparent" }}
+            style={{ backgroundColor: "transparent" , display:"none"}}
             className={style.formCardContainer}
           >
             <TextField
@@ -559,7 +544,7 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            <button className={style.bn5} disabled={btnCondition}>
+            <button className={style.bn5} >
               Let's Shop
             </button>
           </Card>
