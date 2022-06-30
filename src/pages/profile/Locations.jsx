@@ -17,7 +17,7 @@ const Locations = ({ addAddress, setaddAddress, setDisplay, display,setLocations
     setDisplay({...display,[props]:e.target.value})
   }
 
-  let { street,landmark,city,state,pincode,country} = display;
+  let { street, landMark, city, state, pincode, country } = display;
   return (
     <section className={Location.section}>
       <div className={Location.icon}>
@@ -37,11 +37,11 @@ const Locations = ({ addAddress, setaddAddress, setDisplay, display,setLocations
               />
             </div>
             <div>
-              <label htmlFor="">Landmark:</label>
+              <label htmlFor="">landMark:</label>
               <input
                 type="text"
-                value={landmark}
-                onChange={e => handleChange(e, "landmark")}
+                value={landMark}
+                onChange={e => handleChange(e, "landMark")}
               />
             </div>
             <div>

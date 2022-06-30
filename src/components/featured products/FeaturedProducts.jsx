@@ -9,8 +9,12 @@ import PaginationComp from "../pagination/PaginationComp";
 import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
+
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
+import CalculateOffer from "../Offer Helper Components/CalculateOffer";
+import StarRatings from "../starRating/StarRatings";
+
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
@@ -51,8 +55,8 @@ const FeaturedProducts = () => {
                 productsid,
                 title,
                 price,
-                thumbnail_URL,
-
+                thumbnailURL,
+                offer,
                 rating,
                 brand,
               } = product;
@@ -66,17 +70,25 @@ const FeaturedProducts = () => {
                   key={productsid}
                 >
                   <div className={styles.cardBody}>
-                    <img src={thumbnail_URL} alt={title} />
+                    <img src={thumbnailURL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
-                    <span>{rating}⭐</span>
-                    {rating > 4.6 ? <span>Featured</span> : null}
+                    <span>
+                      <StarRatings rating={rating}/>
+                    </span>
+                    {/* <span>{rating}⭐</span> */}
+                    {/* {rating > 4.6 ? <span>Featured</span> : null} */}
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
                       <span>{brand}</span>
                       <span>{title.slice(0, 15) + `...`}</span>
-                      <span>₹{price}</span>
+                      <span>
+                        <CalculateOffer
+                          originPrice={price}
+                          offerPercentage={offer}
+                        />
+                      </span>
                     </div>
                     <div className={styles.footerRight}>
                       <Button

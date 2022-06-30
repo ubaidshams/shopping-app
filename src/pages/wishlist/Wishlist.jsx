@@ -24,7 +24,7 @@ const Wishlist = () => {
                 description,
                 price,
                 rating,
-                thumbnail_URL,
+                thumbnailURL,
               } = product;
               console.log(product);
               return (
@@ -35,7 +35,7 @@ const Wishlist = () => {
                 >
                   <div className={styles.prodImg}>
                     <img
-                      src={thumbnail_URL}
+                      src={thumbnailURL}
                       alt={title}
                       height="200"
                       width="200"

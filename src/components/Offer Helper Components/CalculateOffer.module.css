@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.wrapper > :nth-child(1) {
+  text-decoration: line-through;
+  margin: 0.5rem;
+}
+.wrapper > :nth-child(2) {
+  color: green;
+}

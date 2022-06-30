@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 import { useEffect } from "react";
+import CalculateOffer from "../Offer Helper Components/CalculateOffer";
+import StarRatings from "../starRating/StarRatings";
 const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   // console.log("sdklfsjdkl",sortingType)
   const dispatch = useDispatch();
@@ -20,7 +22,8 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   return (
     <div className={style.box}>
       {data.map(data => {
-        let { productsid, brand, rating, thumbnail_URL, price, title } = data;
+        let { productsid, brand, rating, thumbnailURL, price, title, offer } =
+          data;
         return (
           <Card
             data-aos="zoom-in"
@@ -34,17 +37,18 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
             key={productsid}
           >
             <div className={style2.cardBody}>
-              <img src={thumbnail_URL} alt={title} />
+              <img src={thumbnailURL} alt={title} />
             </div>
             <div className={style2.cardHeader}>
-              <span>{rating}⭐</span>
-              {rating > 4.6 ? <span>Featured</span> : null}
+              <StarRatings rating={rating} />
+              {/* <span>{rating}⭐</span> */}
+              {/* {rating > 4.6 ? <span>Featured</span> : null} */}
             </div>
             <div className={style2.cardFooter}>
               <div className={style2.footerLeft}>
                 <span>{brand}</span>
-                <span>{title.slice(0,10) + `...`}</span>
-                <span>₹{price}</span>
+                <span>{title.slice(0, 10) + `...`}</span>
+                <CalculateOffer originPrice={price} offerPercentage={offer} />
               </div>
               <div className={style2.footerRight}>
                 <Button

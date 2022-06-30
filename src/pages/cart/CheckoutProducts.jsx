@@ -39,14 +39,14 @@ const CheckoutProducts = () => {
             price,
             description,
 
-            thumbnail_URL,
+            thumbnailURL,
             rating,
             brand,
           } = product;
 
           return (
             <Card elevation={5} className={styles.cartProduct} key={productsid}>
-              <img src={thumbnail_URL} alt={title} />
+              <img src={thumbnailURL} alt={title} />
               <div className={styles.productDetails}>
                 <h3>{brand}</h3>
                 <p>{title}</p>
