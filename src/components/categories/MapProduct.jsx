@@ -40,9 +40,9 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
               <img src={thumbnailURL} alt={title} />
             </div>
             <div className={style2.cardHeader}>
+              <span>{rating}</span>
               <StarRatings rating={rating} />
-              {/* <span>{rating}⭐</span> */}
-              {/* {rating > 4.6 ? <span>Featured</span> : null} */}
+              {rating > 4.6 ? <span>Featured</span> : null}
             </div>
             <div className={style2.cardFooter}>
               <div className={style2.footerLeft}>
