@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
                       <StarRatings rating={rating}/>
                     </span>
                     {/* <span>{rating}⭐</span> */}
-                    {/* {rating > 4.6 ? <span>Featured</span> : null} */}
+                    {rating > 4.6 ? <span>Featured</span> : null}
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
