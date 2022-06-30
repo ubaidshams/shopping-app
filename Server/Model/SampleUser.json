@@ -1,23 +1,26 @@
 {
-  "firstName": "",
-  "lastName": "",
-  "gender": "",
-  "email": "",
-  "Phno":0,
-  "password": "",
-  "user_cart": [],
-  "user_wishlist": [],
-  "recently_viewed": [],
-  "address_list": [
-    {
-      "house_no": 0,
-      "street": "",
-      "landmark": "",
-      "city": "",
-      "state": "",
-      "country": "",
-      "pincode": 0
-    }
-  ],
-  "orderHistory": []
-}
+    "id": 0,
+    "firstName": "",
+    "lastName": "",
+    "gender": "",
+    "email": "",
+    "phone": 8967642874,
+    "password": "",
+    "cartList": [],
+    "wishList": [],
+    "status": "",
+    "role": "",
+    "addressList": [
+      {
+        "houseNo": 0,
+        "street": "",
+        "landMark": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "pincode": 32234
+      }
+    ],
+    "orderHistory": [],
+    "token": ""
+  }

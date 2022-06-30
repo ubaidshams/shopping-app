@@ -20,7 +20,7 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   return (
     <div className={style.box}>
       {data.map(data => {
-        let { productsid, brand, rating, thumbnail_URL, price, title } = data;
+        let { productsid, brand, rating, thumbnailURL, price, title } = data;
         return (
           <Card
             data-aos="zoom-in"
@@ -34,7 +34,7 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
             key={productsid}
           >
             <div className={style2.cardBody}>
-              <img src={thumbnail_URL} alt={title} />
+              <img src={thumbnailURL} alt={title} />
             </div>
             <div className={style2.cardHeader}>
               <span>{rating}⭐</span>
@@ -43,7 +43,7 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
             <div className={style2.cardFooter}>
               <div className={style2.footerLeft}>
                 <span>{brand}</span>
-                <span>{title.slice(0,10) + `...`}</span>
+                <span>{title.slice(0, 10) + `...`}</span>
                 <span>₹{price}</span>
               </div>
               <div className={style2.footerRight}>

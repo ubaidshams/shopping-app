@@ -72,12 +72,12 @@ export default function CartDropdown() {
             .slice(0, 4)
 
             .map((item, index) => {
-              let { thumbnail_URL, description, title, price } = item;
+              let { thumbnailURL, description, title, price } = item;
               return (
                 <>
                   <ListItem>
                     <ListItemDecorator sx={{ alignSelf: "flex-start" }}>
-                      <Avatar src={thumbnail_URL} />
+                      <Avatar src={thumbnailURL} />
                     </ListItemDecorator>
                     <ListItemContent>
                       <Typography>{title}</Typography>

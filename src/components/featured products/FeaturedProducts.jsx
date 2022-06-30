@@ -51,7 +51,7 @@ const FeaturedProducts = () => {
                 productsid,
                 title,
                 price,
-                thumbnail_URL,
+                thumbnailURL,
 
                 rating,
                 brand,
@@ -66,7 +66,7 @@ const FeaturedProducts = () => {
                   key={productsid}
                 >
                   <div className={styles.cardBody}>
-                    <img src={thumbnail_URL} alt={title} />
+                    <img src={thumbnailURL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
                     <span>{rating}⭐</span>

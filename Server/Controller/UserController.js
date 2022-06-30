@@ -34,7 +34,7 @@ const RegisterUser = async (req, res) => {
     UserObj.addData({
       ...SampleUserObj,
       ...req.body,
-      address_list: [...req.body.address_list],
+      addressList: [...req.body.addressList],
       password: hashPassword,
     });
     reWrinteJson();
@@ -46,7 +46,7 @@ const RegisterUser = async (req, res) => {
 
 const SignInUser = async (req, res) => {
   let reqUser = UserObj.data.find(
-    user => user.email === req.body.email || user.Phno === req.body.email
+    user => user.email === req.body.email || user.phone === req.body.email
   );
   if (reqUser == null) {
     res.json({ message: "Invalid email or password" });
