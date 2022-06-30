@@ -11,6 +11,7 @@ import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
+import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
   let dispatch = useDispatch();
@@ -52,7 +53,7 @@ const FeaturedProducts = () => {
                 title,
                 price,
                 thumbnail_URL,
-
+                offer,
                 rating,
                 brand,
               } = product;
@@ -76,7 +77,9 @@ const FeaturedProducts = () => {
                     <div className={styles.footerLeft}>
                       <span>{brand}</span>
                       <span>{title.slice(0, 15) + `...`}</span>
-                      <span>₹{price}</span>
+                      <span>
+                        <CalculateOffer originPrice={price} offerPercentage={offer} />
+                      </span>
                     </div>
                     <div className={styles.footerRight}>
                       <Button
