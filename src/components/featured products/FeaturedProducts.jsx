@@ -67,7 +67,7 @@ const FeaturedProducts = () => {
                   key={productsid}
                 >
                   <div className={styles.cardBody}>
-                    <img src={thumbnail_URL} alt={title} />
+                    <img src={thumbnailURL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
                     <span>{rating}⭐</span>
@@ -78,7 +78,10 @@ const FeaturedProducts = () => {
                       <span>{brand}</span>
                       <span>{title.slice(0, 15) + `...`}</span>
                       <span>
-                        <CalculateOffer originPrice={price} offerPercentage={offer} />
+                        <CalculateOffer
+                          originPrice={price}
+                          offerPercentage={offer}
+                        />
                       </span>
                     </div>
                     <div className={styles.footerRight}>

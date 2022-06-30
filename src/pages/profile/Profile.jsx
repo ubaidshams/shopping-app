@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Profile = () => {
   let currUser = useSelector(state => state.user.currentUser);
-  let { firstName, lastName,gender,email,Phno} = currUser;
+  let { firstName, lastName, gender, email, phone } = currUser;
   let [UserGender, setGender] = useState("male");
   let [manage, setManage] = useState("personal");
   let [addAddress, setaddAddress] = useState([]);
@@ -13,7 +13,7 @@ const Profile = () => {
   let [edit, setEdit] = useState("");
   let [display, setDisplay] = useState({
     street: "",
-    landmark: "",
+    landMark: "",
     city: "",
     state: "",
     pincode: "",
@@ -68,7 +68,7 @@ const Profile = () => {
           <div className={Avatar.details}>
             {manage === "personal" ? (
               <>
-                <div style={{paddingTop: "10px"}}>
+                <div style={{ paddingTop: "10px" }}>
                   <lable>First Name:</lable>
                   <input
                     type="text"
@@ -135,7 +135,7 @@ const Profile = () => {
                   <lable>Mobile:</lable>
                   <input
                     type="text"
-                    value={currUser && Phno}
+                    value={currUser && phone}
                     disabled={edit !== "mobile"}
                   />
                   <a onClick={() => setEdit("mobile")}>Edit</a>
@@ -165,7 +165,7 @@ const Profile = () => {
                       return (
                         <div className={Avatar.cardDetails}>
                           <p>Street : {datas.street}</p>
-                          <p>Landmark : {datas.landmark}</p>
+                          <p>landMark : {datas.landMark}</p>
 
                           <p>City : {datas.city}</p>
                           <p>State : {datas.state}</p>

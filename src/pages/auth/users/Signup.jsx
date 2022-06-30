@@ -82,17 +82,15 @@ const Signup = () => {
   const [btnCondition, setBtnCondition] = useState(false);
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
-  const [address, setAddress] = useState(
-    {
-      house_no: "",
-      street: "",
-      landmark: "",
-      city: "",
-      state: "",
-      pincode: "",
-      country: "",
-    },
-  );
+  const [address, setAddress] = useState({
+    houseNo: "",
+    street: "",
+    landMark: "",
+    city: "",
+    state: "",
+    pincode: "",
+    country: "",
+  });
   const [allCountries, setAllCountries] = useState([]);
   const [countryCode, setCountryCode] = useState('IN');
   const [allStates, setAllStates] = useState([]);
@@ -127,8 +125,8 @@ const Signup = () => {
       email,
       password,
       gender,
-      Phno: number1,
-      address_list: [address],
+      phone: number1,
+      addressList: [address],
     };
 console.log("dskfjsdkj")
     setPayload(currPayload);
@@ -255,7 +253,7 @@ console.log("dskfjsdkj")
             ></TextField>
           </Card>
           {/* number2 optional */}
-          
+
           {/* address 1 is mandatory */}
           <Card
             elevation={0}
@@ -305,12 +303,12 @@ console.log("dskfjsdkj")
               size="small"
               id="outlined-size-small"
               variant="outlined"
-              value={address.landmark}
-              label="Landmark"
+              value={address.landMark}
+              label="landMark"
               required
               placeholder="eg-near This and That"
               onChange={e => {
-                setAddress({ ...address, landmark: e.target.value });
+                setAddress({ ...address, landMark: e.target.value });
               }}
             ></TextField>
           </Card>
@@ -473,7 +471,7 @@ console.log("dskfjsdkj")
           </Card>
           <Card
             elevation={0}
-            style={{ backgroundColor: "transparent" , display:"none"}}
+            style={{ backgroundColor: "transparent", display: "none" }}
             className={style.formCardContainer}
           >
             <TextField
@@ -524,7 +522,7 @@ console.log("dskfjsdkj")
                 style={{ width: "350px" }}
                 value="other"
                 checked={btnCondition}
-                onClick={()=> setModel()}
+                onClick={() => setModel()}
                 control={<Checkbox />}
                 label="I agree to the Terms Conditions*"
               />
@@ -544,9 +542,7 @@ console.log("dskfjsdkj")
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            <button className={style.bn5} >
-              Let's Shop
-            </button>
+            <button className={style.bn5}>Let's Shop</button>
           </Card>
         </form>
       </motion.div>

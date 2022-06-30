@@ -36,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
 // description: "Black and white knitted trousers,Flat-front, with no pleats design"
 // id: "KTR10"
 // price: 699
-// productimages_URL: (3) ['https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-2.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-5.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-6.jpg']
+// productImageURLs: (3) ['https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-2.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-5.jpg', 'https://assets.myntassets.com/h_68,q_90,w_52/v1/as…ite-Checked-Pure-Cotton-Trousers-9321654331-6.jpg']
 // rating: 4.7
-// search_tags: (2) ['YK', 'Boys Black & White Checked Pure Cotton Trousers']
-// thumbnail_URL: "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15266194/2022/6/4/32da16f7-30a8-42ae-8e21-cecec1f688ed1654331800339-YK-Boys-Black--White-Checked-Pure-Cotton-Trousers-9321654331-1.jpg"
+// searchTags: (2) ['YK', 'Boys Black & White Checked Pure Cotton Trousers']
+// thumbnailURL: "https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/15266194/2022/6/4/32da16f7-30a8-42ae-8e21-cecec1f688ed1654331800339-YK-Boys-Black--White-Checked-Pure-Cotton-Trousers-9321654331-1.jpg"
 // title: "Boys Black & White Checked Pure Cotton Trousers"
 
 const ProductDisplay = () => {
@@ -101,8 +101,8 @@ const ProductDisplay = () => {
               showArrows={false}
               useKeyboardArrows={true}
             >
-              {product.productimages_URL &&
-                product.productimages_URL.map((e) => {
+              {product.productImageURLs &&
+                product.productImageURLs.map(e => {
                   return (
                     <div>
                       <img src={e} alt="watch" />
