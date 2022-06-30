@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 import { useEffect } from "react";
+import StarRatings from "../starRating/StarRatings";
 const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   // console.log("sdklfsjdkl",sortingType)
   const dispatch = useDispatch();
@@ -37,8 +38,9 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
               <img src={thumbnailURL} alt={title} />
             </div>
             <div className={style2.cardHeader}>
-              <span>{rating}⭐</span>
-              {rating > 4.6 ? <span>Featured</span> : null}
+              <StarRatings rating={rating} />
+              {/* <span>{rating}⭐</span> */}
+              {/* {rating > 4.6 ? <span>Featured</span> : null} */}
             </div>
             <div className={style2.cardFooter}>
               <div className={style2.footerLeft}>
