@@ -32,7 +32,7 @@
 }
 .productCard {
   width: 300px;
-  height: 450px;
+  height: 480px;
 
   display: flex;
   flex-direction: column;
@@ -85,10 +85,15 @@
 .footerLeft span:nth-child(2) {
   font-size: 14px;
 }
+.footerLeft span:nth-child(1) {
+  max-height: 20px;
+  overflow: hidden;
+}
 .footerRight {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  justify-content: flex-end;
 }
 .footerRight span:nth-child(1) {
   color: rgba(72, 210, 72, 0.872);
@@ -105,15 +110,22 @@
   /*dark--> background-color:transparent; */
 }
 .footerRight button:hover {
-  background-color: #1d2c4e;
-  color: var(--text-secondary); /* dark-->rgb(234, 232, 232)*/
+  background-color: var(--link-hover);
+  color: var(--text-secondary);
 }
+.footerRight button:active{
+  background-color: #eda648;
+}
+
 .footerRight svg {
   width: 30px;
   height: 30px;
   cursor: pointer;
   font-weight: 100;
   transition: all linear 0.2s;
+  display: flex;
+  align-self: flex-end;
+  /* justify-content:center; */
 }
 .footerRight svg:hover {
   fill: red;

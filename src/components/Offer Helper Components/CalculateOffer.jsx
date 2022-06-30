@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
+import Style from "./CalculateOffer.module.css"
 
 const CalculateOffer = ({ originPrice, offerPercentage }) => {
   const [offerPrice, setofferPrice] = useState(0);
 
-    const calculatePrice = (originPrice, offerPercentage) => {
-      console.log(originPrice,offerPercentage)
-      let offerAmount = Math.trunc(offerPercentage / 100) * originPrice;
-      console.log(offerAmount)
+  const calculatePrice = (originPrice, offerPercentage) => {
+    console.log(originPrice, offerPercentage);
+    let offerAmount = (offerPercentage / 100) * originPrice;
 
-    return originPrice - offerAmount;
+    return originPrice - Math.trunc(offerAmount);
   };
   useEffect(() => {
     let offerValue = calculatePrice(originPrice, offerPercentage);
@@ -16,9 +16,9 @@ const CalculateOffer = ({ originPrice, offerPercentage }) => {
   }, []);
   return (
     <div>
-      <p>
-        <span>{originPrice}</span>
-        <span>{offerPrice}</span>
+      <p className={Style.wrapper}>
+        <span>₹{originPrice}</span>
+        <span>₹{offerPrice}</span>
       </p>
     </div>
   );

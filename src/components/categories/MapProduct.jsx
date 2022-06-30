@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 import { useEffect } from "react";
+import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   // console.log("sdklfsjdkl",sortingType)
   const dispatch = useDispatch();
@@ -20,7 +21,8 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
   return (
     <div className={style.box}>
       {data.map(data => {
-        let { productsid, brand, rating, thumbnailURL, price, title } = data;
+        let { productsid, brand, rating, thumbnailURL, price, title, offer } =
+          data;
         return (
           <Card
             data-aos="zoom-in"
@@ -44,7 +46,7 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
               <div className={style2.footerLeft}>
                 <span>{brand}</span>
                 <span>{title.slice(0, 10) + `...`}</span>
-                <span>₹{price}</span>
+                <CalculateOffer originPrice={price} offerPercentage={offer} />
               </div>
               <div className={style2.footerRight}>
                 <Button
