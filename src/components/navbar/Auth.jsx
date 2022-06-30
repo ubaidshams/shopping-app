@@ -72,7 +72,12 @@ const Auth = () => {
       { withCredentials: true }
     );
     if (data.message == "success") {
-      dispatch(createCurrentUser({currentUser:data.userData,token:data.accessToken}));
+      dispatch(
+        createCurrentUser({
+          currentUser: data.userData,
+          token: data.accessToken,
+        })
+      );
       dispatch(CloseLogin());
       toast.success("successfully logged in");
     } else toast.error("Invalid password or Email");

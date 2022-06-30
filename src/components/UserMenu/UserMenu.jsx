@@ -22,7 +22,7 @@ import { createCurrentUser } from "../../features/User/userSlice";
 export default function UserMenu({ user }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
-  const open = Boolean(anchorEl);
+  const open = Boolean(anchorEl); 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -31,7 +31,8 @@ export default function UserMenu({ user }) {
   };
   const handleLogOut = async () => {
     try {
-      await axios.get("http://localhost:3001/user/logout", { withCredentials:true});
+      await axios.get("http://localhost:3001/user/logout", { withCredentials: true });
+      navigate("/")
     }
     catch (error) {
       console.log(error);

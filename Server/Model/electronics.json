@@ -332,7 +332,166 @@
     }
   ],
   "mobile": [
-  
+    {
+      "productsid": "MOB1",
+      "brand": "SAMSUNG",
+      "title": "Mobile",
+      "description": "SAMSUNG Galaxy F22 (Denim Black, 64 GB)  (4 GB RAM)",
+      "rating": 4.3,
+      "category": "electronics",
+      "price": 11999,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kqqykcw0/mobile/p/y/u/galaxy-f22-sm-e225fzkhins-samsung-original-imag4z99fagskjxd.jpeg?q=70",
+      "productimages_URL": [
+        " https://rukminim1.flixcart.com/image/416/416/kqqykcw0/mobile/t/i/8/galaxy-f22-sm-e225fzkhins-samsung-original-imag4z99src8zbj4.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kqqykcw0/mobile/h/t/l/galaxy-f22-sm-e225fzkhins-samsung-original-imag4z99mque8aq5.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kqqykcw0/mobile/i/o/t/galaxy-f22-sm-e225fzkhins-samsung-original-imag4z99ffn7frak.jpeg?q=70"
+      ],
+      "search_tags": ["SAMSUNG", "Mobile"]
+    },
+    {
+      "productsid": "MOB2",
+      "brand": "POCO",
+      "title": "Mobile",
+      "description": "POCO C31 (Shadow Gray, 64 GB)  (4 GB RAM)",
+      "rating": 4.4,
+      "category": "electronics",
+      "price": 10400,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/ku4ezrk0/mobile/b/o/m/c31-mzb0a0min-poco-original-imag7bzqxekkpkrv.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kzrbiq80/mobile/w/u/q/-original-imagbp4xphdnkhvg.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/ku4ezrk0/mobile/e/6/z/c31-mzb0a0min-poco-original-imag7bzqefrtjafz.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/ku4ezrk0/mobile/o/c/b/c31-mzb0a0min-poco-original-imag7bzq4buptdvy.jpeg?q=70"
+      ],
+      "search_tags": ["POCO", "Mobile"]
+    },
+    {
+      "productsid": "MOB3",
+      "brand": "OPPO",
+      "title": "Mobile",
+      "description": "OPPO K10 5G (Ocean Blue, 128 GB)  (8 GB RAM)",
+      "rating": 4.7,
+      "category": "electronics",
+      "price": 17499,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/l4d2ljk0/mobile/x/d/z/-original-imagf9wt5emzsjqz.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/l44hyfk0/mobile/h/8/h/-original-imagf2xbspbt7efm.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l44hyfk0/mobile/u/e/x/-original-imagf2xbswnzmtcg.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l44hyfk0/mobile/q/f/h/-original-imagf2xbkesqnuyt.jpeg?q=70"
+      ],
+      "search_tags": ["OPPO", "Mobile"]
+    },
+    {
+      "productsid": "MOB4",
+      "brand": "REDMI",
+      "title": "Mobile",
+      "description": "REDMI Note 10S (Cosmic Purple, 64 GB)  (6 GB RAM)",
+      "rating": 4.4,
+      "category": "electronics",
+      "price": 12999,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kyeqjrk0/mobile/u/0/8/-original-imagan9qhw9nyhce.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kyeqjrk0/mobile/l/z/t/-original-imagan9q2v7jvagh.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kyeqjrk0/mobile/2/p/p/-original-imagan9qjzxu7zgh.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kyeqjrk0/mobile/l/i/h/-original-imagan9qfrbkwcan.jpeg?q=70"
+      ],
+      "search_tags": ["REDMI", "Mobile"]
+    },
+    {
+      "productsid": "MOB5",
+      "brand": "APPLE",
+      "title": "Mobile",
+      "description": "APPLE iPhone 11 (Purple, 128 GB)",
+      "rating": 4.6,
+      "category": "electronics",
+      "price": 46999,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kgiaykw0/mobile/x/g/b/apple-iphone-11-mhdm3hn-a-original-imafwqepgzwzwucu.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kgiaykw0/mobile/x/g/b/apple-iphone-11-mhdm3hn-a-original-imafwqepqy7qet5h.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kmp7ngw0/mobile/l/i/g/iphone-11-mhdu3hn-a-apple-original-imagfj4cmxdxskt6.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/k2jbyq80pkrrdj/mobile-refurbished/y/k/z/iphone-11-64-a-mwlx2hn-a-apple-0-original-imafkg24ymsjav9h.jpeg?q=70"
+      ],
+      "search_tags": ["APPLE", "Mobile"]
+    },
+    {
+      "productsid": "MOB6",
+      "brand": "APPLE",
+      "title": "Mobile",
+      "description": "APPLE iPhone 12 (White, 64 GB)",
+      "rating": 4.6,
+      "category": "electronics",
+      "price": 53999,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/j/f/9/apple-iphone-12-dummyapplefsn-original-imafwg8dhe5aeyhk.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/j/f/9/apple-iphone-12-dummyapplefsn-original-imafwg8dkyh2zgrh.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/j/f/9/apple-iphone-12-dummyapplefsn-original-imafwg8dszwspt8f.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kg8avm80/mobile/j/f/9/apple-iphone-12-dummyapplefsn-original-imafwg8dy8mmbanh.jpeg?q=70"
+      ],
+      "search_tags": ["APPLE", "Mobile"]
+    },
+    {
+      "productsid": "MOB7",
+      "brand": "vivo",
+      "title": "Mobile",
+      "description": "vivo T1 5G (Starlight Black, 128 GB)",
+      "rating": 4.4,
+      "category": "electronics",
+      "price": 16990,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kzd147k0/mobile/d/1/b/-original-imagbe5qddy9xr6y.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kzd147k0/mobile/b/x/9/-original-imagbe5qkfp7fdsf.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kzd147k0/mobile/q/j/k/-original-imagbe5qgqftgyqx.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kzd147k0/mobile/n/r/5/-original-imagbe5qfnzghq78.jpeg?q=70"
+      ],
+      "search_tags": ["vivo", "Mobile"]
+    },
+    {
+      "productsid": "MOB8",
+      "brand": "SAMSUNG",
+      "title": "Mobile",
+      "description": "SAMSUNG Galaxy F12 (Sky Blue, 64 GB)  (4 GB RAM)",
+      "rating": 4.3,
+      "category": "electronics",
+      "price": 11499,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/kn22m4w0/mobile/9/k/s/galaxy-f12-sm-f127glbiins-samsung-original-imagftmhhhvghq7w.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/kn22m4w0/mobile/z/y/z/galaxy-f12-sm-f127glbiins-samsung-original-imagftmhawdaep9u.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kn22m4w0/mobile/f/y/i/galaxy-f12-sm-f127glbiins-samsung-original-imagftmhgv4hmhdp.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/kn22m4w0/mobile/n/4/u/galaxy-f12-sm-f127glbiins-samsung-original-imagftmhafheas9j.jpeg?q=70"
+      ],
+      "search_tags": ["SAMSUNG", "Mobile"]
+    },
+    {
+      "productsid": "MOB9",
+      "brand": "REDMI",
+      "title": "Mobile",
+      "description": "REDMI 10 (Pacific Blue, 64 GB)  (4 GB RAM)",
+      "rating": 4.2,
+      "category": "electronics",
+      "price": 10499,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/l0tweq80/mobile/w/r/t/-original-imagcgtgwg5taegn.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/l0tweq80/mobile/v/p/a/-original-imagcgtgyvg87kpz.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l0tweq80/mobile/z/s/c/-original-imagcgtgavvstwws.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l0tweq80/mobile/b/h/b/-original-imagcgtg3ybf7h7g.jpeg?q=70"
+      ],
+      "search_tags": ["REDMI", "Mobile"]
+    },
+    {
+      "productsid": "MOB10",
+      "brand": "realme",
+      "title": "Mobile",
+      "description": "realme 9 5G (Stargaze White, 128 GB)  (6 GB RAM)",
+      "rating": 4.3,
+      "category": "electronics",
+      "price": 17499,
+      "thumbnail_URL": "https://rukminim1.flixcart.com/image/416/416/l0jwbrk0/mobile/a/p/r/-original-imagcb64gwkhzdk5.jpeg?q=70",
+      "productimages_URL": [
+        "https://rukminim1.flixcart.com/image/416/416/l0jwbrk0/mobile/m/t/t/-original-imagcb64xkmer9wd.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l0jwbrk0/mobile/q/u/g/-original-imagcb64jrrkrpp3.jpeg?q=70",
+        "https://rukminim1.flixcart.com/image/416/416/l0jwbrk0/mobile/c/t/q/-original-imagcb64gt5phcaj.jpeg?q=70"
+      ],
+      "search_tags": ["realme", "Mobile"]
+    }
   ],
   "tv": [
     {
