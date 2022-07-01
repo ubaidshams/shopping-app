@@ -1,11 +1,21 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./cart.module.css";
-import { removeFromCart } from "../../features/cart/cartSlice";
+import {
+  addToCart,
+  removeFromCart,
+  removeWholeProduct,
+} from "../../features/cart/cartSlice";
 import { Card } from "@material-ui/core";
+import { AiOutlineMinusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useState } from "react";
+import StarRatings from "../../components/starRating/StarRatings";
+import { IconButton } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 const CheckoutProducts = () => {
   // for the card
+  const navigate = useNavigate();
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
   console.log(cart.cartItems.length);
@@ -45,7 +55,12 @@ const CheckoutProducts = () => {
           } = product;
 
           return (
-            <Card elevation={5} className={styles.cartProduct} key={productsid}>
+            <Card
+              elevation={5}
+              className={styles.cartProduct}
+              key={productsid}
+              onClick={() => navigate(`/products_page/${productsid}`)}
+            >
               <img src={thumbnailURL} alt={title} />
               <div className={styles.productDetails}>
                 <h3>{brand}</h3>
@@ -53,11 +68,28 @@ const CheckoutProducts = () => {
                 <p>{description}</p>
               </div>
               <div className={styles.moreDetails}>
+                {/* <StarRatings rating={rating} /> */}
                 <span>{rating}⭐</span>
 
                 <span>₹{price}</span>
-                <span>Qty:{productQuantityCounter[productsid]}</span>
-                <button onClick={() => dispatch(removeFromCart(index))}>
+                <div className={styles.quantity}>
+                  <AiOutlineMinusCircle
+                    onClick={() => dispatch(removeFromCart(index))}
+                  />
+                  <span>Qty:{productQuantityCounter[productsid]}</span>
+                  <AiOutlinePlusCircle
+                    onClick={e => {
+                      e.stopPropagation();
+                      dispatch(addToCart(product));
+                    }}
+                  />
+                </div>
+                <button
+                  onClick={e => {
+                    e.stopPropagation();
+                    dispatch(removeWholeProduct(productsid));
+                  }}
+                >
                   Remove from Cart
                 </button>
               </div>

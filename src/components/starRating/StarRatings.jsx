@@ -1,6 +1,6 @@
 import React from "react";
 import StarRating from "react-star-ratings";
-import Style from "./StarRatings.module.css"
+import Style from "./StarRatings.module.css";
 
 const StarRatings = ({ rating }) => {
   return (
