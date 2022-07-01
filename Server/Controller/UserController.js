@@ -106,7 +106,7 @@ const forgotPassword = (req, res) => {
   mg.messages
     .create("sandbox341729995ce44b3a9e883e1d78ca02f2.mailgun.org", {
       from: "Mailgun Sandbox <postmaster@sandbox341729995ce44b3a9e883e1d78ca02f2.mailgun.org>",
-      to: "abdulrazeem452@gmail.com",
+      to: `${userEmail}`,
       subject: "Reset Password LINK",
       // text: `Please the click link below to reset your password
       //     http://localhost:3000/reset
