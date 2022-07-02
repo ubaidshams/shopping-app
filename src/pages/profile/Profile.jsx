@@ -68,10 +68,7 @@ const Profile = () => {
           <div className={Avatar.details}>
             {manage === "personal" ? (
               <>
-                <div
-                  style={{ paddingTop: "10px" }}
-                  className={Avatar.detailsDiv}
-                >
+                <div style={{ paddingTop: "10px" }}>
                   <lable>First Name:</lable>
                   <input
                     type="text"
@@ -148,8 +145,13 @@ const Profile = () => {
               <>
                 <h1>Manage Address</h1>
                 <section>
-                  <div className={Avatar.addAddress} onClick={changeLocations}>
-                    + ADD A NEW ADDRESS
+                  <div style={{display: "flex", justifyContent: "center"}}>
+                    <div
+                      className={Avatar.addAddress}
+                      onClick={changeLocations}
+                    >
+                      + ADD A NEW ADDRESS
+                    </div>
                   </div>
 
                   <div>
@@ -169,7 +171,6 @@ const Profile = () => {
                         <div className={Avatar.cardDetails}>
                           <p>Street : {datas.street}</p>
                           <p>landMark : {datas.landMark}</p>
-
                           <p>City : {datas.city}</p>
                           <p>State : {datas.state}</p>
                           <p>Pincode : {datas.pincode}</p>
