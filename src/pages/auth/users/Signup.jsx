@@ -79,7 +79,7 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
-  const [btnCondition, setBtnCondition] = useState(false);
+  const [btnCondition, setBtnCondition] = useState(false); 
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({

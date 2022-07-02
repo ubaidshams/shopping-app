@@ -1,28 +1,50 @@
-.div{
-    width:800px;
-    height:600px;
-    /* background: rgb(111, 227, 192); */
-    display: flex;
-   line-height:3px;
-   margin-right:300px;
+.blur{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0,0.5);
 }
 .section{
     width:800px;
     height:700px;
-    background:#c6c6c4;
-    /*  background: rgb(111, 227, 192); */
+    background:#fff;
     position:absolute;
-    left:250px;
-    top:70px;
-    box-shadow: 10px 10px 15px 1px gray;
-    border-radius:8px;
-    
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius:5px;
+    z-index: 100;
+}
+.icon{
+    position:absolute;
+    top:-15px;
+    right:-15px;
+    background-color: crimson;
+    color: white;
+    padding:8px;
+    cursor: pointer;
+}
+.article{
+   
 }
 .article h1{
     font-size:24px;
     background: rgb(111, 227, 192);
     color:white;
-    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    /* margin: 0; */
+    border-radius: 5px 5px 0px 0px;
+}
+/* .div{
+    width:800px;
+    height:530px;
+    display: flex;
+   line-height:3px;
+   margin-right:300px;
+   margin-left: 50px !important;
+   justify-content: center;
 }
 .div label{
   font-size:13px; 
@@ -33,28 +55,33 @@
     height:15px;
     border-radius:4px;
     border: none;
-      
-}
-.icon{
-    position:absolute;
-    top:-15px;
-    right:-15px;
-    background-color: crimson;
-    color: white;
-    padding:8px;
-}
+    outline: 1px solid gray;
+    border-radius: 2px;
+    padding-left: 5px;
+} */
 .btn{
     display:flex;
     align-items:center;
     justify-content:center;
     background-color:blue;
     position: absolute;
-    right:350px;
-    width:100px;
+    right:325px;
+    width:160px;
     height:35px;
     padding:5px;
     font-weight: 600;
     background-color: crimson;
     color: white;
     border-radius: 8px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: rgba(220, 20, 60,0.9);
+}
+
+
+/* mui */
+
+.profile_details__2MrKT div{
+    margin-left: 0px !important;
 }
