@@ -12,14 +12,15 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Cataxios from "./../../apis/Cataxios";
 // import Statements
 import axios from "./../../apis/Cataxios";
 import { addToCart } from "../../features/cart/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { OpenLogin } from "../../features/Login/LoginSlice";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: "33.33%",
@@ -43,7 +44,9 @@ const useStyles = makeStyles((theme) => ({
 // title: "Boys Black & White Checked Pure Cotton Trousers"
 
 const ProductDisplay = () => {
+  let currentUser=useSelector(state=>state.user.currentUser)
   let { id } = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const classes = useStyles();
   const [productName, setProductName] = useState("Kids");
@@ -58,6 +61,13 @@ const ProductDisplay = () => {
   const [brand, setBrand] = useState("Apple");
   const [product, setProduct] = useState({});
   const [description, setDescription] = useState("");
+  let handleBuy = e => {
+    if (!currentUser.email) {
+      dispatch(OpenLogin());
+      return;
+    }
+    navigate("/checkout");
+  };
   useEffect(() => {
     const fetchProd = async () => {
       try {
@@ -180,7 +190,9 @@ const ProductDisplay = () => {
             <sup className={style.supScriptPriceTag}>new</sup>
           </span>
           <section className={style.btnContainer}>
-            <button className={style.buyNow}>Buy Now</button>
+            <button className={style.buyNow} onClick={handleBuy}>
+              Buy Now
+            </button>
             <br />
             <button
               className={style.addToCart}

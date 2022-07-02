@@ -128,7 +128,7 @@ const Signup = () => {
       phone: number1,
       addressList: [address],
     };
-console.log("dskfjsdkj")
+console.log("dskfjsdkj")  
     setPayload(currPayload);
     console.log(payload);
 
