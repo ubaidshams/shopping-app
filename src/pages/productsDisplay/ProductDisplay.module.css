@@ -13,8 +13,6 @@ img {
   align-items: center;
   height: 60px;
   width: 100%;
-  /* position: fixed; */
-  /* z-index: 10000; */
 }
 
 .sectionCard {
@@ -31,7 +29,7 @@ img {
   color: #2b2a2a;
   font-weight: 700;
   word-spacing: 2px;
-  margin-right:9rem;
+  margin-right: 9rem;
 }
 
 /* product info card */
