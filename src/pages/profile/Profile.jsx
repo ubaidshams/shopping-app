@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "./profile.module.css";
-import Locations from "./Locations";
+import Locations from "./Locations"; 
 import { useSelector } from "react-redux";
 
 const Profile = () => {
@@ -68,7 +68,10 @@ const Profile = () => {
           <div className={Avatar.details}>
             {manage === "personal" ? (
               <>
-                <div style={{ paddingTop: "10px" }}>
+                <div
+                  style={{ paddingTop: "10px" }}
+                  className={Avatar.detailsDiv}
+                >
                   <lable>First Name:</lable>
                   <input
                     type="text"

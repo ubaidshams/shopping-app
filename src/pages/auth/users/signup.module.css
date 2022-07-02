@@ -78,7 +78,7 @@ hr {
 
 .bn5:before {
   content: "";
-  background-color: #ec8a2f;
+  background-color: #ec8a2f; 
   position: absolute;
   top: -2px;
   left: -2px;

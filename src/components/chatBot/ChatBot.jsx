@@ -106,7 +106,7 @@ const ChatBot = () => {
           <nav>
             <span>Message Us</span>
             <span className="nav_controls">
-              <span>_</span>
+              <span onClick={() => setShowChatBox(!showChatBox)}>_</span>
               <span onClick={() => setShowChatBox(!showChatBox)}>X</span>
             </span>
           </nav>
@@ -117,7 +117,9 @@ const ChatBot = () => {
             id="main_chat_scrolling"
           >
             <article className="">
-                          <h2 style={{ color: "#1D2C4E", marginLeft: '0' }}>ShoppingKart Chats</h2>
+              <h2 style={{ color: "#1D2C4E", marginLeft: "0" }}>
+                ShoppingKart Chats
+              </h2>
               <h4>Chat with our Bots and customer supports</h4>
               <p>Choose mode of chatting : </p>
               <p className="chat_with_bot" onClick={chatWithBot}>
@@ -141,7 +143,7 @@ const ChatBot = () => {
               id="chat_input"
               value={chat_entered}
               onChange={e => setChat_entered(e.target.value)}
-          style={{ padding: '10px', }}
+              style={{ padding: "10px" }}
             />
             <span className="chat_send_arrow" onClick={handleSubmit}>
               <BsArrowRight />
