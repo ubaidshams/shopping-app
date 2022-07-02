@@ -86,19 +86,19 @@ const Auth = () => {
   return (
     <div className={currentUser.email ? styles.authBlock2 : styles.authBlock}>
       {location.pathname !== "/signup" && (
-        <Link
-          to="/cart"
+        <a
+          onClick={e => navigate("/cart")}
           className={styles.cartIcon}
           onMouseEnter={() => setCart(true)}
           onMouseLeave={() => setCart(false)}
           style={{ marginRight: "0.6rem" }}
         >
           <AiOutlineShoppingCart />
+          {openCart && <CartDropdown />}
           <span>{count}</span>
-        </Link>
+        </a>
       )}
 
-      {openCart && <CartDropdown />}
       {currentUser.email || location.pathname === "/signup" ? (
         currentUser.email && <UserMenu user={currentUser} />
       ) : (
@@ -204,7 +204,7 @@ const Auth = () => {
             display: "flex",
             placeItems: "center",
             marginBottom: "1.5rem",
-            justifyContent: "space-evenly"
+            justifyContent: "space-evenly",
           }}
         >
           <a

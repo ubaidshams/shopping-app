@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const filterProduct = cartItem => {
   let NonDuplicateProduct = {};
@@ -26,6 +26,7 @@ const filterProduct = cartItem => {
 };
 
 export default function CartDropdown() {
+  let navigate = useNavigate();
   let cartItem = useSelector(state => state.cart.cartItems);
   const currentUser = useSelector(state => state.user.currentUser);
   const [filter, setFilter] = useState([]);
@@ -72,10 +73,17 @@ export default function CartDropdown() {
             .slice(0, 4)
 
             .map((item, index) => {
-              let { thumbnailURL, description, title, price } = item;
+              let { thumbnailURL, description, title, price, productsid } =
+                item;
               return (
                 <>
-                  <ListItem>
+                  <ListItem
+                    onClick={e => {
+                      e.stopPropagation();
+                      navigate(`products_page/${productsid}`);
+                    }}
+                    className={Style.dropList}
+                  >
                     <ListItemDecorator sx={{ alignSelf: "flex-start" }}>
                       <Avatar src={thumbnailURL} />
                     </ListItemDecorator>

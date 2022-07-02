@@ -148,3 +148,23 @@
 .emptyCart img {
   object-fit: cover;
 }
+
+.quantity {
+  display: inline-block;
+  width: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.quantity svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: #282222 ;
+  cursor: pointer;
+}
+/* .quantity svg:nth-child(1) {
+  fill: #62e64d;
+} */
+/* .moreDetails>span:nth-child(1) {
+  visibility: hidden;
+} */

@@ -52,22 +52,23 @@
   align-items: center;
   justify-content: space-between;
 }
-.authBlock2{
-    width: 20%;
+.authBlock2 {
+  width: 20%;
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content:flex-end;
+  justify-content: flex-end;
 }
-.authBlock a {
+.authBlock > a {
+  color: var(--text-primary);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+.authBlock2 > a {
   color: var(--text-primary);
   transition: all 0.3s linear;
 }
-.authBlock2 a{
-  color: var(--text-primary);
-  transition: all 0.3s linear;
-}
-.authBlock a:hover {
+.authBlock > a:hover {
   color: var(--text-secondary);
 }
 .Loginbutton {
@@ -93,7 +94,7 @@
   height: 30px;
   width: 30px;
 }
-.cartIcon span {
+.cartIcon > span {
   background-color: crimson;
   width: 20px;
   height: 20px;
