@@ -14,8 +14,8 @@
   height: 250px;
   border-radius: "8px";
 }
-
-.section article form {
+ 
+.section article > form {
   padding: 100px auto;
   /* background:skyblue; */
   width: 80%;
@@ -63,13 +63,13 @@
   background-color: white;
   text-align: left;
 }
-.details div {
+.details > div {
   margin: 20px;
   margin-left: 100px;
   display: flex;
   flex-direction: column;
 }
-.details div input {
+.details > div input {
   width: 350px;
   height: 30px;
   margin: 8px 0px;
@@ -94,7 +94,8 @@
   border: 2px solid #222;
   padding: 10px;
   position: relative;
-  left: -105px;
+  /* left: -105px; */
+  margin: 20px 0;
   border-radius: 4px;
   color: black;
   box-shadow: 10px 10px 5px 0.5px gray;
