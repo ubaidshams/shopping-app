@@ -4,6 +4,10 @@ import { removeFromWishlist } from "../../features/wishlist/wishlistSlice";
 import styles from "./wishlist.module.css";
 import { AiOutlineDelete } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import CalculateOffer from "../../components/Offer Helper Components/CalculateOffer";
+import StarRatings from "../../components/starRating/StarRatings";
+import { Button } from "@mui/material";
+import { addToCart } from "../../features/cart/cartSlice";
 const Wishlist = () => {
   let navigate = useNavigate();
   let wishlist = useSelector(state => state.wishlist);
@@ -25,6 +29,7 @@ const Wishlist = () => {
                 price,
                 rating,
                 thumbnailURL,
+                offer,
               } = product;
               return (
                 <div
@@ -45,8 +50,25 @@ const Wishlist = () => {
                       {brand} {title}
                     </h2>
                     <p>{description}</p>
-                    <span>{rating}⭐</span>
-                    <h5>₹ {price}</h5>
+                    <span style={{ position: "relative", width: "100%" }}>
+                      {rating.toFixed(1)}
+                      <StarRatings rating={rating} left="1.7" top="0" />
+                      {/* <Chip className={style.chip} label="Best" /> */}
+                    </span>
+                    <CalculateOffer
+                      originPrice={price}
+                      offerPercentage={offer}
+                    />
+                    <Button
+                      variant="outlined"
+                      size="small"
+                      onClick={e => {
+                        e.stopPropagation();
+                        dispatch(addToCart(product));
+                      }}
+                    >
+                      Add to cart
+                    </Button>
                   </div>
                   <div
                     onClick={e => {

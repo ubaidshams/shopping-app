@@ -77,3 +77,22 @@
 .deleteIcon:hover {
   color: red;
 }
+
+.prodDetails > button {
+  padding: 5px;
+  border: 1px solid #f8981c; /*#345cba*/
+  color: #f8981c; /*#345cba*/
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  /*dark--> background-color:transparent; */
+}
+.prodDetails > button:hover {
+  background-color: var(--link-hover);
+  border-color: #f8981c;
+  color: var(--text-secondary);
+}
+.prodDetails > button:active {
+  background-color: #eda648;
+}
