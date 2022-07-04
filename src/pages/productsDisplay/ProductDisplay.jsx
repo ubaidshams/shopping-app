@@ -20,6 +20,7 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { OpenLogin } from "../../features/Login/LoginSlice";
 import StarRatings from "../../components/starRating/StarRatings";
+import CalculateOffer from "../../components/Offer Helper Components/CalculateOffer";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -62,6 +63,7 @@ const ProductDisplay = () => {
   const [brand, setBrand] = useState("Apple");
   const [product, setProduct] = useState({});
   const [description, setDescription] = useState("");
+  const [offer, setOffer] = useState(0);
   let handleBuy = e => {
     if (!currentUser.email) {
       dispatch(OpenLogin());
@@ -79,6 +81,7 @@ const ProductDisplay = () => {
       setBrand(data.brand);
       setRating(data.rating);
       setProductName(data.title);
+      setOffer(data.offer);
     } catch (error) {
       console.log(error);
     }
@@ -179,17 +182,21 @@ const ProductDisplay = () => {
             </span>
           </section>
 
-          <span>Ratings:</span>
-          <span className={style.ratingstag}>
-            {ratings}
-            {/* <StarRatings rating={ratings} left="1.5" /> */}
-            <Chip className={style.chip} label="Best" />
+          <span>
+            Ratings:
+            <span className={style.ratingstag}>
+              {ratings.toFixed(1)}
+              <StarRatings rating={ratings} left="1.7" top="0" />
+              {/* <Chip className={style.chip} label="Best" /> */}
+            </span>
           </span>
           <br />
           <br />
           <span>
-            Price:<span className={style.priceTag}>₹{price}</span>
-            <sup className={style.supScriptPriceTag}>new</sup>
+            Price:
+            {/* <span className={style.priceTag}>₹{price}</span>
+            <sup className={style.supScriptPriceTag}>new</sup> */}
+            <CalculateOffer originPrice={price} offerPercentage={offer} />
           </span>
           <section className={style.btnContainer}>
             <button className={style.buyNow} onClick={handleBuy}>
@@ -211,7 +218,9 @@ const ProductDisplay = () => {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className={classes.heading}>{brand}</Typography>
+              <Typography className={classes.heading}>
+                Product description
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>{description}</Typography>
