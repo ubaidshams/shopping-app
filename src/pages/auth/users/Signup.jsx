@@ -16,7 +16,6 @@ import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
-import axios from "axios";
 import {toast} from "react-toastify"
 import {useDispatch} from "react-redux"
 import { OpenLogin } from "../../../features/Login/LoginSlice";
@@ -79,7 +78,7 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
-  const [btnCondition, setBtnCondition] = useState(false);
+  const [btnCondition, setBtnCondition] = useState(false); 
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({
@@ -128,7 +127,7 @@ const Signup = () => {
       phone: number1,
       addressList: [address],
     };
-console.log("dskfjsdkj")
+console.log("dskfjsdkj")  
     setPayload(currPayload);
     console.log(payload);
 
@@ -138,7 +137,7 @@ console.log("dskfjsdkj")
 
   const fetchData = async currPayload => {
     try {
-      await axios.post("http://localhost:3001/user/signUp", currPayload);
+      await Axios.post("/user/signUp", currPayload);
       toast.success("successfully registered")
     } catch (error) {
       console.log(error.message);

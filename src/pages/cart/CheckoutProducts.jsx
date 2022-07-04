@@ -74,7 +74,10 @@ const CheckoutProducts = () => {
                 <span>₹{price}</span>
                 <div className={styles.quantity}>
                   <AiOutlineMinusCircle
-                    onClick={() => dispatch(removeFromCart(index))}
+                    onClick={e => {
+                      e.stopPropagation();
+                      dispatch(removeFromCart(index));
+                    }}
                   />
                   <span>Qty:{productQuantityCounter[productsid]}</span>
                   <AiOutlinePlusCircle

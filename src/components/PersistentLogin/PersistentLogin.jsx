@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import Axios from "../../apis/Axios";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Spinner from "../spinner/Spinner";
@@ -12,20 +12,19 @@ const PersistentLogin = ({ children }) => {
   let getNewToken = async () => {
     setLoading(true);
     try {
-      // let { data } = await axios.get("http://localhost:3001/user/refresh", {
-      //     withCredentials: true,
-      // }
-      let data;
-      // );
-      await fetch("http://localhost:3001/user/refresh", {
-        credentials: "include",
-      })
-        .then(res => res.json())
-        .then(result => (data = result));
-      console.log(data);
+      let { data } = await Axios.get("/user/refresh", {
+          withCredentials: true,
+      }
+      );
+      // await fetch("http://localhost:3001/user/refresh", {
+      //   credentials: "include",
+      // })
+      //   .then(res => res.json())
+      //   .then(result => (data = result));
+      // console.log(data);
 
-      let detailsRes = await axios.get(
-        "http://localhost:3001/api/user/detail",
+      let detailsRes = await Axios.get(
+        "/api/user/detail",
         {
           headers: {
             "Context-Type": "application/json",

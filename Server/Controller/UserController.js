@@ -83,7 +83,7 @@ const SignInUser = async (req, res) => {
       });
       
       // sending accessToken as reponse to client
-      res.json({ message: "success", userData: rest, accessToken });
+      res.json({ message: "success", userData: rest,token: accessToken });
     } else {
       res.json({ message: "Invalid email or password" });
     }

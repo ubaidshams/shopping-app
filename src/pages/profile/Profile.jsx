@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Avatar from "./profile.module.css";
-import Locations from "./Locations";
+import Locations from "./Locations"; 
 import { useSelector } from "react-redux";
 
 const Profile = () => {
@@ -145,8 +145,13 @@ const Profile = () => {
               <>
                 <h1>Manage Address</h1>
                 <section>
-                  <div className={Avatar.addAddress} onClick={changeLocations}>
-                    + ADD A NEW ADDRESS
+                  <div style={{display: "flex", justifyContent: "center"}}>
+                    <div
+                      className={Avatar.addAddress}
+                      onClick={changeLocations}
+                    >
+                      + ADD A NEW ADDRESS
+                    </div>
                   </div>
 
                   <div>
@@ -166,7 +171,6 @@ const Profile = () => {
                         <div className={Avatar.cardDetails}>
                           <p>Street : {datas.street}</p>
                           <p>landMark : {datas.landMark}</p>
-
                           <p>City : {datas.city}</p>
                           <p>State : {datas.state}</p>
                           <p>Pincode : {datas.pincode}</p>

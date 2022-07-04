@@ -36,23 +36,27 @@ img {
 .productInfoImgContainer {
   width: 90%;
   /* background-color: aqua; */
-  height: 68vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
   margin: 0 auto;
+  gap: 5rem;
 }
 .infoCard {
   width: 550px;
   height: 60vh;
   /* float: right; */
-  position: absolute;
+  /* position: absolute; */
   /* background-color: black; */
-  margin-top: 60px;
+  /* margin-top: 60px; */
   right: 15%;
   padding: 20px;
 }
 
 .imageCard {
   width: 500px;
-  position: absolute;
+  /* position: absolute; */
   /* background-color: rgba(255, 0, 0, 0.313); */
   margin-top: 60px;
   padding: 20px;
@@ -60,7 +64,10 @@ img {
 }
 
 .h1Title {
-  margin-left: -100px;
+  /* margin-left: -100px; */
+  width: 100%;
+  text-align: left;
+  margin: 0.6rem;
 }
 
 .supScript {
@@ -153,12 +160,10 @@ img {
 }
 
 .buyNow:hover {
-  background-color: rgba(32, 249, 119, 0.703);
-  /* color: var(--text-secondary); */
+  background-color: #f8981c;
   box-shadow: 0 0 2px black;
 
-  color: darkgreen;
-  border: 1.5px solid black;
+  color:white;
 }
 
 .accordion {
@@ -206,9 +211,13 @@ div img {
 .detailDescription {
   /* border: 2px solid red; */
   height: 150px;
-  width: 80%;
+  width: 75%;
   margin: 0 auto;
   padding: 15px;
+  margin-top: 1rem;
+}
+.detailDescription h4 {
+  margin-top: 0.8rem;
 }
 
 .detailDescription summary h4 {
