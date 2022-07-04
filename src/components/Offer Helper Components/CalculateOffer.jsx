@@ -12,7 +12,7 @@ const CalculateOffer = ({ originPrice, offerPercentage }) => {
   useEffect(() => {
     let offerValue = calculatePrice(originPrice, offerPercentage);
     setofferPrice(offerValue);
-  }, []);
+  }, [originPrice, offerPercentage]);
   return (
     <div>
       <p className={Style.wrapper}>

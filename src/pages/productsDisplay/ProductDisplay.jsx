@@ -19,6 +19,8 @@ import axios from "./../../apis/Cataxios";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { OpenLogin } from "../../features/Login/LoginSlice";
+import StarRatings from "../../components/starRating/StarRatings";
+import CalculateOffer from "../../components/Offer Helper Components/CalculateOffer";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -44,7 +46,7 @@ const useStyles = makeStyles(theme => ({
 // title: "Boys Black & White Checked Pure Cotton Trousers"
 
 const ProductDisplay = () => {
-  let currentUser=useSelector(state=>state.user.currentUser)
+  let currentUser = useSelector(state => state.user.currentUser);
   let { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -61,6 +63,7 @@ const ProductDisplay = () => {
   const [brand, setBrand] = useState("Apple");
   const [product, setProduct] = useState({});
   const [description, setDescription] = useState("");
+  const [offer, setOffer] = useState(0);
   let handleBuy = e => {
     if (!currentUser.email) {
       dispatch(OpenLogin());
@@ -68,22 +71,24 @@ const ProductDisplay = () => {
     }
     navigate("/checkout");
   };
+  const fetchProd = async () => {
+    try {
+      let { data } = await Cataxios.get(`/allProduct/${id}`);
+      console.log("fetching....");
+      setProduct(data);
+      setPrice(data.price);
+      setDescription(data.description);
+      setBrand(data.brand);
+      setRating(data.rating);
+      setProductName(data.title);
+      setOffer(data.offer);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const fetchProd = async () => {
-      try {
-        let { data } = await Cataxios.get(`/allProduct/${id}`);
-        setProduct(data);
-        setPrice(data.price);
-        setDescription(data.description);
-        setBrand(data.brand);
-        setRating(data.rating);
-        setProductName(data.title);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     fetchProd();
-  }, []);
+  }, [id]);
   return (
     <div>
       {/* title card */}
@@ -177,16 +182,21 @@ const ProductDisplay = () => {
             </span>
           </section>
 
-          <span>Ratings:</span>
-          <span className={style.ratingstag}>{ratings}⭐</span>
           <span>
-            <Chip className={style.chip} label="Best" />
+            Ratings:
+            <span className={style.ratingstag}>
+              {ratings.toFixed(1)}
+              <StarRatings rating={ratings} left="1.7" top="0" />
+              {/* <Chip className={style.chip} label="Best" /> */}
+            </span>
           </span>
           <br />
           <br />
           <span>
-            Price:<span className={style.priceTag}>₹{price}</span>
-            <sup className={style.supScriptPriceTag}>new</sup>
+            Price:
+            {/* <span className={style.priceTag}>₹{price}</span>
+            <sup className={style.supScriptPriceTag}>new</sup> */}
+            <CalculateOffer originPrice={price} offerPercentage={offer} />
           </span>
           <section className={style.btnContainer}>
             <button className={style.buyNow} onClick={handleBuy}>
@@ -208,7 +218,9 @@ const ProductDisplay = () => {
               aria-controls="panel1bh-content"
               id="panel1bh-header"
             >
-              <Typography className={classes.heading}>{brand}</Typography>
+              <Typography className={classes.heading}>
+                Product description
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>{description}</Typography>
