@@ -155,11 +155,11 @@ const Locations = ({
     // sending data to database
     let payload = [...addAddress, display];
     try {
-      await axios.put("http://localhost:3001/user/signUp", payload);
+      await axios.put("http://localhost:5000/user/signUp", payload);
     } catch (error) {
       console.log(error.message);
     }
-    
+
     console.log(payload);
     setLocations(false);
   };
