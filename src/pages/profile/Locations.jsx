@@ -154,6 +154,7 @@ const Locations = ({
     setaddAddress([...addAddress, display]);
     // sending data to database
     let payload = [...addAddress, display];
+    setLocations(false);
     try {
       await axios.put("http://localhost:3001/user/signUp", payload);
     } catch (error) {
@@ -161,7 +162,7 @@ const Locations = ({
     }
     
     console.log(payload);
-    setLocations(false);
+    console.log('k');
   };
 
   let handleChange = (e, props) => {

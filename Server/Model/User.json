@@ -203,30 +203,30 @@
   },
   {
     "id": 0,
-    "firstName": "Ubaid",
-    "lastName": "Uz Zaman",
+    "firstName": "jai",
+    "lastName": "kumar",
     "gender": "male",
-    "email": "wahidshams@gmail.com",
-    "phone": "7022177781",
-    "password": "$2b$10$.dG9ZVzx.Ji6k4HLN9J81Ob0JAprpsulWhgvl5Kmf2VNNjqKIlCFu",
+    "email": "jaikumar@gmail",
+    "phone": "213123123",
+    "password": "$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y",
     "cartList": [],
     "wishList": [],
     "status": "",
     "role": "",
     "addressList": [
       {
-        "houseNo": "A-201, Midmac Regency",
-        "street": "CityPark",
-        "landMark": "Adarsh School",
+        "houseNo": "No:12d ",
+        "street": "thomsan ",
+        "landMark": "sdfsdf",
         "city": "bangalore",
         "state": "Karnataka",
-        "pincode": "560029",
+        "pincode": "32342",
         "country": "Tamil Nadu"
       }
     ],
     "orderHistory": [],
     "token": "",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhaGlkc2hhbXNAZ21haWwuY29tIiwiaWF0IjoxNjU2NjUxODQ2LCJleHAiOjE2NTY3MzgyNDZ9.81qJ7G-nMaa6JubEijUvNnX9IdsgAxPKnOurN3lzYzs"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphaWt1bWFyQGdtYWlsIiwiaWF0IjoxNjU2OTA3NjExLCJleHAiOjE2NTY5OTQwMTF9.09HfbLuKnXq1kMmQ2kNzgAkoIGuqXT9D7cBEV-3MvWo"
   },
   {
     "id": 0,
@@ -253,33 +253,33 @@
     ],
     "orderHistory": [],
     "token": "",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEiLCJpYXQiOjE2NTY3NDYxODUsImV4cCI6MTY1NjgzMjU4NX0.oWzSq_bOBe3VgWFnXqVdLLEFX1WV03_5KuvuvgmgNXQ"
+    "refreshToken": ""
   },
   {
     "id": 0,
-    "firstName": "jai",
-    "lastName": "kumar",
+    "firstName": "Ubaid",
+    "lastName": "Uz Zaman",
     "gender": "male",
-    "email": "jaikumar@gmail",
-    "phone": "213123123",
-    "password": "$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y",
+    "email": "wahidshams@gmail.com",
+    "phone": "7022177781",
+    "password": "$2b$10$.dG9ZVzx.Ji6k4HLN9J81Ob0JAprpsulWhgvl5Kmf2VNNjqKIlCFu",
     "cartList": [],
     "wishList": [],
     "status": "",
     "role": "",
     "addressList": [
       {
-        "houseNo": "No:12d ",
-        "street": "thomsan ",
-        "landMark": "sdfsdf",
+        "houseNo": "A-201, Midmac Regency",
+        "street": "CityPark",
+        "landMark": "Adarsh School",
         "city": "bangalore",
         "state": "Karnataka",
-        "pincode": "32342",
+        "pincode": "560029",
         "country": "Tamil Nadu"
       }
     ],
     "orderHistory": [],
     "token": "",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphaWt1bWFyQGdtYWlsIiwiaWF0IjoxNjU2OTA3NjExLCJleHAiOjE2NTY5OTQwMTF9.09HfbLuKnXq1kMmQ2kNzgAkoIGuqXT9D7cBEV-3MvWo"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IndhaGlkc2hhbXNAZ21haWwuY29tIiwiaWF0IjoxNjU2OTE5NTIyLCJleHAiOjE2NTcwMDU5MjJ9.LdFU9IPZZffm2roH0jPVq9iKd5amIwjPMYxNs5oU0sw"
   }
 ]
