@@ -16,12 +16,7 @@ const PersistentLogin = ({ children }) => {
           withCredentials: true,
       }
       );
-      // await fetch("http://localhost:3001/user/refresh", {
-      //   credentials: "include",
-      // })
-      //   .then(res => res.json())
-      //   .then(result => (data = result));
-      // console.log(data);
+     
 
       let detailsRes = await Axios.get(
         "/api/user/detail",
@@ -33,7 +28,7 @@ const PersistentLogin = ({ children }) => {
         }
       );
       let token = data.token;
-      console.log("persistentLogin....", detailsRes.data);
+      // console.log("persistentLogin....", detailsRes.data);
       dispatch(
         createCurrentUser({
           refreshToken: token,

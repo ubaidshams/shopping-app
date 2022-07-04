@@ -5,7 +5,6 @@ const CalculateOffer = ({ originPrice, offerPercentage }) => {
   const [offerPrice, setofferPrice] = useState(0);
 
   const calculatePrice = (originPrice, offerPercentage) => {
-    console.log(originPrice, offerPercentage);
     let offerAmount = (offerPercentage / 100) * originPrice;
 
     return originPrice - Math.trunc(offerAmount);

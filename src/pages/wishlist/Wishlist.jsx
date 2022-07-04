@@ -26,7 +26,6 @@ const Wishlist = () => {
                 rating,
                 thumbnailURL,
               } = product;
-              console.log(product);
               return (
                 <div
                   onClick={() => navigate(`/products_page/${productsid}`)}

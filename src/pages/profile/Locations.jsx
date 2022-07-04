@@ -154,13 +154,11 @@ const Locations = ({
 
   let handleSubmit = e => {
     e.preventDefault();
-    console.log("hi");
     setaddAddress([...addAddress, display]);
     setLocations(false);
   };
 
   let handleChange = (e, props) => {
-    console.log(props);
     setDisplay({ ...display, [props]: e.target.value });
   };
 
