@@ -3,10 +3,15 @@
   display: flex;
   align-items: center;
 }
-.wrapper > :nth-child(1) {
+.wrapper > :nth-child(2) {
   text-decoration: line-through;
+  font-weight: 100;
+  color: rgb(126, 123, 123);
   margin: 0.5rem;
 }
-.wrapper > :nth-child(2) {
-  color: green;
+.wrapper > :nth-child(1) {
+  font-weight: 500;
+}
+.wrapper>:nth-child(3){
+  color:green;
 }

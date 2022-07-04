@@ -6,7 +6,7 @@
   align-items: center;
 }
 .featuredProducts article {
-  width: 90%;
+  width: 97%;
   height: inherit;
   display: flex;
   flex-direction: column;
@@ -32,27 +32,30 @@
 }
 .productCard {
   width: 300px;
-  height: 480px;
+  height: 460px;
 
   display: flex;
   flex-direction: column;
 
-  gap: 15px;
+  gap: 0px;
   background-color: #fff;
   border-radius: 10px;
   transition: all 0.3s linear;
   cursor: pointer;
 }
 .productCard:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px 5px #666;
+  transform: scale(1.01) !important;
+  box-shadow: 4px 4px 10px 0px #666;
 }
 .cardHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  padding: 10px;
+  margin-top: 1rem;
+  height: 25px;
+  padding: 5px;
+  padding-left: 0.6rem;
 }
 .cardHeader span:nth-child(2) {
   color: var(--link-hover);
@@ -73,6 +76,7 @@
 }
 .cardFooter {
   display: flex;
+  flex-direction: column;
   padding: 10px;
   justify-content: space-between;
 }
@@ -80,7 +84,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 50%;
+  margin-bottom: 0.3rem;
 }
 .footerLeft span:nth-child(2) {
   font-size: 14px;
@@ -91,9 +95,7 @@
 }
 .footerRight {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .footerRight span:nth-child(1) {
   color: rgba(72, 210, 72, 0.872);
@@ -111,9 +113,10 @@
 }
 .footerRight button:hover {
   background-color: var(--link-hover);
+  border-color:#f8981c;
   color: var(--text-secondary);
 }
-.footerRight button:active{
+.footerRight button:active {
   background-color: #eda648;
 }
 

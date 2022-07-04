@@ -15,7 +15,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import Axios from "../../apis/Axios";
 import {useDispatch} from "react-redux"
 import { createCurrentUser } from "../../features/User/userSlice";
 
@@ -31,7 +31,7 @@ export default function UserMenu({ user }) {
   };
   const handleLogOut = async () => {
     try {
-      await axios.get("http://localhost:3001/user/logout", { withCredentials: true });
+      await Axios.get("/user/logout", { withCredentials: true });
       navigate("/")
     }
     catch (error) {

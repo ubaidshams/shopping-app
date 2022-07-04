@@ -11,12 +11,10 @@ import { useEffect } from "react";
 import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 import StarRatings from "../starRating/StarRatings";
 const MapProduct = ({ data, getSort, sortingType, objKey }) => {
-  // console.log("sdklfsjdkl",sortingType)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(objKey);
     getSort(objKey);
   }, [sortingType]);
   return (
@@ -40,14 +38,16 @@ const MapProduct = ({ data, getSort, sortingType, objKey }) => {
               <img src={thumbnailURL} alt={title} />
             </div>
             <div className={style2.cardHeader}>
-              <span>{rating}</span>
-              <StarRatings rating={rating} />
+              <span>{rating.toFixed(1)}</span>
+              <StarRatings rating={rating} left="2.5" />
               {rating > 4.6 ? <span>Featured</span> : null}
             </div>
             <div className={style2.cardFooter}>
               <div className={style2.footerLeft}>
                 <span>{brand}</span>
-                <span>{title.slice(0, 10) + `...`}</span>
+                <span>
+                  {title.length > 38 ? title.slice(0, 35) + "..." : title}
+                </span>
                 <CalculateOffer originPrice={price} offerPercentage={offer} />
               </div>
               <div className={style2.footerRight}>

@@ -151,7 +151,6 @@ const Locations = ({
 
   let handleSubmit = async e => {
     e.preventDefault();
-    console.log("hi");
     setaddAddress([...addAddress, display]);
     // sending data to database
     let payload = [...addAddress, display];

@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 import PaginationComp from "../pagination/PaginationComp";
 import { AiOutlineHeart } from "react-icons/ai";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
-
-
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
 import CalculateOffer from "../Offer Helper Components/CalculateOffer";
@@ -73,16 +71,17 @@ const FeaturedProducts = () => {
                     <img src={thumbnailURL} alt={title} />
                   </div>
                   <div className={styles.cardHeader}>
-                    <span>
-                      <StarRatings rating={rating}/>
-                    </span>
+                    <span>{rating.toFixed(1)}</span>
+                    <StarRatings rating={rating} left="2.5" />
                     {/* <span style={{color:"black"}}>{rating}</span> */}
                     {rating > 4.6 ? <span>Featured</span> : null}
                   </div>
                   <div className={styles.cardFooter}>
                     <div className={styles.footerLeft}>
-                      <span>{brand}</span>
-                      <span>{title.slice(0, 15) + `...`}</span>
+                      <span>{brand.toUpperCase()}</span>
+                      <span>
+                        {title.length > 38 ? title.slice(0, 38) + "..." : title}
+                      </span>
                       <span>
                         <CalculateOffer
                           originPrice={price}

@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const Credentials = require("./middleware/credentials");
 const app = express();
-const PORT = 3001;
+const PORT = 5000;
 const corsOption = {
   origin: "http://localhost:3000",
   credentials: true,
@@ -13,7 +13,6 @@ app.use(Credentials);
 app.use(cors(corsOption));
 app.use(express.json());
 app.use(cookieParser());
-
 
 //middware for cookies
 
@@ -24,4 +23,4 @@ app.get("/", (req, res) => {
   res.send(`Home page`);
 });
 
-app.listen(PORT, () => console.log("server is running on port 3001"));
+app.listen(PORT, () => console.log("server is running on port 5000"));

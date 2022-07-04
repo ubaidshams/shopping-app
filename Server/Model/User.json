@@ -149,33 +149,6 @@
   },
   {
     "id": 0,
-    "firstName": "jai",
-    "lastName": "kumar",
-    "gender": "male",
-    "email": "jaikumar@gmail",
-    "phone": "213123123",
-    "password": "$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y",
-    "cartList": [],
-    "wishList": [],
-    "status": "",
-    "role": "",
-    "addressList": [
-      {
-        "houseNo": "No:12d ",
-        "street": "thomsan ",
-        "landMark": "sdfsdf",
-        "city": "bangalore",
-        "state": "Karnataka",
-        "pincode": "32342",
-        "country": "Tamil Nadu"
-      }
-    ],
-    "orderHistory": [],
-    "token": "",
-    "refreshToken": ""
-  },
-  {
-    "id": 0,
     "firstName": "Sandeep",
     "lastName": "Suryaprasad",
     "gender": "male",
@@ -257,7 +230,7 @@
   },
   {
     "id": 0,
-    "firstName": "a",
+    "firstName": "ah",
     "lastName": "ih",
     "gender": "male",
     "email": "a",
@@ -280,6 +253,33 @@
     ],
     "orderHistory": [],
     "token": "",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEiLCJpYXQiOjE2NTY3NTU3NDYsImV4cCI6MTY1Njg0MjE0Nn0.L5b2eY6RjJgWBXEDSewv_YgwgMlRfko71WTjm618zqk"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImEiLCJpYXQiOjE2NTY3NDYxODUsImV4cCI6MTY1NjgzMjU4NX0.oWzSq_bOBe3VgWFnXqVdLLEFX1WV03_5KuvuvgmgNXQ"
+  },
+  {
+    "id": 0,
+    "firstName": "jai",
+    "lastName": "kumar",
+    "gender": "male",
+    "email": "jaikumar@gmail",
+    "phone": "213123123",
+    "password": "$2b$10$NyfIx0yA5FtfN8MevLJJaeIKSgXznwURcahirbuloIZ9yvUnlae3y",
+    "cartList": [],
+    "wishList": [],
+    "status": "",
+    "role": "",
+    "addressList": [
+      {
+        "houseNo": "No:12d ",
+        "street": "thomsan ",
+        "landMark": "sdfsdf",
+        "city": "bangalore",
+        "state": "Karnataka",
+        "pincode": "32342",
+        "country": "Tamil Nadu"
+      }
+    ],
+    "orderHistory": [],
+    "token": "",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphaWt1bWFyQGdtYWlsIiwiaWF0IjoxNjU2OTA3NjExLCJleHAiOjE2NTY5OTQwMTF9.09HfbLuKnXq1kMmQ2kNzgAkoIGuqXT9D7cBEV-3MvWo"
   }
 ]

@@ -35,7 +35,6 @@ const Profile = () => {
     setLocations(true);
   };
 
-  console.log(gender);
 
   return (
     <section className={Avatar.section}>
