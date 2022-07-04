@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import Axios from "../../../apis/Axios";
 import { orange } from "@mui/material/colors";
 import { toast } from "react-toastify";
 const theme = createTheme({
@@ -27,8 +27,8 @@ export default function Forget() {
 
   const handleSubmit = async event => {
     event.preventDefault();
-    let { data } = await axios.post(
-      "http://localhost:3001/user/forgot-password",
+    let { data } = await Axios.post(
+      "/user/forgot-password",
       {
         email,
       }

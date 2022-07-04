@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./navbar.module.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsHeart } from "react-icons/bs";
+import Axios from "../../apis/Axios";
 import {
   Box,
   Button,
@@ -63,8 +64,8 @@ const Auth = () => {
 
   const handleSubmit = async e => {
     // e.preventDefault();
-    let { data } = await axios.post(
-      "http://localhost:3001/user/signIn",
+    let { data } = await Axios.post(
+      "/user/signIn",
       {
         email: values.email,
         password: values.password,

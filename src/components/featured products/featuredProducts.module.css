@@ -32,12 +32,12 @@
 }
 .productCard {
   width: 300px;
-  height: 472px;
+  height: 460px;
 
   display: flex;
   flex-direction: column;
 
-  gap: 15px;
+  gap: 0px;
   background-color: #fff;
   border-radius: 10px;
   transition: all 0.3s linear;
@@ -52,7 +52,10 @@
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  padding: 10px;
+  margin-top: 1rem;
+  height: 25px;
+  padding: 5px;
+  padding-left: 0.6rem;
 }
 .cardHeader span:nth-child(2) {
   color: var(--link-hover);
@@ -73,6 +76,7 @@
 }
 .cardFooter {
   display: flex;
+  flex-direction: column;
   padding: 10px;
   justify-content: space-between;
 }
@@ -80,7 +84,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 50%;
+  margin-bottom: 0.3rem;
 }
 .footerLeft span:nth-child(2) {
   font-size: 14px;
@@ -91,9 +95,7 @@
 }
 .footerRight {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .footerRight span:nth-child(1) {
   color: rgba(72, 210, 72, 0.872);
@@ -111,6 +113,7 @@
 }
 .footerRight button:hover {
   background-color: var(--link-hover);
+  border-color:#f8981c;
   color: var(--text-secondary);
 }
 .footerRight button:active {
