@@ -19,6 +19,7 @@ import axios from "./../../apis/Cataxios";
 import { addToCart } from "../../features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { OpenLogin } from "../../features/Login/LoginSlice";
+import StarRatings from "../../components/starRating/StarRatings";
 
 const useStyles = makeStyles(theme => ({
   heading: {
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 // title: "Boys Black & White Checked Pure Cotton Trousers"
 
 const ProductDisplay = () => {
-  let currentUser=useSelector(state=>state.user.currentUser)
+  let currentUser = useSelector(state => state.user.currentUser);
   let { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -68,22 +69,23 @@ const ProductDisplay = () => {
     }
     navigate("/checkout");
   };
+  const fetchProd = async () => {
+    try {
+      let { data } = await Cataxios.get(`/allProduct/${id}`);
+      console.log("fetching....");
+      setProduct(data);
+      setPrice(data.price);
+      setDescription(data.description);
+      setBrand(data.brand);
+      setRating(data.rating);
+      setProductName(data.title);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    const fetchProd = async () => {
-      try {
-        let { data } = await Cataxios.get(`/allProduct/${id}`);
-        setProduct(data);
-        setPrice(data.price);
-        setDescription(data.description);
-        setBrand(data.brand);
-        setRating(data.rating);
-        setProductName(data.title);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     fetchProd();
-  }, []);
+  }, [id]);
   return (
     <div>
       {/* title card */}
@@ -178,8 +180,9 @@ const ProductDisplay = () => {
           </section>
 
           <span>Ratings:</span>
-          <span className={style.ratingstag}>{ratings}⭐</span>
-          <span>
+          <span className={style.ratingstag}>
+            {ratings}
+            {/* <StarRatings rating={ratings} left="1.5" /> */}
             <Chip className={style.chip} label="Best" />
           </span>
           <br />
