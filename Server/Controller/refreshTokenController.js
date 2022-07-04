@@ -3,10 +3,8 @@ const jwt = require("jsonwebtoken");
 
 const RefreshToken = (req, res) => {
     let cookie = req.cookies;
-    console.log(cookie)
     if (!cookie || !cookie.jwt) return res.sendStatus(401);
     let refreshtoken = cookie.jwt;
-    console.log(refreshtoken);
     let foundUser = UserObj.find(user => {
         return user.refreshToken == refreshtoken
     });

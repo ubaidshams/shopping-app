@@ -72,7 +72,6 @@ const ProductDisplay = () => {
     const fetchProd = async () => {
       try {
         let { data } = await Cataxios.get(`/allProduct/${id}`);
-        console.log(data);
         setProduct(data);
         setPrice(data.price);
         setDescription(data.description);

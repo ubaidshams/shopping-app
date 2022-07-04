@@ -33,7 +33,6 @@ export default function CartDropdown() {
   let DropDownLimit = 4;
 
   useEffect(() => {
-    console.log(filterProduct(cartItem));
     setFilter(filterProduct(cartItem));
   }, [cartItem]);
 

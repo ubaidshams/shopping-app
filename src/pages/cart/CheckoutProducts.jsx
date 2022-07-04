@@ -18,7 +18,6 @@ const CheckoutProducts = () => {
   const navigate = useNavigate();
   const cart = useSelector(state => state.cart);
   const dispatch = useDispatch();
-  console.log(cart.cartItems.length);
   const cartSet = cart.cartItems.map(JSON.stringify);
   const uniqueSet = new Set(cartSet);
   let uniqueArray = Array.from(uniqueSet).map(JSON.parse);
@@ -29,7 +28,6 @@ const CheckoutProducts = () => {
     productQuantityCounter[element.productsid] =
       (productQuantityCounter[element.productsid] || 0) + 1;
   });
-  console.log(productQuantityCounter["HPH1"]);
   return (
     <div className={styles.checkoutProductContainer}>
       {cart.cartItems.length === 0 ? (

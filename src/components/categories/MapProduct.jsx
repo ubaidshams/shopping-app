@@ -11,12 +11,10 @@ import { useEffect } from "react";
 import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 import StarRatings from "../starRating/StarRatings";
 const MapProduct = ({ data, getSort, sortingType, objKey }) => {
-  // console.log("sdklfsjdkl",sortingType)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(objKey);
     getSort(objKey);
   }, [sortingType]);
   return (
