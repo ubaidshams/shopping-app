@@ -1,4 +1,4 @@
-.mainContainer{
+/* .mainContainer{
     top:100%;
     position:absolute;
     z-index: 100;
@@ -45,4 +45,15 @@ li{
 
 .checkbox{
     size: 20px;
+} */
+
+.icon{
+    position:absolute;
+    top: 0px;
+    right:0px;
+    border-radius: 0 5px 0 0;
+    background-color: crimson;
+    color: white;
+    padding:8px;
+    cursor: pointer;
 }
