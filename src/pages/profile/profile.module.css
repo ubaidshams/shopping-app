@@ -17,7 +17,6 @@
  
 .section article > form {
   padding: 100px auto;
-  /* background:skyblue; */
   width: 80%;
   height: 550px;
   margin: 5px auto;
@@ -94,7 +93,6 @@
   border: 2px solid #222;
   padding: 10px;
   position: relative;
-  /* left: -105px; */
   margin: 20px 0;
   border-radius: 4px;
   color: black;

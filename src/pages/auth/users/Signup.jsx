@@ -131,7 +131,6 @@ const Signup = () => {
 console.log("dskfjsdkj")
     setPayload(currPayload);
     console.log(payload);
-
     fetchData(currPayload);
     navigate("/")
   };

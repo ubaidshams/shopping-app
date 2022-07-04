@@ -3,9 +3,9 @@
 // import ClearIcon from "@mui/icons-material/Clear";
 
 // const Locations = ({ addAddress, setaddAddress, setDisplay, display,setLocations }) => {
-  
+
 //   let handleSubmit = (e) => {
-    
+
 //     e.preventDefault();
 //     console.log("hi")
 //     setaddAddress([...addAddress, display])
@@ -91,16 +91,13 @@
 
 // export default Locations
 
-
-
-
-
 import React from "react";
 import Location from "./location.module.css";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import clsx from "clsx";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -152,15 +149,23 @@ const Locations = ({
 }) => {
   const classes = useStyles();
 
-  let handleSubmit = e => {
+  let handleSubmit = async e => {
     e.preventDefault();
     console.log("hi");
     setaddAddress([...addAddress, display]);
+    // sending data to database
+    let payload = [...addAddress, display];
+    try {
+      await axios.put("http://localhost:3001/user/signUp", payload);
+    } catch (error) {
+      console.log(error.message);
+    }
+    
+    console.log(payload);
     setLocations(false);
   };
 
   let handleChange = (e, props) => {
-    console.log(props);
     setDisplay({ ...display, [props]: e.target.value });
   };
 
@@ -175,7 +180,7 @@ const Locations = ({
         <article className={Location.article}>
           <h1>Address Details</h1>
           <motion.div className={clsx(Location.formCard)}>
-            <form style={{marginTop: "30px"}}>
+            <form style={{ marginTop: "30px" }}>
               <Card
                 elevation={0}
                 style={{ backgroundColor: "transparent" }}
