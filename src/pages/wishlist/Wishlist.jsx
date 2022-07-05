@@ -73,7 +73,7 @@ const Wishlist = () => {
                   <div
                     onClick={e => {
                       e.stopPropagation();
-                      dispatch(removeFromWishlist(index));
+                      dispatch(removeFromWishlist(productsid));
                     }}
                     className={styles.deleteIcon}
                   >
