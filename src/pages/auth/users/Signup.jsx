@@ -16,8 +16,8 @@ import TermsConditions from "../TermsConditions";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
-import {toast} from "react-toastify"
-import {useDispatch} from "react-redux"
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 import { OpenLogin } from "../../../features/Login/LoginSlice";
 import { Country, State, City } from "country-state-city";
 
@@ -65,8 +65,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Signup = () => {
-
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -78,7 +76,7 @@ const Signup = () => {
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
-  const [btnCondition, setBtnCondition] = useState(false); 
+  const [btnCondition, setBtnCondition] = useState(false);
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({
@@ -91,20 +89,18 @@ const Signup = () => {
     country: "",
   });
   const [allCountries, setAllCountries] = useState([]);
-  const [countryCode, setCountryCode] = useState('IN');
+  const [countryCode, setCountryCode] = useState("IN");
   const [allStates, setAllStates] = useState([]);
-  const [allCity, setAllcity] = useState([])
+  const [allCity, setAllcity] = useState([]);
   // const navigate = useNavigate()
 
+  useEffect(() => {
+    let allCountriesData = Country.getAllCountries().map(countryData => {
+      return countryData.name;
+    });
+    setAllCountries(allCountriesData);
+  }, []);
 
-   useEffect(() => {
-     let allCountriesData = Country.getAllCountries().map(countryData => {
-       return countryData.name;
-     });
-     setAllCountries(allCountriesData)
-   }, []);
-  
-  
   function enableStateDropDown(countryCode1) {
     let allStatesData = State.getStatesOfCountry(`${countryCode1}`);
     setAllStates(allStatesData);
@@ -114,7 +110,6 @@ const Signup = () => {
     let allCityData = City.getCitiesOfState(countryCode, stateCode1);
     setAllcity(allCityData);
   }
-  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -127,17 +122,17 @@ const Signup = () => {
       phone: number1,
       addressList: [address],
     };
-console.log("dskfjsdkj")  
+    console.log("dskfjsdkj");
     setPayload(currPayload);
     console.log(payload);
     fetchData(currPayload);
-    navigate("/")
+    navigate("/");
   };
 
   const fetchData = async currPayload => {
     try {
       await Axios.post("/user/signUp", currPayload);
-      toast.success("successfully registered")
+      toast.success("successfully registered");
     } catch (error) {
       console.log(error.message);
     }
@@ -508,22 +503,42 @@ console.log("dskfjsdkj")
             className={clsx(style.formCardContainer, style.Checkbox)}
             elevation={0}
             style={{ backgroundColor: "transparent" }}
+            onc
           >
             <span
-              style={{ marginLeft: "300px" }}
-              onClick={() => {
-                setModel(!model);
-              }}
+              style={{ marginLeft: "300px", display: "flex", width: "350px" }}
             >
               <FormControlLabel
                 // className={style.radioGroup}
-                style={{ width: "350px" }}
+                style={{ width: "35px" }}
                 value="other"
                 checked={btnCondition}
-                onClick={() => setModel()}
+                onClick={() => {
+                  setModel();
+                  setModel(true);
+                }}
                 control={<Checkbox />}
-                label="I agree to the Terms Conditions*"
+
+                // label="I agree to the Terms Conditions*"
               />
+              <span
+                style={{
+                  display: "inline-block",
+                  width: "300px",
+                  marginTop: "12px",
+                }}
+              >
+                I agree to the{" "}
+                <a
+                  href="#"
+                  onClick={() => {
+                    setModel(true);
+                  }}
+                >
+                  Terms Conditions
+                </a>
+                *
+              </span>
             </span>
           </Card>
           <Card style={{ marginLeft: "300px" }}>
