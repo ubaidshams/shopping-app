@@ -7,12 +7,12 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-import termsStyle from "./termsCondtions.module.css";
+import termsStyle from "./TermsCondtions.module.css";
 
 export default function TermsConditions({ condition, modelCondition }) {
   const [open, setOpen] = React.useState(true);
   const [scroll, setScroll] = React.useState("paper");
-  const [btnCondition, setBtnCondition] = React.useState(false)
+  const [btnCondition, setBtnCondition] = React.useState(false);
 
   const handleClickOpen = scrollType => () => {
     setOpen(true);
@@ -21,7 +21,7 @@ export default function TermsConditions({ condition, modelCondition }) {
 
   const handleClose = () => {
     setOpen(false);
-    modelCondition(false);  //model(TermsConditions) condition in sign up page
+    modelCondition(false); //model(TermsConditions) condition in sign up page
     condition(false); // checkbox condition of signup page
   };
 
