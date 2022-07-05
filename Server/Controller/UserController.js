@@ -62,6 +62,7 @@ const SignInUser = async (req, res) => {
         process.env.ACCESS_TOKEN,
         { expiresIn: "2h" }
       );
+      // refresh token is sended as cookie to client
       let refreshToken = jwt.sign(
         { email: reqUser.email },
         process.env.REFRESH_TOKEN,
