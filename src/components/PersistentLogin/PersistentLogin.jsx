@@ -13,20 +13,15 @@ const PersistentLogin = ({ children }) => {
     setLoading(true);
     try {
       let { data } = await Axios.get("/user/refresh", {
-          withCredentials: true,
-      }
-      );
-     
+        withCredentials: true,
+      });
 
-      let detailsRes = await Axios.get(
-        "/api/user/detail",
-        {
-          headers: {
-            "Context-Type": "application/json",
-            Authorization: `Bearer ${data.token}`,
-          },
-        }
-      );
+      let detailsRes = await Axios.get("/api/user/detail", {
+        headers: {
+          "Context-Type": "application/json",
+          Authorization: `Bearer ${data.token}`,
+        },
+      });
       let token = data.token;
       // console.log("persistentLogin....", detailsRes.data);
       dispatch(
@@ -47,20 +42,20 @@ const PersistentLogin = ({ children }) => {
 
   return (
     <>
-      {loading
-        ? (
-          <div
-            style={{
-              width: "100%",
-              height: "100vh",
-              display: "grid",
-              placeItems: "center",
-            }}
-          >
-            <Spinner />
-          </div>)
-        : 
-          children}
+      {loading ? (
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <Spinner />
+        </div>
+      ) : (
+        children
+      )}
     </>
   );
 };
