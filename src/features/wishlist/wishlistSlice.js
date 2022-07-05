@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   wishList: [],
+  wishListid:[]
 };
 
 const wishlistSlice = createSlice({
@@ -10,9 +11,11 @@ const wishlistSlice = createSlice({
   reducers: {
     addToWishlist: (state, action) => {
       state.wishList.push(action.payload);
+      state.wishListid.push(action.payload.productsid);
     },
     removeFromWishlist: (state, action) => {
       state.wishList.splice(action.payload, 1);
+      state.wishListid.splice(action.payload, 1);
     },
   },
 });

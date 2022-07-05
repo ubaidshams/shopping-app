@@ -144,3 +144,19 @@
   border-radius: 0 4px 4px 0;
   fill: var(--link-hover);
 }
+
+.merchentDrop{
+  position: absolute;
+  right: 1rem;
+  background-color: #efefef;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  top: 3.5rem;
+  border-radius: 10px;
+}
+
+.merchentDrop span{
+  border-bottom: 1px solid;
+  padding: 0.5rem 0;
+}
