@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Avatar from "./profile.module.css";
 import Locations from "./Locations"; 
 import { useSelector } from "react-redux";
+import { Input } from "@mui/material";
+import { InputLabel } from "@material-ui/core";
 
 const Profile = () => {
   let currUser = useSelector(state => state.user.currentUser);
@@ -68,8 +70,8 @@ const Profile = () => {
             {manage === "personal" ? (
               <>
                 <div style={{ paddingTop: "10px" }}>
-                  <lable>First Name:</lable>
-                  <input
+                  <InputLabel>First Name:</InputLabel>
+                  <Input
                     type="text"
                     value={currUser && firstName}
                     disabled={edit !== "firstName"}

@@ -1,3 +1,13 @@
+import {
+  Avatar,
+  Box,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  Grid,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 import style from "./merch.module.css";
 
@@ -10,75 +20,86 @@ const MerchSignup = () => {
   let [contact, setContact] = useState();
   let [address, setAddress] = useState();
 
-  let handleSubmit = (e) => {
+  let handleSubmit = e => {
     e.preventDefault();
     console.log(name, email, licenceNo, gstNo, stockDetails, contact, address);
   };
+
   return (
-    <div>
-      <form action="" onSubmit={handleSubmit} className={style.mainblock}>
-        <h1>Merchant Registration Form</h1>
-        <div>
-          <label htmlFor="">Merchant Name :</label>
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">E-Mail :</label>
-          <input
-            type="mail"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Bussiness Licence No.:</label>
-          <input
-            type="number"
-            value={licenceNo}
-            onChange={(e) => setLicenceNo(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">GST No.:</label>
-          <input
-            type="number"
-            value={gstNo}
-            onChange={(e) => setGstNo(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Stock Details :</label>
-          <input
-            type="file"
-            value={stockDetails}
-            onChange={(e) => setStockDetails(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Contact :</label>
-          <input
-            type="tel"
-            value={contact}
-            onChange={(e) => setContact(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="">Address :</label>
-          <textarea
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-        </div>
-        <div>
-          <button className={style.btn}>Submit</button>
-        </div>
-      </form>
-    </div>
+    <section>
+      <Box
+        sx={{
+          margin: "2rem 25rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="given-name"
+                name="firstName"
+                required
+                fullWidth
+                id="firstName"
+                label="First Name"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                required
+                fullWidth
+                id="lastName"
+                label="Last Name"
+                name="lastName"
+                autoComplete="family-name"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="new-password"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="I want to receive inspiration, marketing promotions and updates via email."
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Sign Up
+          </Button>
+        </Box>
+      </Box>
+    </section>
   );
 };
 

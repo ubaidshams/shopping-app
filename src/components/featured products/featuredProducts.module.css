@@ -128,10 +128,12 @@
   transition: all linear 0.2s;
   display: flex;
   align-self: flex-end;
+  fill: #c0bfbf;
   /* justify-content:center; */
 }
 .footerRight svg:hover {
   fill: red;
+
 }
 .paginationComp {
   margin-bottom: 20px;
