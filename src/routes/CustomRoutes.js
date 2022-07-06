@@ -7,7 +7,7 @@ import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
 import Checkout from "../pages/cart/ProductCheckout/Checkout";
-
+import Myorder from "../pages/cart/Myorder";
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
 import Kids from "../components/categories/Kids";
@@ -91,6 +91,12 @@ const CustomRoutes = () => {
       path: "/my-profile",
       element: <Profile />,
     },
+    {
+      path:"/myorder",
+      element: <Myorder/>
+    }
+
+
   ]);
   return myRoutes;
 };

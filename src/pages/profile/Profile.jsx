@@ -4,6 +4,8 @@ import Locations from "./Locations";
 import { useSelector } from "react-redux";
 import { Input } from "@mui/material";
 import { InputLabel } from "@material-ui/core";
+import {Link}  from  "react-router-dom";
+import { Margin } from "@mui/icons-material";
 
 const Profile = () => {
   let currUser = useSelector(state => state.user.currentUser);
@@ -62,7 +64,7 @@ const Profile = () => {
             <div className={Avatar.info}>
               <li onClick={() => setManage("personal")}>Profile Information</li>
               <li onClick={() => setManage("address")}>Manage Address</li>
-              <li>My Order</li>
+             <Link to="/myorder" > <li>My Order</li></Link>
             </div>
           </div>
 
