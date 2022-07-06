@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-import termsStyle from "./termsCondtions.module.css";
+import termsStyle from "./TermsCondtions.module.css";
 
 export default function TermsConditions({ condition, modelCondition }) {
   const [open, setOpen] = React.useState(true);
@@ -65,7 +65,6 @@ export default function TermsConditions({ condition, modelCondition }) {
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
-        
       >
         <DialogTitle id="scroll-dialog-title">Terms Conditions</DialogTitle>
         <div className={termsStyle.icon}>
