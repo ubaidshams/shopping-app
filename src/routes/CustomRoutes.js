@@ -19,11 +19,16 @@ import Beauty from "../components/categories/Beauty";
 import Wishlist from "../pages/wishlist/Wishlist";
 import Profile from "./../pages/profile/Profile";
 import Reset from "../pages/auth/users/Reset";
+import Order from "../pages/profile/Order";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/My-orders",
+      element: <Order />,
     },
     {
       path: "/login",
@@ -34,7 +39,7 @@ const CustomRoutes = () => {
       element: <Signup />,
     },
     {
-      path: "/forgot", 
+      path: "/forgot",
       element: <Forget />,
     },
     {

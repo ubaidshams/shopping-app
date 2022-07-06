@@ -541,7 +541,7 @@ const Signup = () => {
               </span>
             </span>
           </Card>
-          <Card style={{ marginLeft: "300px" }}>
+          <Card style={{ marginLeft: "300px" }} >
             {model && (
               <TermsConditions
                 modelCondition={setModel}
