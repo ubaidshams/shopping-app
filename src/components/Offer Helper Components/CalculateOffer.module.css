@@ -11,7 +11,8 @@
 }
 .wrapper > :nth-child(1) {
   font-weight: 500;
+  color: black;
 }
-.wrapper>:nth-child(3){
-  color:green;
+.wrapper > :nth-child(3) {
+  color: green;
 }

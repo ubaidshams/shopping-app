@@ -97,7 +97,7 @@ const ChatBot = () => {
           <span>
             <BiMessageRoundedDots />
           </span>{" "}
-          <span>Contact Us</span>
+          {/* <span>Contact Us</span> */}
         </div>
       </section>
       {/* once we click on chat icon/bot, then chat box will appear for chatting */}
