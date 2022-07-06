@@ -40,12 +40,12 @@
 }
 .info {
   margin-top: 50px;
-  text-align: center;
+  /* text-align: center; */
   line-height: 30px;
 }
 .info li {
-  background: rgb(29, 44, 78);
-  color: #fff;
+  /* background: rgb(29, 44, 78); */
+  color: #0066b2;
   margin-top: 5px;
   list-style: none;
   cursor: pointer;
@@ -83,10 +83,10 @@
   margin-left: 20px;
 }
 .addAddress {
-  color: blue;
-  width: 500px;
+  color: #0066b2;
+  width: 200px;
   border: 0.5px solid silver;
-  padding: 8px;
+  padding: 3px;
   cursor: pointer;
 }
 .cardDetails {
