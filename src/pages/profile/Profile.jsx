@@ -206,8 +206,7 @@ const Profile = () => {
     //     </article>
     //   </section>
     // );
-
-    <section className="sec1">
+   <section className="sec1">
       <form className="mai1" onSubmit={e => e.preventDefault()}>
         <div className="left">
           <div className="top">
@@ -356,7 +355,7 @@ const Profile = () => {
                             setaddAddress={setaddAddress}
                             setDisplay={setDisplay}
                             setLocations={setLocations}
-                          />
+                          />  
                         )}
                       </div>
                       <div>
@@ -384,7 +383,7 @@ const Profile = () => {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGWMo8Vg0nfDaKEIZMjVlKvNP_fiPqOygAwA&usqp=CAU"
                 alt=""
               />
-              <br />
+              <br/>
               <button>Upload Image</button>
             </div>
           </div>
@@ -396,5 +395,4 @@ const Profile = () => {
     </section>
   );
 };
-
 export default Profile;
