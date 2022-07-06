@@ -7,14 +7,21 @@ import { addToCart } from "../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
 import PaginationComp from "../pagination/PaginationComp";
 import { AiOutlineHeart } from "react-icons/ai";
-import { addToWishlist } from "../../features/wishlist/wishlistSlice";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../../features/wishlist/wishlistSlice";
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
 import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 import StarRatings from "../starRating/StarRatings";
+import { sx } from "@mui/joy/styles/styleFunctionSx";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
+  let cartList = useSelector(state => state.wishlist.wishList);
+  let [productIdList, setIdList] = useState([]);
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let [prodList, setProdList] = useState([]);
@@ -39,6 +46,9 @@ const FeaturedProducts = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+  useEffect(() => {
+    setIdList(cartList.map(item => item.productsid));
+  }, [cartList]);
 
   return (
     <section className={styles.featuredProducts}>
@@ -48,7 +58,7 @@ const FeaturedProducts = () => {
           {prodList.length === 0 ? (
             <Spinner />
           ) : (
-            prodList.map(product => {
+            prodList.map((product, index) => {
               let {
                 productsid,
                 title,
@@ -100,10 +110,19 @@ const FeaturedProducts = () => {
                       >
                         Add to cart
                       </Button>
-                      <AiOutlineHeart
+                      <FavoriteIcon
                         onClick={e => {
                           e.stopPropagation();
+                          if (productIdList.includes(productsid)) {
+                            dispatch(removeFromWishlist(productsid));
+                            return;
+                          }
                           dispatch(addToWishlist(product));
+                        }}
+                        style={{
+                          fill: productIdList.includes(productsid)
+                            ? "red"
+                            : "#c0bfbf",
                         }}
                       />
                     </div>
