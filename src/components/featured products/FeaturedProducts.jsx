@@ -20,7 +20,8 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const FeaturedProducts = () => {
   let product = useSelector(state => state.product);
-  let productid = useSelector(state => state.wishlist.wishListid);
+  let cartList = useSelector(state => state.wishlist.wishList);
+  let [productIdList, setIdList] = useState([]);
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let [prodList, setProdList] = useState([]);
@@ -45,6 +46,9 @@ const FeaturedProducts = () => {
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+  useEffect(() => {
+    setIdList(cartList.map(item => item.productsid));
+  }, [cartList]);
 
   return (
     <section className={styles.featuredProducts}>
@@ -106,18 +110,17 @@ const FeaturedProducts = () => {
                       >
                         Add to cart
                       </Button>
-                     
                       <FavoriteIcon
                         onClick={e => {
                           e.stopPropagation();
-                          if (productid.includes(productsid)) {
-                            dispatch(removeFromWishlist(index));
+                          if (productIdList.includes(productsid)) {
+                            dispatch(removeFromWishlist(productsid));
                             return;
                           }
                           dispatch(addToWishlist(product));
                         }}
                         style={{
-                          fill: productid.includes(productsid)
+                          fill: productIdList.includes(productsid)
                             ? "red"
                             : "#c0bfbf",
                         }}
