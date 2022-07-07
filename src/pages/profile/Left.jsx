@@ -49,7 +49,6 @@ const FireNav = styled(List)({
 });
 
 export default function CustomizedList() {
-
   return (
     <Box sx={{ display: "flex" }}>
       <ThemeProvider
@@ -137,13 +136,8 @@ export default function CustomizedList() {
             <Divider />
             <Box
               sx={{
-<<<<<<< HEAD
                 bgcolor: "rgba(71, 98, 130, 0.2)",
                 pb: 2,
-=======
-                bgcolor: open ? "rgba(71, 98, 130, 0.2)" : null,
-                pb: open ? 2 : 0,
->>>>>>> c7b915b6268d83263768c9814cab489c874fc482
               }}
             >
               <ListItemButton
@@ -151,7 +145,6 @@ export default function CustomizedList() {
                 sx={{
                   px: 3,
                   pt: 2.5,
-<<<<<<< HEAD
                 }}
               ></ListItemButton>
               {data.map(item => (
@@ -171,62 +164,6 @@ export default function CustomizedList() {
                   />
                 </ListItemButton>
               ))}
-=======
-                  pb: open ? 0 : 2.5,
-                  "&:hover, &:focus": { "& svg": { opacity: open ? 1 : 0 } },
-                }}
-              >
-                <ListItemText
-                  primary="Profile"
-                  primaryTypographyProps={{
-                    fontSize: 15,
-                    fontWeight: "medium",
-                    lineHeight: "20px",
-                    mb: "2px",
-                  }}
-                  secondary=", Firestore Database, Realtime Database, Storage, Hosting, Functions, and Machine Learning"
-                  secondaryTypographyProps={{
-                    noWrap: true,
-                    fontSize: 12,
-                    lineHeight: "16px",
-                    color: open ? "rgba(0,0,0,0)" : "rgba(255,255,255,0.5)",
-                  }}
-                  sx={{ my: 0 }}
-                />
-                <KeyboardArrowDown
-                  sx={{
-                    mr: -1,
-                    opacity: 0,
-                    transform: open ? "rotate(-180deg)" : "rotate(0)",
-                    transition: "0.2s",
-                  }}
-                />
-              </ListItemButton>
-              {open &&
-                data.map(item => (
-                  <Link to={`${item.details.route}`}>
-                    <ListItemButton
-                      key={item.details.lable}
-                      sx={{
-                        py: 0,
-                        minHeight: 32,
-                        color: "rgba(255,255,255,.8)",
-                      }}
-                    >
-                      <ListItemIcon sx={{ color: "inherit" }}>
-                        {item.icon}
-                      </ListItemIcon>
-                      <ListItemText
-                        primary={item.details.lable}
-                        primaryTypographyProps={{
-                          fontSize: 14,
-                          fontWeight: "medium",
-                        }}
-                      />
-                    </ListItemButton>
-                  </Link>
-                ))}
->>>>>>> c7b915b6268d83263768c9814cab489c874fc482
             </Box>
           </FireNav>
         </Paper>
