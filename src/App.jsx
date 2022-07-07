@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -16,13 +16,14 @@ import CustomRoutes2 from "./routes/CustomRoutes2";
 
 const App = () => {
   AOS.init({ once: true });
+ 
   return (
     <div>
       <Router>
-        <Navbar />
         <ToastContainer />
         <CustomRoutes2 />
         <PersistentLogin>
+        <Navbar />
           <CustomRoutes />
         </PersistentLogin>
         <Footer />
