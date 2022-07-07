@@ -1,4 +1,5 @@
 const UserJson = require("../Model/User.json");
+const crypto = require("crypto");
 const fs = require("fs").promises;
 const jwt = require("jsonwebtoken");
 const path = require("path");
@@ -31,11 +32,13 @@ const RegisterUser = async (req, res) => {
   try {
     let salt = await bcrypt.genSalt(10);
     let hashPassword = await bcrypt.hash(req.body.password, salt);
+    let randbytes = crypto.randomBytes(8).toString("hex");
     UserObj.addData({
       ...SampleUserObj,
       ...req.body,
 
       password: hashPassword,
+      id: randbytes,
     });
     reWrinteJson();
     res.json({ Message: "successfully registered" });

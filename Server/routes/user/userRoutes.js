@@ -7,6 +7,7 @@ const {
   getAllUsers,
   forgotPassword,
 } = require("../../Controller/UserController");
+const { addNewAddress } = require("../../Controller/userDataController");
 const verifyAccessToken = require("../../middleware/verifyAccessToken");
 const router = express.Router();
 
@@ -19,6 +20,7 @@ router.get("/refresh", RefreshToken);
 router.get("/logout", handleLogOut);
 
 router.route("/forgot-password").post(forgotPassword);
+router.route("/AddAddress/:id").put(addNewAddress);
 
 // const formData = require("form-data");
 // const Mailgun = require("mailgun.js");

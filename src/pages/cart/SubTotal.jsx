@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./cart.module.css";
+import  {Link} from "react-router-dom"
 
 import { useSelector, useDispatch } from "react-redux";
 import { getCartTotal } from "../../features/cart/cartSlice";
@@ -27,12 +28,15 @@ const SubTotal = () => {
         <input type="checkbox" name="gift" id="gift" />
         <label htmlFor="gift">This order contains a gift</label>
       </div>
-      <button
-        disabled={cart.cartItems.length === 0 ? true : false}
-        onClick={buyProduct}
-      >
-        Proceed to Buy
-      </button>
+      <Link to="/selectaddress">
+        {" "}
+        <button
+          disabled={cart.cartItems.length === 0 ? true : false}
+          onClick={buyProduct}
+        >
+          Proceed to Buy
+        </button>
+      </Link>
     </div>
   );
 };
