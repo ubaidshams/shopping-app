@@ -7,6 +7,7 @@ import welcomeStyle from "./welcome.module.css";
 function Welcome() {
   return (
     <section>
+      <Navbar/>
       <article className={welcomeStyle.welcomesection}>
         <div className={welcomeStyle.mainHead}>
           <div className={welcomeStyle.headings1}>

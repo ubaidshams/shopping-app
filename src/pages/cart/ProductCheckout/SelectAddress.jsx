@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import style from "./selectaddress.module.css";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 
 const SelectAddress = () => {
+  let [proceed, setproceed]=useState(false)
   let currUser = useSelector(state => state.user.currentUser);
   console.log(currUser);
   let { firstName, lastName, gender, email, phone, addressList, id } = currUser;
+
+  let handlesubmit = () => {
+    setproceed(!proceed);
+    toast.success("Order Placed Successfully to this Address")
+    
+
+  }
 
   return (
     <div className={style.addresscont}>
@@ -30,10 +40,10 @@ const SelectAddress = () => {
 
         {addressList.map((item, index) => {
           return (
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
               <input type="radio" name="address" />
               <div className={style.addname}>
-                <h4>{`Address ${index + 1}`}</h4> : 
+                <h4>{`Address ${index + 1}`}</h4> :
                 <p>
                   {item.houseNo} , {item.landMark},{item.street}, {item.city} -
                   {item.pincode}{" "}
@@ -43,6 +53,10 @@ const SelectAddress = () => {
           );
         })}
       </div>
+      <Link to="/payment">
+        {" "}
+        <button onClick={handlesubmit}>Proceed</button>
+      </Link>
     </div>
   );
 };
