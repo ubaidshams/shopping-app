@@ -6,7 +6,7 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 const Logo = () => {
   return (
     <div className={styles.logoBlock}>
-      <Link to="/">
+      <Link to="/Home">
         <h1>ShoppingKart</h1>
         <LocalOfferIcon />
       </Link>
