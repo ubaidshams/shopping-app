@@ -9,6 +9,9 @@ import "./profile.css";
 import { useDispatch } from "react-redux";
 import MEN from "../../menprofile.png";
 import Axios from "../../apis/Axios";
+import Left from "./Left";
+import Right from "./Right";
+
 import { createCurrentUser } from "../../features/User/userSlice";
 import {
   Avatar,
@@ -63,52 +66,16 @@ const Profile = () => {
       dispatch(createCurrentUser({ token: "", currentUser: {} }));
     }
   };
-
   return (
-    <>
-      <section>
-        <Container
-          sx={{
-            display: "flex",
-            margin: "1rem auto",
-
-            gap: 5,
-          }}
-        >
-          <Box className={avatar.accsett}>
-            <h1>Account Settings</h1>
-            <ul>
-              <li onClick={() => setManage("personal")}>Profile Info</li>
-              <li onClick={() => setManage("address")}>My Addresses</li>
-              <li>
-                <Link to="/My-orders">My Orders</Link>
-              </li>
-              <li>
-                <Button variant="contained" onClick={handleLogOut}>
-                  LogOut
-                </Button>
-              </li>
-            </ul>
-          </Box>
-          <Box className={avatar.userBox}>
-            <h1>My Profile</h1>
-            <div>
-              <Avatar alt="" src="" />
-
-              <h2>{firstName}</h2>
-            </div>
-            <div>
-              <ul>
-                <li>First Name:</li>
-                <li>Last Name:</li>
-                <li>Email:</li>
-                <li>Phone:</li>
-              </ul>
-            </div>
-          </Box>
-        </Container>
-      </section>
-    </>
+    <section className="sect">
+      <div className="left">
+        <Left />
+      </div>
+      <div className="rightabove">
+        <Right />
+      </div>
+      <div className="right"></div>
+    </section>
   );
 };
 export default Profile;
