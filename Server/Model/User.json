@@ -308,5 +308,68 @@
     "orderHistory": [],
     "token": "",
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpdGhAdGVzdC5jb20iLCJpYXQiOjE2NTcwMjE3MTUsImV4cCI6MTY1NzEwODExNX0.uwHkImLgdoi9ot4Q-dsBNOT46RhtcpCbINOv_uON7fY"
+  },
+  {
+    "id": 0,
+    "firstName": "askar",
+    "lastName": "kabeer",
+    "gender": "male",
+    "email": "sandhya.g8855@gmail.com",
+    "phone": "9591876533",
+    "password": "$2b$10$xe5.M7j9Jz.VBh0xcfevBO1I2p0kCkn04OhL3iYaZdJg3qYKsxgLe",
+    "cartList": [],
+    "wishList": [],
+    "status": "",
+    "role": "",
+    "addressList": [
+      {
+        "houseNo": "142/75",
+        "street": "Bannihatti, Sandur Taluq,",
+        "landMark": "sanju",
+        "city": "Departamento de Toay",
+        "state": "La Pampa",
+        "pincode": "575022",
+        "country": "Argentina"
+      }
+    ],
+    "orderHistory": [],
+    "token": "",
+    "refreshToken": ""
+  },
+  {
+    "id": "ee4387d40041a928",
+    "firstName": "Manju",
+    "lastName": "G",
+    "gender": "male",
+    "email": "manjunathgrandhe15@gmail.com",
+    "phone": "7090028035",
+    "password": "$2b$10$HPxGov3EhhZ5cFAzxGL77.5UopB76lUpPQIYZv9GskPYrllm6hpE2",
+    "cartList": [],
+    "wishList": [],
+    "status": "",
+    "role": "",
+    "addressList": [
+      {
+        "houseNo": "142/7",
+        "street": "4th street",
+        "landMark": "near anna kutir",
+        "city": "Bangalore Urban",
+        "state": "Karnataka",
+        "pincode": "560010",
+        "country": "India"
+      },
+      {
+        "houseNo": "sdgsdfgsd",
+        "street": "sdfsdfsf",
+        "landMark": "dfsdfs",
+        "city": "Buzhakan",
+        "state": "Kotayk Region",
+        "pincode": "sdfsdf",
+        "country": "Armenia"
+      }
+    ],
+    "orderHistory": [],
+    "token": "",
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbmp1bmF0aGdyYW5kaGUxNUBnbWFpbC5jb20iLCJpYXQiOjE2NTcxNzgwMTUsImV4cCI6MTY1NzI2NDQxNX0.Kgif_fKZuEECOuDS5ta9Tgj8qnbDK-RRwIZDwSHfkrw"
   }
 ]

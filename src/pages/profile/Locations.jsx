@@ -53,6 +53,7 @@ const Locations = ({
   setDisplay,
   display,
   setLocations,
+  ch,
 }) => {
   const classes = useStyles();
 
@@ -82,7 +83,7 @@ const Locations = ({
       <section className={Location.blur}></section>
       <section className={Location.section}>
         <div className={Location.icon}>
-          <ClearIcon onClick={() => setLocations(false)} />
+          <ClearIcon onClick={ ch} />
         </div>
         <article className={Location.article}>
           <h1>Address Details</h1>

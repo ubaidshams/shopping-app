@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Avatar from "./profile.module.css";
+import avatar from "./profile.module.css";
 import Locations from "./Locations";
 import Order from "./Order";
 import { useSelector } from "react-redux";
@@ -13,7 +13,14 @@ import Left from "./Left";
 import Right from "./Right";
 
 import { createCurrentUser } from "../../features/User/userSlice";
-import { Box } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Button,
+  Container,
+  Stack,
+  Typography,
+} from "@mui/material";
 const Profile = () => {
   let currUser = useSelector(state => state.user.currentUser);
   let { firstName, lastName, gender, email, phone } = currUser;

@@ -55,7 +55,7 @@ export default function UserMenu({ user }) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32, background: "orange" }}>
+            <Avatar sx={{ width: 35, height: 35, background: "orange" }}>
               {user.firstName.slice(0, 1)}
             </Avatar>
           </IconButton>

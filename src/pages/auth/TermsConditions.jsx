@@ -65,7 +65,6 @@ export default function TermsConditions({ condition, modelCondition }) {
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
-        
       >
         <DialogTitle id="scroll-dialog-title">Terms Conditions</DialogTitle>
         <div className={termsStyle.icon}>

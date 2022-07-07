@@ -5,10 +5,8 @@
 }
 
 
-h1{
-    position: relative;
-    right: 380px;
-    top: 7px;
+.r1 h1{
+   padding: 1rem;
 }
 
 table{

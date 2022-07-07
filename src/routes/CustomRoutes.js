@@ -7,7 +7,7 @@ import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
 import Checkout from "../pages/cart/ProductCheckout/Checkout";
-
+import Myorder from "../pages/cart/Myorder";
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
 import Kids from "../components/categories/Kids";
@@ -15,11 +15,12 @@ import Women from "../components/categories/Women";
 import Menpage from "../components/categories/Menpage";
 import Electronics from "../components/categories/Electronics";
 import Beauty from "../components/categories/Beauty";
-
+import SelectAddress from "../pages/cart/ProductCheckout/SelectAddress";
 import Wishlist from "../pages/wishlist/Wishlist";
 import Profile from "./../pages/profile/Profile";
 import Reset from "../pages/auth/users/Reset";
 import Order from "../pages/profile/Order";
+import AddressForm from "../pages/auth/users/AddressForm";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -96,6 +97,24 @@ const CustomRoutes = () => {
       path: "/my-profile",
       element: <Profile />,
     },
+    {
+      path:"/myorder",
+      element: <Myorder/>
+    },
+    {
+      path: "/selectaddress",
+      element:<SelectAddress/>
+
+
+    },
+
+    {
+      path: "/addressform",
+      element:<AddressForm/>
+    }
+
+
+
   ]);
   return myRoutes;
 };
