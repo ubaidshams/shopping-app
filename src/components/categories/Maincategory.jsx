@@ -7,7 +7,7 @@ import AOS from "aos";
 const Maincategory = () => {
   return (
     <div>
-      <h1>TOP CATEGORIES TO CHOOSE FROM</h1>
+      <h1 className={style.h1Maincart}>TOP CATEGORIES TO CHOOSE FROM</h1>
       <div className={style.maincart}>
         <div data-aos="zoom-in" data-aos-offset="200">
           <Link to="/kids">

@@ -29,7 +29,7 @@ import { createCurrentUser } from "../../features/User/userSlice";
 import UserMenu from "../UserMenu/UserMenu";
 import CartDropdown from "../CartDropDown/CartDropdown";
 import { BiAlignRight } from "react-icons/bi";
-import {NavLink} from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const Auth = () => {
   const isLoginOpen = useSelector(state => state.Login.isOpen);
   const currentUser = useSelector(state => state.user.currentUser);
   const [count, setCount] = useState(cartValue);
-   const [opendrop, setOpendrop] = useState(false);
+  const [opendrop, setOpendrop] = useState(false);
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -84,6 +84,7 @@ const Auth = () => {
       );
       dispatch(CloseLogin());
       toast.success("successfully logged in");
+      navigate("/Home");
     } else toast.error("Invalid password or Email");
     setValues({ email: "", password: "", showPassword: false });
   };
@@ -115,17 +116,7 @@ const Auth = () => {
       )}
       {/*  */}
       {!currentUser.email && <Link to="/signup">Signup</Link>}
-      <div onClick={() => setOpendrop(!opendrop)}>
-        <BiAlignRight />
-        {opendrop && (
-          <div className={styles.merchentDrop}>
-            <span>Admin SignUp</span>
-            <NavLink to="/merch-Signup" style={{ color: "black",paddingTop:'0.5rem' }}>
-              Merchent SignUp
-            </NavLink>
-          </div>
-        )}
-      </div>
+
       <Dialog
         open={isLoginOpen}
         onClose={() => dispatch(CloseLogin())}
