@@ -1,15 +1,16 @@
-h1 {
-  height: 10vh;
-  width: 80%;
-  margin: 0px auto;
+.h1Maincart {
+  /* height: 10vh; */
+  /* width: 80%; */
+  margin: 4rem auto;
   text-align: center;
-  padding: 20px 0px;
+
+  font-size: x-large;
 }
 
 .maincart {
   height: 40vh;
   width: 100%;
-  margin: 10px 0px;
+  margin: 1rem 0px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,22 +18,32 @@ h1 {
 
 .maincart div {
   flex-basis: 25%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 .maincart div img {
+  width: 220px;
   height: 220px;
-  width: 220px !important;
   border: 0px solid;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .maincart div h4 {
   font-size: 20px;
   font-weight: bold;
   margin: 10px;
+}
+.main div img {
+  width: 346px;
+  height: 345px;
+  margin: auto;
+
+  object-fit: cover;
 }
 
 /* //////////////category part//////////////////////////// */

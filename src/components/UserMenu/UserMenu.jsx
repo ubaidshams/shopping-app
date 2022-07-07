@@ -22,6 +22,7 @@ import { createCurrentUser } from "../../features/User/userSlice";
 export default function UserMenu({ user }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const open = Boolean(anchorEl); 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
@@ -42,7 +43,6 @@ export default function UserMenu({ user }) {
     }
 
   }
-  let navigate = useNavigate();
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>

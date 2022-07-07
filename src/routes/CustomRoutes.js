@@ -23,7 +23,7 @@ import Order from "../pages/profile/Order";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
-      path: "/",
+      path: "/Home",
       element: <Home />,
     },
     {

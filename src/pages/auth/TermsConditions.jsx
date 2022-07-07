@@ -61,10 +61,11 @@ export default function TermsConditions({ condition, modelCondition }) {
       {/* <Button onClick={handleClickOpen("paper")}>scroll=paper</Button> */}
       <Dialog
         open={open}
-        onClose={handleClose}
+        onClose="{handleClose, {reason: backdropClick}}"
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
+        
       >
         <DialogTitle id="scroll-dialog-title">Terms Conditions</DialogTitle>
         <div className={termsStyle.icon}>

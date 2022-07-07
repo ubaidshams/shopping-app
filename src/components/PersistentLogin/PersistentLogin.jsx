@@ -1,12 +1,17 @@
 import React, { useEffect } from "react";
 import Axios from "../../apis/Axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import Spinner from "../spinner/Spinner";
-import { Outlet } from "react-router-dom";
+import { BrowserRouter, Outlet, useNavigate } from "react-router-dom";
 import { createCurrentUser } from "../../features/User/userSlice";
+import Welcome from "../welcomepage/Welcome";
+import CustomRoutes from "../../routes/CustomRoutes";
+import Navbar from "../navbar/Navbar";
 
 const PersistentLogin = ({ children }) => {
+  const navigate = useNavigate();
+  let currentUser = useSelector(state => state.user.currentUser);
   let dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   let getNewToken = async () => {
@@ -38,6 +43,9 @@ const PersistentLogin = ({ children }) => {
   };
   useEffect(() => {
     getNewToken();
+    if (!currentUser.email) {
+      navigate("/");
+    }
   }, []);
 
   return (
@@ -53,8 +61,12 @@ const PersistentLogin = ({ children }) => {
         >
           <Spinner />
         </div>
-      ) : (
+      ) : currentUser.email ? (
         children
+      ) : (
+        <>
+          <Outlet />
+        </>
       )}
     </>
   );

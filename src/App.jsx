@@ -10,19 +10,22 @@ import "react-toastify/dist/ReactToastify.css";
 import SubNavbar from "./components/subnavbar/SubNavbar";
 import Footer from "./components/footer/Footer";
 import PersistentLogin from "./components/PersistentLogin/PersistentLogin";
+import Welcome from "./components/welcomepage/Welcome";
+import Signup from "./pages/auth/users/Signup";
+import CustomRoutes2 from "./routes/CustomRoutes2";
 
 const App = () => {
   AOS.init({ once: true });
   return (
     <div>
       <Router>
+        <Navbar />
+        <ToastContainer />
+        <CustomRoutes2 />
         <PersistentLogin>
-          <ToastContainer />
-          <Navbar />
-          <SubNavbar />
           <CustomRoutes />
-          <Footer />
         </PersistentLogin>
+        <Footer />
       </Router>
     </div>
   );
