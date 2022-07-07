@@ -347,7 +347,7 @@ const Profile = () => {
                         </div>
                       </div>
 
-                      <div>
+                      {/* <div>
                         {locations === false ? null : (
                           <Locations
                             addAddress={addAddress}
@@ -357,8 +357,8 @@ const Profile = () => {
                             setLocations={setLocations}
                           />
                         )}
-                      </div>
-                      <div>
+                      </div> */}
+                      {/* <div>
                         {addAddress.map(datas => {
                           return (
                             <div className={Avatar.cardDetails}>
@@ -371,7 +371,7 @@ const Profile = () => {
                             </div>
                           );
                         })}
-                      </div>
+                      </div> */}
                     </section>
                   </>
                 )}

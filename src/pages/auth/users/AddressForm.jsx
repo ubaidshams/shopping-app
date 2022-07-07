@@ -20,6 +20,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { OpenLogin } from "../../../features/Login/LoginSlice";
 import { Country, State, City } from "country-state-city";
+import { useSelector } from "react-redux";
 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
@@ -65,13 +66,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Signup = () => {
+  let currUser = useSelector(state => state.user.currentUser);
+
+  let { addressList, id } = currUser;
+  console.log(currUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const classes = useStyles();
 
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
-  const [email, setEmail] = useState("");
+  //   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("nopassword");
   const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
@@ -111,28 +116,29 @@ const Signup = () => {
     setAllcity(allCityData);
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     let currPayload = {
-      firstName: fname,
-      lastName: lname,
-      email,
-      password,
-      gender,
-      phone: number1,
-      addressList: [address],
+      //   firstName: fname,
+      //   lastName: lname,
+      //   email,
+      //   gender,
+      //   phone: number1,
+      ...address,
     };
-    console.log("dskfjsdkj");
-    setPayload(currPayload);
-    console.log(payload);
-    fetchData(currPayload);
-    navigate("/");
+    try {
+      await Axios.put(`/user/AddAddress/${id}`, currPayload);
+      navigate("/selectaddress");
+      toast.success("successfully added");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const fetchData = async currPayload => {
     try {
       await Axios.post("/user/signUp", currPayload);
-      toast.success("successfully registered");
+      // toast.success("successfully registered");
     } catch (error) {
       console.log(error.message);
     }
@@ -142,14 +148,14 @@ const Signup = () => {
     <>
       <br />
       <motion.div className={clsx(style.formCard)}>
-        <h1>Create Your Profile</h1>
+        <h1>Add Address</h1>
         <section>
           One profile ID is all you need to access all KART services. You
           already have a profile?{" "}
           <a
             onClick={() => {
               dispatch(OpenLogin());
-              navigate("/");
+              navigate("/selctaddress");
             }}
           >
             Find it here{" "}
@@ -161,7 +167,7 @@ const Signup = () => {
             elevation={0}
             className={style.formCardContainer}
           >
-            <TextField
+            {/* <TextField
               className={classes.formTextFieldName}
               size="small"
               label="First Name"
@@ -184,9 +190,9 @@ const Signup = () => {
               onChange={e => {
                 setLname(e.target.value);
               }}
-            ></TextField>
+            ></TextField> */}
           </Card>
-          <Card
+          {/* <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
@@ -226,14 +232,14 @@ const Signup = () => {
                 />
               </section>
             </RadioGroup>
-          </Card>
+          </Card> */}
           {/* phone number1 mandatory */}
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            <TextField
+            {/* <TextField
               className={classes.formTextFieldOther}
               size="small"
               label="Phone Number"
@@ -243,7 +249,26 @@ const Signup = () => {
               variant="outlined"
               value={number1}
               onChange={e => setNumber1(e.target.value)}
-            ></TextField>
+            ></TextField> */}
+          </Card>
+          <Card
+            elevation={0}
+            style={{ backgroundColor: "transparent" }}
+            className={style.formCardContainer}
+          >
+            {/* <TextField
+              className={classes.formTextFieldOther}
+              size="small"
+              label="Email Address"
+              id="outlined-size-small email"
+              variant="outlined"
+              placeholder="exmaple@company.com"
+              required
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value);
+              }}
+            ></TextField> */}
           </Card>
           {/* number2 optional */}
 
@@ -445,25 +470,6 @@ const Signup = () => {
 
           <Card
             elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            className={style.formCardContainer}
-          >
-            <TextField
-              className={classes.formTextFieldOther}
-              size="small"
-              label="Email Address"
-              id="outlined-size-small email"
-              variant="outlined"
-              placeholder="exmaple@company.com"
-              required
-              value={email}
-              onChange={e => {
-                setEmail(e.target.value);
-              }}
-            ></TextField>
-          </Card>
-          <Card
-            elevation={0}
             style={{ backgroundColor: "transparent", display: "none" }}
             className={style.formCardContainer}
           >
@@ -481,7 +487,7 @@ const Signup = () => {
               }}
             ></TextField>
           </Card>
-          <Card
+          {/* <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
@@ -498,8 +504,8 @@ const Signup = () => {
                 setRole(e.target.value);
               }}
             ></TextField>
-          </Card>
-          <Card
+          </Card> */}
+          {/* <Card
             className={clsx(style.formCardContainer, style.Checkbox)}
             elevation={0}
             style={{ backgroundColor: "transparent" }}
@@ -518,8 +524,6 @@ const Signup = () => {
                   setModel(true);
                 }}
                 control={<Checkbox />}
-
-                // label="I agree to the Terms Conditions*"
               />
               <span
                 style={{
@@ -540,7 +544,7 @@ const Signup = () => {
                 *
               </span>
             </span>
-          </Card>
+          </Card> */}
           <Card style={{ marginLeft: "300px" }}>
             {model && (
               <TermsConditions
@@ -555,7 +559,7 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            <button className={style.bn5}>Let's Shop</button>
+            <button className={style.bn5}>Add Address</button>
           </Card>
         </form>
       </motion.div>
@@ -565,3 +569,91 @@ const Signup = () => {
 };
 
 export default Signup;
+
+// import React, { useState } from "react";
+// import Avatar from "../../profile/profile.module.css";
+// import Locations from "../../profile/Locations";
+// // import Order from "./Order";
+// import { useSelector } from "react-redux";
+// import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+// import "../../profile/profile.module.css";
+// import { useDispatch } from "react-redux";
+// // import MEN from "../../menprofile.png";
+// // import Axios from "../../apis/Axios";
+// import { createCurrentUser } from "../../../features/User/userSlice";
+// const Profile = () => {
+//   let currUser = useSelector(state => state.user.currentUser);
+//   let { firstName, lastName, gender, email, phone } = currUser;
+//   let [UserGender, setGender] = useState("male");
+//   let [manage, setManage] = useState("personal");
+//   let [addAddress, setaddAddress] = useState([]);
+//   let [locations, setLocations] = useState(false);
+//   let [order, setOrder] = useState(false);
+//   let [edit, setEdit] = useState("");
+//   let [display, setDisplay] = useState({
+//     street: "",
+//     landMark: "",
+//     city: "",
+//     state: "",
+//     pincode: "",
+//     country: "",
+//   });
+//   let navigate = useNavigate();
+//   const dispatch = useDispatch();
+
+//   let changeOption = e => {
+//     setGender(e.target.value);
+//   };
+
+//   let changeAddress = () => {
+//     setManage("address");
+//   };
+
+//   let displayAddress = () => {
+//     setDisplay(setaddAddress);
+//   };
+
+//   let changeLocations = () => {
+//     setLocations(true);
+//   };
+
+//     let ch = () => {
+//          setLocations(false);
+//   }
+
+//   return (   <div onClick={changeLocations}>
+
+//                           + ADD A NEW ADDRESS
+
+//                       <div>
+//                         {locations === false ? null : (
+//                           <Locations
+//                             addAddress={addAddress}
+//                             display={display}
+//                             setaddAddress={setaddAddress}
+//                             setDisplay={setDisplay}
+//                             setLocations={setLocations}
+//                             ch={ch}
+//                           />
+//                         )}
+//                       </div>
+//                       <div>
+//                         {addAddress.map(datas => {
+//                           return (
+//                             <div className={Avatar.cardDetails}>
+//                               <p>Street : {datas.street}</p>
+//                               <p>landMark : {datas.landMark}</p>
+//                               <p>City : {datas.city}</p>
+//                               <p>State : {datas.state}</p>
+//                               <p>Pincode : {datas.pincode}</p>
+//                               <p>Country : {datas.country}</p>
+//                             </div>
+//                           );
+//                         })}
+//                       </div>
+
+//    </div>
+//   );
+// };
+// export default Profile;

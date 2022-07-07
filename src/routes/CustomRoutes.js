@@ -15,11 +15,12 @@ import Women from "../components/categories/Women";
 import Menpage from "../components/categories/Menpage";
 import Electronics from "../components/categories/Electronics";
 import Beauty from "../components/categories/Beauty";
-
+import SelectAddress from "../pages/cart/ProductCheckout/SelectAddress";
 import Wishlist from "../pages/wishlist/Wishlist";
 import Profile from "./../pages/profile/Profile";
 import Reset from "../pages/auth/users/Reset";
 import Order from "../pages/profile/Order";
+import AddressForm from "../pages/auth/users/AddressForm";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -99,7 +100,19 @@ const CustomRoutes = () => {
     {
       path:"/myorder",
       element: <Myorder/>
+    },
+    {
+      path: "/selectaddress",
+      element:<SelectAddress/>
+
+
+    },
+
+    {
+      path: "/addressform",
+      element:<AddressForm/>
     }
+
 
 
   ]);
