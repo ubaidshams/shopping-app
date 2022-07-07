@@ -119,11 +119,6 @@ const Signup = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     let currPayload = {
-      //   firstName: fname,
-      //   lastName: lname,
-      //   email,
-      //   gender,
-      //   phone: number1,
       ...address,
     };
     try {

@@ -1,5 +1,9 @@
 .sect {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: 1rem;
 }
 
 .left {
@@ -10,7 +14,6 @@
 
 .rightabove {
   color: black;
-  height: 14vh;
   width: 70%;
   background-color: #1723372e;
   position: relative;
@@ -19,20 +22,26 @@
   border-radius: 7px;
 }
 
-/* .right{
-  height: 20vh;
-  width: 70%;
-  background-color: #172337 ;
-  position: relative;
-  top: 200px;
-} */
-
 .r2 {
   height: 23vh;
-  width: 100%;
+
   background-color: #1723372e;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 7px;
+}
+
+.editpromodal {
+  position: absolute;
+  top: 3rem;
+}
+
+.editprofilebox {
+  padding: 2rem;
+   align-items: center;
+}
+
+.editprofilebox h2{
+ padding-bottom: 3rem;
 }
