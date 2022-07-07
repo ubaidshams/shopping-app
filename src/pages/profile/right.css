@@ -1,0 +1,33 @@
+.editbtn{
+    position: relative;
+    left: 739px;
+    bottom: 44px;
+}
+
+
+h1{
+    position: relative;
+    right: 380px;
+    top: 7px;
+}
+
+table{
+  width: 100%;
+  height: 7vh;
+  /* position: relative;
+  top: 70px; */
+}
+
+table th{
+    color: grey;
+    font-size: small;
+    /* display: flex; */
+    text-align: center;
+    padding: 12px;
+}
+
+
+table td{
+    text-align: center;
+    padding: 7px;
+}

@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 1rem 0;
 }
 .featuredProducts article {
   width: 97%;
@@ -12,10 +13,11 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin: 4rem 0;
 }
 
 .featuredProducts article h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 .cardContainer {

@@ -24,7 +24,7 @@ import AddressForm from "../pages/auth/users/AddressForm";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
-      path: "/",
+      path: "/Home",
       element: <Home />,
     },
     {
