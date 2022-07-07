@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne&family=Ubuntu&family=Varela+Round&display=swap");
 /*  #313132*/
 :root {
-  --text-primary: #adadad;
+  --text-primary: #333;
   --text-secondary: #eee;
   --heading-primary: #111;
   --heading-secondary: #8b8b8b;

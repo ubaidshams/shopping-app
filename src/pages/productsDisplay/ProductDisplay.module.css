@@ -187,13 +187,7 @@ img {
   /* margin-top: 50px; */
 }
 
-div img {
-  width: 346px;
-  height: 345px;
-  margin: auto;
 
-  object-fit: cover;
-}
 
 .imgCardFooterCard {
   margin-top: 20px;
