@@ -7,6 +7,7 @@ import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
 import Checkout from "../pages/cart/ProductCheckout/Checkout";
+import Payment from "../pages/cart/ProductCheckout/Payment";
 import Myorder from "../pages/cart/Myorder";
 import Forget from "../pages/auth/users/Forget";
 import Maincategory from "../components/categories/Maincategory";
@@ -111,6 +112,10 @@ const CustomRoutes = () => {
     {
       path: "/addressform",
       element:<AddressForm/>
+    },
+    {
+      path: "/payment",
+      element: <Payment/>
     }
 
 
