@@ -24,4 +24,19 @@ let addNewAddress = (req, res) => {
   res.send("success");
 };
 
-module.exports = { addNewAddress };
+const updateProfile = (req, res) => {
+  const userId = req.params.id;
+  const newdata = req.body;
+  let updatedData = userData.map(item => {
+    if (item.id == userId) {
+      return { ...item, ...newdata };
+    } else {
+      return item;
+    }
+  });
+
+  reWrinteJson(updatedData);
+  res.send("success");
+};
+
+module.exports = { addNewAddress, updateProfile };
