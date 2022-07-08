@@ -59,7 +59,7 @@
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .authBlock2 {
   width: 20%;
@@ -84,23 +84,39 @@
 }
 .Loginbutton {
   padding: 8px 16px;
-  border: 1px solid var(--link-hover);
+  border: 1px solid var(--span-color);
   border-radius: 10px;
-  color: var(--link-hover);
+  color: var(--span-color);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  background-color: transparent;
+}
+
+/* .Signupbutton{
+   padding: 8px 16px;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: green;
   transition: all 0.3s linear;
   cursor: pointer;
   font-size: 1rem;
   background-color: transparent;
-}
+} */
+
+
 .authBlock button:hover {
-  background-color: var(--link-hover);
-  color: #1d2c4e;
+  background-color: var(--span-color);
+  color: var(--text-secondary);
 }
 .cartIcon {
   display: flex;
   align-items: center;
   gap: 5px;
   position: relative;
+  cursor: pointer;
 }
 .cartIcon svg {
   height: 30px;
