@@ -5,8 +5,13 @@ import FeaturedProducts from "../../components/featured products/FeaturedProduct
 import Maincategory from "../../components/categories/Maincategory";
 import ChatBot from "../../components/chatBot/ChatBot";
 import SubNavbar from "../../components/subnavbar/SubNavbar";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Home = () => {
+  
+
   return (
     <section className="homeBlock">
       <SubNavbar />

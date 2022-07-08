@@ -34,7 +34,7 @@ const PersistentLogin = ({ children }) => {
         },
       });
       let token = data.token;
-      // console.log("persistentLogin....", detailsRes.data);
+
       dispatch(
         createCurrentUser({
           refreshToken: token,

@@ -26,7 +26,7 @@ const Profile = () => {
 
 
   return (
-    <Container sx={{ display: "flex" }}>
+    <Container sx={{ display: "flex" ,marginY:'3rem' }}>
       <UserDashBoard />
       <ProfileOutlet />
     </Container>
