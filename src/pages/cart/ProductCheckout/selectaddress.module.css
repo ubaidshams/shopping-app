@@ -18,7 +18,7 @@ background-color: #fff;
 color: #333;
 }
 
-.df button{
+.df .adneadd{
     border: none;
     padding: 10px;
     color: rgb(31, 190, 252);
@@ -44,5 +44,28 @@ color: #333;
     box-shadow: 0 0 1px 0.5px gray;
     margin: 10px;
     padding: 10px;
+
+}
+
+
+.proceed{
+    padding: 10px;
+    background-color: rgb(43, 194, 253);
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+
+}
+
+.remove svg{
+    height: 20px;
+    width: 20px;
+   
+   
+    margin-top: 30px;
+   
+    
 
 }

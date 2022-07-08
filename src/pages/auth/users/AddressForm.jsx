@@ -128,16 +128,21 @@ const Signup = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+    };
+    
+    useEffect(() => {
+        const fetchData = async currPayload => {
+          try {
+            await Axios.post("/user/signUp", currPayload);
+            // toast.success("successfully registered");
+          } catch (error) {
+            console.log(error.message);
+          }
+        };
+        
+    },[])
 
-  const fetchData = async currPayload => {
-    try {
-      await Axios.post("/user/signUp", currPayload);
-      // toast.success("successfully registered");
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  
 
   return (
     <>
