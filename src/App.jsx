@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 // import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -13,8 +19,13 @@ import PersistentLogin from "./components/PersistentLogin/PersistentLogin";
 import Welcome from "./components/welcomepage/Welcome";
 import Signup from "./pages/auth/users/Signup";
 import CustomRoutes2 from "./routes/CustomRoutes2";
+import { useSelector } from "react-redux";
+
 
 const App = () => {
+    
+  
+
   AOS.init({ once: true });
 
   return (

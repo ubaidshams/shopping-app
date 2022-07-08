@@ -5,6 +5,7 @@ import Menu from "./Menu";
 import styles from "./navbar.module.css";
 
 const Navbar = () => {
+
   return (
     <section className={styles.navbar}>
       <article>

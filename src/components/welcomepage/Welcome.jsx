@@ -12,8 +12,10 @@ function Welcome() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (currentUser.email && pathname == "/") {
+      navigate("/Home");
+    }
     if (!currentUser.email) {
-      console.log("navigate");
       if (!pathname == "/signup") navigate("/");
     }
   }, [pathname]);
