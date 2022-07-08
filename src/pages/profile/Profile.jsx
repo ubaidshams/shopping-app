@@ -23,13 +23,13 @@ import ProfileInfo from "./ProfileInfo";
 import ProfileOutlet from "./ProfileOutlet";
 import UserDashBoard from "./UserDashBoard";
 const Profile = () => {
-
-
   return (
-    <Container sx={{ display: "flex" ,marginY:'3rem' }}>
-      <UserDashBoard />
-      <ProfileOutlet />
-    </Container>
+    <section>
+      <Container sx={{ display: "flex", paddingY: "3rem" }}>
+        <UserDashBoard />
+        <ProfileOutlet />
+      </Container>
+    </section>
   );
 };
 export default Profile;
