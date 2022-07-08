@@ -74,7 +74,7 @@ const Profile = () => {
       <div className="rightabove">
         <Right />
       </div>
-      <div className="right"></div>
+      
     </section>
   );
 };
