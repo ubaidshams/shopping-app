@@ -14,7 +14,7 @@ function UserDashBoard() {
       sx={{
         height: "60vh",
         margin: "1rem 0",
-        boxShadow: "0px 1px 2px 2px lightblue",
+        boxShadow: "0px 1px 2px 2px #efefef",
         background: "#e4e4e4",
         width: "20vw",
       }}

@@ -69,7 +69,7 @@ const ProfileInfo = () => {
             </StyledBadge>
             <span>{firstName}</span>
           </h1>
-          <Button variant="contained" onClick={() => setOpeneditprofile(true)}>
+          <Button sx={{textTransform:'capitalize',fontWeight:'600'}}  variant="contained" onClick={() => setOpeneditprofile(true)}>
             Edit Profile &nbsp; <ModeEditIcon />
           </Button>
         </div>

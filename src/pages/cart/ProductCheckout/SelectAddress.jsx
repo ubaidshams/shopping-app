@@ -71,17 +71,12 @@ const SelectAddress = () => {
                   {item.pincode}{" "}
                 </p>
               </div>
-              {/* <div className={style.remove} onClick={remove}>
-                <AiFillDelete />
-              </div> */}
+             
             </div>
           );
         })}
       </div>
-     
-        {" "}
         <button onClick={handlesubmit} className={style.proceed}>Proceed</button>
-     
     </div>
   );
 };
