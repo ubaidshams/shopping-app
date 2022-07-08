@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 import "./right.css";
 import EditProfile from "./EditProfile";
-const Right = () => {
+const ProfileInfo = () => {
   const [openeditprofile, setOpeneditprofile] = useState(false);
   let currUser = useSelector(state => state.user.currentUser);
   let { firstName, lastName, gender, email, phone } = currUser;
@@ -53,4 +53,4 @@ const Right = () => {
   );
 };
 
-export default Right;
+export default ProfileInfo;

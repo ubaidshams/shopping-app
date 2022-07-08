@@ -45,3 +45,11 @@
 .editprofilebox h2{
  padding-bottom: 3rem;
 }
+
+.ediprofileDashbord{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 40vh;
+}

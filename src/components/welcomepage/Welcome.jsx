@@ -1,13 +1,26 @@
 import { Container } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Navbar from "../navbar/Navbar";
 import welcomeStyle from "./welcome.module.css";
+import { useSelector } from "react-redux";
 
 function Welcome() {
+  const currentUser = useSelector(state => state.user.currentUser);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!currentUser.email) {
+      console.log("navigate");
+      if (!pathname == "/signup") navigate("/");
+    }
+  }, [pathname]);
+
   return (
     <section>
-      <Navbar/>
+      <Navbar />
       <article className={welcomeStyle.welcomesection}>
         <div className={welcomeStyle.mainHead}>
           <div className={welcomeStyle.headings1}>
