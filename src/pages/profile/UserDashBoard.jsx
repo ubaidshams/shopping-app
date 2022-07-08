@@ -14,8 +14,8 @@ function UserDashBoard() {
       sx={{
         height: "60vh",
         margin: "1rem 0",
-        boxShadow: "0px 1px 2px 2px #efefef",
-        background: "#e4e4e4",
+        boxShadow: "0px 1px 4px 3px lightgray",
+        borderRadius:'10px',
         width: "20vw",
       }}
     >
@@ -29,7 +29,7 @@ function UserDashBoard() {
       >
         <img
           alt=""
-          src="https://cdn.pixabay.com/photo/2016/12/28/11/56/headphones-1935971_960_720.png"
+          src="https://cdn.pixabay.com/photo/2017/01/10/03/54/avatar-1968236_960_720.png"
           className="userDashimage"
         />
         <h2>My Account</h2>

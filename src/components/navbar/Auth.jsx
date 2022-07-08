@@ -90,7 +90,7 @@ const Auth = () => {
   };
   return (
     <div className={currentUser.email ? styles.authBlock2 : styles.authBlock}>
-      {location.pathname !== "/signup" && (
+      {currentUser.email && (
         <a
           onClick={e => navigate("/cart")}
           className={styles.cartIcon}
@@ -115,7 +115,11 @@ const Auth = () => {
         </button>
       )}
 
-      {!currentUser.email && <Link to="/signup">Signup</Link>}
+      {/* {!currentUser.email && (
+        <Link to="/signup">
+          <button className={styles.Signupbutton}>Signup</button>
+        </Link>
+      )} */}
 
       <Dialog
         open={isLoginOpen}
