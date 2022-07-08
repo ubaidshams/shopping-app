@@ -49,5 +49,7 @@
 .ediprofileDashbord{
   display: flex;
   flex-direction: column;
-  gap: 3;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 40vh;
 }

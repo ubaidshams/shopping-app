@@ -23,9 +23,7 @@ import ProfileInfo from "./ProfileInfo";
 import ProfileOutlet from "./ProfileOutlet";
 import UserDashBoard from "./UserDashBoard";
 const Profile = () => {
-  let currUser = useSelector(state => state.user.currentUser);
 
-  let { firstName, lastName, gender, email, phone } = currUser;
 
   return (
     <Container sx={{ display: "flex" }}>

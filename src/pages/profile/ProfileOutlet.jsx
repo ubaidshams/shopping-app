@@ -2,9 +2,9 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 function ProfileOutlet() {
-    return <section>
+    return <>
       <Outlet/>
-  </section>;
+  </>;
 }
 
 export default ProfileOutlet;

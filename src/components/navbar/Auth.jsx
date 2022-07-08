@@ -114,7 +114,7 @@ const Auth = () => {
           Login
         </button>
       )}
-      {/*  */}
+
       {!currentUser.email && <Link to="/signup">Signup</Link>}
 
       <Dialog

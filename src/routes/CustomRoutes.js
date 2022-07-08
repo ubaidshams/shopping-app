@@ -24,6 +24,7 @@ import Order from "../pages/profile/Order";
 import AddressForm from "../pages/auth/users/AddressForm";
 import Right from "../pages/profile/ProfileInfo";
 import ProfileInfo from "../pages/profile/ProfileInfo";
+import MyAddresses from "../pages/profile/MyAddresses";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -100,6 +101,10 @@ const CustomRoutes = () => {
         {
           path: "my-profile-info",
           element: <ProfileInfo />,
+        },
+        {
+          path: "my-addresses",
+          element: <MyAddresses />,
         },
       ],
     },

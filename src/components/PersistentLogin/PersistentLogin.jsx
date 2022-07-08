@@ -50,15 +50,6 @@ const PersistentLogin = ({ children }) => {
   useEffect(() => {
     getNewToken();
   }, []);
-  useEffect(() => {
-    if (!currentUser.email) {
-      navigate("/");
-    } else {
-      if (pathname === "/") {
-        navigate("/Home");
-      }
-    }
-  }, [pathname]);
 
   if (loading) {
     return (
@@ -74,17 +65,7 @@ const PersistentLogin = ({ children }) => {
       </div>
     );
   } else {
-    return (
-      <>
-        {currentUser.email ? (
-          children
-        ) : (
-          <>
-            <Outlet />
-          </>
-        )}
-      </>
-    );
+    return <>{currentUser.email && children}</>;
   }
 };
 
