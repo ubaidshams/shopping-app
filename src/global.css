@@ -44,3 +44,7 @@ a {
 a:hover {
   color: var(--link-hover) !important;
 }
+
+ul{
+  list-style: none;
+}

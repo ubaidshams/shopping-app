@@ -105,7 +105,7 @@ export default function UserMenu({ user }) {
           </ListItemIcon>
           Wish List
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => navigate("/myorder")}>
           <ListItemIcon>
             <ShoppingBagIcon />
           </ListItemIcon>

@@ -22,16 +22,15 @@ import Profile from "./../pages/profile/Profile";
 import Reset from "../pages/auth/users/Reset";
 import Order from "../pages/profile/Order";
 import AddressForm from "../pages/auth/users/AddressForm";
+import Right from "../pages/profile/ProfileInfo";
+import ProfileInfo from "../pages/profile/ProfileInfo";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
       path: "/Home",
       element: <Home />,
     },
-    {
-      path: "/My-orders",
-      element: <Order />,
-    },
+
     {
       path: "/login",
       element: <Login />,
@@ -97,29 +96,30 @@ const CustomRoutes = () => {
     {
       path: "/my-profile",
       element: <Profile />,
+      children: [
+        {
+          path: "my-profile-info",
+          element: <ProfileInfo />,
+        },
+      ],
     },
     {
-      path:"/myorder",
-      element: <Myorder/>
+      path: "/myorder",
+      element: <Myorder />,
     },
     {
       path: "/selectaddress",
-      element:<SelectAddress/>
-
-
+      element: <SelectAddress />,
     },
 
     {
       path: "/addressform",
-      element:<AddressForm/>
+      element: <AddressForm />,
     },
     {
       path: "/payment",
-      element: <Payment/>
-    }
-
-
-
+      element: <Payment />,
+    },
   ]);
   return myRoutes;
 };
