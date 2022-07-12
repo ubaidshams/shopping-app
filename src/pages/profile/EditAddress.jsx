@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams} from "react-router-dom";
 import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import style from "../auth/users/signup.module.css";
 import { motion } from "framer-motion";
@@ -73,17 +73,7 @@ const EditAddress = () => {
   const navigate = useNavigate();
   // const dispatch = useDispatch();
   const classes = useStyles();
-
-  //   const [fname, setFname] = useState("");
-  //   const [lname, setLname] = useState("");
-  //   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("nopassword");
-  //   const [role, setRole] = useState("");
-  //   const [gender, setGender] = useState("male");
-  //   const [payload, setPayload] = useState({});
-  //   const [btnCondition, setBtnCondition] = useState(false);
-  //   const [model, setModel] = useState(false);
-  //   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({
     id:addressId,
     houseNo: houseNo,
@@ -117,19 +107,6 @@ const EditAddress = () => {
     setAllcity(allCityData);
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   let currPayload = {
-  //     ...address,
-  //   };
-  //   try {
-  //     await Axios.put(`/user/AddAddress/${id}`, currPayload);
-  //     navigate("/selectaddress");
-  //     toast.success("successfully added");
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
   
   const handleSubmit = async e => {
     e.preventDefault();

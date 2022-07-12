@@ -124,7 +124,7 @@ const Signup = () => {
     };
     try {
       await Axios.put(`/user/AddAddress/${id}`, currPayload);
-      navigate("/selectaddress");
+      navigate("/my-profile/my-addresses");
       toast.success("successfully added");
     } catch (err) {
       console.log(err);
