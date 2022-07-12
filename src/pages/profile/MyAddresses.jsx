@@ -6,19 +6,35 @@ import { Link } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import { v4 as uuidv4 } from "uuid";
-
+import Axios from "../../apis/Axios";
+import { toast } from "react-toastify";
 function MyAddresses() {
-  let currUser = useSelector(state => state.user.currentUser);
-  let { firstName, lastName, gender, email, phone, addressList } = currUser;
-
+  let currUser = useSelector((state) => state.user.currentUser);
+  let { firstName, lastName, phone, addressList } = currUser;
+  let [cuurentUser, setCurrentUser] = useState(currUser);
   let [use, setuse] = useState(false);
   let navigate = useNavigate();
   useEffect(() => {
-    let address = currUser;
-    console.log(address);
-  }, []);
+    setCurrentUser(currUser);
+    console.log(cuurentUser);
+  }, [cuurentUser]);
 
-  console.log(addressList);
+  const deleteAddress = async (addressId) => {
+    let permit = window.confirm("are sure to delete Address")
+
+   
+    try {
+      if(permit){
+        await Axios.delete(
+          `http://localhost:5000/user/deleteAddress/${currUser.id}/${addressId}`
+        );
+        toast.error("Address Deleted");
+        window.location.assign("/my-profile/my-addresses")
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div style={{ margin: "0 2rem" }}>
@@ -37,7 +53,7 @@ function MyAddresses() {
         </h3>
         <p style={{ fontWeight: "lighter" }}>{phone}</p>
 
-        {addressList.map((item, index) => {
+        {cuurentUser.addressList.map((item, index) => {
           return (
             <Card sx={{ maxWidth: 500, margin: "8px 0px" }}>
               <CardContent>
@@ -60,13 +76,13 @@ function MyAddresses() {
                     startIcon={<ModeEditOutlineOutlinedIcon />}
                   ></Button>
                 </Link>
-                <Link to={`/deleteAddress`}>
-                  <Button
-                    color="error"
-                    startIcon={<DeleteIcon />}
-                    size="small"
-                  ></Button>
-                </Link>
+
+                <Button
+                  color="error"
+                  onClick={() => deleteAddress(item.id)}
+                  startIcon={<DeleteIcon />}
+                  size="small"
+                ></Button>
               </CardActions>
             </Card>
           );
