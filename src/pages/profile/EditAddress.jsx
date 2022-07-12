@@ -62,16 +62,16 @@ const useStyles = makeStyles((theme) => ({
 const EditAddress = () => {
   let currUser = useSelector((state) => state.user.currentUser);
   let { addressId } = useParams();
-  let { addressList, id } = currUser;
+  let { addressList } = currUser;
   
-  let Addressdata= addressList.reduce(add=>{if(add.id === addressId){
+  let Addressdata= addressList.find(add=>{if(add.id === addressId){
     return add
   }})
 // console.log(Addressdata)
   let { houseNo, street, landMark, pincode } = Addressdata;
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const classes = useStyles();
 
   //   const [fname, setFname] = useState("");
@@ -138,10 +138,11 @@ const EditAddress = () => {
         };
     try {
       await Axios.put(
-        `http://localhost:5000/user/updateProfile/${addressId}`,
+        `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
       toast.success("successfully updated");
+      navigate("/my-profile/my-addresses")
     } catch (err) {
       console.log(err);
     }

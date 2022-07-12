@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 import { v4 as uuidv4 } from "uuid";
-
+import Axios from "../../apis/Axios";
+import { toast } from "react-toastify";
 function MyAddresses() {
   let currUser = useSelector((state) => state.user.currentUser);
   let { firstName, lastName, gender, email, phone, addressList } = currUser;
@@ -20,6 +21,16 @@ function MyAddresses() {
 
   console.log(addressList);
 
+  const deleteAddress = async (addressId)=>{
+    try {
+      await Axios.put(
+        `http://localhost:5000/user/deleteAddress/${currUser.id}/${addressId}`
+      );
+      toast.error("Address Deleted")
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   
   return (
@@ -62,13 +73,14 @@ function MyAddresses() {
                     startIcon={<ModeEditOutlineOutlinedIcon />}
                   ></Button>
                 </Link>
-                <Link to={`/deleteAddress`}>
+                
                   <Button
                     color="error"
+                    onClick={deleteAddress(item.id)}
                     startIcon={<DeleteIcon />}
                     size="small"
                   ></Button>
-                </Link>
+              
               </CardActions>
             </Card>
           );
