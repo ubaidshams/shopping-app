@@ -21,7 +21,6 @@ function MyAddresses() {
 
   console.log(addressList);
 
-<<<<<<< HEAD
   const deleteAddress = async (addressId)=>{
     try {
       await Axios.put(
@@ -34,8 +33,6 @@ function MyAddresses() {
   }
 
   
-=======
->>>>>>> ad6544a042c7546c883cc7dff8a01b474b4c7cfc
   return (
     <div style={{ margin: "0 2rem" }}>
       <h3 style={{ marginBottom: "30px", textAlign: "center" }}>
