@@ -121,6 +121,7 @@ const EditAddress = () => {
         `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
+
        setTimeout(async () => {
          let detailsRes = await Axios.get("/api/user/detail", {
            headers: {

@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -29,6 +30,7 @@ function EditProfile({ open, onClose }) {
   let currentUser = useSelector(state => state.user.currentUser);
   let token = useSelector(state => state.user.token);
   let { firstName, lastName, gender, email, phone, id } = currentUser;
+
   const navigate = useNavigate();
   let [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
@@ -75,9 +77,6 @@ function EditProfile({ open, onClose }) {
         );
       }, 200);
       onClose()
-      // navigate("/my-profile/my-profile-info");
-      // window.location.assign("/my-profile/my-profile-info");
-
       toast.success("successfully updated");
     } catch (err) {
       console.log(err);
