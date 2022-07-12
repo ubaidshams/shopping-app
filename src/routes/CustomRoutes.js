@@ -41,10 +41,7 @@ const CustomRoutes = () => {
       path: "/signup",
       element: <Signup />,
     },
-    {
-      path: "/forgot",
-      element: <Forget />,
-    },
+   
     {
       path: "/reset",
       element: <Reset />,
