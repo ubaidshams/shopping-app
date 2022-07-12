@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import Axios from "../../apis/Axios";
 import { toast } from "react-toastify";
 function MyAddresses() {
-  let currUser = useSelector((state) => state.user.currentUser);
+  let currUser = useSelector(state => state.user.currentUser);
   let { firstName, lastName, gender, email, phone, addressList } = currUser;
 
   let [use, setuse] = useState(false);
@@ -21,6 +21,7 @@ function MyAddresses() {
 
   console.log(addressList);
 
+<<<<<<< HEAD
   const deleteAddress = async (addressId)=>{
     try {
       await Axios.put(
@@ -33,8 +34,10 @@ function MyAddresses() {
   }
 
   
+=======
+>>>>>>> ad6544a042c7546c883cc7dff8a01b474b4c7cfc
   return (
-    <div className={""}>
+    <div style={{ margin: "0 2rem" }}>
       <h3 style={{ marginBottom: "30px", textAlign: "center" }}>
         Your Address
       </h3>
