@@ -11,15 +11,7 @@
   "status": "",
   "role": "",
   "addressList": [
-    {
-      "houseNo": 0,
-      "street": "",
-      "landMark": "",
-      "city": "",
-      "state": "",
-      "country": "",
-      "pincode": 0
-    }
+   
   ],
   "orderHistory": [],
   "token": ""
