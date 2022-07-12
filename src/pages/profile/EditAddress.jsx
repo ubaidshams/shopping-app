@@ -66,7 +66,7 @@ const EditAddress = () => {
     let token = useSelector(state => state.user.token);
   let { addressId } = useParams();
   let { addressList } = currUser;
-  
+  const dispatch = useDispatch();
   let Addressdata= addressList.find(add=>{if(add.id === addressId){
     return add
   }})
