@@ -16,7 +16,7 @@ import { useDispatch } from "react-redux";
 import { Country, State, City } from "country-state-city";
 import { useSelector } from "react-redux";
 import { createCurrentUser } from "../../features/User/userSlice";
-
+ 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -62,11 +62,9 @@ const useStyles = makeStyles((theme) => ({
 
 const EditAddress = () => {
   let currUser = useSelector((state) => state.user.currentUser);
-    // let currentUser = useSelector(state => state.user.currentUser);
     let token = useSelector(state => state.user.token);
   let { addressId } = useParams();
   let { addressList } = currUser;
-  
   let Addressdata= addressList.find(add=>{if(add.id === addressId){
     return add
   }})
@@ -74,7 +72,6 @@ const EditAddress = () => {
   let { houseNo, street, landMark, pincode } = Addressdata;
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const classes = useStyles();
   const [password, setPassword] = useState("nopassword");
   const [address, setAddress] = useState({

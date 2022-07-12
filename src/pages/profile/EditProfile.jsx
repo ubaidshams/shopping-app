@@ -31,7 +31,6 @@ function EditProfile({ open, onClose }) {
   let token = useSelector(state => state.user.token);
   let { firstName, lastName, gender, email, phone, id } = currentUser;
 
-  const navigate = useNavigate();
   let [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
 
