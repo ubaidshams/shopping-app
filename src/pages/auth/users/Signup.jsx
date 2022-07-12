@@ -84,6 +84,7 @@ const Signup = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    window.alert(" Successfully Registered Please Check your mail and Verify");
     let currPayload = {
       firstName: fname,
       lastName: lname,
