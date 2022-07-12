@@ -8,7 +8,7 @@ import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutl
 import { v4 as uuidv4 } from "uuid";
 
 function MyAddresses() {
-  let currUser = useSelector((state) => state.user.currentUser);
+  let currUser = useSelector(state => state.user.currentUser);
   let { firstName, lastName, gender, email, phone, addressList } = currUser;
 
   let [use, setuse] = useState(false);
@@ -20,10 +20,8 @@ function MyAddresses() {
 
   console.log(addressList);
 
-
-  
   return (
-    <div className={""}>
+    <div style={{ margin: "0 2rem" }}>
       <h3 style={{ marginBottom: "30px", textAlign: "center" }}>
         Your Address
       </h3>
