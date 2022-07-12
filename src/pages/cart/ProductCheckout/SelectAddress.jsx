@@ -39,10 +39,10 @@ const SelectAddress = () => {
 
       <div className={style.df}>
         <p style={{ color: "black", fontWeight: "bold" }}>Deliver to:</p>
-        <Link to="/addressform">
+        {/* <Link to="/addressform">
           {" "}
           <button className={style.adneadd}>Add New Address</button>
-        </Link>
+        </Link> */}
       </div>
       <div className="adcon">
         <h3>
