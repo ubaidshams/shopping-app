@@ -173,8 +173,6 @@ img {
 
 .accordion {
   margin-top: 10px;
-  background-color: #1d2c4e;
-  color: white;
 }
 
 /* product image card */
@@ -186,8 +184,6 @@ img {
   margin: 0 auto;
   /* margin-top: 50px; */
 }
-
-
 
 .imgCardFooterCard {
   margin-top: 20px;

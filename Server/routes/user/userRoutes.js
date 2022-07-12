@@ -7,7 +7,7 @@ const {
   getAllUsers,
   forgotPassword,
 } = require("../../Controller/UserController");
-const { addNewAddress, updateProfile } = require("../../Controller/userDataController");
+const { addNewAddress, updateProfile , updateAddress, deleteAddress} = require("../../Controller/userDataController");
 const verifyAccessToken = require("../../middleware/verifyAccessToken");
 const router = express.Router();
 
@@ -21,6 +21,8 @@ router.get("/logout", handleLogOut);
 
 router.route("/forgot-password").post(forgotPassword);
 router.route("/AddAddress/:id").put(addNewAddress);
+router.route("/updateAddress/:id/:addressId").put(updateAddress);
+router.route("/deleteAddress/:id/:addressId").delete(deleteAddress)
 router.route("/updateProfile/:id").put(updateProfile);
 
 // const formData = require("form-data");

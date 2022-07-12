@@ -25,6 +25,7 @@ import AddressForm from "../pages/auth/users/AddressForm";
 import Right from "../pages/profile/ProfileInfo";
 import ProfileInfo from "../pages/profile/ProfileInfo";
 import MyAddresses from "../pages/profile/MyAddresses";
+import EditAddress from "../pages/profile/EditAddress";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -120,6 +121,10 @@ const CustomRoutes = () => {
     {
       path: "/addressform",
       element: <AddressForm />,
+    },
+    {
+      path:`/editaddress/:addressId`,
+      element: <EditAddress/>
     },
     {
       path: "/payment",

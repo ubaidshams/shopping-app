@@ -71,24 +71,11 @@ const CheckoutProducts = () => {
                 <p>{description}</p>
               </div>
               <div className={styles.moreDetails}>
-                {/* <StarRatings rating={rating} /> */}
                 <span>{rating}⭐</span>
 
                 <span>₹{price}</span>
                 <div className={styles.quantity}>
-                  {/* <AiOutlineMinusCircle
-                    onClick={e => {
-                      e.stopPropagation();
-                      dispatch(removeFromCart(index));
-                    }}
-                  /> */}
                   <span>Qty:{productQuantityCounter[productsid]}</span>
-                  {/* <AiOutlinePlusCircle
-                    onClick={e => {
-                      e.stopPropagation();
-                      dispatch(addToCart(product));
-                    }}
-                  /> */}
                 </div>
               </div>
             </Card>
