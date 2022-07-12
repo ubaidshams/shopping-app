@@ -144,9 +144,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 2rem 0;
 }
 .emptyCart img {
   object-fit: cover;
+  width: 30vw;
+  
 }
 
 .quantity {

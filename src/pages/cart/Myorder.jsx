@@ -31,9 +31,9 @@ const CheckoutProducts = () => {
   return (
     <div
       className={styles.checkoutProductContainer}
-      style={{ margin: "0 auto" }}
-      >
-          <h1>My Order</h1>
+      style={{ margin: "1rem auto" }}
+    >
+      <h1>My Order</h1>
       {cart.cartItems.length === 0 ? (
         <div className={styles.emptyCart}>
           <img
@@ -61,8 +61,8 @@ const CheckoutProducts = () => {
               elevation={5}
               className={styles.cartProduct}
               key={productsid}
-                  onClick={() => navigate(`/products_page/${productsid}`)}
-                  style={{margin:"10px"}}
+              onClick={() => navigate(`/products_page/${productsid}`)}
+              style={{ margin: "10px" }}
             >
               <img src={thumbnailURL} alt={title} />
               <div className={styles.productDetails}>
