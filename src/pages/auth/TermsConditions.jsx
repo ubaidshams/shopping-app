@@ -73,7 +73,6 @@ export default function TermsConditions({ condition, modelCondition }) {
         <DialogContent dividers={scroll === "paper"}>
           <DialogContentText
             id="scroll-dialog-description"
-            style={{ textAlign: "justify" }}
             ref={descriptionElementRef}
             tabIndex={-1}
           >
@@ -101,9 +100,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           {btnCondition == true ? (
-            <Button onClick={handleAgree} style={{ backgroundColor: "#231955",color:'#eee' }}>
-              I Agree
-            </Button>
+            <Button onClick={handleAgree}>I Agree</Button>
           ) : (
             <Button disabled={true}>I Agree</Button>
           )}

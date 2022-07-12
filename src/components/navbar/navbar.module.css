@@ -147,12 +147,12 @@
   align-items: center;
 }
 .searchContainer {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
 }
 .searchContainer input {
-  width: 100%;
+  width: 80%;
   padding:  10px;
   border: none;
   background-color: #efefef;
@@ -164,8 +164,7 @@
 .searchContainer svg {
   width: 8%;
   height: 35px;
-  background-color: #FBB454;
-  color: black !important;
+  background-color: #666;
   padding: 5px;
   cursor: pointer;
   border-radius: 0 4px 4px 0;

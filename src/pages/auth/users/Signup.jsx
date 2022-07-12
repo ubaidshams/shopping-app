@@ -73,7 +73,7 @@ const Signup = () => {
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("nopassword");
-  // const [role, setRole] = useState("");
+  const [role, setRole] = useState("");
   const [gender, setGender] = useState("male");
   const [payload, setPayload] = useState({});
   const [btnCondition, setBtnCondition] = useState(false);
@@ -262,7 +262,7 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
           >
-            {/* <TextField
+            <TextField
               className={classes.formTextFieldOther}
               size="small"
               label="Role"
@@ -273,7 +273,7 @@ const Signup = () => {
               onChange={e => {
                 setRole(e.target.value);
               }}
-            ></TextField> */}
+            ></TextField>
           </Card>
           <Card
             className={clsx(style.formCardContainer, style.Checkbox)}

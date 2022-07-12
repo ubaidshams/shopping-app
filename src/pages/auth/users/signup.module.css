@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 .formCard section a::after {
-  content: ">>";
+  content: ">";
 }
 
 .formCard section a:hover {
