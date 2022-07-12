@@ -20,14 +20,16 @@ function MyAddresses() {
   }, [cuurentUser]);
 
   const deleteAddress = async (addressId) => {
-    try {
+    let permit = window.confirm("are sure to delete Address")
 
-      if (true) {
+   
+    try {
+      if(permit){
         await Axios.delete(
           `http://localhost:5000/user/deleteAddress/${currUser.id}/${addressId}`
         );
-        navigate("/my-profile/my-addresses");
         toast.error("Address Deleted");
+        window.location.assign("/my-profile/my-addresses")
       }
     } catch (err) {
       console.log(err);
