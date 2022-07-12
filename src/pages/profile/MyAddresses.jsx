@@ -1,11 +1,11 @@
-import { Button, Card , CardActions, CardContent } from "@mui/material";
+import { Button, Card, CardActions, CardContent } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import DeleteIcon from '@mui/icons-material/Delete';
-import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
-import {v4 as uuidv4} from "uuid"
+import DeleteIcon from "@mui/icons-material/Delete";
+import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
+import { v4 as uuidv4 } from "uuid";
 
 function MyAddresses() {
   let currUser = useSelector((state) => state.user.currentUser);
@@ -18,8 +18,9 @@ function MyAddresses() {
     console.log(address);
   }, []);
 
+  console.log(addressList);
 
-  console.log(addressList)
+
   
   return (
     <div className={""}>
@@ -32,7 +33,7 @@ function MyAddresses() {
           <Button variant="contained">Add Address</Button>
         </Link>
       </div>
-      <div className={""} style={{margin:"8px 0px"}}>
+      <div className={""} style={{ margin: "8px 0px" }}>
         <h3>
           {firstName} <span>{lastName}</span>
         </h3>
@@ -40,12 +41,12 @@ function MyAddresses() {
 
         {addressList.map((item, index) => {
           return (
-            <Card sx={{ maxWidth: 500 , margin:"8px 0px" }}>
+            <Card sx={{ maxWidth: 500, margin: "8px 0px" }}>
               <CardContent>
                 <div style={{ display: "flex" }}>
                   <div className={""}>
                     <h4>{`Address ${index + 1}`} : &nbsp; </h4>
-                    <div style={{marginTop:"6px"}}>
+                    <div style={{ marginTop: "6px" }}>
                       {item.houseNo} , {item.landMark},{item.street},{" "}
                       {item.city} -{item.pincode}
                     </div>
@@ -53,12 +54,21 @@ function MyAddresses() {
                 </div>
               </CardContent>
 
-              <CardActions >
+              <CardActions>
                 <Link to={`/editaddress/${item.id}`}>
-                <Button  size="small" color="success" startIcon={<ModeEditOutlineOutlinedIcon/>}>edit</Button>
+                  <Button
+                    size="small"
+                    color="success"
+                    startIcon={<ModeEditOutlineOutlinedIcon />}
+                  ></Button>
                 </Link>
-                
-                <Button color="error" startIcon={<DeleteIcon />} size="small">Delete</Button>
+                <Link to={`/deleteAddress`}>
+                  <Button
+                    color="error"
+                    startIcon={<DeleteIcon />}
+                    size="small"
+                  ></Button>
+                </Link>
               </CardActions>
             </Card>
           );

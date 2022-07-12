@@ -66,16 +66,6 @@
     "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpdGhAdGVzdC5jb20iLCJpYXQiOjE2NTcyNzY0NDEsImV4cCI6MTY1NzM2Mjg0MX0.0bC6ZjWd0G4tu0X2jY_rheMp611DlOI543x315vY1f0"
   },
   {
-    "0": {
-      "id": "ef39ba01-c38f-497b-999f-2670eb9e16dd",
-      "houseNo": "104",
-      "street": "rajura",
-      "landMark": "nandurbar",
-      "city": "Nagpur",
-      "state": "Maharashtra",
-      "pincode": "554466",
-      "country": "India"
-    },
     "id": "4fa0d8193a6a7df7",
     "firstName": "Aniket",
     "lastName": "Mahure",
@@ -111,6 +101,6 @@
     ],
     "orderHistory": [],
     "token": "",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaUBnbWFpbC5jb20iLCJpYXQiOjE2NTc1MTU3MDYsImV4cCI6MTY1NzYwMjEwNn0.N8b4Uv0RL6UL4-Bs9fge2-vvI7X_vAsI_VQ9ckZNS9I"
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuaUBnbWFpbC5jb20iLCJpYXQiOjE2NTc2MDA3MDQsImV4cCI6MTY1NzY4NzEwNH0.LdsorGGymPwT9ayFucizpYopmB9mOk6iy8XAq14HbL4"
   }
 ]
