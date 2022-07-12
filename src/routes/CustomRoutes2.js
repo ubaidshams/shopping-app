@@ -37,9 +37,6 @@ const CustomRoutes2 = () => {
       path: "/forgot",
       element: <Forget />,
     },
-    
-    }
-
   ]);
   return myRoutes;
 };
