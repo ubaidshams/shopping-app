@@ -11,8 +11,8 @@
 }
 .container2 {
   position: absolute;
-  top: 29px;
- right: 10px;
+  top: 2.5rem;
+  right: -5rem;
   background-color: #e7ecf7;
   color: black;
   z-index: 1000 !important;
@@ -27,18 +27,17 @@
   border-bottom: 11px solid #e7ecf7;
   position: absolute;
   top: -5px;
-  left: 24px;
+  left: 4px;
 }
 .arrowup2 {
   width: 0;
   height: 0;
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
-
   border-bottom: 11px solid #e7ecf7;
   position: absolute;
   top: -5px;
-  left: 60px;
+  left: 8rem;
 }
 .dropList:hover {
   background: #dee9ff;

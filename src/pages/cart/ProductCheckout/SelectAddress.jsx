@@ -3,9 +3,7 @@ import { useSelector } from "react-redux";
 import style from "./selectaddress.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import {AiFillDelete}  from "react-icons/ai"
-
-
+import { AiFillDelete } from "react-icons/ai";
 
 const SelectAddress = () => {
   let [proceed, setproceed] = useState(false);
@@ -17,17 +15,11 @@ const SelectAddress = () => {
   let { firstName, lastName, gender, email, phone, addressList, id } = currUser;
 
   useEffect(() => {
-
     let address = currUser;
     console.log(address);
-    
-  },[])
+  }, []);
 
-  let remove = () => {
-    
-  }
-
-  
+  let remove = () => {};
 
   let handlesubmit = () => {
     if (use === true) {
@@ -35,11 +27,9 @@ const SelectAddress = () => {
       toast.success("Order Placed Successfully to this Address");
       navigate("/payment");
     } else {
-     toast.error("Please select address to be delivered")
-   }
-    
-
-  }
+      toast.error("Please select address to be delivered");
+    }
+  };
 
   return (
     <div className={style.addresscont}>
@@ -59,24 +49,25 @@ const SelectAddress = () => {
           {firstName} <span>{lastName}</span>
         </h3>
         <p style={{ fontWeight: "lighter" }}>{phone}</p>
-       
-  {addressList.map((item, index) => {
+
+        {addressList.map((item, index) => {
           return (
             <div style={{ display: "flex" }}>
               <input type="radio" name="address" onClick={() => setuse(!use)} />
               <div className={style.addname}>
-                <h4>{`Address ${index + 1}`} : &nbsp;  </h4>
+                <h4>{`Address ${index + 1}`} : &nbsp; </h4>
                 <p>
                   {item.houseNo} , {item.landMark},{item.street}, {item.city} -
                   {item.pincode}{" "}
                 </p>
               </div>
-             
             </div>
           );
         })}
       </div>
-        <button onClick={handlesubmit} className={style.proceed}>Proceed</button>
+      <button onClick={handlesubmit} className={style.proceed}>
+        Proceed
+      </button>
     </div>
   );
 };
