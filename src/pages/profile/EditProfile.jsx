@@ -10,7 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useSelector , useDispatch} from "react-redux";
+
+import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Axios from "../../apis/Axios";
 import "./profile.css";
@@ -23,12 +25,16 @@ let initialState = {
   phone: 0,
   email: "",
 };
+
 function EditProfile({ open, onClose }) {
   let currentUser = useSelector(state => state.user.currentUser);
   let token = useSelector(state => state.user.token);
   let { firstName, lastName, gender, email, phone, id } = currentUser;
+
+  const navigate = useNavigate();
   let [userData, setUserData] = useState(initialState);
   const dispatch = useDispatch();
+
   useEffect(() => {
     setUserData({
       ...userData,
@@ -45,6 +51,7 @@ function EditProfile({ open, onClose }) {
     let value = e.target.value;
     setUserData(pre => ({ ...pre, [e.target.name]: value }));
   };
+  console.log(token);
 
   const handleSubmit = async e => {
     e.preventDefault();
