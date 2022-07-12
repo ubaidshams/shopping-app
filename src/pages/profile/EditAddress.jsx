@@ -118,8 +118,8 @@ const EditAddress = () => {
         `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
-      toast.success("successfully updated");
-      navigate("/my-profile/my-addresses")
+      toast.success("Address updated");
+      window.location.assign("/my-profile/my-addresses")
     } catch (err) {
       console.log(err);
     }
