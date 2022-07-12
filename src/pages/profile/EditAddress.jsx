@@ -118,7 +118,24 @@ const EditAddress = () => {
         `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
-       
+
+       setTimeout(async () => {
+         let detailsRes = await Axios.get("/api/user/detail", {
+           headers: {
+             "Context-Type": "application/json",
+             Authorization: `Bearer ${token}`,
+           },
+         });
+         console.log(detailsRes);
+
+         dispatch(
+           createCurrentUser({
+             refreshToken: token,
+             currentUser: detailsRes.data.userDetails,
+           })
+         );
+       }, 200);
+      
       toast.success("successfully updated");
       navigate("/my-profile/my-addresses")
     } catch (err) {
