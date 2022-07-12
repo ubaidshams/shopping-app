@@ -20,6 +20,7 @@ import Wishlist from "../pages/wishlist/Wishlist";
 import Profile from "./../pages/profile/Profile";
 import Reset from "../pages/auth/users/Reset";
 import Order from "../pages/profile/Order";
+
 import Welcome from "../components/welcomepage/Welcome";
 const CustomRoutes2 = () => {
   let myRoutes = useRoutes([
@@ -37,6 +38,14 @@ const CustomRoutes2 = () => {
       path: "/forgot",
       element: <Forget />,
     },
+    {
+      path:"/login",
+      element:<Login/>
+    },
+    {
+      path:"/forgot",
+      element:<Forget/>
+    }
   ]);
   return myRoutes;
 };
