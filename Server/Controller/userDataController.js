@@ -33,31 +33,27 @@ let updateAddress = (req, res) => {
   const newdata = req.body;
 
   let updatedData = userData.map(user => {
-    // console.log(userID)
-    // console.log(addressID)
     if (user.id == userID) {
-
       let addressList = user.addressList.map(addEle => {
         if (addEle.id === addressID) {
-          return { ...addEle, ...newdata }
+          console.log({...addEle, ...newdata})
+          return newdata
         } else {
           return addEle
         }
       })
-
-      return { ...user, ...addressList }
-
+      return { ...user,addressList }
     } else {
       return user;
     }
 
   });
   reWrinteJson(updatedData);
-  res.send("address updated");
+  res.json({
+    'message':"address updated",updatedData} );
 }
 // deleteAddress
 
-// upadate addrees
 let deleteAddress = (req, res) => {
 
   const userID = req.params.id;
@@ -67,8 +63,7 @@ let deleteAddress = (req, res) => {
     // console.log(addressID)
     if (user.id == userID) {
       let addressList = user.addressList.filter(addEle => addEle.id !== addressID)
-      console.log(addressList)
-      return { ...user, ...addressList }
+      return { ...user, addressList }
     } else {
       return user;
     }

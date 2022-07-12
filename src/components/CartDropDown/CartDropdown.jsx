@@ -63,7 +63,7 @@ export default function CartDropdown() {
                 <AddShoppingCartIcon />
               </ListItemDecorator>
               <ListItemContent>
-                <Typography>Emtpty</Typography>
+                <Typography>Empty</Typography>
               </ListItemContent>
             </ListItem>
           )}
