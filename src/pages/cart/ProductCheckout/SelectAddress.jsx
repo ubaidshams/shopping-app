@@ -25,7 +25,7 @@ const SelectAddress = () => {
     if (use === true) {
       setproceed(!proceed);
       toast.success("Order Placed Successfully to this Address");
-      navigate("/payment");
+      navigate("/place-order");
     } else {
       toast.error("Please select address to be delivered");
     }
