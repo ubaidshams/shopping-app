@@ -12,10 +12,10 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import { Country, State, City } from "country-state-city";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { createCurrentUser } from "../../features/User/userSlice";
+ 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -60,10 +60,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const EditAddress = () => {
+  const dispatch = useDispatch(); 
   let currUser = useSelector((state) => state.user.currentUser);
+    let token = useSelector(state => state.user.token);
   let { addressId } = useParams();
   let { addressList } = currUser;
-  
   let Addressdata= addressList.find(add=>{if(add.id === addressId){
     return add
   }})
@@ -71,7 +72,6 @@ const EditAddress = () => {
   let { houseNo, street, landMark, pincode } = Addressdata;
 
   const navigate = useNavigate();
-  // const dispatch = useDispatch();
   const classes = useStyles();
   const [password, setPassword] = useState("nopassword");
   const [address, setAddress] = useState({
@@ -109,6 +109,7 @@ const EditAddress = () => {
 
   
   const handleSubmit = async e => {
+    
     e.preventDefault();
     let addressPayload = {
           ...address,
@@ -118,6 +119,24 @@ const EditAddress = () => {
         `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
+
+       setTimeout(async () => {
+         let detailsRes = await Axios.get("/api/user/detail", {
+           headers: {
+             "Context-Type": "application/json",
+             Authorization: `Bearer ${token}`,
+           },
+         });
+         console.log(detailsRes);
+
+         dispatch(
+           createCurrentUser({
+             refreshToken: token,
+             currentUser: detailsRes.data.userDetails,
+           })
+         );
+       }, 200);
+      
       toast.success("successfully updated");
       navigate("/my-profile/my-addresses")
     } catch (err) {

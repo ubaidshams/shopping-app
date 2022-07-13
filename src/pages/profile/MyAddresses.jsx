@@ -20,9 +20,7 @@ function MyAddresses() {
   }, [cuurentUser]);
 
   const deleteAddress = async (addressId) => {
-    let permit = window.confirm("are sure to delete Address")
-
-   
+    let permit = window.confirm("Are sure to delete Address")
     try {
       if(permit){
         await Axios.delete(
