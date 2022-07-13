@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./payment.module.css";
+import style from "./placeorder.module.css";
 import { AiFillRightCircle } from "react-icons/ai";
 
-const Payment = () => {
+const PlaceOrder = () => {
   let orderId = Math.floor(Math.random() * 2664645);
   console.log(orderId);
 
@@ -38,4 +38,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default PlaceOrder;
