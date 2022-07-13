@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams} from "react-router-dom";
 import { Card, TextField, makeStyles, Checkbox } from "@material-ui/core";
 import style from "../auth/users/signup.module.css";
 import { motion } from "framer-motion";
@@ -12,10 +12,10 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import { Country, State, City } from "country-state-city";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { createCurrentUser } from "../../features/User/userSlice";
+ 
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -60,30 +60,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const EditAddress = () => {
+  const dispatch = useDispatch(); 
   let currUser = useSelector((state) => state.user.currentUser);
+    let token = useSelector(state => state.user.token);
   let { addressId } = useParams();
-  let { addressList, id } = currUser;
-  
-  let Addressdata= addressList.reduce(add=>{if(add.id === addressId){
+  let { addressList } = currUser;
+  let Addressdata= addressList.find(add=>{if(add.id === addressId){
     return add
   }})
 // console.log(Addressdata)
   let { houseNo, street, landMark, pincode } = Addressdata;
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const classes = useStyles();
-
-  //   const [fname, setFname] = useState("");
-  //   const [lname, setLname] = useState("");
-  //   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("nopassword");
-  //   const [role, setRole] = useState("");
-  //   const [gender, setGender] = useState("male");
-  //   const [payload, setPayload] = useState({});
-  //   const [btnCondition, setBtnCondition] = useState(false);
-  //   const [model, setModel] = useState(false);
-  //   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({
     id:addressId,
     houseNo: houseNo,
@@ -117,31 +107,38 @@ const EditAddress = () => {
     setAllcity(allCityData);
   }
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   let currPayload = {
-  //     ...address,
-  //   };
-  //   try {
-  //     await Axios.put(`/user/AddAddress/${id}`, currPayload);
-  //     navigate("/selectaddress");
-  //     toast.success("successfully added");
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
   
   const handleSubmit = async e => {
+    
     e.preventDefault();
     let addressPayload = {
           ...address,
         };
     try {
       await Axios.put(
-        `http://localhost:5000/user/updateProfile/${addressId}`,
+        `http://localhost:5000/user/updateAddress/${currUser.id}/${addressId}`,
         addressPayload
       );
+
+       setTimeout(async () => {
+         let detailsRes = await Axios.get("/api/user/detail", {
+           headers: {
+             "Context-Type": "application/json",
+             Authorization: `Bearer ${token}`,
+           },
+         });
+         console.log(detailsRes);
+
+         dispatch(
+           createCurrentUser({
+             refreshToken: token,
+             currentUser: detailsRes.data.userDetails,
+           })
+         );
+       }, 200);
+      
       toast.success("successfully updated");
+      navigate("/my-profile/my-addresses")
     } catch (err) {
       console.log(err);
     }

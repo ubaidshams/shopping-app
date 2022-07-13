@@ -21,7 +21,7 @@ import { useDispatch } from "react-redux";
 import { OpenLogin } from "../../../features/Login/LoginSlice";
 import { Country, State, City } from "country-state-city";
 import { useSelector } from "react-redux";
-import {v4 as uuidv4} from "uuid"
+import { v4 as uuidv4 } from "uuid";
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -85,7 +85,7 @@ const Signup = () => {
   const [model, setModel] = useState(false);
   const [number1, setNumber1] = useState();
   const [address, setAddress] = useState({
-    id:uuidv4(),
+    id: uuidv4(),
     houseNo: "",
     street: "",
     landMark: "",
@@ -124,26 +124,23 @@ const Signup = () => {
     };
     try {
       await Axios.put(`/user/AddAddress/${id}`, currPayload);
-      navigate("/selectaddress");
       toast.success("successfully added");
+      window.location.assign("/my-profile/my-addresses")
     } catch (err) {
       console.log(err);
     }
-    };
-    
-    useEffect(() => {
-        const fetchData = async currPayload => {
-          try {
-            await Axios.post("/user/signUp", currPayload);
-            // toast.success("successfully registered");
-          } catch (error) {
-            console.log(error.message);
-          }
-        };
-        
-    },[])
+  };
 
-  
+  useEffect(() => {
+    const fetchData = async currPayload => {
+      try {
+        await Axios.post("/user/signUp", currPayload);
+        // toast.success("successfully registered");
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+  }, []);
 
   return (
     <>
@@ -156,7 +153,6 @@ const Signup = () => {
           <a
             onClick={() => {
               dispatch(OpenLogin());
-              navigate("/selctaddress");
             }}
           >
             Find it here{" "}
@@ -167,110 +163,18 @@ const Signup = () => {
             style={{ backgroundColor: "transparent" }}
             elevation={0}
             className={style.formCardContainer}
-          >
-            {/* <TextField
-              className={classes.formTextFieldName}
-              size="small"
-              label="First Name"
-              id="outlined-size-small"
-              variant="outlined"
-              required
-              value={fname}
-              onChange={e => {
-                setFname(e.target.value);
-              }}
-            ></TextField>
-            <TextField
-              className={classes.formTextFieldName}
-              size="small"
-              label="Last Name"
-              id="outlined-size-small"
-              variant="outlined"
-              required
-              value={lname}
-              onChange={e => {
-                setLname(e.target.value);
-              }}
-            ></TextField> */}
-          </Card>
-          {/* <Card
-            elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            className={style.formCardContainer}
-          >
-            <RadioGroup
-              aria-label="gender"
-              name="gender1"
-              value={gender}
-              onChange={e => setGender(e.target.value)}
-            >
-              <section
-                style={{
-                  display: "flex",
-                  // alignItems: "baseline",
-                  alignItems: "center",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <FormLabel component="legend">Gender</FormLabel>
-                <FormControlLabel
-                  className={style.radioGroup}
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
-                />
-                <FormControlLabel
-                  className={style.radioGroup}
-                  value="male"
-                  control={<Radio />}
-                  label="Male"
-                />
-                <FormControlLabel
-                  className={style.radioGroup}
-                  value="other"
-                  control={<Radio />}
-                  label="Other"
-                />
-              </section>
-            </RadioGroup>
-          </Card> */}
-          {/* phone number1 mandatory */}
+          ></Card>
+
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
-          >
-            {/* <TextField
-              className={classes.formTextFieldOther}
-              size="small"
-              label="Phone Number"
-              required
-              placeholder="9856412537"
-              id="outlined-size-small"
-              variant="outlined"
-              value={number1}
-              onChange={e => setNumber1(e.target.value)}
-            ></TextField> */}
-          </Card>
+          ></Card>
           <Card
             elevation={0}
             style={{ backgroundColor: "transparent" }}
             className={style.formCardContainer}
-          >
-            {/* <TextField
-              className={classes.formTextFieldOther}
-              size="small"
-              label="Email Address"
-              id="outlined-size-small email"
-              variant="outlined"
-              placeholder="exmaple@company.com"
-              required
-              value={email}
-              onChange={e => {
-                setEmail(e.target.value);
-              }}
-            ></TextField> */}
-          </Card>
+          ></Card>
           {/* number2 optional */}
 
           {/* address 1 is mandatory */}
@@ -488,64 +392,7 @@ const Signup = () => {
               }}
             ></TextField>
           </Card>
-          {/* <Card
-            elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            className={style.formCardContainer}
-          >
-            <TextField
-              className={classes.formTextFieldOther}
-              size="small"
-              label="Role"
-              id="outlined-size-small role"
-              variant="outlined"
-              required
-              value={role}
-              onChange={e => {
-                setRole(e.target.value);
-              }}
-            ></TextField>
-          </Card> */}
-          {/* <Card
-            className={clsx(style.formCardContainer, style.Checkbox)}
-            elevation={0}
-            style={{ backgroundColor: "transparent" }}
-            onc
-          >
-            <span
-              style={{ marginLeft: "300px", display: "flex", width: "350px" }}
-            >
-              <FormControlLabel
-                // className={style.radioGroup}
-                style={{ width: "35px" }}
-                value="other"
-                checked={btnCondition}
-                onClick={() => {
-                  setModel();
-                  setModel(true);
-                }}
-                control={<Checkbox />}
-              />
-              <span
-                style={{
-                  display: "inline-block",
-                  width: "300px",
-                  marginTop: "12px",
-                }}
-              >
-                I agree to the{" "}
-                <a
-                  href="#"
-                  onClick={() => {
-                    setModel(true);
-                  }}
-                >
-                  Terms Conditions
-                </a>
-                *
-              </span>
-            </span>
-          </Card> */}
+
           <Card style={{ marginLeft: "300px" }}>
             {model && (
               <TermsConditions
@@ -570,91 +417,3 @@ const Signup = () => {
 };
 
 export default Signup;
-
-// import React, { useState } from "react";
-// import Avatar from "../../profile/profile.module.css";
-// import Locations from "../../profile/Locations";
-// // import Order from "./Order";
-// import { useSelector } from "react-redux";
-// import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
-// import "../../profile/profile.module.css";
-// import { useDispatch } from "react-redux";
-// // import MEN from "../../menprofile.png";
-// // import Axios from "../../apis/Axios";
-// import { createCurrentUser } from "../../../features/User/userSlice";
-// const Profile = () => {
-//   let currUser = useSelector(state => state.user.currentUser);
-//   let { firstName, lastName, gender, email, phone } = currUser;
-//   let [UserGender, setGender] = useState("male");
-//   let [manage, setManage] = useState("personal");
-//   let [addAddress, setaddAddress] = useState([]);
-//   let [locations, setLocations] = useState(false);
-//   let [order, setOrder] = useState(false);
-//   let [edit, setEdit] = useState("");
-//   let [display, setDisplay] = useState({
-//     street: "",
-//     landMark: "",
-//     city: "",
-//     state: "",
-//     pincode: "",
-//     country: "",
-//   });
-//   let navigate = useNavigate();
-//   const dispatch = useDispatch();
-
-//   let changeOption = e => {
-//     setGender(e.target.value);
-//   };
-
-//   let changeAddress = () => {
-//     setManage("address");
-//   };
-
-//   let displayAddress = () => {
-//     setDisplay(setaddAddress);
-//   };
-
-//   let changeLocations = () => {
-//     setLocations(true);
-//   };
-
-//     let ch = () => {
-//          setLocations(false);
-//   }
-
-//   return (   <div onClick={changeLocations}>
-
-//                           + ADD A NEW ADDRESS
-
-//                       <div>
-//                         {locations === false ? null : (
-//                           <Locations
-//                             addAddress={addAddress}
-//                             display={display}
-//                             setaddAddress={setaddAddress}
-//                             setDisplay={setDisplay}
-//                             setLocations={setLocations}
-//                             ch={ch}
-//                           />
-//                         )}
-//                       </div>
-//                       <div>
-//                         {addAddress.map(datas => {
-//                           return (
-//                             <div className={Avatar.cardDetails}>
-//                               <p>Street : {datas.street}</p>
-//                               <p>landMark : {datas.landMark}</p>
-//                               <p>City : {datas.city}</p>
-//                               <p>State : {datas.state}</p>
-//                               <p>Pincode : {datas.pincode}</p>
-//                               <p>Country : {datas.country}</p>
-//                             </div>
-//                           );
-//                         })}
-//                       </div>
-
-//    </div>
-//   );
-// };
-// export default Profile;

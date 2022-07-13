@@ -25,7 +25,7 @@ const SelectAddress = () => {
     if (use === true) {
       setproceed(!proceed);
       toast.success("Order Placed Successfully to this Address");
-      navigate("/payment");
+      navigate("/place-order");
     } else {
       toast.error("Please select address to be delivered");
     }
@@ -39,10 +39,10 @@ const SelectAddress = () => {
 
       <div className={style.df}>
         <p style={{ color: "black", fontWeight: "bold" }}>Deliver to:</p>
-        <Link to="/addressform">
+        {/* <Link to="/addressform">
           {" "}
           <button className={style.adneadd}>Add New Address</button>
-        </Link>
+        </Link> */}
       </div>
       <div className="adcon">
         <h3>
