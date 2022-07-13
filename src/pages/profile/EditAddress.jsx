@@ -12,9 +12,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
 import { Country, State, City } from "country-state-city";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { createCurrentUser } from "../../features/User/userSlice";
  
 // import { motion, Variants } from "framer-motion";
@@ -61,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const EditAddress = () => {
+  const dispatch = useDispatch(); 
   let currUser = useSelector((state) => state.user.currentUser);
     let token = useSelector(state => state.user.token);
   let { addressId } = useParams();
@@ -109,6 +109,7 @@ const EditAddress = () => {
 
   
   const handleSubmit = async e => {
+    
     e.preventDefault();
     let addressPayload = {
           ...address,
