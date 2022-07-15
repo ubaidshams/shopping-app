@@ -6,6 +6,7 @@ import Signup from "../pages/auth/users/Signup";
 import Cart from "../pages/cart/Cart";
 import Home from "../pages/home/Home";
 import ProductDisplay from "../pages/productsDisplay/ProductDisplay";
+import Search from "../pages/productsDisplay/search/Search";
 import Checkout from "../pages/cart/ProductCheckout/Checkout";
 import Myorder from "../pages/cart/Myorder";
 import Forget from "../pages/auth/users/Forget";
@@ -26,6 +27,7 @@ import ProfileInfo from "../pages/profile/ProfileInfo";
 import MyAddresses from "../pages/profile/MyAddresses";
 import EditAddress from "../pages/profile/EditAddress";
 import PlaceOrder from "../pages/cart/ProductCheckout/PlaceOrder";
+import Payment from "../pages/cart/ProductCheckout/Payment";
 const CustomRoutes = () => {
   let myRoutes = useRoutes([
     {
@@ -118,6 +120,14 @@ const CustomRoutes = () => {
       path: "/place-order",
       element: <PlaceOrder />,
     },
+    {
+      path: "payment",
+      element: <Payment/>
+    },
+    {
+      path:"/search",
+      element: <Search/>
+    }
   ]);
   return myRoutes;
 };
