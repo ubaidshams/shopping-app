@@ -45,9 +45,6 @@ const Search = () => {
   return (
     <section className={styles.featuredProducts}>
       <article>
-        <h1>Featured Products</h1>
-      
-
         <div className={styles.cardContainer}>
           { 
             prodList
