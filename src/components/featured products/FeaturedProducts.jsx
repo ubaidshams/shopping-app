@@ -17,8 +17,13 @@ import CalculateOffer from "../Offer Helper Components/CalculateOffer";
 import StarRatings from "../starRating/StarRatings";
 import { sx } from "@mui/joy/styles/styleFunctionSx";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import Menu from "../navbar/Menu";
+import { useContext } from "react";
+import { MyContext } from "../../apis/MyContext";
 
 const FeaturedProducts = () => {
+  let { search, setsearch } = useContext(MyContext)
+  // let [search, setsearch] = useState("");
   let product = useSelector(state => state.product);
   let cartList = useSelector(state => state.wishlist.wishList);
   let [productIdList, setIdList] = useState([]);
@@ -54,11 +59,15 @@ const FeaturedProducts = () => {
     <section className={styles.featuredProducts}>
       <article>
         <h1>Featured Products</h1>
+        <br />
+        
         <div className={styles.cardContainer}>
           {prodList.length === 0 ? (
-            <Spinner />
-          ) : (
-            prodList.map((product, index) => {
+            <Spinner /> 
+           
+         
+          ): 
+             ( prodList  .map((product, index) => {
               let {
                 productsid,
                 title,

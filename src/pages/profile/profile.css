@@ -60,9 +60,9 @@
 
 .profileDashactive {
   background-color: #f3f3f3 !important;
-  color: deeppink !important;
+  color:#1976d2 !important;
   padding: 1rem 0.8rem;
-  border-left: 4px solid deeppink;
+  border-left: 4px solid #1976d2;
     font-weight: 700;
 }
 
@@ -73,7 +73,7 @@
 }
 
 .hello{
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .myprofileAddress{

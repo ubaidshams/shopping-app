@@ -2,8 +2,8 @@ import React from "react";
 
 const Electronic = () => {
   return (
-    <aside>
-      <div>
+    <aside  style={{width:"auto"}}>
+      <div style={{width:"auto"}}>
         <ul>
           <li>
             <a href="">Electronics GST Store</a>

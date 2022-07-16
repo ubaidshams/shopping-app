@@ -67,7 +67,7 @@ const ProfileInfo = () => {
             >
               <Avatar  >{firstName.slice(0,1)}</Avatar>
             </StyledBadge>
-            <span>{firstName}</span>
+            <span style={{textTransform:"uppercase"}}>{firstName}</span>
           </h1>
           <Button sx={{textTransform:'capitalize',fontWeight:'600'}}  variant="contained" onClick={() => setOpeneditprofile(true)}>
             Edit Profile &nbsp; <ModeEditIcon />

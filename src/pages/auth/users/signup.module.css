@@ -134,3 +134,22 @@ hr {
 .Checkbox {
   margin-left: -5px;
 }
+
+.back{
+
+  top: 0;
+  right: 0;
+  margin: 10px;
+  height: 25px;
+  width: 25px;
+ margin-left: 55vw;
+  
+  
+}
+
+.back svg{
+  height: 25px;
+  width: 25px;
+  right: 0;
+  top: 0;
+}

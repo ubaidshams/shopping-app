@@ -11,7 +11,7 @@
 }
 .menuBlock {
   flex-basis: 40%;
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 300;
   padding: 1rem 0;
 }
@@ -28,7 +28,7 @@
   font-weight: normal;
   padding: 30px 18px;
   color: white;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
 }
 .menuBlock nav ul li a sup {
@@ -43,26 +43,26 @@
   position: relative;
 }
 .dropDown {
-  min-width: 420px;
+  min-width: auto;
   min-height: 380px;
   position: absolute;
   left: -11px;
-  top: 39px;
+  top: 36px;
   background-color: #fff;
   display: none;
   z-index: 1;
 }
 .dropDown aside {
-  width: 420px;
+  width: 400px;
   display: flex;
   align-items: stretch;
-  height: 500px;
+  height:auto;
 }
 .dropDown aside div {
   flex: 1;
 }
 .dropDown aside div:nth-child(odd) {
-  background-color: #dfdede;
+  background-color: #efefef;
 }
 .dropDown aside div:nth-child(even) {
   background-color: #fff;
@@ -76,12 +76,12 @@
   line-height: 25px;
 }
 .dropDown aside div ul li a {
-  font-size: 11px;
-  color: black;
+  font-size: 12px;
+  color: #333;
 }
 .dropDown ul li:first-child a {
-  color: #ee5f73;
-  font-size: 12px;
+  color: #fb465e;
+  font-size: 14px;
   font-weight: bold;
   padding-bottom: 4px;
   display: block;
