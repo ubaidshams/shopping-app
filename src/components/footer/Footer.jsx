@@ -10,38 +10,75 @@ const Footer = () => {
       <div className={foot.footer_Upperhalf}>
         <div className={foot.footer_Links}>
           <div className={foot.footer_about}>
-            <div>ABOUT</div>
-            <div>About Us</div>
-            <div>Contact Us</div>
-            <div>Careers</div>
-            <div>ShoppingKart Stories</div>
-            <div>Press</div>
-            <div>ShoppingKart Wholesale</div>
-            <div>Corporate Information</div>
+            <div className={foot.link}>
+              <a href="#">ABOUT</a>
+            </div>
+            {/* <div className={foot.link}>
+              <a href="#">About Us</a>
+            </div> */}
+            <div className={foot.link}>
+              <a href="#">Contact Us</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Careers</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">ShoppingKart Stories</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Press</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">ShoppingKart Wholesale</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Corporate Information</a>
+            </div>
           </div>
           <div className={foot.footer_help}>
-            <div>HELP</div>
-            <div>Payments</div>
-            <div>Shipping</div>
-            <div>Cancellation & Returns</div>
-            <div>FAQ</div>
-            <div>Report Infringement</div>
+            <div className={foot.link}>
+              <a href="#">HELP</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Payments</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Shipping</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Cancellation & Returns</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">FAQ</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Report Infringement</a>
+            </div>
           </div>
           <div className={foot.footer_policy}>
-            <div>POLICY</div>
-            <div>Return Policy</div>
-            <div>Terms Of Use</div>
-            <div>Security</div>
-            <div>Privacy</div>
-            <div>Sitemap</div>
-            <div>EPR Compliance</div>
+            <div className={foot.link}>
+              <a href="#">POLICY</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Return Policy</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Terms Of Use</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Security</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Privacy</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">Sitemap</a>
+            </div>
+            <div className={foot.link}>
+              <a href="#">EPR Compliance</a>
+            </div>
           </div>
-          <div className={foot.footer_social}>
-            <div>SOCIAL</div>
-            <div>Facebook</div>
-            <div>Twitter</div>
-            <div>YouTube</div>
-          </div>
+          
         </div>
         <div className={foot.sideBorder}></div>
         <div className={foot.footer_EmailContact}>
@@ -55,10 +92,10 @@ const Footer = () => {
           </div>
           <div>
             <div>Registered Office Address:</div>
-            <div>
+            <div style={{textAlign:"start"}}>
               ShoppingKart Private Limited, #88 3rd floor, Brigade
               Chambers,Gandhi Bazar Main Road, Basavanagudi Bengaluru, 560004,
-              Karnataka, India CIN : U51109KA2012PTC066107 Telephone:{" "}
+              Karnataka,  Telephone:{" "}
               <span>080-41204235</span>
             </div>
           </div>
@@ -70,7 +107,7 @@ const Footer = () => {
           <span>
             <IoMdBriefcase />
           </span>
-          <span>Become a Seller</span>
+          <span> Seller</span>
         </div>
         <div className={foot.Advertise}>
           <span>

@@ -22,6 +22,7 @@ import { OpenLogin } from "../../../features/Login/LoginSlice";
 import { Country, State, City } from "country-state-city";
 import { useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import { GiCancel } from "react-icons/gi";
 // import { motion, Variants } from "framer-motion";
 const useStyles = makeStyles(theme => ({
   margin: {
@@ -142,11 +143,20 @@ const Signup = () => {
     };
   }, []);
 
+  let goBack = () => {
+    navigate("/my-profile/my-addresses");
+  }
+
   return (
     <>
       <br />
+
       <motion.div className={clsx(style.formCard)}>
+        <div className={style.back} onClick={goBack}>
+         <GiCancel/>
+        </div>
         <h1>Add Address</h1>
+
         <section>
           One profile ID is all you need to access all KART services. You
           already have a profile?{" "}
@@ -410,7 +420,6 @@ const Signup = () => {
             <button className={style.bn5}>Add Address</button>
           </Card>
         </form>
-        <div>back</div>
       </motion.div>
       <br />
     </>

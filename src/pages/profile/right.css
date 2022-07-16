@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  margin: 1rem 0;
-  background-color: #dff8fe;
+  margin-bottom: 25px;
+  background-color: rgba(164, 228, 253, 0.845);
   border-radius: 10px;
+  height: 25vh;
 }
 
 .r1 h1 {
@@ -22,19 +23,23 @@
 
 table {
   width: 100%;
-  height: 7vh;
+  height: 25vh;
 }
 
 table th {
-  color: #686868;
+  color: #444;
   font-size: small;
   text-align: center;
   padding: 12px;
+  font-size: large;
+  font-weight: bold;
 }
 
 table td {
   text-align: center;
-  padding: 7px;
+  padding: 12px;
+  font-weight: bold;
+  color: #444;
 }
 
 .myprofileOutlet {

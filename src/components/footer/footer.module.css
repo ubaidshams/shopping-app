@@ -3,6 +3,8 @@
   background-color: var(--bg-color);
   color: var(--list-color);
   padding: 20px;
+  color: #fff;
+  line-height: 1.8rem;
 }
 .footer_Links > div div:first-child {
   color: var(--heading-color);
@@ -70,4 +72,9 @@
   width: 80%;
   height: 100px;
   object-fit: contain;
+}
+
+.link a{
+  text-decoration: none;
+  color: #fff;
 }
