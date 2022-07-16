@@ -7,7 +7,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-import termsStyle from "./termsCondtions.module.css";
+import termsStyle from "./TermsCondtions.module.css";
 
 export default function TermsConditions({ condition, modelCondition }) {
   const [open, setOpen] = React.useState(true);
@@ -65,7 +65,6 @@ export default function TermsConditions({ condition, modelCondition }) {
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
-        
       >
         <DialogTitle id="scroll-dialog-title">Terms Conditions</DialogTitle>
         <div className={termsStyle.icon}>
@@ -74,6 +73,7 @@ export default function TermsConditions({ condition, modelCondition }) {
         <DialogContent dividers={scroll === "paper"}>
           <DialogContentText
             id="scroll-dialog-description"
+            style={{ textAlign: "justify" }}
             ref={descriptionElementRef}
             tabIndex={-1}
           >
@@ -101,7 +101,12 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           {btnCondition == true ? (
-            <Button onClick={handleAgree}>I Agree</Button>
+            <Button
+              onClick={handleAgree}
+              style={{ backgroundColor: "#231955" , color: "#eee"}}
+            >
+              I Agree
+            </Button>
           ) : (
             <Button disabled={true}>I Agree</Button>
           )}

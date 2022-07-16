@@ -1,4 +1,5 @@
 const UserJson = require("../Model/User.json");
+const crypto = require("crypto");
 const fs = require("fs").promises;
 const jwt = require("jsonwebtoken");
 const path = require("path");
@@ -31,11 +32,13 @@ const RegisterUser = async (req, res) => {
   try {
     let salt = await bcrypt.genSalt(10);
     let hashPassword = await bcrypt.hash(req.body.password, salt);
+    let randbytes = crypto.randomBytes(8).toString("hex");
     UserObj.addData({
       ...SampleUserObj,
       ...req.body,
-      addressList: [...req.body.addressList],
+
       password: hashPassword,
+      id: randbytes,
     });
     reWrinteJson();
     res.json({ Message: "successfully registered" });
@@ -75,16 +78,16 @@ const SignInUser = async (req, res) => {
       //reWrite the user json file
       reWrinteJson();
       // sending refreshToken as cookie to the client
-      res.setHeader("Access-Control-Allow-Origin","http://localhost:3000");
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
       res.cookie("jwt", refreshToken, {
         httpOnly: true,
         secure: true,
         sameSite: "None",
         maxAge: 24 * 60 * 60 * 1000,
       });
-      
+
       // sending accessToken as reponse to client
-      res.json({ message: "success", userData: rest,token: accessToken });
+      res.json({ message: "success", userData: rest, token: accessToken });
     } else {
       res.json({ message: "Invalid email or password" });
     }

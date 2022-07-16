@@ -1,12 +1,23 @@
 import React, { useEffect } from "react";
 import Axios from "../../apis/Axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import Spinner from "../spinner/Spinner";
-import { Outlet } from "react-router-dom";
+import {
+  BrowserRouter,
+  Outlet,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
 import { createCurrentUser } from "../../features/User/userSlice";
+import Welcome from "../welcomepage/Welcome";
+import CustomRoutes from "../../routes/CustomRoutes";
+import Navbar from "../navbar/Navbar";
 
 const PersistentLogin = ({ children }) => {
+  let { pathname } = useLocation();
+  const navigate = useNavigate();
+  let currentUser = useSelector(state => state.user.currentUser);
   let dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   let getNewToken = async () => {
@@ -23,7 +34,7 @@ const PersistentLogin = ({ children }) => {
         },
       });
       let token = data.token;
-      // console.log("persistentLogin....", detailsRes.data);
+
       dispatch(
         createCurrentUser({
           refreshToken: token,
@@ -40,24 +51,22 @@ const PersistentLogin = ({ children }) => {
     getNewToken();
   }, []);
 
-  return (
-    <>
-      {loading ? (
-        <div
-          style={{
-            width: "100%",
-            height: "100vh",
-            display: "grid",
-            placeItems: "center",
-          }}
-        >
-          <Spinner />
-        </div>
-      ) : (
-        children
-      )}
-    </>
-  );
+  if (loading) {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          display: "grid",
+          placeItems: "center",
+        }}
+      >
+        <Spinner />
+      </div>
+    );
+  } else {
+    return <>{currentUser.email && children}</>;
+  }
 };
 
 export default PersistentLogin;

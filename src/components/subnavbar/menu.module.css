@@ -1,9 +1,9 @@
 .catMenu {
-  background-color: rgb(255, 255, 255);
+  background-color: #391e65;
   backdrop-filter: blur(5px);
   position: sticky;
   top: 10vh;
-  height: 8vh;
+  /* height: 8vh; */
   z-index: 10;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   flex-basis: 40%;
   text-transform: uppercase;
   font-weight: 300;
-  padding-top: 10px;
+  padding: 1rem 0;
 }
 .menuBlock nav ul {
   display: flex;
@@ -27,7 +27,7 @@
   text-decoration: none;
   font-weight: normal;
   padding: 30px 18px;
-  color: #444859;
+  color: white;
   font-size: 15px;
   font-weight: 600;
 }
@@ -77,6 +77,7 @@
 }
 .dropDown aside div ul li a {
   font-size: 11px;
+  color: black;
 }
 .dropDown ul li:first-child a {
   color: #ee5f73;

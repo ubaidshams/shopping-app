@@ -2,13 +2,13 @@
   width: 100%;
   height: 10vh;
   display: flex;
-  background-color: #1d2c4e; /*dark--->  #141e37*/
+  background-color: white; /*dark--->  #141e37*/
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 99;
-  /*dark--> box-shadow:  0 0 5px 5px #111; */
+  box-shadow: 0px 2px 4px 1px #afafaf;
 }
 .navbar article {
   width: 90%;
@@ -36,11 +36,19 @@
   height: 5vh;
   object-fit: contain;
 }
+
+.logoBlock svg{
+  fill: #ea0303;
+  font-size: xx-large;
+  margin-left: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
 .logoBlock h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--text-primary) !important;
   transition: all 0.3s linear;
-  font-weight: 500;
+  font-weight: bold;
   margin-bottom: 0.85rem;
 }
 .logoBlock h1:hover {
@@ -51,7 +59,7 @@
   height: 10vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .authBlock2 {
   width: 20%;
@@ -76,30 +84,46 @@
 }
 .Loginbutton {
   padding: 8px 16px;
-  border: 1px solid var(--link-hover);
+  border: 1px solid var(--span-color);
   border-radius: 10px;
-  color: var(--link-hover);
+  color: var(--span-color);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: sans-serif;
+  background-color: transparent;
+}
+
+/* .Signupbutton{
+   padding: 8px 16px;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: green;
   transition: all 0.3s linear;
   cursor: pointer;
   font-size: 1rem;
   background-color: transparent;
-}
+} */
+
+
 .authBlock button:hover {
-  background-color: var(--link-hover);
-  color: #1d2c4e;
+  background-color: var(--span-color);
+  color: var(--text-secondary);
 }
 .cartIcon {
   display: flex;
   align-items: center;
   gap: 5px;
   position: relative;
+  cursor: pointer;
 }
 .cartIcon svg {
   height: 30px;
   width: 30px;
 }
 .cartIcon > span {
-  background-color: crimson;
+  background-color: green;
   width: 20px;
   height: 20px;
   display: flex;
@@ -109,8 +133,9 @@
   font-size: 14px;
   font-weight: 500;
   position: absolute;
-  top: -5.5px;
+  top: -5px;
   right: -0.7rem;
+  color: white;
   /* margin-left: -12px;
   margin-top: -21px; */
 }
@@ -122,14 +147,15 @@
   align-items: center;
 }
 .searchContainer {
-  width: 80%;
+  width: 100%;
   display: flex;
   align-items: center;
 }
 .searchContainer input {
-  width: 80%;
-  padding: 8px 10px;
+  width: 100%;
+  padding:  10px;
   border: none;
+  background-color: #efefef;
   border-radius: 4px 0 0 4px;
 }
 .searchContainer input:focus {
@@ -137,12 +163,12 @@
 }
 .searchContainer svg {
   width: 8%;
-  height: 32px;
-  background-color: #666;
+  height: 35px;
+  background-color: #FBB454;
   padding: 5px;
   cursor: pointer;
   border-radius: 0 4px 4px 0;
-  fill: var(--link-hover);
+  fill: var(--text-secondary);
 }
 
 .merchentDrop{

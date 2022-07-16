@@ -16,13 +16,14 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Axios from "../../apis/Axios";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { createCurrentUser } from "../../features/User/userSlice";
 
 export default function UserMenu({ user }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
-  const open = Boolean(anchorEl); 
+  let navigate = useNavigate();
+  const open = Boolean(anchorEl);
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
   };
@@ -32,17 +33,13 @@ export default function UserMenu({ user }) {
   const handleLogOut = async () => {
     try {
       await Axios.get("/user/logout", { withCredentials: true });
-      navigate("/")
-    }
-    catch (error) {
+      navigate("/");
+    } catch (error) {
       console.log(error);
     } finally {
-      dispatch(createCurrentUser({token:"",currentUser:{}}))
-      
+      dispatch(createCurrentUser({ token: "", currentUser: {} }));
     }
-
-  }
-  let navigate = useNavigate();
+  };
   return (
     <>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -55,7 +52,7 @@ export default function UserMenu({ user }) {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 32, height: 32, background: "orange" }}>
+            <Avatar sx={{ width: 35, height: 35, background: "orange" }}>
               {user.firstName.slice(0, 1)}
             </Avatar>
           </IconButton>
@@ -96,7 +93,7 @@ export default function UserMenu({ user }) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={() => navigate("/my-profile")}>
+        <MenuItem onClick={() => navigate("/my-profile/my-profile-info")}>
           <Avatar /> Profile
         </MenuItem>
         <MenuItem onClick={() => navigate("/wishlist")}>
@@ -105,7 +102,7 @@ export default function UserMenu({ user }) {
           </ListItemIcon>
           Wish List
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={() => navigate("/myorder")}>
           <ListItemIcon>
             <ShoppingBagIcon />
           </ListItemIcon>

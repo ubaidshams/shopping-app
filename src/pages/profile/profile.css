@@ -1,162 +1,82 @@
-.sec1 {
-  height: 90vh;
-  width: 100%;
-  /* background-color: rgba(137, 43, 226, 0.593); */
-  /* background-color: whitesmoke; */
+.sect {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
-}
 
-.mai1 {
-  display: flex;
-  /* align-items: center;
-    justify-content:center ; */
-
-  height: 80vh;
-  width: 70%;
-  /* background-color: aliceblue; */
+  padding: 1rem;
 }
 
 .left {
-  height: 80vh;
-  width: 30%;
-  /* background-color: aqua; */
+  position: relative;
+  top: 40px;
+  left: 18px;
 }
 
-.top {
-  height: 16vh;
-  width: 90%;
-  background-color: rgba(128, 128, 128, 0.065);
-  margin-left: 40px;
-  box-shadow: 2px 2px 2px 2px grey;
-  border-radius: 1px;
+.rightabove {
+  color: black;
+  width: 70%;
+  background-color: #1723372e;
+  position: relative;
+  left: 40px;
+  top: 40px;
+  border-radius: 7px;
+}
+
+
+
+.editpromodal {
+  position: absolute;
+  top: 3rem;
+}
+
+.editprofilebox {
+  padding: 2rem;
+  align-items: center;
+}
+
+.editprofilebox h2 {
+  padding-bottom: 3rem;
+}
+
+.ediprofileDashbord {
   display: flex;
-}
-
-.tlef {
-  width: 35%;
-  height: 100%;
-  /* background-color: aquamarine; */
-}
-
-.tlef img {
-  height: 95px;
-  width: 90px;
-  /* border-right: 1px solid grey; */
-}
-.trig {
-  width: 65%;
-  height: 100%;
-  font-family: sans-serif;
-}
-
-.trig li {
-  list-style-type: none;
-}
-
-.bottom {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
   height: 40vh;
-  width: 90%;
-  background-color: rgba(128, 128, 128, 0.065);
-
-  margin-top: -36px;
-  margin-left: 40px;
-  box-shadow: 2px 2px 2px 2px grey;
-  border-radius: 1px;
 }
 
-.bottom li {
-  margin-top: 23px;
-  margin-left: 23px;
-}
-
-.right {
-  height: 80vh;
-  width: 60%;
-  /* background-color: rgba(128, 128, 128, 0.172); */
-  background-color: rgba(211, 211, 211, 0.112);
-
-  /* margin-left: 200px; */
-  position: relative;
-  /* left: 500px; */
-  left: 26px;
-  box-shadow: 2px 2px 2px 2px grey;
-  border-radius: 5px;
-}
-
-.rtop {
-  height: 16vh;
+.dashboardOutlet {
+  margin: 1rem;
   width: 100%;
-  /* background-color: bisque; */
-  border-bottom: 1px solid grey;
-  /* text-align: left; */
 }
 
-.rmid {
-  display: flex;
-}
-.rmidl {
-  height: 50vh;
-  width: 50%;
-  /* background-color: aqua; */
-  border-right: 1px solid grey;
-  border-bottom: 1px solid grey;
+.ediprofileDashNavlink {
+  padding: 1rem 0.8rem;
+  color: black;
+  border-left: 4px solid white;
+  font-weight: 700;
 }
 
-.rmidr {
-  height: 50vh;
-  width: 50%;
-  /* background-color: blue; */
-  border-bottom: 1px solid grey;
+.profileDashactive {
+  background-color: #f3f3f3 !important;
+  color: deeppink !important;
+  padding: 1rem 0.8rem;
+  border-left: 4px solid deeppink;
+    font-weight: 700;
 }
 
-.formy {
-  height: 30vh;
+.userDashimage{
+  width: 7vw;
+  background-color: #e4e4e4;
+  
+}
+
+.hello{
+  background-color: #ffffff;
+}
+
+.myprofileAddress{
+  margin: 1rem;
   width: 100%;
-  /* background-color: aquamarine; */
-  margin-left: 15px;
-  margin-top: 50px;
-}
-
-.formy input {
-  outline: none;
-  border: none;
-  background-color: transparent;
-  padding: 13px;
-}
-
-.rmidr {
-  text-align: center;
-  font-size: 30px;
-  padding: 50px;
-}
-.rmidr img {
-  height: 130px;
-  width: 120px;
-}
-
-.rbottom button {
-  height: 40px;
-  width: 30%;
-  position: relative;
-  left: 340px;
-  top: 25px;
-  background-color: #0066b2;
-  border: none;
-  border-radius: 4px;
-}
-
-
-
-.bottom button{
-    height: 5vh;
-    width: 70px;
-    position: relative;
-    top: 15px;
-    background-color: #0066b2;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-
 }

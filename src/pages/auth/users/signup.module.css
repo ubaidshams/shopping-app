@@ -25,7 +25,7 @@
   cursor: pointer;
 }
 .formCard section a::after {
-  content: ">";
+  content: ">>";
 }
 
 .formCard section a:hover {
@@ -65,7 +65,7 @@ hr {
 /* btn */
 .bn5 {
   /* width: 100%; */
-  padding: 20px 100px;
+  padding: 20px 50px;
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
@@ -74,6 +74,8 @@ hr {
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  font-weight: bold;
+  font-size: larger;
 }
 
 .bn5:before {
