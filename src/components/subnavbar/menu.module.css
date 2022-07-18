@@ -57,9 +57,11 @@
   display: flex;
   align-items: stretch;
   height:auto;
+  
 }
 .dropDown aside div {
   flex: 1;
+  
 }
 .dropDown aside div:nth-child(odd) {
   background-color: #efefef;

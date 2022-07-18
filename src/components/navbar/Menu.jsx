@@ -7,12 +7,17 @@ import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
   let { search, setsearch } = useContext(MyContext);
+  let[csearch,setcsearch]=useState("")
 
   let navigate = useNavigate();
   
   let handlesubmit = () => {
+setsearch(csearch);
+    navigate("/search");
+    setcsearch("")
+    
 
-navigate("/search")
+    
     
 
 
@@ -27,8 +32,8 @@ navigate("/search")
           name="searchbar"
           id="searchbar"
           placeholder="Search for products brands and more"
-          value={search}
-          onChange={e => setsearch(e.target.value)}
+          value={csearch}
+          onChange={e => setcsearch(e.target.value)}
         />
 
         <AiOutlineSearch onClick={handlesubmit} />

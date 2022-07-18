@@ -156,18 +156,6 @@ const Signup = () => {
          <GiCancel/>
         </div>
         <h1>Add Address</h1>
-
-        <section>
-          One profile ID is all you need to access all KART services. You
-          already have a profile?{" "}
-          <a
-            onClick={() => {
-              dispatch(OpenLogin());
-            }}
-          >
-            Find it here{" "}
-          </a>
-        </section>
         <form onSubmit={handleSubmit}>
           <Card
             style={{ backgroundColor: "transparent" }}
