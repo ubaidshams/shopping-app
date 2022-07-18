@@ -45,98 +45,95 @@ const Search = () => {
   return (
     <section className={styles.featuredProducts}>
       <article>
+        {search == "" ? <h2>Please search for the products you need</h2> : <h2>showing results for &nbsp; "{search}"</h2>}
         <div className={styles.cardContainer}>
-          { 
-            prodList
-              .filter(term => {
-                if (search == "") {
-                  return term;
-                } else if (
-                  term.brand
-                    .toLocaleUpperCase()
-                    .includes(search.toLocaleUpperCase()) ||
-                  term.title
-                    .toLocaleUpperCase()
-                    .includes(search.toLocaleUpperCase())
-                ) {
-                  return term;
-                }
-              })
-              .map((product, index) => {
-                let {
-                  productsid,
-                  title,
-                  price,
-                  thumbnailURL,
-                  offer,
-                  rating,
-                  brand,
-                } = product;
+          {prodList
+            .filter(term => {
+              if (search == "") {
+                return null;
+              } else if (
+                term.brand
+                  .toLocaleUpperCase()
+                  .includes(search.toLocaleUpperCase()) ||
+                term.title
+                  .toLocaleUpperCase()
+                  .includes(search.toLocaleUpperCase())
+              ) {
+                return term;
+              }
+            })
+            .map((product, index) => {
+              let {
+                productsid,
+                title,
+                price,
+                thumbnailURL,
+                offer,
+                rating,
+                brand,
+              } = product;
 
-                return (
-                  <Card
-                    data-aos="zoom-in"
-                    data-aos-offset="200"
-                    onClick={() => navigate(`/products_page/${productsid}`)}
-                    className={styles.productCard}
-                    key={productsid}
-                  >
-                    <div className={styles.cardBody}>
-                      <img src={thumbnailURL} alt={title} />
-                    </div>
-                    <div className={styles.cardHeader}>
-                      <span>{rating.toFixed(1)}</span>
-                      <StarRatings rating={rating} left="2.5" />
-                      {/* <span style={{color:"black"}}>{rating}</span> */}
-                      {rating > 4.6 ? <span>Featured</span> : null}
-                    </div>
-                    <div className={styles.cardFooter}>
-                      <div className={styles.footerLeft}>
-                        <span>{brand.toUpperCase()}</span>
-                        <span>
-                          {title.length > 38
-                            ? title.slice(0, 38) + "..."
-                            : title}
-                        </span>
-                        <span>
-                          <CalculateOffer
-                            originPrice={price}
-                            offerPercentage={offer}
-                          />
-                        </span>
-                      </div>
-                      <div className={styles.footerRight}>
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          onClick={e => {
-                            e.stopPropagation();
-                            dispatch(addToCart(product));
-                          }}
-                        >
-                          Add to cart
-                        </Button>
-                        <FavoriteIcon
-                          onClick={e => {
-                            e.stopPropagation();
-                            if (productIdList.includes(productsid)) {
-                              dispatch(removeFromWishlist(productsid));
-                              return;
-                            }
-                            dispatch(addToWishlist(product));
-                          }}
-                          style={{
-                            fill: productIdList.includes(productsid)
-                              ? "red"
-                              : "#c0bfbf",
-                          }}
+              return (
+                <Card
+                  data-aos="zoom-in"
+                  data-aos-offset="200"
+                  onClick={() => navigate(`/products_page/${productsid}`)}
+                  className={styles.productCard}
+                  key={productsid}
+                >
+                  <div className={styles.cardBody}>
+                    <img src={thumbnailURL} alt={title} />
+                  </div>
+                  <div className={styles.cardHeader}>
+                    <span>{rating.toFixed(1)}</span>
+                    <StarRatings rating={rating} left="2.5" />
+                    {/* <span style={{color:"black"}}>{rating}</span> */}
+                    {rating > 4.6 ? <span>Featured</span> : null}
+                  </div>
+                  <div className={styles.cardFooter}>
+                    <div className={styles.footerLeft}>
+                      <span>{brand.toUpperCase()}</span>
+                      <span>
+                        {title.length > 38 ? title.slice(0, 38) + "..." : title}
+                      </span>
+                      <span>
+                        <CalculateOffer
+                          originPrice={price}
+                          offerPercentage={offer}
                         />
-                      </div>
+                      </span>
                     </div>
-                  </Card>
-                );
-              })
-          }
+                    <div className={styles.footerRight}>
+                      <Button
+                        variant="outlined"
+                        size="small"
+                        onClick={e => {
+                          e.stopPropagation();
+                          dispatch(addToCart(product));
+                        }}
+                      >
+                        Add to cart
+                      </Button>
+                      <FavoriteIcon
+                        onClick={e => {
+                          e.stopPropagation();
+                          if (productIdList.includes(productsid)) {
+                            dispatch(removeFromWishlist(productsid));
+                            return;
+                          }
+                          dispatch(addToWishlist(product));
+                        }}
+                        style={{
+                          fill: productIdList.includes(productsid)
+                            ? "red"
+                            : "#c0bfbf",
+                        }}
+                      />
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
         </div>
       </article>
     </section>

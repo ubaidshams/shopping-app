@@ -14,6 +14,7 @@ const Menu = () => {
   let handlesubmit = () => {
 setsearch(csearch);
     navigate("/search");
+    setcsearch("")
     
 
     
