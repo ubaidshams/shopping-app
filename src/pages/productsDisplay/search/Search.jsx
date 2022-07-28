@@ -1,73 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../features/products/productSlice";
-import Spinner from "./../spinner/Spinner";
-import styles from "./featuredProducts.module.css";
-import { addToCart } from "../../features/cart/cartSlice";
+import { fetchProducts } from "../../../features/products/productSlice";
+
+import styles from "../../../components/featured products/featuredProducts.module.css";
+import { addToCart } from "../../../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom";
-import PaginationComp from "../pagination/PaginationComp";
+
 import { AiOutlineHeart } from "react-icons/ai";
 import {
   addToWishlist,
   removeFromWishlist,
-} from "../../features/wishlist/wishlistSlice";
+} from "../../../features/wishlist/wishlistSlice";
 import Card from "@material-ui/core/Card";
 import { Button } from "@mui/material";
-import CalculateOffer from "../Offer Helper Components/CalculateOffer";
-import StarRatings from "../starRating/StarRatings";
+import CalculateOffer from "../../../components/Offer Helper Components/CalculateOffer";
+import StarRatings from "../../../components/spinner/Spinner";
 import { sx } from "@mui/joy/styles/styleFunctionSx";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import Menu from "../navbar/Menu";
-import { useContext } from "react";
-import { MyContext } from "../../apis/MyContext";
 
-const FeaturedProducts = () => {
-  let { search, setsearch } = useContext(MyContext)
-  // let [search, setsearch] = useState("");
+import { useContext } from "react";
+import { MyContext } from "../../../apis/MyContext";
+
+
+const Search = () => {
+  let { search, setsearch } = useContext(MyContext);
+
   let product = useSelector(state => state.product);
   let cartList = useSelector(state => state.wishlist.wishList);
   let [productIdList, setIdList] = useState([]);
   let dispatch = useDispatch();
   let navigate = useNavigate();
   let [prodList, setProdList] = useState([]);
-  let [currentPage, setCurrentPage] = useState(1);
-  let cardPerPage = 12;
-  let totalPages = Math.ceil(product.productList.length / cardPerPage);
-
-  const setPage = () => {
-    let start, end;
-    if (currentPage === 1) {
-      start = 0;
-      end = currentPage * cardPerPage;
-    } else {
-      start = currentPage * cardPerPage - cardPerPage;
-      end = currentPage * cardPerPage;
-    }
-    setProdList(product.productList.slice(start, end));
-  };
+  
   useEffect(() => {
-    setPage();
-  }, [currentPage, product]);
+    setProdList(product.productList);
+  },[])
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
   useEffect(() => {
     setIdList(cartList.map(item => item.productsid));
   }, [cartList]);
-
+  console.log(prodList);
   return (
     <section className={styles.featuredProducts}>
       <article>
-        <h1>Featured Products</h1>
-        <br />
-        
+        {search == "" ? <h2>Please search for the products you need</h2> : <h2>showing results for &nbsp; "{search}"</h2>}
         <div className={styles.cardContainer}>
-          {prodList.length === 0 ? (
-            <Spinner /> 
-           
-         
-          ): 
-             ( prodList  .map((product, index) => {
+          {prodList
+            .filter(term => {
+              if (search == "") {
+                return null;
+              } else if (
+                term.brand
+                  .toLocaleUpperCase()
+                  .includes(search.toLocaleUpperCase()) ||
+                term.title
+                  .toLocaleUpperCase()
+                  .includes(search.toLocaleUpperCase())
+              ) {
+                return term;
+              }
+            })
+            .map((product, index) => {
               let {
                 productsid,
                 title,
@@ -138,17 +133,18 @@ const FeaturedProducts = () => {
                   </div>
                 </Card>
               );
-            })
-          )}
+            })}
         </div>
-        <PaginationComp
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          totalPages={totalPages}
-        />
       </article>
     </section>
   );
 };
 
-export default FeaturedProducts;
+export default Search;
+
+
+
+
+
+
+

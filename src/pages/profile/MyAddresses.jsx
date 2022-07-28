@@ -40,12 +40,12 @@ function MyAddresses() {
         Your Address
       </h3>
 
-      <div className={""}>
+      <div style={{float:"right"}}>
         <Link to="/addressform">
           <Button variant="contained">Add Address</Button>
         </Link>
       </div>
-      <div className={""} style={{ margin: "8px 0px" }}>
+      <div className={""} style={{ margin: "8px 0px",textTransform:"uppercase" }}>
         <h3>
           {firstName} <span>{lastName}</span>
         </h3>
@@ -53,7 +53,7 @@ function MyAddresses() {
 
         {cuurentUser.addressList.map((item, index) => {
           return (
-            <Card sx={{ maxWidth: 500, margin: "8px 0px" }}>
+            <Card sx={{ maxWidth: 1000, margin: "8px 0px", display: "flex" ,alignItems:"center", justifyContent:"space-between"}}>
               <CardContent>
                 <div style={{ display: "flex" }}>
                   <div className={""}>
@@ -65,23 +65,24 @@ function MyAddresses() {
                   </div>
                 </div>
               </CardContent>
+              <div>
+                <CardActions>
+                  <Link to={`/editaddress/${item.id}`}>
+                    <Button
+                      size="small"
+                      color="success"
+                      startIcon={<ModeEditOutlineOutlinedIcon />}
+                    ></Button>
+                  </Link>
 
-              <CardActions>
-                <Link to={`/editaddress/${item.id}`}>
                   <Button
+                    color="error"
+                    onClick={() => deleteAddress(item.id)}
+                    startIcon={<DeleteIcon />}
                     size="small"
-                    color="success"
-                    startIcon={<ModeEditOutlineOutlinedIcon />}
                   ></Button>
-                </Link>
-
-                <Button
-                  color="error"
-                  onClick={() => deleteAddress(item.id)}
-                  startIcon={<DeleteIcon />}
-                  size="small"
-                ></Button>
-              </CardActions>
+                </CardActions>
+              </div>
             </Card>
           );
         })}

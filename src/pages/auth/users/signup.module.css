@@ -1,12 +1,12 @@
 .formCard {
-  width: 60vw;
+  width: 40vw;
   /* background-color: red; */
   margin: 20px auto;
 
   /* height: 90vh; */
   padding: 20px;
-  box-shadow: 0 5px 15px gray;
-  border-radius: 20px;
+  box-shadow: 0 0 4px 5px lightgray;
+  border-radius: 10px;
   /* position: absolute; */
 }
 .formCard h1 {
@@ -41,7 +41,7 @@ hr {
 .formCardContainer {
   width: 500px;
   /* height:50vh; */
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 15px;
   display: flex;
   justify-content: space-evenly;
@@ -133,4 +133,23 @@ hr {
 
 .Checkbox {
   margin-left: -5px;
+}
+
+.back{
+
+  top: 0;
+  right: 0;
+  margin: 10px;
+  height: 25px;
+  width: 25px;
+ margin-left: 35vw;
+  
+  
+}
+
+.back svg{
+  height: 25px;
+  width: 25px;
+  right: 0;
+  top: 0;
 }

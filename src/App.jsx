@@ -20,6 +20,7 @@ import Welcome from "./components/welcomepage/Welcome";
 import Signup from "./pages/auth/users/Signup";
 import CustomRoutes2 from "./routes/CustomRoutes2";
 import { useSelector } from "react-redux";
+import MyProvider from "./apis/MyContext";
 
 
 const App = () => {
@@ -30,15 +31,17 @@ const App = () => {
 
   return (
     <div>
-      <Router>
-        <ToastContainer />
-        <CustomRoutes2 />
-        <PersistentLogin>
-          <Navbar />
-          <CustomRoutes />
-        </PersistentLogin>
-        <Footer />
-      </Router>
+      <MyProvider>
+        <Router>
+          <ToastContainer />
+          <CustomRoutes2 />
+          <PersistentLogin>
+            <Navbar />
+            <CustomRoutes />
+          </PersistentLogin>
+          <Footer />
+        </Router>
+      </MyProvider>
     </div>
   );
 };

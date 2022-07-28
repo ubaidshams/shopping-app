@@ -1,38 +1,69 @@
-import React from "react";
+import React,{useState} from "react";
 import style from "./payment.module.css";
-import { AiFillRightCircle } from "react-icons/ai";
+import { FaAmazonPay } from "react-icons/fa";
+import { SiVisa } from "react-icons/si";
+import { BsCashStack } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
+import {toast} from "react-toastify"
+
 
 const Payment = () => {
-  let orderId = Math.floor(Math.random() * 2664645);
-  console.log(orderId);
+    let [use, setuse] = useState(false);
+    let navigate = useNavigate();
+
+
+    
+
+
+    let handlesubmit = () => {
+        if (use === true) {
+
+            // alert(`You have Opted for payment method`);
+            toast.success("Order Placed Successfully to this Address");
+
+            navigate("/place-order")
+        } else {
+            alert("Please Select paymentmethod")
+}
+
+
+        
+
+
+    }
+
 
   return (
-    <div className={style.checkoutcard}>
-      <h1 style={{ textAlign: "center" }}>CheckOut</h1>
-      <div className={style.radiodiv}>
-        <div className={style.arc}>
-          <AiFillRightCircle />
-          Shipping address
+    <div className={style.paymentsec}>
+      <div className={style.paycard}>
+        <h3 style={{ textAlign: "center" }}>Select Payment Method</h3>
+        <div style={{ display: "flex" }}>
+          <input type="radio" name="payment" onClick={() => setuse(!use)} />
+          <div className={style.option}>
+            Pay with Paytm
+            <FaAmazonPay />
+          </div>
         </div>
-        <div className={style.arc}>
-          {" "}
-          <AiFillRightCircle />
-          Order Details{" "}
-        </div>
-        <div className={style.arc}>
-          {" "}
-          <AiFillRightCircle />
-          Review Your Order
-        </div>
-      </div>
 
-      <div>
-        <h2 style={{ textAlign: "center" }}>Thank you for your order </h2>
-        <p style={{ textAlign: "center", fontSize: "large" }}>
-          <br />
-          Your order number is <h4> #{`${orderId}`} </h4> we update you when
-          your order has shipped.{" "}
-        </p>
+        <div style={{ display: "flex" }}>
+          <input type="radio" name="payment" onClick={() => setuse(!use)} />
+          <div className={style.option}>
+            Pay with creditcard
+            <SiVisa />
+          </div>
+        </div>
+
+        <div style={{ display: "flex" }}>
+          <input type="radio" name="payment" onClick={() => setuse(!use)} />
+          <div className={style.option}>
+            Cash On Delivery
+            <BsCashStack />
+          </div>
+        </div>
+
+        <button onClick={handlesubmit} className={style.ebtn}>
+          Proceed next
+        </button>
       </div>
     </div>
   );

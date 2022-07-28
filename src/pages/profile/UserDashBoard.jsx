@@ -12,7 +12,7 @@ function UserDashBoard() {
   return (
     <Card
       sx={{
-        height: "60vh",
+        height: "52vh",
         margin: "1rem 0",
         boxShadow: "0px 1px 4px 3px lightgray",
         borderRadius:'10px',
@@ -55,7 +55,7 @@ function UserDashBoard() {
                 : "ediprofileDashNavlink"
             }
           >
-            My Addresses
+            My Address
           </Grid>
         </NavLink>
       </Grid>

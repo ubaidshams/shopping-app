@@ -2,7 +2,7 @@ import React from 'react'
 
 const Beauty = () => {
   return (
-    <aside>
+    <aside style={{ width: "200px" }} >
         <div>
             <ul>
                 <li><a href="">Makeup</a></li>
